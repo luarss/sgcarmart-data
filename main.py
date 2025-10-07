@@ -5,6 +5,7 @@ import requests
 import sys
 import os
 from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 DEALER_BRAND_MAPPING_FILE = "data/dealer_brand_mapping.json"
 
@@ -74,6 +75,55 @@ def scrape_pricelist_links(html_content):
 
     return pricelist_links
 
+def process_dealer(dealer_id, brand_name):
+    brand_url = f"https://www.sgcarmart.com/new-cars/pricelists/{dealer_id}/{normalize_brand_name(brand_name)}"
+
+    try:
+        response = requests.get(brand_url, timeout=10)
+        response.raise_for_status()
+        html_content = response.text
+
+        extracted_links = scrape_pricelist_links(html_content)
+
+        if extracted_links:
+            latest_url = extracted_links[0]
+            full_url = latest_url if latest_url.startswith('http') else f"https://www.sgcarmart.com{latest_url}"
+            date_match = latest_url.split('/')[-1].replace('.pdf', '')
+
+            filepath, status = download_pricelist(full_url, brand_name, dealer_id, date_match)
+
+            if filepath:
+                return {
+                    "dealer_id": dealer_id,
+                    "brand": brand_name,
+                    "url": full_url,
+                    "date": date_match,
+                    "filepath": filepath,
+                    "status": "success"
+                }
+            else:
+                return {
+                    "dealer_id": dealer_id,
+                    "brand": brand_name,
+                    "url": full_url,
+                    "date": date_match,
+                    "status": "failed",
+                    "error": status
+                }
+        else:
+            return {
+                "dealer_id": dealer_id,
+                "brand": brand_name,
+                "status": "not_found"
+            }
+    except Exception as e:
+        return {
+            "dealer_id": dealer_id,
+            "brand": brand_name,
+            "status": "error",
+            "error": str(e)
+        }
+
 if __name__ == "__main__":
     dealer_brand_mapping = load_dealer_brand_mapping()
 
@@ -87,76 +137,23 @@ if __name__ == "__main__":
         print("TEST MODE: Processing only MG, Toyota, BMW\n")
 
     results = []
-    downloaded_count = 0
-    found_count = 0
+    max_workers = 10
 
-    for dealer_id, brand_name in dealer_brand_mapping.items():
-        brand_url = f"https://www.sgcarmart.com/new-cars/pricelists/{dealer_id}/{normalize_brand_name(brand_name)}"
+    print("Processing dealers in parallel...")
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {
+            executor.submit(process_dealer, dealer_id, brand_name): (dealer_id, brand_name)
+            for dealer_id, brand_name in dealer_brand_mapping.items()
+        }
 
-        print(f"[{dealer_id}] {brand_name}")
+        for future in as_completed(futures):
+            result = future.result()
+            results.append(result)
+            print(".", end="", flush=True)
+    print()
 
-        try:
-            response = requests.get(brand_url, timeout=10)
-            response.raise_for_status()
-            html_content = response.text
-
-            extracted_links = scrape_pricelist_links(html_content)
-
-            if extracted_links:
-                found_count += 1
-
-                print(f"    ✓ Found {len(extracted_links)} PDF link(s):")
-                for idx, link in enumerate(extracted_links):
-                    date_str = link.split('/')[-1].replace('.pdf', '')
-                    print(f"      [{idx}] {date_str} - {link}")
-
-                latest_url = extracted_links[0]
-                full_url = latest_url if latest_url.startswith('http') else f"https://www.sgcarmart.com{latest_url}"
-
-                date_match = latest_url.split('/')[-1].replace('.pdf', '')
-
-                print(f"    → Downloading latest: {date_match}")
-
-                filepath, status = download_pricelist(full_url, brand_name, dealer_id, date_match)
-
-                if filepath:
-                    downloaded_count += 1
-                    print(f"    ✓ {status}: {filepath}")
-                    results.append({
-                        "dealer_id": dealer_id,
-                        "brand": brand_name,
-                        "url": full_url,
-                        "date": date_match,
-                        "filepath": filepath,
-                        "status": "success"
-                    })
-                else:
-                    print(f"    ✗ {status}")
-                    results.append({
-                        "dealer_id": dealer_id,
-                        "brand": brand_name,
-                        "url": full_url,
-                        "date": date_match,
-                        "status": "failed",
-                        "error": status
-                    })
-            else:
-                print("    ✗ No PDF links found")
-                results.append({
-                    "dealer_id": dealer_id,
-                    "brand": brand_name,
-                    "status": "not_found"
-                })
-        except Exception as e:
-            print(f"    ✗ Error: {e}")
-            results.append({
-                "dealer_id": dealer_id,
-                "brand": brand_name,
-                "status": "error",
-                "error": str(e)
-            })
-
-        print()
+    downloaded_count = sum(1 for r in results if r.get("status") == "success")
+    found_count = sum(1 for r in results if r.get("status") in ["success", "failed"])
 
     report_file = f"data/download_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
     with open(report_file, 'w') as f:
