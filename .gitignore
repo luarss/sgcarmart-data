@@ -213,4 +213,9 @@ marimo/_lsp/
 __marimo__/
 
 # Streamlit
-.streamlit/secrets.toml
+.streamlit/secrets.tomlo
+
+##################################
+# Metadata
+download_report_*.json
+scrape_report_*.json

@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Error 404</title>
+<meta name="description" content="Thousands of new and used car listings of all makes/models @ the lowest price. Updated daily! Plus Car Advertisement space for car owners! Research, News. Articles, Carpark Rates Guide, COE Results &amp; Singapore Motoring Directory. Make Sgcarmart your one-stop car centre NOW!">
+<meta name="keywords" content="singapore cars, singapore car, singapore car dealers, singapore car dealer, singapore used cars, singapore used car, singapore, sgcarmart, used car, carmart, singapore 2nd hand cars, singapore second hand cars, second-hand cars, second hand car, honda, toyota, mazda, mercedes, BMW, car classified, advertise, car portal, carpark">
+<meta name="robots" content="INDEX,FOLLOW">
+<META NAME="ROBOTS" content="NOARCHIVE">
+<meta name="AUTHOR" content="Sgcarmart">
+<meta name="COPYRIGHT" content="Copyright (c) 2011, Sgcarmart.com">
+<meta http-equiv="content-language" content="en-us">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="expires" content="-1">
+<meta http-equiv="pragma" content="no-cache">
+<link rel="SHORTCUT ICON" href="https://www.sgcarmart.com/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/css/global.css" />
+<link rel="stylesheet" type="text/css" href="/css/topmenuheader.css" />
+<link rel="stylesheet" type="text/css" href="/autocomplete/includes/jquery.autocomplete.css" />
+<link href="https://fonts.googleapis.com/css?family=Roboto:light,regular,medium,thin,italic,mediumitalic,bold" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style type="text/css">
+#error_message{
+	height:auto; 
+	text-align:center; 
+	margin:15px auto 15px auto;
+}
+#mainimg{
+	margin: 20px 0;
+    width: 500px;
+    height: 300px;
+}
+#page{
+	text-decoration: none;
+	font-family: Graphik;
+	font-size: 30px;
+	font-weight:600;
+}
+#contentblank{
+    margin-bottom: 60px;
+}
+#text{
+	margin-bottom: 35.5px;
+	text-align: center;
+}
+#headerblank1{display: block;}
+#globalheader{display: none;}
+#footerbottom_white{display: block;}
+#footerbg{display:block;}
+#global_footer{display: none;}
+#load{
+	margin-top:35.5px;
+}
+@media only screen and (max-width: 480px) {
+	#page{
+		font-size: 25px;
+	}
+	#load{
+		font-size: 22px;
+		margin-top:23px;
+	}
+	#mainimg{
+		width: 100%;
+    	height: auto;
+	}
+	#contentblank{
+		width: 100%;
+		margin-top: 20%;
+		margin-bottom: 32px;
+	}
+	#text{
+		margin-bottom: 23px;
+		text-align: center;
+	}
+	#headerblank1{display: none;}
+	#globalheader{display: block;}
+	#footerbottom_white{display: none;}
+	#footerbg{display:none;}
+	#global_footer{display: block;}
+	#error_message{width:100%;}
+}
+#home_btn{
+	margin-top: 35.5px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Graphik',sans-serif;
+    height: 42px;
+	width:200px;
+	cursor: pointer;
+	background: white;
+    color: #F0484E;
+    border: solid 1px #F0484E;
+}
+#home_btn:hover{
+	background-color: #FFF0F1;
+}
+#topheader {
+	margin: auto;
+}
+#top-header__user-icon-container {
+	margin-left: 32px;
+}
+#menu {
+	margin-top: 4px !important;
+}
+@media only screen and (min-width: 480px) {
+	#topheader {
+		width: 90% !important;
+		min-width: 950px !important;
+	}
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	jQuery(document).ready(function(){
+		jQuery('#selling_parent').mouseenter(function(){
+				jQuery('#selling_parent').find('.sellingTypeMenu').show();
+			}).mouseleave(function(){
+				jQuery(this).find('.sellingTypeMenu').hide();
+		});
+		jQuery('#top-header__user-icon-container').mouseover(function(){
+			jQuery('.user-icon__container__dropdowm').css('display','block')
+		});
+		jQuery('#top-header__user-icon-container').mouseout(function(){
+			jQuery('.user-icon__container__dropdowm').css('display','none')
+		})
+	})
+</script>
+</head>
+<body>
+<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<link rel="stylesheet" media="only screen and (max-width: 480px)" href="https://m.sgcarmart.com/css/global.css" />
+<link rel="stylesheet" media="only screen and (max-width: 480px)" href="https://m.sgcarmart.com/css/menu_footer.css" />
+<link rel="stylesheet" href="/css/topmenuheader.css">
+<script type="text/javascript" src="/autocomplete/includes/jquery.autocomplete.js"></script>
+
+<div id="headerblank1">
+	<div id="topheader">
+		<div id="navigationHeader">
+			<div id="logo">
+				<a href="https://www.sgcarmart.com"><img src="https://i.i-sgcm.com/all/topheader/sgcm_logo.svg" alt="sgcarmart logo" width="158" height="23"></a>
+			</div>
+			<div id="topright_icons">
+				<div id="topicons" class="search_sections floatleft">
+											<div class="top-header" id="top-header">
+							<div class="top-header__toggle">
+								<div class="top-header__toggle__select-container" style="width:166px;">
+									<select>
+										<option value="all">All Sections</option>
+										<option value="newcar">New Cars</option>
+										<option value="usedcar">Used Cars</option>
+										<option value="motordirectory">Motor Directory</option>
+										<option value="productGuide">Product Guide</option>
+										<option value="article">Articles</option>
+										<option value="forum">Forum</option> 
+									</select>
+								<div class="select-container__selected">All Sections</div><div class="select-container__select-items select-container__select-hide"><div id="newcar">New Cars</div><div id="usedcar">Used Cars</div><div id="motordirectory">Motor Directory</div><div id="productGuide">Product Guide</div><div id="article">Articles</div><div id="forum">Forum</div></div></div>
+								<form action="https://www.sgcarmart.com/search" method="get" name="topsearch" onsubmit="CommmonTabSearch();return false;" style="width:83%">
+									<input id="searchCal" name="section" type="hidden">
+									<input id="toggle__form__search-input" class="toggle__form__search-input" name="MOD" onfocus="expandSearchField()" oninput="showDeleteBtn()">
+								</form>
+								<div class="top-header__toggle__action-container"> 
+									<button class="action-container__delete-btn" id="action-container__delete-btn" onclick="deleteInputValue()">
+										<img src="https://i.i-sgcm.com/all/topheader/delete_icon.svg" width="18" height="18">
+									</button> 
+									<div class="action-container__search-icon" id="action-container__search-icon" onclick="CommmonTabSearch();">
+										<img src="https://i.i-sgcm.com/all/topheader/search_icon.svg" alt="search icon" width="20" height="20">
+									</div>
+								</div>
+							</div>
+							<div id="CartButton" class="CartButton_cartButtonContainer"><a class="CartButton_cartButton" href="https://www.sgcarmart.com/shop"><img alt="cart button icon" loading="lazy" width="23" height="20" decoding="async" data-nimg="1" style="color:transparent" src="https://media.i-sgcm.com/public/components/header/cart-icon.svg"></a></div>
+							<div class="top-header__user-icon-container" id="top-header__user-icon-container"> 
+								<img src="https://i.i-sgcm.com/all/topheader/user_icon.svg" alt="user icon" width="23" height="23"/>
+								<a class="user-icon-container__dropdowm-item" style="color:#f0484e;font-weight: 500;font-size: 16px;padding-right: 8px!important;" href="https://www.sgcarmart.com/member/login">Login</a>
+								<div class="middle-line">|</div>
+								<a class="user-icon-container__dropdowm-item" style="color:#333333; font-weight: 500;font-size: 16px;" href="https://www.sgcarmart.com/member/login/">Sign Up</a>
+							</div>
+						</div>
+									</div>
+				<div class="clear"></div>
+			</div>
+		</div>	
+		<div class="clear"></div>
+		<div>
+			<ul id="menu" style="position:relative;">
+				<li><a href="https://www.sgcarmart.com/new_cars/index.php"><span>New</span></a></li>
+				<li><a href="https://www.sgcarmart.com/used-cars"><span>Used</span></a></li>
+				<li><a href="https://www.sgcarmart.com/electric-vehicle"><span>Electric</span></a></li>
+				<li><a href="https://www.sgcarmart.com/car-loan/"><span>Loan</span></a></li>
+				<li><a href="https://www.sgcarmart.com/car_rental/index.php"><span>Rent</span></a></li>
+				<li id="selling_parent"><a href="https://www.sgcarmart.com/main/sell.php"><span>Sell</span></a>
+					<div class="sellingTypeMenu">
+						<ul id="sub_options">
+							<li><a href="https://www.sgcarmart.com/owner/index.php">Sell By Yourself</a></li>
+							<li><a href="https://www.sgcarmart.com/quotz/sell_by_bid.php?type=sbbid">Sell By Bidding</a></li>
+							<li><a href="https://www.sgcarmart.com/tools_tips/consignment.php">Sell By Consignment</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="https://www.sgcarmart.com/directory/index.php"><span>Directory</span></a></li>
+				<li><a href="https://www.sgcarmart.com/shop"><span>e-Shop</span></a></li>
+				<li><a href="https://www.sgcarmart.com/car-insurance"><span>Insurance</span></a></li>
+				<li id="articles_parent">
+					<a href="https://www.sgcarmart.com//news/index.php"><span>Articles</span></a>
+                    <div class="menusub">
+						<ul id="sub_options">
+                        <li><a href="https://www.sgcarmart.com/news/review_landing.php">Car Reviews</a></li>
+						<li><a href="https://www.sgcarmart.com/news/advice_landing.php">Car Advice</a></li>
+						<li><a href="https://www.sgcarmart.com/news/news_landing.php">Car News</a></li>
+						<li><a href="https://www.sgcarmart.com/news/events_features_landing.php">Car Features</a></li>
+						<li><a href="https://www.sgcarmart.com/articles/videos">Car Videos</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="https://www.sgcarmart.com/forum/index.php"><span>Forum</span></a></li>
+				<li id="ttips"><a href="https://www.sgcarmart.com/resources"><span>Resources</span></a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>	<!--headerblank1 ends -->
+<div id="globalheader" class="headerFlex">
+	<div class="side_menu_overlay menu_close"></div>
+	<a href="#" class="slide_menu_open"><img src="https://i.i-sgcm.com/mobile/mmenulist.svg" height="18" alt="Menu List" border="0" style="position:relative;float:left;top:7px;left:19px;" onclick="control_display_act('closeall');"></a>
+	<div class="side_menu_wrapper">
+		<ul>
+			<li>
+				<a href="https://www.sgcarmart.com" style="border:none;">
+				<img src="https://i.i-sgcm.com/mobile/sgcm_logo.svg" alt="sgcarmart_logo" width="120" style="padding-top:10px;">
+				</a>
+			</li>
+			<li class="sidemenu_coty_border">
+										</li>
+
+										<li>
+												<div style="width:100%; display:flex; text-align:right; padding:15px 4px 15px 4px;">
+						<img src="https://i.i-sgcm.com/mobile/m_signin.svg" alt="login logo" width="20" height="20"><a href="https://www.sgcarmart.com/member/login" rel="nofollow" style="border:none;padding: 3px 4px 0 9px; color: #f0484e; font-weight: 500;">Login</a> <span style="color: #DFDFDF; padding:3px 4px 12px 4px; color: #333333;">|</span> <a href="https://www.sgcarmart.com/member/login" rel="nofollow" style="border:none;padding: 3px 4px 0 4px; color: #333333; font-weight: 500;">Sign up</a>
+					</div>
+												</li>
+			
+			<li class="sidemenu_border_line"><a href="https://m.sgcarmart.com/main/shortlist.php" style="padding-top: 5px;"><div alt="Menu List"><img src="https://i.i-sgcm.com/mobile/member/shortlist.svg" alt="home" width="20"><span class="sidemenu_text" style="vertical-align: middle;">My Shortlist</span></div></a></li>
+			<li class="sidemenu_border_line"><a href="https://www.sgcarmart.com"><div alt="Menu List"><img src="https://i.i-sgcm.com/mobile/member/home.png" alt="home" width="20"><span class="sidemenu_text">Home</span></div></a></li>
+			<div class="flip" rel="ncmm">
+				<li><a href="#"><img src="https://i.i-sgcm.com/mobile/member/newcar.png" alt="home" width="20"><span class="sidemenu_text">New Cars</span><span class="arrow"><img class="arrow_right" src="https://i.i-sgcm.com/mobile/home/slide_menu_arrow.png" border="0" width="8" height="12" alt="arrow"></span></a></li>
+			</div>
+			<div id="ncmm" class="hide">
+				<li><a class="mmlink" href="https://m.sgcarmart.com/new_cars/index.php"><span class="sidemenu_second_sp">Find New Cars</span></a></li>
+				<li><a class="mmlink" href="https://m.sgcarmart.com/new_cars/promotionlist.php"><span class="sidemenu_second_sp">New Car Promotions</span></a></li>
+				<li><a class="mmlink" href="https://m.sgcarmart.com/new_cars/coe_result.php"><span class="sidemenu_second_sp">COE Results</span></a></li>
+			</div>
+			<li><a href="https://m.sgcarmart.com/used_cars/index.php"><div alt="Menu List"><img src="https://i.i-sgcm.com/mobile/member/usedcar.png" alt="home" width="20"><span class="sidemenu_text">Used Cars</span></div></a></li>
+			<li><a href="https://www.sgcarmart.com/electric-vehicle"><div alt="Menu List"><img src="https://i.i-sgcm.com/mobile/member/electric-vehicle.svg" alt="home" width="20"><span class="sidemenu_text">Electric Vehicle</span></div></a></li>
+			<li><a href="https://m.sgcarmart.com/car-loan/"><div alt="Menu List"><img src="https://i.i-sgcm.com/mobile/member/carloan.svg" alt="home" width="20"><span class="sidemenu_text">Car Loan</span></div></a></li>
+			<li class="sidemenu_border_line"><a href="https://m.sgcarmart.com/car_rental/index.php"><div alt="Menu List"><img src="https://i.i-sgcm.com/mobile/member/rentalcar.png" alt="home" width="20"><span class="sidemenu_text">Rental Cars</span></div></a></li>
+			<div class="flip" rel="sellmm">
+				<li class="sidemenu_border_line"><a href="#"><img src="https://i.i-sgcm.com/mobile/member/sellmycar.png" alt="home" width="20"><span class="sidemenu_text">Sell My Car</span><span class="arrow"><img class="arrow_right" src="https://i.i-sgcm.com/mobile/home/slide_menu_arrow.png" border="0" width="8" height="12" alt="arrow"></span></a></li>
+			</div>
+			<div id="sellmm" class="hide">
+				<li><a class="mmlink" href="https://m.sgcarmart.com/sell_cars/index.php"><span class="sidemenu_second_sp"> Post an Ad</span></a></li>
+				<li><a class="mmlink" href="https://m.sgcarmart.com/quotz/sell-by-bidding.php?type=sbbid"><div class="sidemenu_second_sp">Sell by Bidding</div></a></li>
+				<li><a class="mmlink" href="https://m.sgcarmart.com/tools_tips/consignment.php"><div class="sidemenu_second_sp">Consignment</div></a></li>
+				<li><a class="mmlink" href="https://m.sgcarmart.com/quotz/index.php?type=fv"><div class="sidemenu_second_sp">Free Car Valuation</div></a></li>
+				<li><a class="mmlink" href="https://www.sgcarmart.com/advertiser/login"><div class="sidemenu_second_sp">Advertiser's Login</div></a></li>
+			</div>
+<li>
+				<a href="https://www.sgcarmart.com/shop">
+					<div alt="Menu List"><img src="https://i.i-sgcm.com/mobile/directory/eshop.png" alt="home" width="20"><span class="sidemenu_text">e-Shop</span></div>
+				</a>
+			</li>
+			<li><a href="https://m.sgcarmart.com/directory/index.php"><div alt="Menu List"><img src="https://i.i-sgcm.com/mobile/member/directory.png" alt="home" width="20"><span class="sidemenu_text">Motor Directory</span></div></a></li>
+			<li><a href="https://m.sgcarmart.com/accessories/index.php"><div alt="Menu List"><img src="https://i.i-sgcm.com/mobile/member/accessories.png" alt="home" width="20"><span class="sidemenu_text">Accessories</span></div></a></li>
+			<li class="sidemenu_border_line"><a href="https://www.sgcarmart.com/car-insurance"><div alt="Menu List"><img src="https://i.i-sgcm.com/mobile/member/insurance.png" alt="insurance" width="20"><span class="sidemenu_text">Insurance</span></div></a></li>
+			<li><a href="https://m.sgcarmart.com/articles/index.php"><div alt="Menu List"><img src="https://i.i-sgcm.com/mobile/member/article.png" alt="home" width="20"><span class="sidemenu_text">Articles</span></div></a></li>
+			<li><a href="https://m.sgcarmart.com/forum/index.php"><div alt="Menu List"><img src="https://i.i-sgcm.com/mobile/member/forum.png" alt="home" width="20"><span class="sidemenu_text">Forum</span></div></a></li>
+			<li class="sidemenu_border_line"><a href="https://www.sgcarmart.com/resources"><img src="https://i.i-sgcm.com/mobile/member/resources.png" alt="home" width="20"><span class="sidemenu_text">Resources</span></a></li>
+									<li class="sidemenu_border_line"><a href="https://www.sgcarmart.com/phpads/www/delivery/ck.php?bannerid=2275" target="_blank"><div alt="Menu List"><img src="https://i.i-sgcm.com/mobile/member/appdownload.png" alt="home" width="20"><span class="sidemenu_text">Download Our App</span></div></a></li>
+									<li style="margin-bottom:150px;">&nbsp;</li>
+		</ul>
+	</div>
+	<div><a href="https://www.sgcarmart.com"><img src="https://i.i-sgcm.com/mobile/sgcm_logo.svg" alt="sgcarmart_logo" class="sgcmlogo" style="width:120px!important;"></a></div>
+						<div style="float:right;position:relative;top: -27px;right:18px;display:flex;">
+									<div>
+				<img src="https://i.i-sgcm.com/mobile/m_signin.svg" height="18" alt="signin icon" style="cursor: pointer;" onclick="control_display_act('login_dis')"></div>
+			<div class="clear"></div>
+</div>
+	
+					
+<div id="dashboard_options" style="background-color:#FFFFFF; width:150px; font-size:14px; box-shadow:1px 1px 10px 1px #999999; position:fixed; top:46px; z-index:22; text-align:left; display:none;right:18px">
+	<div class="toparrow" style="background:url('https://i.i-sgcm.com/mobile/used_car_toparrow.png') no-repeat scroll center center rgba(0, 0, 0, 0); background-size:20px 9px; position:absolute; top:-5px; right:0px; width:20px; height:9px;"></div>
+	<a href="https://www.sgcarmart.com/member/login" rel="nofollow" style="color:#000000;">
+		<div style="padding:14px 15px;border-bottom:1px solid #E7E7E7;">
+			Login 
+		</div>
+	</a>
+	<a href="https://www.sgcarmart.com/member/login" rel="nofollow" style="color:#000000;">
+		<div style="padding:14px 15px;border-bottom:1px solid #E7E7E7;">
+			Sign up
+		</div>
+	</a>
+</div>
+</div>
+<div id="content">
+	<div id="contentblank">
+        <div id="error_message">
+        	<img id="mainimg" src="https://i.i-sgcm.com/images/msg404_bg.svg" border="0"/>
+			<br>
+			<div id="text">
+				<br>
+				<a id="page" style="color:black;">Page Not Found</a>
+				<div id="load" style="text-decoration: none;font-family: Graphik;font-size: 20px;text-align: center;font-weight:500;padding-left: 18px;padding-right: 17px;">
+					<a style="text-decoration: none;text-align: center;color: black;">We can't seem to find the page you're looking for.</a> 
+				</div>
+				<a href="https://www.sgcarmart.com"><button id="home_btn">Go to Home</button></a>
+			</div>
+        </div>
+	</div>
+</div>
+<div id="footerbg">
+	<div id="footermain">
+		<div class="footerBoxes">
+			<div class="footerBox">
+				<div class="boxTitle">Buy / Rent Cars</div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/new_cars/index.php">New Cars For Sale</a></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/used_cars/index.php">Used Cars For Sale</a></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/car_rental/index.php">Cars For Rent</a></div>
+			</div>
+			<div class="footerBox">
+				<div class="boxTitle">Sell Your Car</div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/owner/index.php">Post an Ad</a></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/quotz/sell_by_bid.php?type=sbbid">Sell by Bidding</a></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/tools_tips/consignment.php">Sell by Consignment</a></div>
+			</div>
+			<div class="footerBox">
+				<div class="boxTitle">Aftermarket</div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/directory/index.php">Workshop Directory</a></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/products/index.php">Aftermarket Products</a></div>
+			</div>
+			<div class="footerBox">
+				<div class="boxTitle">Articles</div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/news/review_landing.php">Car Reviews</a></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/news/advice_landing.php">Car Advice</a></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/news/news_landing.php">Car News</a></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/news/events_features_landing.php">Car Features</a></div>
+			</div>
+			<div class="footerBox">
+				<div class="boxTitle">General</div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/main/about_us.php">About Us</a></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/contact">Contact Us</a></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/main/careers.php">Careers</a></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/site-map">Site Map</a></div>
+			</div>
+			<div class="footerBox">
+				<div class="boxTitle">Resources</div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/news/writeup.php?AID=70">COE Prices</a></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/resources/car-loan-calculator">Car Loan Calculators</a></div>
+				<div class="boxOption"><a href="https://www.mycarforum.com/" target="_blank">Car Forum</a></div>
+			</div>
+			<div class="footerBox">
+				<div class="boxTitle" style="height:17px;"></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/car-insurance">Car Insurance</a></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/quotz/free_valuation.php?type=fv">Car Valuation</a></div>
+				<div class="boxOption"><a href="https://connect.sgcarmart.com/coe_renewal.php">COE Renewal</a></div>
+			</div>
+			<div class="footerBox">
+				<div class="boxTitle" style="height:17px;"></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/warranty/index.php">Used Car Warranty</a></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/directory/carplate_index.php">Bidded Carplates</a></div>
+				<div class="boxOption"><a href="https://www.sgcarmart.com/news/carpark_index.php?TYP=carpark&amp;LOC=all">Carpark Rates</a></div>
+			</div>
+			<div class="footerBox" style="grid-column: span 2;">
+				<div class="boxTitle">Follow Sgcarmart.com</div>
+				<div id="footerfollow">
+					<ul class="footericons">
+						<li class="floatleft"><a href="https://www.facebook.com/sgcarmart" style="text-decoration:none;" target="_blank"><div id="icon_fb"><img alt="fabebook" src="https://i.i-sgcm.com/all/icon_fb.svg" no-repeat=""></div></a></li>
+						<li class="floatleft"><a href="https://www.instagram.com/sgcarmart/?hl=en" style="text-decoration:none;" target="_blank"><div id="icon_ig"><img alt="instagram" src="https://i.i-sgcm.com/all/icon_ig.svg" no-repeat=""></div></a></li>
+						<li class="floatleft"><a href="https://www.youtube.com/user/SGCMVids" style="text-decoration:none;" target="_blank"><div id="icon_yt"><img alt="youtube" src="https://i.i-sgcm.com/all/icon_yt.svg" no-repeat=""></div></a></li>
+						<li class="floatleft"><a href="https://t.me/sgcmcommunity" style="text-decoration:none;" target="_blank"><div id="icon_telegram"><img alt="telegram" src="https://i.i-sgcm.com/all/icon_telegram.svg" no-repeat=""></div></a></li>
+						<div class="clear"></div>
+					</ul>
+					<ul class="footericons">
+						<li class="floatleft"><a href="https://itunes.apple.com/us/app/sgcarmart/id962261200?mt=8" style="text-decoration:none;" target="_blank"><div id="icon_ap"><img alt="apple" src="https://i.i-sgcm.com/all/icon_ap.png" no-repeat=""></div></a></li>
+						<li class="floatleft"><a href="https://play.google.com/store/apps/details?id=com.sgcarmart.app" style="text-decoration:none;" target="_blank"><div id="icon_pl"><img alt="play store" src="https://i.i-sgcm.com/all/icon_pl.png" no-repeat=""></div></a></li>
+						<li class="floatleft"><a href="https://appgallery.cloud.huawei.com/uowap/index.html#/detailApp/C101183615?detailType=0&amp;subsource=&amp;referrer=&amp;s=&amp;shareFrom=&amp;v=&amp;shareTo=&amp;source=&amp;id=&amp;locale=&amp;channelId=web" style="text-decoration:none;" target="_blank"><div id="icon_huawei"><img alt="huawei" src="https://i.i-sgcm.com/all/icon_huawei.png" no-repeat=""></div></a></li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<div id="footerbottom_white">
+		<div id="footerbottom_white_main">
+			<ul style="margin-top:0px;">
+					<li style="padding-left:0px;"><a href="https://www.sgcarmart.com/main/tos.php">Terms of Service</a></li>
+					<li><a href="https://www.sgcarmart.com/main/privacy.php">Privacy Policy</a></li>
+					<li><a href="https://www.sgcarmart.com/main/pdpa.php">Personal Data Protection Statement</a></li>
+					<li style="padding-right:0px;">
+						<div id="footercopyrights">&copy;2004-2022 Sgcarmart, Singapore. All rights reserved.</div>
+					</li>
+				</ul>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div id="global_footer" style="width:100%">
+		<div class="footer_tabs">
+			<a href="https://www.sgcarmart.com/contact"><div class="footer_tabs f14 fbold fgrey" style="padding: 4% 6%;">Contact Us</div></a>
+			<hr style="margin:0 4%;background-color:#E4E4E4; height:1px; border:none;">
+			<a href="https://m.sgcarmart.com/main/careers.php"><div class="footer_tabs f14 fbold fgrey" style="padding: 4% 6%;">Careers</div></a>
+			<hr style="margin:0 4%;background-color:#E4E4E4; height:1px; border:none;">
+								<div class="footer_tabs f14 fbold fgrey" style="padding: 4% 6%;">Follow sgcarmart.com</div>
+		</div>
+		<div class="footer_icons" style="padding:0 6% 4% 6%;">
+			<ul class="footericons" style="display:flex; align-items:center;">
+				<li class="fleft"><a href="https://www.facebook.com/sgcarmart" style="text-decoration:none;" target="_blank"><div id="icon_fb"><img alt="fabebook icon" src="https://i.i-sgcm.com/all/icon_fb.svg" no-repeat=""></div></a></li>
+				<li class="fleft" style="padding:0 5%;"><a href="https://www.instagram.com/sgcarmart/?hl=en" style="text-decoration:none;" target="_blank"><div id="icon_ig"><img alt="instagram icon" src="https://i.i-sgcm.com/all/icon_ig.svg" no-repeat=""></div></a></li>
+				<li class="fleft"><a href="https://www.youtube.com/user/SGCMVids" style="text-decoration:none;" target="_blank"><div id="icon_yt"><img alt="youtube icon" src="https://i.i-sgcm.com/all/icon_yt.svg" no-repeat=""></div></a></li>
+				<li class="fleft"><a href="https://t.me/sgcmcommunity" style="text-decoration:none;" target="_blank"><div id="icon_telegram"><img alt="telegram icon" src="https://i.i-sgcm.com/all/icon_telegram.svg" no-repeat=""></div></a></li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+
+							<div class="footer_links" style="padding:0 6% 4% 6%;">
+				<ul class="footericons">
+					<li class="fleft" style="width:30%"><a href="https://itunes.apple.com/us/app/sgcarmart/id962261200?mt=8" style="text-decoration:none;" target="_blank"><div id="icon_ap"><img alt="apple icon" src="https://i.i-sgcm.com/all/icon_ap.png" width="100%"></div></a></li>
+					<li class="fleft" style="width:30%;padding:0 2%;"><a href="https://play.google.com/store/apps/details?id=com.sgcarmart.app" style="text-decoration:none;" target="_blank"><div id="icon_pl"><img alt="play store icon" src="https://i.i-sgcm.com/all/icon_pl.png" width="100%"></div></a></li>
+					<li class="fleft" style="width:30%"><a href="https://appgallery.cloud.huawei.com/uowap/index.html#/detailApp/C101183615?detailType=0&amp;subsource=&amp;referrer=&amp;s=&amp;shareFrom=&amp;v=&amp;shareTo=&amp;source=&amp;id=&amp;locale=&amp;channelId=web" style="text-decoration:none;" target="_blank"><div id="icon_huawei"><img alt="huawei icon" src="https://i.i-sgcm.com/all/icon_huawei.png" width="100%"></div></a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+		
+		<div id="viewfullver">
+		<div class="footerBtnSpace"><a href="https://www.sgcarmart.com" id="footer_desktop" class="fgrey">
+			<div class="footer_ChangeDesktopBtn">
+				<img src="https://i.i-sgcm.com/all/desktop.svg" style="vertical-align:middle;">
+				<span class="f12">View page in Desktop</span>
+			</div>
+			</a>
+		</div>
+	</div>
+		
+		<div class="footer_subTabs f12" style="text-align:center;padding:4% 0;">
+			<a href="https://m.sgcarmart.com/main/tos.php" class="fgrey">Terms of Service</a> | <a href="https://m.sgcarmart.com/main/privacy.php" class="fgrey">Privacy</a> | <a href="https://m.sgcarmart.com/main/pdpa.php" class="fgrey">PDPA</a>
+		</div>
+		<div class="footer_copyright f12 fgrey" style="text-align:center;">
+			© 2004 - 2023 sgcarmart, Singapore. All rights reserved.
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="topheader.js"></script>
+<script>
+function deleteAllCookies() {
+    document.cookie.split(";").forEach(function(c) {
+        let cookieName = c.split("=")[0].trim();
+        
+        // Skip deleting specific cookies
+        if (cookieName !== 'cookid' && cookieName !== 'username' && cookieName !== 'n_cookid' && cookieName !== 'n_username') {
+            // Deleting the cookie for the current domain
+            document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            // Deleting the cookie for the current domain with a specific domain
+            document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
+            // Deleting the cookie for the '.sgcarmart.com' domain
+            document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.sgcarmart.com;";
+			document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=m.sgcarmart.com;";
+			document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.m.sgcarmart.com;";
+        }
+    });
+}
+deleteAllCookies();
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98aea6c6fa6c113f',t:'MTc1OTg1MzI0Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
