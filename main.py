@@ -4,13 +4,35 @@ import json
 import requests
 import sys
 import os
+import random
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 DEALER_BRAND_MAPPING_FILE = "data/dealer_brand_mapping.json"
 
+USER_AGENTS = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Firefox/132.0",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14.7; rv:133.0) Gecko/20100101 Firefox/133.0",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14.7; rv:132.0) Gecko/20100101 Firefox/132.0",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.2 Safari/605.1.15",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1 Safari/605.1.15",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (X11; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0",
+]
+
 def normalize_brand_name(brand):
     return brand.lower().replace(" ", "-").replace("_", "-")
+
+def get_random_user_agent():
+    return random.choice(USER_AGENTS)
 
 def load_dealer_brand_mapping():
     with open(DEALER_BRAND_MAPPING_FILE, 'r') as f:
@@ -30,7 +52,8 @@ def download_pricelist(pricelist_url, brand_name, dealer_id, date, output_dir="d
         return filepath, f"Already exists ({file_size} bytes)"
 
     try:
-        response = requests.get(pricelist_url, timeout=30)
+        headers = {"User-Agent": get_random_user_agent()}
+        response = requests.get(pricelist_url, headers=headers, timeout=30)
         response.raise_for_status()
 
         content_type = response.headers.get('content-type', '').lower()
@@ -79,7 +102,8 @@ def process_dealer(dealer_id, brand_name):
     brand_url = f"https://www.sgcarmart.com/new-cars/pricelists/{dealer_id}/{normalize_brand_name(brand_name)}"
 
     try:
-        response = requests.get(brand_url, timeout=10)
+        headers = {"User-Agent": get_random_user_agent()}
+        response = requests.get(brand_url, headers=headers, timeout=10)
         response.raise_for_status()
         html_content = response.text
 
