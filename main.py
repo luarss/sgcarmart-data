@@ -1,38 +1,23 @@
 #!/usr/bin/env python3
-from bs4 import BeautifulSoup
+import argparse
 import json
 import requests
 import sys
 import os
-import random
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-DEALER_BRAND_MAPPING_FILE = "data/dealer_brand_mapping.json"
-
-USER_AGENTS = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Firefox/132.0",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14.7; rv:133.0) Gecko/20100101 Firefox/133.0",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14.7; rv:132.0) Gecko/20100101 Firefox/132.0",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.2 Safari/605.1.15",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1 Safari/605.1.15",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0",
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (X11; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0",
-]
-
-def normalize_brand_name(brand):
-    return brand.lower().replace(" ", "-").replace("_", "-")
-
-def get_random_user_agent():
-    return random.choice(USER_AGENTS)
+from constants import (
+    DEALER_BRAND_MAPPING_FILE,
+    BASE_URL,
+    DEFAULT_REQUEST_TIMEOUT,
+    DEFAULT_PAGE_TIMEOUT,
+    DEFAULT_MAX_WORKERS,
+    MIN_PDF_SIZE_BYTES,
+    PDF_MAGIC_HEADER,
+    PDF_CONTENT_TYPE,
+)
+from common import normalize_brand_name, get_random_user_agent, scrape_pricelist_links
 
 def load_dealer_brand_mapping():
     with open(DEALER_BRAND_MAPPING_FILE, 'r') as f:
@@ -53,17 +38,17 @@ def download_pricelist(pricelist_url, brand_name, dealer_id, date, output_dir="d
 
     try:
         headers = {"User-Agent": get_random_user_agent()}
-        response = requests.get(pricelist_url, headers=headers, timeout=30)
+        response = requests.get(pricelist_url, headers=headers, timeout=DEFAULT_REQUEST_TIMEOUT)
         response.raise_for_status()
 
         content_type = response.headers.get('content-type', '').lower()
-        if 'application/pdf' not in content_type:
+        if PDF_CONTENT_TYPE not in content_type:
             return None, f"Not a PDF file (content-type: {content_type})"
 
-        if len(response.content) < 1000:
+        if len(response.content) < MIN_PDF_SIZE_BYTES:
             return None, f"File too small ({len(response.content)} bytes)"
 
-        if response.content[:4] != b'%PDF':
+        if response.content[:4] != PDF_MAGIC_HEADER:
             return None, "Invalid PDF header"
 
         with open(filepath, 'wb') as f:
@@ -75,35 +60,12 @@ def download_pricelist(pricelist_url, brand_name, dealer_id, date, output_dir="d
     except Exception as e:
         return None, f"Failed: {str(e)}"
 
-def scrape_pricelist_links(html_content):
-    """
-    Parses the given HTML content to extract PDF links for the price lists.
-
-    Args:
-        html_content: A string containing the HTML source code of the page.
-
-    Returns:
-        A list of strings, where each string is a URL to a PDF price list.
-    """
-    soup = BeautifulSoup(html_content, 'html.parser')
-    pricelist_links = []
-
-    links_container = soup.find('div', class_='styles_containerDatesContent__nOueF')
-
-    if links_container:
-        for link in links_container.find_all('a', class_='styles_textPricelistLink__UvFUj'):
-            pdf_url = link.get('href')
-            if pdf_url and isinstance(pdf_url, str) and pdf_url.endswith('.pdf'):
-                pricelist_links.append(pdf_url)
-
-    return pricelist_links
-
 def process_dealer(dealer_id, brand_name):
     brand_url = f"https://www.sgcarmart.com/new-cars/pricelists/{dealer_id}/{normalize_brand_name(brand_name)}"
 
     try:
         headers = {"User-Agent": get_random_user_agent()}
-        response = requests.get(brand_url, headers=headers, timeout=10)
+        response = requests.get(brand_url, headers=headers, timeout=DEFAULT_PAGE_TIMEOUT)
         response.raise_for_status()
         html_content = response.text
 
@@ -111,7 +73,7 @@ def process_dealer(dealer_id, brand_name):
 
         if extracted_links:
             latest_url = extracted_links[0]
-            full_url = latest_url if latest_url.startswith('http') else f"https://www.sgcarmart.com{latest_url}"
+            full_url = latest_url if latest_url.startswith('http') else f"{BASE_URL}{latest_url}"
             date_match = latest_url.split('/')[-1].replace('.pdf', '')
 
             filepath, status = download_pricelist(full_url, brand_name, dealer_id, date_match)
@@ -149,22 +111,40 @@ def process_dealer(dealer_id, brand_name):
         }
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="SGCarMart Pricelist Downloader - Download latest pricelists for dealers",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  %(prog)s
+  %(prog)s --test
+        """
+    )
+
+    parser.add_argument(
+        "--test",
+        action="store_true",
+        help="Run in test mode (only download MG, Toyota, BMW)"
+    )
+
+    args = parser.parse_args()
+
     dealer_brand_mapping = load_dealer_brand_mapping()
 
     print("SGCarMart Pricelist Downloader")
     print("=" * 60)
-    print(f"Total dealers to check: {len(dealer_brand_mapping)}\n")
 
-    if len(sys.argv) > 1 and sys.argv[1] == "--test":
+    if args.test:
         test_dealers = {"82": "mg", "44": "toyota", "4": "bmw"}
         dealer_brand_mapping = test_dealers
-        print("TEST MODE: Processing only MG, Toyota, BMW\n")
+        print("TEST MODE: Processing only MG, Toyota, BMW")
+
+    print(f"Total dealers to check: {len(dealer_brand_mapping)}\n")
 
     results = []
-    max_workers = 10
 
     print("Processing dealers in parallel...")
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+    with ThreadPoolExecutor(max_workers=DEFAULT_MAX_WORKERS) as executor:
         futures = {
             executor.submit(process_dealer, dealer_id, brand_name): (dealer_id, brand_name)
             for dealer_id, brand_name in dealer_brand_mapping.items()
