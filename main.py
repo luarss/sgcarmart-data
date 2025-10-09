@@ -40,6 +40,8 @@ def process_dealer_historical(dealer_id: str, brand_name: str, years: list = Non
     Returns:
         Dict with download results
     """
+    import os
+    from sgcarmart.utils.file_utils import normalize_brand_name
     from sgcarmart.core.downloader import download_pdf
 
     try:
@@ -55,8 +57,11 @@ def process_dealer_historical(dealer_id: str, brand_name: str, years: list = Non
         failed = 0
 
         for year, pdfs in filtered_pdfs.items():
+            year_output_dir = f"data/pricelists/{normalize_brand_name(brand_name)}/{year}"
+            os.makedirs(year_output_dir, exist_ok=True)
+
             for pdf_info in pdfs:
-                result = download_pdf(pdf_info['url'], brand_name, output_dir="data/pricelists")
+                result = download_pdf(pdf_info['url'], brand_name, output_dir=f"data/pricelists/{normalize_brand_name(brand_name)}/{year}")
 
                 if result['status'] == 'success':
                     downloaded += 1
