@@ -221,3 +221,5 @@ download_report_*.json
 scrape_report_*.json
 pdf_download_report_*.json
 data/pricelists/mg/dealer_82_2025-01-15.pdf
+data/simple_navigator_results.json
+data/test_year_navigation_results.json
