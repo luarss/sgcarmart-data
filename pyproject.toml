@@ -30,8 +30,6 @@ addopts = [
     "-v",
     "--strict-markers",
     "--cov=sgcarmart",
-    "--cov=main",
-    "--cov=download_all_pdfs",
     "--cov-report=term-missing",
     "--cov-report=html",
     "--cov-fail-under=80",
