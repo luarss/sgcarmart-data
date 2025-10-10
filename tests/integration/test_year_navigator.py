@@ -294,7 +294,7 @@ class TestDiscoverHistoricalPdfs:
         assert '2024' in result
         assert '2023' in result
         mock_navigator_class.assert_called_once_with(headless=True)
-        mock_navigator.discover_all_pdfs.assert_called_once_with('82', 'mg')
+        mock_navigator.discover_all_pdfs.assert_called_once_with('82', 'mg', None)
 
     @patch('sgcarmart.core.year_navigator.SimpleYearNavigator')
     def test_discover_historical_pdfs_headless_false(self, mock_navigator_class):
