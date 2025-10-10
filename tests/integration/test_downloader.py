@@ -48,9 +48,10 @@ class TestDownloadPricelist:
 
     def test_skip_existing_file(self, temp_output_dir):
         brand_dir = os.path.join(temp_output_dir, "bmw")
-        os.makedirs(brand_dir, exist_ok=True)
+        year_dir = os.path.join(brand_dir, "2025")
+        os.makedirs(year_dir, exist_ok=True)
 
-        existing_file = os.path.join(brand_dir, "dealer_4_2025-01-15.pdf")
+        existing_file = os.path.join(year_dir, "dealer_4_2025-01-15.pdf")
         with open(existing_file, 'wb') as f:
             f.write(b'%PDF-existing')
 
@@ -116,9 +117,10 @@ class TestDownloadPdf:
     @responses.activate
     def test_download_pdf_skips_existing(self, temp_output_dir, valid_pdf_content):
         brand_dir = os.path.join(temp_output_dir, "mg")
-        os.makedirs(brand_dir, exist_ok=True)
+        year_dir = os.path.join(brand_dir, "2025")
+        os.makedirs(year_dir, exist_ok=True)
 
-        existing_file = os.path.join(brand_dir, "dealer_82_2025-01-15.pdf")
+        existing_file = os.path.join(year_dir, "dealer_82_2025-01-15.pdf")
         with open(existing_file, 'wb') as f:
             f.write(valid_pdf_content)
 
