@@ -20,6 +20,12 @@ DEALER_BRAND_MAPPING_FILE = "data/dealer_brand_mapping.json"
 
 BASE_URL = "https://www.sgcarmart.com"
 PRICELIST_URL_TEMPLATE = f"{BASE_URL}/new-cars/pricelists/{{dealer_id}}/{{brand}}"
+PDF_URL_TEMPLATE = f"{BASE_URL}/new_cars/pricelist/{{dealer_id}}/{{date}}.pdf"
+
+SCRAPER_URL_PATTERNS = [
+    "/new-cars/pricelists/{dealer_id}/{brand}",
+    "/new_cars/pricelist/{dealer_id}/{date}.pdf",
+]
 
 PRICELIST_CONTAINER_CLASS = "styles_containerDatesContent__nOueF"
 PRICELIST_LINK_CLASS = "styles_textPricelistLink__UvFUj"

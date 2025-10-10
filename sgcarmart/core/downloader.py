@@ -3,6 +3,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from constants import (
     BASE_URL,
+    PRICELIST_URL_TEMPLATE,
     DEFAULT_REQUEST_TIMEOUT,
     DEFAULT_PAGE_TIMEOUT,
     DEFAULT_PDF_MAX_WORKERS,
@@ -144,7 +145,7 @@ def download_pdf(pdf_url, brand_name=None, output_dir="data/pricelists"):
 
 
 def process_dealer(dealer_id, brand_name):
-    brand_url = f"https://www.sgcarmart.com/new-cars/pricelists/{dealer_id}/{normalize_brand_name(brand_name)}"
+    brand_url = PRICELIST_URL_TEMPLATE.format(dealer_id=dealer_id, brand=normalize_brand_name(brand_name))
 
     try:
         response = fetch_with_retry(brand_url, DEFAULT_PAGE_TIMEOUT)

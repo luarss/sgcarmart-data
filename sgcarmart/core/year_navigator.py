@@ -1,12 +1,13 @@
 """
 Simplified year navigation using direct PDF URL construction.
-Based on the pattern: https://www.sgcarmart.com/new_cars/pricelist/{dealer_id}/{YYYY-MM-DD}.pdf
 """
 from playwright.sync_api import sync_playwright
 from typing import List, Dict
 from datetime import datetime
 import time
 import re
+
+from constants import PRICELIST_URL_TEMPLATE, PDF_URL_TEMPLATE
 
 
 class SimpleYearNavigator:
@@ -68,7 +69,7 @@ class SimpleYearNavigator:
 
     def get_available_years(self, dealer_id: str, brand_name: str) -> List[str]:
         """Get all available years by parsing the year dropdown."""
-        url = f"https://www.sgcarmart.com/new-cars/pricelists/{dealer_id}/{brand_name}"
+        url = PRICELIST_URL_TEMPLATE.format(dealer_id=dealer_id, brand=brand_name)
 
         try:
             self.page.goto(url, wait_until="domcontentloaded")
@@ -105,7 +106,7 @@ class SimpleYearNavigator:
         Returns:
             List of dicts with 'url', 'date', 'filename', 'year'
         """
-        url = f"https://www.sgcarmart.com/new-cars/pricelists/{dealer_id}/{brand_name}"
+        url = PRICELIST_URL_TEMPLATE.format(dealer_id=dealer_id, brand=brand_name)
 
         try:
             self.page.goto(url, wait_until="domcontentloaded")
@@ -156,7 +157,7 @@ class SimpleYearNavigator:
             for date_text in set(date_texts):
                 url_date = self.parse_date_to_url_format(date_text)
                 if url_date:
-                    pdf_url = f"https://www.sgcarmart.com/new_cars/pricelist/{dealer_id}/{url_date}.pdf"
+                    pdf_url = PDF_URL_TEMPLATE.format(dealer_id=dealer_id, date=url_date)
                     pdfs.append({
                         'url': pdf_url,
                         'date': url_date,
