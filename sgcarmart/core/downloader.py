@@ -24,8 +24,13 @@ def download_pricelist(pricelist_url, brand_name, dealer_id, date, output_dir="d
     brand_dir = os.path.join(output_dir, normalize_brand_name(brand_name))
     ensure_directory(brand_dir)
 
+    # Extract year from date and create year folder
+    year = date.split('-')[0] if '-' in date else date[:4]
+    year_dir = os.path.join(brand_dir, year)
+    ensure_directory(year_dir)
+
     filename = f"dealer_{dealer_id}_{date}.pdf"
-    filepath = os.path.join(brand_dir, filename)
+    filepath = os.path.join(year_dir, filename)
 
     if os.path.exists(filepath):
         file_size = os.path.getsize(filepath)
@@ -59,12 +64,17 @@ def download_pdf(pdf_url, brand_name=None, output_dir="data/pricelists"):
         brand_dir = os.path.join(output_dir, normalize_brand_name(brand_name))
         ensure_directory(brand_dir)
 
+        # Extract year from date and create year folder
+        year = date.split('-')[0] if '-' in date else date[:4]
+        year_dir = os.path.join(brand_dir, year)
+        ensure_directory(year_dir)
+
         if dealer_id:
             filename = f"dealer_{dealer_id}_{date}.pdf"
         else:
             filename = f"{date}.pdf"
 
-        filepath = os.path.join(brand_dir, filename)
+        filepath = os.path.join(year_dir, filename)
     else:
         ensure_directory(output_dir)
         filename = pdf_url.split('/')[-1]
@@ -222,7 +232,7 @@ def download_all_pdfs_from_page(page_url, brand_name=None, output_dir="data/pric
 
     print(f"Found {len(full_urls)} PDF(s) on the page")
     if brand_name:
-        print(f"Downloading to: {output_dir}/{normalize_brand_name(brand_name)}/")
+        print(f"Downloading to: {output_dir}/{normalize_brand_name(brand_name)}/<year>/")
     else:
         print(f"Downloading to: {output_dir}/")
     print()
