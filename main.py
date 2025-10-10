@@ -8,7 +8,7 @@ from sgcarmart.core.downloader import process_dealer
 from sgcarmart.core.year_navigator import discover_historical_pdfs
 from sgcarmart.utils.file_utils import load_dealer_brand_mapping
 
-from constants import DEFAULT_MAX_WORKERS
+from constants import DEFAULT_MAX_WORKERS, DEFAULT_BROWSER_MAX_WORKERS
 
 
 def parse_year_range(year_arg: str) -> list:
@@ -45,7 +45,7 @@ def process_dealer_historical(dealer_id: str, brand_name: str, years: list = Non
     from sgcarmart.core.downloader import download_pdf
 
     try:
-        all_pdfs = discover_historical_pdfs(dealer_id, brand_name, headless=True)
+        all_pdfs = discover_historical_pdfs(dealer_id, brand_name, headless=True, target_years=years)
 
         if years:
             filtered_pdfs = {year: pdfs for year, pdfs in all_pdfs.items() if year in years}
@@ -57,11 +57,8 @@ def process_dealer_historical(dealer_id: str, brand_name: str, years: list = Non
         failed = 0
 
         for year, pdfs in filtered_pdfs.items():
-            year_output_dir = f"data/pricelists/{normalize_brand_name(brand_name)}/{year}"
-            os.makedirs(year_output_dir, exist_ok=True)
-
             for pdf_info in pdfs:
-                result = download_pdf(pdf_info['url'], brand_name, output_dir=f"data/pricelists/{normalize_brand_name(brand_name)}/{year}")
+                result = download_pdf(pdf_info['url'], brand_name, output_dir="data/pricelists")
 
                 if result['status'] == 'success':
                     downloaded += 1
@@ -118,6 +115,13 @@ Examples:
         help="Specify year or year range (e.g., 2024 or 2023-2025). If not specified, downloads only latest."
     )
 
+    parser.add_argument(
+        "--browser-workers",
+        type=int,
+        default=DEFAULT_BROWSER_MAX_WORKERS,
+        help=f"Number of parallel browser instances for historical downloads (default: {DEFAULT_BROWSER_MAX_WORKERS})"
+    )
+
     args = parser.parse_args()
 
     dealer_brand_mapping = load_dealer_brand_mapping()
@@ -144,15 +148,36 @@ Examples:
     results = []
 
     if mode == "historical":
-        print("Processing dealers for historical PDFs...")
-        for dealer_id, brand_name in dealer_brand_mapping.items():
-            print(f"\nProcessing {brand_name} (dealer {dealer_id})...")
-            result = process_dealer_historical(dealer_id, brand_name, years_to_download)
-            results.append(result)
-            if result.get("status") == "success":
-                print(f"  ✓ Downloaded: {result['downloaded']}, Skipped: {result['skipped']}, Failed: {result['failed']}")
-            else:
-                print(f"  ✗ Error: {result.get('error')}")
+        print(f"Processing dealers for historical PDFs with {args.browser_workers} parallel browsers...")
+        with ThreadPoolExecutor(max_workers=args.browser_workers) as executor:
+            futures = {
+                executor.submit(process_dealer_historical, dealer_id, brand_name, years_to_download): (dealer_id, brand_name)
+                for dealer_id, brand_name in dealer_brand_mapping.items()
+            }
+
+            completed = 0
+            total = len(futures)
+
+            for future in as_completed(futures):
+                dealer_id, brand_name = futures[future]
+                completed += 1
+
+                try:
+                    result = future.result()
+                    results.append(result)
+
+                    if result.get("status") == "success":
+                        print(f"[{completed}/{total}] ✓ {brand_name}: Downloaded: {result['downloaded']}, Skipped: {result['skipped']}, Failed: {result['failed']}")
+                    else:
+                        print(f"[{completed}/{total}] ✗ {brand_name}: {result.get('error', 'Unknown error')}")
+                except Exception as e:
+                    print(f"[{completed}/{total}] ✗ {brand_name}: Exception: {str(e)}")
+                    results.append({
+                        "dealer_id": dealer_id,
+                        "brand_name": brand_name,
+                        "status": "error",
+                        "error": str(e)
+                    })
     else:
         print("Processing dealers in parallel...")
         with ThreadPoolExecutor(max_workers=DEFAULT_MAX_WORKERS) as executor:

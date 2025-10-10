@@ -71,12 +71,12 @@ class SimpleYearNavigator:
         url = f"https://www.sgcarmart.com/new-cars/pricelists/{dealer_id}/{brand_name}"
 
         try:
-            self.page.goto(url, wait_until="networkidle")
-            time.sleep(2)
+            self.page.goto(url, wait_until="domcontentloaded")
+            time.sleep(1)
 
             year_selector = self.page.locator('[role="button"]:has-text("Select A Year")').first
             year_selector.click()
-            time.sleep(1)
+            time.sleep(0.5)
 
             all_divs = self.page.locator('div').all()
             years = []
@@ -90,7 +90,7 @@ class SimpleYearNavigator:
                     continue
 
             self.page.keyboard.press("Escape")
-            time.sleep(0.5)
+            time.sleep(0.2)
 
             return sorted(set(years), reverse=True)
 
@@ -108,12 +108,12 @@ class SimpleYearNavigator:
         url = f"https://www.sgcarmart.com/new-cars/pricelists/{dealer_id}/{brand_name}"
 
         try:
-            self.page.goto(url, wait_until="networkidle")
-            time.sleep(2)
+            self.page.goto(url, wait_until="domcontentloaded")
+            time.sleep(1)
 
             year_selector = self.page.locator('[role="button"]:has-text("Select A Year")').first
             year_selector.click()
-            time.sleep(1)
+            time.sleep(0.5)
 
             all_divs = self.page.locator('div').all()
             year_elem = None
@@ -131,11 +131,11 @@ class SimpleYearNavigator:
                 return []
 
             year_elem.click()
-            time.sleep(1.5)
+            time.sleep(0.8)
 
             date_selector = self.page.locator('[role="button"]:has-text("Select Date of Pricelist")').first
             date_selector.click()
-            time.sleep(1)
+            time.sleep(0.5)
 
             all_text_elements = self.page.locator('div').all()
             date_texts = []
@@ -150,7 +150,7 @@ class SimpleYearNavigator:
                     continue
 
             self.page.keyboard.press("Escape")
-            time.sleep(0.5)
+            time.sleep(0.2)
 
             pdfs = []
             for date_text in set(date_texts):
@@ -171,9 +171,14 @@ class SimpleYearNavigator:
             print(f"Error getting PDFs for year {year}: {e}")
             return []
 
-    def discover_all_pdfs(self, dealer_id: str, brand_name: str) -> Dict[str, List[Dict[str, str]]]:
+    def discover_all_pdfs(self, dealer_id: str, brand_name: str, target_years: List[str] = None) -> Dict[str, List[Dict[str, str]]]:
         """
         Discover all available PDFs across all years for a dealer.
+
+        Args:
+            dealer_id: Dealer ID
+            brand_name: Brand name
+            target_years: Specific years to discover (None = all years)
 
         Returns:
             Dict mapping years to lists of PDF info dicts
@@ -184,7 +189,14 @@ class SimpleYearNavigator:
             print(f"No years found for dealer {dealer_id}")
             return {}
 
-        print(f"Found {len(years)} years: {years}")
+        # Filter to target years if specified
+        if target_years:
+            years = [y for y in years if y in target_years]
+            if not years:
+                print(f"No matching years found for dealer {dealer_id} (requested: {target_years})")
+                return {}
+
+        print(f"Found {len(years)} years to process: {years}")
 
         all_pdfs = {}
         for year in years:
@@ -199,12 +211,12 @@ class SimpleYearNavigator:
             else:
                 print(f"  No PDFs found for {year}")
 
-            time.sleep(1)
+            time.sleep(0.5)
 
         return all_pdfs
 
 
-def discover_historical_pdfs(dealer_id: str, brand_name: str, headless: bool = True) -> Dict[str, List[Dict[str, str]]]:
+def discover_historical_pdfs(dealer_id: str, brand_name: str, headless: bool = True, target_years: List[str] = None) -> Dict[str, List[Dict[str, str]]]:
     """
     Convenience function to discover all historical PDFs for a dealer.
 
@@ -212,9 +224,10 @@ def discover_historical_pdfs(dealer_id: str, brand_name: str, headless: bool = T
         dealer_id: Dealer ID
         brand_name: Brand name (URL-encoded, e.g., 'aston%20martin')
         headless: Run browser in headless mode
+        target_years: Specific years to discover (None = all years)
 
     Returns:
         Dict mapping years to lists of PDF info dicts
     """
     with SimpleYearNavigator(headless=headless) as navigator:
-        return navigator.discover_all_pdfs(dealer_id, brand_name)
+        return navigator.discover_all_pdfs(dealer_id, brand_name, target_years)
