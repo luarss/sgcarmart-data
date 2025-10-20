@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "source_filename": "dealer_29_2025-03-28.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "29",
+    "pdf_date": "2025-03-28",
+    "brand_folder": "nissan",
+    "year_folder": 2025,
+    "pdf_size_kb": 302.7880859375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1519,
+      "output_tokens": 2070,
+      "total_tokens": 3589,
+      "input_cost_usd": 0.0001519,
+      "output_cost_usd": 0.000828,
+      "total_cost_usd": 0.0009799,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Nissan",
+        "model_name": "Note e-POWER Premium",
+        "category": null,
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "e-POWER Premium",
+            "engine_size": null,
+            "list_price": 180300.0,
+            "final_price": 156800.0
+          }
+        ]
+      },
+      {
+        "brand": "Nissan",
+        "model_name": "Kicks e-POWER Premium",
+        "category": "SUV",
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "e-POWER Premium",
+            "engine_size": null,
+            "list_price": 191300.0,
+            "final_price": 167800.0
+          }
+        ]
+      },
+      {
+        "brand": "Nissan",
+        "model_name": "Kicks e-POWER Premium Plus",
+        "category": "SUV",
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "e-POWER Premium Plus",
+            "engine_size": null,
+            "list_price": 197300.0,
+            "final_price": 173800.0
+          }
+        ]
+      },
+      {
+        "brand": "Nissan",
+        "model_name": "LEAF EV",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "EV",
+            "engine_size": null,
+            "list_price": 200300.0,
+            "final_price": 176800.0
+          }
+        ]
+      },
+      {
+        "brand": "Nissan",
+        "model_name": "Serena e-POWER Premium",
+        "category": "MPV",
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "e-POWER Premium 8-Seater (Single-Tone)",
+            "engine_size": null,
+            "list_price": 252300.0,
+            "final_price": 218800.0
+          }
+        ]
+      },
+      {
+        "brand": "Nissan",
+        "model_name": "Serena e-POWER Highway Star Prestige",
+        "category": "MPV",
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "e-POWER Highway Star Prestige 7-Seater (Single-Tone)",
+            "engine_size": null,
+            "list_price": 255300.0,
+            "final_price": 221800.0
+          },
+          {
+            "variant_name": "e-POWER Highway Star Prestige 7-Seater (Dual-Tone)",
+            "engine_size": null,
+            "list_price": 257300.0,
+            "final_price": 223800.0
+          },
+          {
+            "variant_name": "e-POWER Highway Star Prestige 7-seater Touring Edition (Single-Tone)",
+            "engine_size": null,
+            "list_price": 260300.0,
+            "final_price": 226800.0
+          },
+          {
+            "variant_name": "e-POWER Highway Star Prestige 7-seater Touring Edition (Dual-Tone)",
+            "engine_size": null,
+            "list_price": 262300.0,
+            "final_price": 228800.0
+          }
+        ]
+      },
+      {
+        "brand": "Nissan",
+        "model_name": "Qashqai 1.3T MHEV",
+        "category": "SUV",
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "1.3T MHEV Premium",
+            "engine_size": "1.3T",
+            "list_price": 238300.0,
+            "final_price": 204800.0
+          },
+          {
+            "variant_name": "1.3T MHEV Prestige",
+            "engine_size": "1.3T",
+            "list_price": 248300.0,
+            "final_price": 214800.0
+          }
+        ]
+      },
+      {
+        "brand": "Nissan",
+        "model_name": "X-Trail e-POWER e-4ORCE Prestige",
+        "category": "SUV",
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "e-POWER e-4ORCE Prestige (Single-Tone)",
+            "engine_size": null,
+            "list_price": 273300.0,
+            "final_price": 239800.0
+          },
+          {
+            "variant_name": "e-POWER e-4ORCE Prestige (Dual-Tone)",
+            "engine_size": null,
+            "list_price": 275300.0,
+            "final_price": 241800.0
+          }
+        ]
+      },
+      {
+        "brand": "Nissan",
+        "model_name": "Ariya EV",
+        "category": "SUV",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "EV (Single-Tone)",
+            "engine_size": null,
+            "list_price": 272300.0,
+            "final_price": 238800.0
+          },
+          {
+            "variant_name": "EV (Dual-Tone)",
+            "engine_size": null,
+            "list_price": 274300.0,
+            "final_price": 240800.0
+          }
+        ]
+      },
+      {
+        "brand": "Nissan",
+        "model_name": "NV200 Petrol Panel Van",
+        "category": "Commercial",
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "Petrol Panel Van (CVT)",
+            "engine_size": null,
+            "list_price": 105400.0,
+            "final_price": 102900.0
+          },
+          {
+            "variant_name": "Petrol Panel Van (CVT)",
+            "engine_size": null,
+            "list_price": 104400.0,
+            "final_price": 101900.0
+          }
+        ]
+      },
+      {
+        "brand": "Nissan",
+        "model_name": "NV350 Urvan Diesel",
+        "category": "Commercial",
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "Urvan Diesel Panel Van (7AT)",
+            "engine_size": null,
+            "list_price": 138400.0,
+            "final_price": 135900.0
+          },
+          {
+            "variant_name": "Urvan Diesel Microbus (7AT)",
+            "engine_size": null,
+            "list_price": 145400.0,
+            "final_price": 142900.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
