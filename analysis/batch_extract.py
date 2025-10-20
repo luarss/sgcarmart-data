@@ -1,0 +1,178 @@
+from pathlib import Path
+from typing import List
+import json
+from datetime import datetime
+
+from dotenv import load_dotenv
+
+from analysis.pdf_extractor import GeminiPDFExtractor
+
+load_dotenv(Path(__file__).parent / ".env")
+
+
+def extract_brand_samples(
+    brands: List[str],
+    base_dir: Path = Path("data/pricelists"),
+    year: int = 2025,
+    max_per_brand: int = 1,
+    output_dir: Path = Path("analysis/output")
+):
+    extractor = GeminiPDFExtractor()
+
+    results = {
+        "extraction_run": datetime.now().isoformat(),
+        "brands": [],
+        "summary": {
+            "total_attempted": 0,
+            "total_successful": 0,
+            "total_failed": 0,
+        },
+        "cost_summary": {
+            "total_tokens": 0,
+            "total_input_tokens": 0,
+            "total_output_tokens": 0,
+            "total_cost_usd": 0.0,
+            "free_tier_requests": 0,
+            "paid_requests": 0,
+        }
+    }
+
+    for brand in brands:
+        brand_dir = base_dir / brand / str(year)
+
+        if not brand_dir.exists():
+            print(f"⚠ Brand directory not found: {brand_dir}")
+            continue
+
+        pdf_files = sorted(brand_dir.glob("*.pdf"))[:max_per_brand]
+
+        if not pdf_files:
+            print(f"⚠ No PDFs found for {brand}")
+            continue
+
+        brand_results = {
+            "brand": brand,
+            "files": []
+        }
+
+        for pdf_file in pdf_files:
+            results["summary"]["total_attempted"] += 1
+            print(f"\n{'='*60}")
+            print(f"Processing: {brand} - {pdf_file.name}")
+            print(f"{'='*60}")
+
+            try:
+                extraction = extractor.extract_from_pdf(pdf_file)
+
+                output_path = extractor.save_extraction(
+                    extraction=extraction,
+                    output_dir=output_dir
+                )
+
+                file_result = {
+                    "filename": pdf_file.name,
+                    "status": "success",
+                    "confidence": extraction.extraction_confidence,
+                    "models_extracted": len(extraction.pricelist.models),
+                    "output_path": str(output_path)
+                }
+
+                if extraction.metadata.api_usage:
+                    api = extraction.metadata.api_usage
+                    file_result["api_usage"] = {
+                        "model": api.model_name,
+                        "tokens": api.total_tokens,
+                        "cost_usd": float(api.total_cost_usd),
+                        "is_free": api.is_free_tier
+                    }
+
+                    results["cost_summary"]["total_tokens"] += api.total_tokens
+                    results["cost_summary"]["total_input_tokens"] += api.input_tokens
+                    results["cost_summary"]["total_output_tokens"] += api.output_tokens
+                    results["cost_summary"]["total_cost_usd"] += float(api.total_cost_usd)
+
+                    if api.is_free_tier:
+                        results["cost_summary"]["free_tier_requests"] += 1
+                    else:
+                        results["cost_summary"]["paid_requests"] += 1
+
+                brand_results["files"].append(file_result)
+                results["summary"]["total_successful"] += 1
+
+            except Exception as e:
+                print(f"✗ Failed: {e}")
+                brand_results["files"].append({
+                    "filename": pdf_file.name,
+                    "status": "failed",
+                    "error": str(e)
+                })
+                results["summary"]["total_failed"] += 1
+
+        results["brands"].append(brand_results)
+
+    cost = results["cost_summary"]
+
+    print(f"\n\n{'='*60}")
+    print("BATCH EXTRACTION SUMMARY")
+    print(f"{'='*60}")
+    print(f"Total Attempted: {results['summary']['total_attempted']}")
+    print(f"Total Successful: {results['summary']['total_successful']}")
+    print(f"Total Failed: {results['summary']['total_failed']}")
+
+    print(f"\nCost Summary:")
+    print(f"  Total Tokens: {cost['total_tokens']:,}")
+    print(f"  Input Tokens: {cost['total_input_tokens']:,}")
+    print(f"  Output Tokens: {cost['total_output_tokens']:,}")
+    print(f"  Free Tier Requests: {cost['free_tier_requests']}")
+    print(f"  Paid Requests: {cost['paid_requests']}")
+    if cost['total_cost_usd'] == 0:
+        print(f"  Total Cost: FREE")
+    else:
+        print(f"  Total Cost: ${cost['total_cost_usd']:.6f} USD")
+
+    print(f"{'='*60}\n")
+
+    return results
+
+
+def main():
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Batch extract PDFs for multiple brands")
+    parser.add_argument(
+        "--brands",
+        nargs="+",
+        default=["toyota", "mercedes-benz", "byd"],
+        help="List of brands to process"
+    )
+    parser.add_argument(
+        "--year",
+        type=int,
+        default=2025,
+        help="Year to process"
+    )
+    parser.add_argument(
+        "--max-per-brand",
+        type=int,
+        default=1,
+        help="Maximum PDFs to process per brand"
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=str,
+        default="analysis/output",
+        help="Output directory"
+    )
+
+    args = parser.parse_args()
+
+    extract_brand_samples(
+        brands=args.brands,
+        year=args.year,
+        max_per_brand=args.max_per_brand,
+        output_dir=Path(args.output_dir)
+    )
+
+
+if __name__ == "__main__":
+    main()
