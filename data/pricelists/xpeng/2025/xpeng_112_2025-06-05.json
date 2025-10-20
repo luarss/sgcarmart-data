@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "source_filename": "dealer_112_2025-06-05.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "112",
+    "pdf_date": "2025-06-05",
+    "brand_folder": "xpeng",
+    "year_folder": 2025,
+    "pdf_size_kb": 1378.513671875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1003,
+      "output_tokens": 444,
+      "total_tokens": 1447,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "XPENG",
+        "model_name": "G6",
+        "category": "SUV",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Standard Range",
+            "engine_size": null,
+            "list_price": 230999.0,
+            "final_price": 209999.0
+          },
+          {
+            "variant_name": "Long Range",
+            "engine_size": null,
+            "list_price": 245999.0,
+            "final_price": 224999.0
+          }
+        ]
+      },
+      {
+        "brand": "XPENG",
+        "model_name": "X9",
+        "category": "MPV",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Long Range",
+            "engine_size": null,
+            "list_price": 354999.0,
+            "final_price": 333999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

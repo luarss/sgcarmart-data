@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "source_filename": "dealer_112_2025-04-15.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "112",
+    "pdf_date": "2025-04-15",
+    "brand_folder": "xpeng",
+    "year_folder": 2025,
+    "pdf_size_kb": 3.708984375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1777,
+      "output_tokens": 538,
+      "total_tokens": 2315,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "XPENG",
+        "model_name": "G6",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Electric Standard Range 66 kWh (A)",
+            "engine_size": null,
+            "list_price": 233999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Long Range 87.5 kWh (A)",
+            "engine_size": null,
+            "list_price": 250999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "XPENG",
+        "model_name": "X9",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Electric Standard Range 84.5 kWh (A)",
+            "engine_size": null,
+            "list_price": 344999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Long Range 101.5 kWh (A)",
+            "engine_size": null,
+            "list_price": 354999.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Validity date is extracted from the pricelist title: XPENG Pricelist (updated on 15-Apr-2025).",
+    "Only list prices are available, final_price is set to null."
+  ]
+}
