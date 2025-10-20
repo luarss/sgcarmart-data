@@ -8,19 +8,17 @@
     "year_folder": 2025,
     "pdf_size_kb": 502.3076171875,
     "api_usage": {
-      "model_name": "gemini-2.0-flash-exp",
+      "model_name": "gemini-2.0-flash",
       "input_tokens": 875,
-      "output_tokens": 1569,
-      "total_tokens": 2444,
-      "input_cost_usd": 0.0,
-      "output_cost_usd": 0.0,
-      "total_cost_usd": 0.0,
-      "is_free_tier": true
+      "output_tokens": 1585,
+      "total_tokens": 2460,
+      "input_cost_usd": 8.750000000000001e-05,
+      "output_cost_usd": 0.000634,
+      "total_cost_usd": 0.0007215,
+      "is_free_tier": false
     }
   },
   "pricelist": {
-    "valid_from": "1023-04-20",
-    "valid_to": "2025-04-23",
     "models": [
       {
         "brand": "Toyota",
@@ -37,11 +35,6 @@
             "variant_name": "1.6 ELEGANCE (WITH TSS)",
             "engine_size": "1.6",
             "list_price": 174888.0
-          },
-          {
-            "variant_name": "1.8 HYBRID",
-            "engine_size": "1.8",
-            "list_price": 202888.0
           }
         ]
       },
@@ -73,6 +66,19 @@
             "variant_name": "1.5 ELEGANCE HYBRID",
             "engine_size": "1.5",
             "list_price": 186888.0
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "COROLLA ALTIS",
+        "category": "SEDAN",
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "1.8 HYBRID",
+            "engine_size": "1.8",
+            "list_price": 202888.0
           }
         ]
       },
@@ -142,7 +148,7 @@
           {
             "variant_name": "2.5 ELEGANCE HYBRID",
             "engine_size": "2.5",
-            "list_price": 401888.0
+            "list_price": 399888.0
           }
         ]
       },

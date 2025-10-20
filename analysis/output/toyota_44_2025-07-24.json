@@ -8,22 +8,20 @@
     "year_folder": 2025,
     "pdf_size_kb": 1243.36328125,
     "api_usage": {
-      "model_name": "gemini-2.0-flash-exp",
+      "model_name": "gemini-2.0-flash",
       "input_tokens": 875,
-      "output_tokens": 1605,
-      "total_tokens": 2480,
-      "input_cost_usd": 0.0,
-      "output_cost_usd": 0.0,
-      "total_cost_usd": 0.0,
-      "is_free_tier": true
+      "output_tokens": 1610,
+      "total_tokens": 2485,
+      "input_cost_usd": 8.750000000000001e-05,
+      "output_cost_usd": 0.000644,
+      "total_cost_usd": 0.0007315,
+      "is_free_tier": false
     }
   },
   "pricelist": {
-    "valid_from": "2420-07-20",
-    "valid_to": "2025-08-06",
     "models": [
       {
-        "brand": "TOYOTA",
+        "brand": "Toyota",
         "model_name": "COROLLA ALTIS",
         "category": "SEDAN",
         "vehicle_type": "ICE",
@@ -37,16 +35,11 @@
             "variant_name": "1.6 ELEGANCE (WITH TSS)",
             "engine_size": "1.6",
             "list_price": 179888.0
-          },
-          {
-            "variant_name": "1.8 HYBRID",
-            "engine_size": "1.8",
-            "list_price": 204888.0
           }
         ]
       },
       {
-        "brand": "TOYOTA",
+        "brand": "Toyota",
         "model_name": "YARIS CROSS",
         "category": "SUV",
         "vehicle_type": "Hybrid",
@@ -59,7 +52,7 @@
         ]
       },
       {
-        "brand": "TOYOTA",
+        "brand": "Toyota",
         "model_name": "SIENTA",
         "category": "MPV",
         "vehicle_type": "Hybrid",
@@ -67,17 +60,30 @@
           {
             "variant_name": "1.5 STANDARD HYBRID",
             "engine_size": "1.5",
-            "list_price": 193888.0
+            "list_price": 185888.0
           },
           {
             "variant_name": "1.5 ELEGANCE HYBRID",
             "engine_size": "1.5",
-            "list_price": 195888.0
+            "list_price": 193888.0
           }
         ]
       },
       {
-        "brand": "TOYOTA",
+        "brand": "Toyota",
+        "model_name": "COROLLA ALTIS",
+        "category": "SEDAN",
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "1.8 HYBRID",
+            "engine_size": "1.8",
+            "list_price": 204888.0
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
         "model_name": "CAMRY",
         "category": "SEDAN",
         "vehicle_type": "Hybrid",
@@ -90,7 +96,7 @@
         ]
       },
       {
-        "brand": "TOYOTA",
+        "brand": "Toyota",
         "model_name": "RAV4",
         "category": "SUV",
         "vehicle_type": "Hybrid",
@@ -103,9 +109,9 @@
         ]
       },
       {
-        "brand": "TOYOTA",
+        "brand": "Toyota",
         "model_name": "HARRIER",
-        "category": "MPV",
+        "category": "SUV",
         "vehicle_type": "Hybrid",
         "variants": [
           {
@@ -116,7 +122,7 @@
         ]
       },
       {
-        "brand": "TOYOTA",
+        "brand": "Toyota",
         "model_name": "ALPHARD",
         "category": "MPV",
         "vehicle_type": "Hybrid",
@@ -134,7 +140,7 @@
         ]
       },
       {
-        "brand": "TOYOTA",
+        "brand": "Toyota",
         "model_name": "VELLFIRE",
         "category": "MPV",
         "vehicle_type": "Hybrid",
@@ -147,7 +153,7 @@
         ]
       },
       {
-        "brand": "TOYOTA",
+        "brand": "Toyota",
         "model_name": "SUPRA",
         "category": "SPORTS",
         "vehicle_type": "ICE",
@@ -165,7 +171,7 @@
         ]
       },
       {
-        "brand": "TOYOTA",
+        "brand": "Toyota",
         "model_name": "GR86",
         "category": "SPORTS",
         "vehicle_type": "ICE",
@@ -183,7 +189,7 @@
         ]
       },
       {
-        "brand": "TOYOTA",
+        "brand": "Toyota",
         "model_name": "GR YARIS",
         "category": "SPORTS",
         "vehicle_type": "ICE",

@@ -15,7 +15,8 @@ def extract_brand_samples(
     base_dir: Path = Path("data/pricelists"),
     year: int = 2025,
     max_per_brand: int = 1,
-    output_dir: Path = Path("analysis/output")
+    output_dir: Path = Path("analysis/output"),
+    model: str = "gemini-2.0-flash-exp"
 ):
     extractor = GeminiPDFExtractor()
 
@@ -62,7 +63,7 @@ def extract_brand_samples(
             print(f"{'='*60}")
 
             try:
-                extraction = extractor.extract_from_pdf(pdf_file)
+                extraction = extractor.extract_from_pdf(pdf_file, model=model)
 
                 output_path = extractor.save_extraction(
                     extraction=extraction,
@@ -163,6 +164,12 @@ def main():
         default="analysis/output",
         help="Output directory"
     )
+    parser.add_argument(
+        "--model",
+        type=str,
+        default="gemini-2.0-flash-exp",
+        help="Gemini model to use (e.g., gemini-2.0-flash, gemini-2.0-flash-exp)"
+    )
 
     args = parser.parse_args()
 
@@ -170,7 +177,8 @@ def main():
         brands=args.brands,
         year=args.year,
         max_per_brand=args.max_per_brand,
-        output_dir=Path(args.output_dir)
+        output_dir=Path(args.output_dir),
+        model=args.model
     )
 
 

@@ -8,19 +8,17 @@
     "year_folder": 2025,
     "pdf_size_kb": 505.4873046875,
     "api_usage": {
-      "model_name": "gemini-2.0-flash-exp",
+      "model_name": "gemini-2.0-flash",
       "input_tokens": 875,
-      "output_tokens": 1621,
-      "total_tokens": 2496,
-      "input_cost_usd": 0.0,
-      "output_cost_usd": 0.0,
-      "total_cost_usd": 0.0,
-      "is_free_tier": true
+      "output_tokens": 1527,
+      "total_tokens": 2402,
+      "input_cost_usd": 8.750000000000001e-05,
+      "output_cost_usd": 0.0006108,
+      "total_cost_usd": 0.0006983,
+      "is_free_tier": false
     }
   },
   "pricelist": {
-    "valid_from": "2025-03-20",
-    "valid_to": "2025-04-09",
     "models": [
       {
         "brand": "Toyota",
@@ -37,6 +35,11 @@
             "variant_name": "1.6 ELEGANCE (WITH TSS)",
             "engine_size": "1.6",
             "list_price": 171888.0
+          },
+          {
+            "variant_name": "1.8 HYBRID",
+            "engine_size": "1.8",
+            "list_price": 201888.0
           }
         ]
       },
@@ -68,19 +71,6 @@
             "variant_name": "1.5 ELEGANCE HYBRID",
             "engine_size": "1.5",
             "list_price": 188888.0
-          }
-        ]
-      },
-      {
-        "brand": "Toyota",
-        "model_name": "COROLLA ALTIS",
-        "category": "SEDAN",
-        "vehicle_type": "Hybrid",
-        "variants": [
-          {
-            "variant_name": "1.8 HYBRID",
-            "engine_size": "1.8",
-            "list_price": 201888.0
           }
         ]
       },
@@ -126,7 +116,7 @@
       {
         "brand": "Toyota",
         "model_name": "HARRIER",
-        "category": "MPV",
+        "category": "SUV",
         "vehicle_type": "Hybrid",
         "variants": [
           {

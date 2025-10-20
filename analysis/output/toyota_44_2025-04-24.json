@@ -8,19 +8,17 @@
     "year_folder": 2025,
     "pdf_size_kb": 502.1064453125,
     "api_usage": {
-      "model_name": "gemini-2.0-flash-exp",
+      "model_name": "gemini-2.0-flash",
       "input_tokens": 875,
-      "output_tokens": 1623,
-      "total_tokens": 2498,
-      "input_cost_usd": 0.0,
-      "output_cost_usd": 0.0,
-      "total_cost_usd": 0.0,
-      "is_free_tier": true
+      "output_tokens": 1585,
+      "total_tokens": 2460,
+      "input_cost_usd": 8.750000000000001e-05,
+      "output_cost_usd": 0.000634,
+      "total_cost_usd": 0.0007215,
+      "is_free_tier": false
     }
   },
   "pricelist": {
-    "valid_from": "2442-04-24",
-    "valid_to": "2025-05-07",
     "models": [
       {
         "brand": "Toyota",

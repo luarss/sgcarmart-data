@@ -8,19 +8,17 @@
     "year_folder": 2025,
     "pdf_size_kb": 1238.619140625,
     "api_usage": {
-      "model_name": "gemini-2.0-flash-exp",
+      "model_name": "gemini-2.0-flash",
       "input_tokens": 875,
-      "output_tokens": 1646,
-      "total_tokens": 2521,
-      "input_cost_usd": 0.0,
-      "output_cost_usd": 0.0,
-      "total_cost_usd": 0.0,
-      "is_free_tier": true
+      "output_tokens": 1607,
+      "total_tokens": 2482,
+      "input_cost_usd": 8.750000000000001e-05,
+      "output_cost_usd": 0.0006428,
+      "total_cost_usd": 0.0007303,
+      "is_free_tier": false
     }
   },
   "pricelist": {
-    "valid_from": "7820-08-07",
-    "valid_to": "2025-08-20",
     "models": [
       {
         "brand": "Toyota",
@@ -113,7 +111,7 @@
       {
         "brand": "Toyota",
         "model_name": "HARRIER",
-        "category": "MPV",
+        "category": "SUV",
         "vehicle_type": "Hybrid",
         "variants": [
           {

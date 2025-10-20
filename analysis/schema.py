@@ -1,6 +1,27 @@
 from typing import Optional, List, Literal, Any
 from pydantic import BaseModel, Field, field_validator
 from datetime import date
+from enum import Enum
+
+
+class VehicleType(str, Enum):
+    ICE = "ICE"
+    HYBRID = "Hybrid"
+    ELECTRIC = "Electric"
+
+
+class VehicleCategory(str, Enum):
+    SEDAN = "SEDAN"
+    SUV = "SUV"
+    MPV = "MPV"
+    HATCHBACK = "HATCHBACK"
+    COUPE = "COUPE"
+    CONVERTIBLE = "CONVERTIBLE"
+    SPORTS = "SPORTS"
+    WAGON = "WAGON"
+    VAN = "VAN"
+    COMMERCIAL = "Commercial"
+    TRUCK = "TRUCK"
 
 
 class Variant(BaseModel):
@@ -21,14 +42,12 @@ class Variant(BaseModel):
 class CarModel(BaseModel):
     brand: str = Field(..., description="e.g., 'Toyota', 'Mercedes-Benz', 'BYD'")
     model_name: str = Field(..., description="e.g., 'COROLLA ALTIS', 'Vito 114 CDI Van', 'eT3'")
-    category: Optional[str] = Field(None, description="e.g., 'SEDAN', 'SUV', 'MPV', 'SPORTS', 'Commercial'")
-    vehicle_type: Optional[Literal["ICE", "Hybrid", "Electric"]] = Field(None, description="Powertrain type")
+    category: Optional[VehicleCategory] = Field(None, description="Vehicle category type")
+    vehicle_type: Optional[VehicleType] = Field(None, description="Powertrain type")
     variants: List[Variant] = Field(default_factory=list, description="Different trim levels or configurations")
 
 
 class PriceListDocument(BaseModel):
-    valid_from: Optional[date] = Field(None, description="Start date of price validity")
-    valid_to: Optional[date] = Field(None, description="End date of price validity")
     models: List[CarModel] = Field(..., description="All car models in this pricelist")
 
 
