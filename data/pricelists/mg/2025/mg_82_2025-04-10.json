@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "source_filename": "dealer_82_2025-04-10.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "82",
+    "pdf_date": "2025-04-10",
+    "brand_folder": "mg",
+    "year_folder": 2025,
+    "pdf_size_kb": 1565.0361328125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1519,
+      "output_tokens": 1110,
+      "total_tokens": 2629,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MG",
+        "model_name": "ZS EV TROPHY",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "ZS EV TROPHY",
+            "engine_size": null,
+            "list_price": 181888.0,
+            "final_price": 158888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "MG4 TROPHY LR 99KW",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "MG4 TROPHY LR 99KW",
+            "engine_size": null,
+            "list_price": 181888.0,
+            "final_price": 166888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "M9 TROPHY",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "M9 TROPHY",
+            "engine_size": null,
+            "list_price": 294888.0,
+            "final_price": 279888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "M9 GRAND TROPHY",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "M9 GRAND TROPHY",
+            "engine_size": null,
+            "list_price": 317888.0,
+            "final_price": 302888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "MGS5 EV LUX",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "MGS5 EV LUX",
+            "engine_size": null,
+            "list_price": 190888.0,
+            "final_price": 170888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "CYBERSTER RWD 250KW",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "CYBERSTER RWD 250KW",
+            "engine_size": null,
+            "list_price": 345888.0,
+            "final_price": 330888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "CYBERSTER AWD 375KW",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "CYBERSTER AWD 375KW",
+            "engine_size": null,
+            "list_price": 362888.0,
+            "final_price": 347888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "HS 1.5T EXCLUSIVE",
+        "category": null,
+        "vehicle_type": null,
+        "variants": [
+          {
+            "variant_name": "HS 1.5T EXCLUSIVE",
+            "engine_size": "1.5T",
+            "list_price": 211888.0,
+            "final_price": 211888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

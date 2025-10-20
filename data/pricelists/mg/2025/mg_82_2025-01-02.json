@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "source_filename": "dealer_82_2025-01-02.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "82",
+    "pdf_date": "2025-01-02",
+    "brand_folder": "mg",
+    "year_folder": 2025,
+    "pdf_size_kb": 1098.544921875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1777,
+      "output_tokens": 835,
+      "total_tokens": 2612,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MG",
+        "model_name": "ZS EV TROPHY",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "TROPHY",
+            "engine_size": null,
+            "list_price": 240888.0,
+            "final_price": 177888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "MG4 TROPHY LR 99KW",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "TROPHY LR 99KW",
+            "engine_size": null,
+            "list_price": 240888.0,
+            "final_price": 177888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "MG5 EV EXCITE",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "EV EXCITE",
+            "engine_size": null,
+            "list_price": 277888.0,
+            "final_price": 212888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "MG5 EV EXCLUSIVE",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "EV EXCLUSIVE",
+            "engine_size": null,
+            "list_price": 283888.0,
+            "final_price": 218888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "M9 TROPHY",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "TROPHY",
+            "engine_size": null,
+            "list_price": 346888.0,
+            "final_price": 283888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "M9 GRAND TROPHY",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "GRAND TROPHY",
+            "engine_size": null,
+            "list_price": 366888.0,
+            "final_price": 303888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
