@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "source_filename": "dealer_105_2025-09-05.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "105",
+    "pdf_date": "2025-09-05",
+    "brand_folder": "levc",
+    "year_folder": 2025,
+    "pdf_size_kb": 3.2783203125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1777,
+      "output_tokens": 278,
+      "total_tokens": 2055,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "LEVC",
+        "model_name": "VN5",
+        "category": null,
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "Plug-in Hybrid 1.5 (A)",
+            "engine_size": "1.5",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "medium",
+  "extraction_notes": [
+    "Price is POA, so list_price and final_price are null."
+  ]
+}
