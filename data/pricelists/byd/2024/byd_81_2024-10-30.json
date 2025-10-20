@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "source_filename": "dealer_81_2024-10-30.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "81",
+    "pdf_date": "2024-10-30",
+    "brand_folder": "byd",
+    "year_folder": 2024,
+    "pdf_size_kb": 523.58984375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1003,
+      "output_tokens": 959,
+      "total_tokens": 1962,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "BYD",
+        "model_name": "M6",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "7-Seater",
+            "engine_size": null,
+            "list_price": 244888.0,
+            "final_price": 179888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "SEAL",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Dynamic 100kW",
+            "engine_size": null,
+            "list_price": 266888.0,
+            "final_price": 201888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "DOLPHIN",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Dynamic",
+            "engine_size": null,
+            "list_price": 235888.0,
+            "final_price": 170888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "ATTO 3 2024",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "list_price": 248888.0,
+            "final_price": 183888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "ATTO 3 2024",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "CarbonEdge",
+            "engine_size": null,
+            "list_price": 252888.0,
+            "final_price": 187888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "SEAL",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Premium",
+            "engine_size": null,
+            "list_price": 288888.0,
+            "final_price": 223888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "SEAL",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Performance",
+            "engine_size": null,
+            "list_price": 317888.0,
+            "final_price": 252888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

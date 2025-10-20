@@ -1,0 +1,133 @@
+{
+  "metadata": {
+    "source_filename": "dealer_81_2024-05-10.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "81",
+    "pdf_date": "2024-05-10",
+    "brand_folder": "byd",
+    "year_folder": 2024,
+    "pdf_size_kb": 6.1455078125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1003,
+      "output_tokens": 1093,
+      "total_tokens": 2096,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "BYD",
+        "model_name": "Atto 3",
+        "category": "SUV",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Electric [100kW] 60.5 kWh (A)",
+            "engine_size": null,
+            "list_price": 164888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric CarbonEdge [100kW] 60.5 kWh (A)",
+            "engine_size": null,
+            "list_price": 168888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric [150kW] 60.5 kWh MY23 (A)",
+            "engine_size": null,
+            "list_price": 184888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric CarbonEdge [150kW] 60.5 kWh MY23 (A)",
+            "engine_size": null,
+            "list_price": 187888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "Dolphin",
+        "category": "HATCHBACK",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Electric 44.9 kWh (A)",
+            "engine_size": null,
+            "list_price": 151888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "e6",
+        "category": "MPV",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Electric 71.7 kWh (A)",
+            "engine_size": null,
+            "list_price": 158888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric ADVANCE Edition 71.7 kWh (A)",
+            "engine_size": null,
+            "list_price": 162888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "Seal",
+        "category": "SEDAN",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Electric Dynamic 61.4 kWh (A)",
+            "engine_size": null,
+            "list_price": 198888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Premium 82.6 kWh (A)",
+            "engine_size": null,
+            "list_price": 208888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Performance 82.6 kWh (A)",
+            "engine_size": null,
+            "list_price": 239888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "T3",
+        "category": "VAN",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Electric 44.9 kWh (A)",
+            "engine_size": null,
+            "list_price": 53800.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
