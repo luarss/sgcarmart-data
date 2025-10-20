@@ -1,0 +1,141 @@
+{
+  "metadata": {
+    "source_filename": "dealer_18_2025-09-30.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "18",
+    "pdf_date": "2025-09-30",
+    "brand_folder": "kia",
+    "year_folder": 2025,
+    "pdf_size_kb": 1707.56640625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1519,
+      "output_tokens": 1137,
+      "total_tokens": 2656,
+      "input_cost_usd": 0.0001519,
+      "output_cost_usd": 0.0004548,
+      "total_cost_usd": 0.0006067,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Kia",
+        "model_name": "Niro Hybrid",
+        "category": "SUV",
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "EX",
+            "engine_size": null,
+            "list_price": 213999.0,
+            "final_price": 201999.0
+          },
+          {
+            "variant_name": "EX Comfort",
+            "engine_size": null,
+            "list_price": 221999.0,
+            "final_price": 209999.0
+          },
+          {
+            "variant_name": "SX",
+            "engine_size": null,
+            "list_price": 231999.0,
+            "final_price": 219999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "EV5",
+        "category": "SUV",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Air Standard Range",
+            "engine_size": null,
+            "list_price": 230000.0,
+            "final_price": 218000.0
+          },
+          {
+            "variant_name": "Earth Long Range",
+            "engine_size": null,
+            "list_price": 246600.0,
+            "final_price": 234600.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "Stonic M-Hybrid",
+        "category": "SUV",
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "SX",
+            "engine_size": null,
+            "list_price": 186999.0,
+            "final_price": 174999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "Sorento Hybrid",
+        "category": "SUV",
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "SX",
+            "engine_size": null,
+            "list_price": 297999.0,
+            "final_price": 285999.0
+          },
+          {
+            "variant_name": "SX Tech Pack",
+            "engine_size": null,
+            "list_price": 307999.0,
+            "final_price": 295999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "Carnival Hybrid",
+        "category": "MPV",
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "7 Seater",
+            "engine_size": null,
+            "list_price": 324999.0,
+            "final_price": 312999.0
+          },
+          {
+            "variant_name": "8 Seater",
+            "engine_size": null,
+            "list_price": 319999.0,
+            "final_price": 307999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "EV9",
+        "category": "SUV",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Dual Motor Long Range GT-Line",
+            "engine_size": null,
+            "list_price": 305999.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

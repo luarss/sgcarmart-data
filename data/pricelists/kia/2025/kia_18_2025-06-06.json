@@ -1,0 +1,163 @@
+{
+  "metadata": {
+    "source_filename": "dealer_18_2025-06-06.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "18",
+    "pdf_date": "2025-06-06",
+    "brand_folder": "kia",
+    "year_folder": 2025,
+    "pdf_size_kb": 2000.720703125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1519,
+      "output_tokens": 1235,
+      "total_tokens": 2754,
+      "input_cost_usd": 0.0001519,
+      "output_cost_usd": 0.000494,
+      "total_cost_usd": 0.0006459,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Kia",
+        "model_name": "Niro Hybrid",
+        "category": null,
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "EX",
+            "engine_size": null,
+            "list_price": 186999.0,
+            "final_price": 174999.0
+          },
+          {
+            "variant_name": "EX Comfort",
+            "engine_size": null,
+            "list_price": 194999.0,
+            "final_price": 182999.0
+          },
+          {
+            "variant_name": "SX",
+            "engine_size": null,
+            "list_price": 204999.0,
+            "final_price": 192999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "EV5 Air",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Standard Range",
+            "engine_size": null,
+            "list_price": 205000.0,
+            "final_price": 193000.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "EV5 Earth",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Long Range",
+            "engine_size": null,
+            "list_price": 221600.0,
+            "final_price": 209600.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "Stonic M-Hybrid",
+        "category": null,
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "SX",
+            "engine_size": null,
+            "list_price": 166999.0,
+            "final_price": 154999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "Sorento Hybrid",
+        "category": null,
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "SX",
+            "engine_size": null,
+            "list_price": 268999.0,
+            "final_price": 256999.0
+          },
+          {
+            "variant_name": "SX Tech Pack",
+            "engine_size": null,
+            "list_price": 278999.0,
+            "final_price": 266999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "Carnival Hybrid",
+        "category": null,
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "7 Seater",
+            "engine_size": null,
+            "list_price": 295999.0,
+            "final_price": 283999.0
+          },
+          {
+            "variant_name": "8 Seater",
+            "engine_size": null,
+            "list_price": 289999.0,
+            "final_price": 277999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "EV5 GT-Line AWD",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Long Range",
+            "engine_size": null,
+            "list_price": 273000.0,
+            "final_price": 261000.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "EV9 Dual Motor",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Long Range GT-Line",
+            "engine_size": null,
+            "list_price": 305999.0,
+            "final_price": 289999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
