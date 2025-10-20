@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "source_filename": "dealer_46_2025-01-24.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "46",
+    "pdf_date": "2025-01-24",
+    "brand_folder": "volvo",
+    "year_folder": 2025,
+    "pdf_size_kb": 344.89453125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1777,
+      "output_tokens": 1031,
+      "total_tokens": 2808,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Volvo",
+        "model_name": "S90",
+        "category": null,
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "B5 Ultimate",
+            "engine_size": null,
+            "list_price": 323000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volvo",
+        "model_name": "V60",
+        "category": null,
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "B4 Plus",
+            "engine_size": null,
+            "list_price": 308000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volvo",
+        "model_name": "XC40",
+        "category": "SUV",
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "B4 Plus",
+            "engine_size": null,
+            "list_price": 281000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volvo",
+        "model_name": "XC60",
+        "category": "SUV",
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "B5 Plus",
+            "engine_size": null,
+            "list_price": 330000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "T8 Plus",
+            "engine_size": null,
+            "list_price": 345000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volvo",
+        "model_name": "XC90",
+        "category": "SUV",
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "B5 Ultra (MY25)",
+            "engine_size": null,
+            "list_price": 435000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volvo",
+        "model_name": "EX30",
+        "category": "SUV",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Ultra (MY25)",
+            "engine_size": null,
+            "list_price": 240000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volvo",
+        "model_name": "EX40",
+        "category": "SUV",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Plus (MY25)",
+            "engine_size": null,
+            "list_price": 270000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volvo",
+        "model_name": "EC40",
+        "category": "SUV",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Ultra (MY25)",
+            "engine_size": null,
+            "list_price": 280000.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
