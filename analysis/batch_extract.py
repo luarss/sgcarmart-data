@@ -15,7 +15,7 @@ def extract_brand_samples(
     base_dir: Path = Path("data/pricelists"),
     year: int = 2025,
     max_per_brand: int = 1,
-    output_dir: Path = Path("analysis/output"),
+    output_dir: Path | None = None,
     model: str = "gemini-2.0-flash-exp"
 ):
     extractor = GeminiPDFExtractor()
@@ -161,8 +161,8 @@ def main():
     parser.add_argument(
         "--output-dir",
         type=str,
-        default="analysis/output",
-        help="Output directory"
+        default=None,
+        help="Output directory (default: same directory as PDFs)"
     )
     parser.add_argument(
         "--model",
@@ -177,7 +177,7 @@ def main():
         brands=args.brands,
         year=args.year,
         max_per_brand=args.max_per_brand,
-        output_dir=Path(args.output_dir),
+        output_dir=Path(args.output_dir) if args.output_dir else None,
         model=args.model
     )
 

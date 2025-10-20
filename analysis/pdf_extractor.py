@@ -125,11 +125,16 @@ Extract the following information from this PDF pricelist:
    For each variant/trim level of a model:
    - variant_name: Full variant name (e.g., "1.6 STANDARD", "2.5 PREMIUM HYBRID")
    - engine_size: Engine size if mentioned (e.g., "1.6", "2.0", "3.0L")
-   - list_price: The primary list price WITHOUT COE (just the number, remove $ and commas)
+   - list_price: The base list price WITHOUT COE (often labeled as "LIST PRICE W/O COE")
+   - final_price: The final/guaranteed COE price (often labeled as "CLASSIC PRICE (W/O F&I REBATE)" or "CLASSIC PRICE (NON-GUARANTEED COE)" or similar)
 
-IMPORTANT GUIDELINES:
-- Extract EVERY model and variant mentioned
+IMPORTANT GUIDELINES FOR PRICES:
+- Extract BOTH the list_price and final_price if available
+- list_price is typically the higher base price (left column)
+- final_price is typically the lower guaranteed COE price (right column, often labeled as "CLASSIC PRICE")
 - For prices: extract the number only, no currency symbols or commas
+- If only one price is available, put it in list_price and set final_price to null
+- Extract EVERY model and variant mentioned
 - If a field is not present, set it to null
 - Set extraction_confidence to "high", "medium", or "low" based on data clarity
 - Add any extraction issues to extraction_notes
@@ -224,10 +229,14 @@ Extract the data now from the provided PDF."""
     def save_extraction(
         self,
         extraction: SGCarMartPriceListExtraction,
-        output_dir: Path,
+        output_dir: Optional[Path] = None,
         format: str = "json"
     ) -> Path:
-        output_dir = Path(output_dir)
+        if output_dir is None:
+            output_dir = Path("data/pricelists") / extraction.metadata.brand_folder / str(extraction.metadata.year_folder)
+        else:
+            output_dir = Path(output_dir)
+
         output_dir.mkdir(parents=True, exist_ok=True)
 
         base_filename = f"{extraction.metadata.brand_folder}_{extraction.metadata.dealer_id}_{extraction.metadata.pdf_date}"
@@ -256,8 +265,8 @@ def main():
     parser.add_argument(
         "--output-dir",
         type=str,
-        default="analysis/output",
-        help="Output directory for extracted JSON"
+        default=None,
+        help="Output directory for extracted JSON (default: same directory as PDF)"
     )
     parser.add_argument(
         "--model",

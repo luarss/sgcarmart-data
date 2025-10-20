@@ -27,9 +27,10 @@ class VehicleCategory(str, Enum):
 class Variant(BaseModel):
     variant_name: str = Field(..., description="e.g., '1.6 STANDARD', '2.5 PREMIUM HYBRID', 'Long'")
     engine_size: Optional[str] = Field(None, description="e.g., '1.6', '2.0', '3.0L'")
-    list_price: Optional[float] = Field(None, description="List price without COE")
+    list_price: Optional[float] = Field(None, description="List price without COE (base price)")
+    final_price: Optional[float] = Field(None, description="Final/Classic/Guaranteed COE price (after rebates/promotions)")
 
-    @field_validator('list_price', mode='before')
+    @field_validator('list_price', 'final_price', mode='before')
     @classmethod
     def parse_price(cls, v: Any) -> Any:
         if v is None:
