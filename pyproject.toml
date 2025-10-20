@@ -7,11 +7,25 @@ requires-python = ">=3.13"
 dependencies = [
     "beautifulsoup4>=4.14.2",
     "lxml>=6.0.2",
+    "openai>=2.5.0",
     "playwright>=1.55.0",
+    "pydantic>=2.0.0",
     "pytest-playwright>=0.7.1",
+    "python-dotenv>=1.1.1",
     "requests>=2.32.5",
     "tenacity>=9.1.2",
 ]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["sgcarmart*", "analysis*"]
+exclude = ["tests*", "data*", "claude*"]
+
+[tool.uv]
+package = true
 
 [project.optional-dependencies]
 dev = [
