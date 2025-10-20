@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "source_filename": "dealer_118_2025-09-04.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "118",
+    "pdf_date": "2025-09-04",
+    "brand_folder": "denza",
+    "year_folder": 2025,
+    "pdf_size_kb": 2308.3798828125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1003,
+      "output_tokens": 365,
+      "total_tokens": 1368,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "DENZA",
+        "model_name": "D9",
+        "category": "MPV",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "D9 Elite",
+            "engine_size": null,
+            "list_price": 357888.0,
+            "final_price": 302888.0
+          },
+          {
+            "variant_name": "D9 Grandeur",
+            "engine_size": null,
+            "list_price": 405388.0,
+            "final_price": 350388.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Assuming DENZA D9 is an electric vehicle based on the consumption being measured in kWh/100KM."
+  ]
+}

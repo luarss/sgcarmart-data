@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "source_filename": "dealer_117_2025-05-09.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "117",
+    "pdf_date": "2025-05-09",
+    "brand_folder": "denza",
+    "year_folder": 2025,
+    "pdf_size_kb": 3767.1591796875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1003,
+      "output_tokens": 390,
+      "total_tokens": 1393,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "DENZA",
+        "model_name": "D9",
+        "category": "MPV",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "D9 Elite",
+            "engine_size": null,
+            "list_price": 349888.0,
+            "final_price": 294888.0
+          },
+          {
+            "variant_name": "D9 Grandeur",
+            "engine_size": null,
+            "list_price": 397388.0,
+            "final_price": 342388.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Validity date is 'Valid till 21 May 2025, 12 PM', so valid_to is 2025-05-21.",
+    "Assuming DENZA D9 is an electric vehicle."
+  ]
+}
