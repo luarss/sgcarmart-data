@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "source_filename": "dealer_106_2025-03-25.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "106",
+    "pdf_date": "2025-03-25",
+    "brand_folder": "farizon",
+    "year_folder": 2025,
+    "pdf_size_kb": 4.134765625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1777,
+      "output_tokens": 653,
+      "total_tokens": 2430,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Farizon",
+        "model_name": "H9E Electric",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "14 Footer 106.95 kWh (A)",
+            "engine_size": null,
+            "list_price": 99000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "20 Footer 162.28 kWh (A)",
+            "engine_size": null,
+            "list_price": 109000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Farizon",
+        "model_name": "SuperVan Electric",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "5FR 66 kWh (A)",
+            "engine_size": null,
+            "list_price": 65000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "5FR 83 kWh (A)",
+            "engine_size": null,
+            "list_price": 70000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "5.5MR 83 kWh (A)",
+            "engine_size": null,
+            "list_price": 73000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "5.5HR 83 kWh (A)",
+            "engine_size": null,
+            "list_price": 75000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "6HR 106 kWh (A)",
+            "engine_size": null,
+            "list_price": 85000.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
