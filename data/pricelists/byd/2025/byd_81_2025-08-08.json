@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "source_filename": "dealer_81_2025-08-08.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "81",
+    "pdf_date": "2025-08-08",
+    "brand_folder": "byd",
+    "year_folder": 2025,
+    "pdf_size_kb": 1540.099609375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1519,
+      "output_tokens": 1400,
+      "total_tokens": 2919,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "BYD",
+        "model_name": "ATTO 2",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "list_price": 227388.0,
+            "final_price": 159388.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "ATTO 3",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "STANDARD",
+            "engine_size": null,
+            "list_price": 240388.0,
+            "final_price": 173388.0
+          },
+          {
+            "variant_name": "CARBON EDGE",
+            "engine_size": null,
+            "list_price": null,
+            "final_price": 177388.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "SEAL",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "DYNAMIC",
+            "engine_size": null,
+            "list_price": 250888.0,
+            "final_price": 183888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "DOLPHIN",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "list_price": 233388.0,
+            "final_price": 166388.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "M6",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "STANDARD",
+            "engine_size": null,
+            "list_price": 245388.0,
+            "final_price": 178388.0
+          },
+          {
+            "variant_name": "CARBON EDGE",
+            "engine_size": null,
+            "list_price": null,
+            "final_price": 181388.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "E6",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "STANDARD",
+            "engine_size": null,
+            "list_price": 238388.0,
+            "final_price": 171388.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "SEALION 6 DM-I",
+        "category": null,
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "STANDARD",
+            "engine_size": null,
+            "list_price": 285888.0,
+            "final_price": 218888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "SEALION 7",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "list_price": 280888.0,
+            "final_price": 213888.0
+          },
+          {
+            "variant_name": "PERFORMANCE",
+            "engine_size": null,
+            "list_price": 305888.0,
+            "final_price": 238888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "SEAL",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "list_price": 278888.0,
+            "final_price": 211888.0
+          },
+          {
+            "variant_name": "PERFORMANCE",
+            "engine_size": null,
+            "list_price": 329888.0,
+            "final_price": 262888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
