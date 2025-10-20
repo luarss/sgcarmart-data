@@ -1,0 +1,213 @@
+{
+  "metadata": {
+    "source_filename": "dealer_14_2025-05-08.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "14",
+    "pdf_date": "2025-05-08",
+    "brand_folder": "hyundai",
+    "year_folder": 2025,
+    "pdf_size_kb": 1560.6005859375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1777,
+      "output_tokens": 1948,
+      "total_tokens": 3725,
+      "input_cost_usd": 0.0001777,
+      "output_cost_usd": 0.0007792000000000001,
+      "total_cost_usd": 0.0009569000000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "HYUNDAI",
+        "model_name": "IONIQ 5 N 2025 Edition",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "IONIQ 5 N 2025 Edition",
+            "engine_size": null,
+            "list_price": 461888.0,
+            "final_price": 368888.0
+          }
+        ]
+      },
+      {
+        "brand": "HYUNDAI",
+        "model_name": "KONA Electric SUV",
+        "category": "SUV",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "list_price": 282888.0,
+            "final_price": 189888.0
+          },
+          {
+            "variant_name": "Sunroof",
+            "engine_size": null,
+            "list_price": 292888.0,
+            "final_price": 199888.0
+          },
+          {
+            "variant_name": "Sunroof (Long Range)",
+            "engine_size": null,
+            "list_price": 306888.0,
+            "final_price": 213888.0
+          }
+        ]
+      },
+      {
+        "brand": "HYUNDAI",
+        "model_name": "AVANTE",
+        "category": "SEDAN",
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "1.6 Hybrid S",
+            "engine_size": "1,580 cc",
+            "list_price": 261499.0,
+            "final_price": 190999.0
+          },
+          {
+            "variant_name": "1.6 Hybrid Elite",
+            "engine_size": "1,580 cc",
+            "list_price": 267499.0,
+            "final_price": 196999.0
+          }
+        ]
+      },
+      {
+        "brand": "HYUNDAI",
+        "model_name": "KONA",
+        "category": "SUV",
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "1.6 Hybrid GL SUV",
+            "engine_size": "1,580 cc",
+            "list_price": 262499.0,
+            "final_price": 191999.0
+          },
+          {
+            "variant_name": "1.6 Hybrid Elite Sunroof SUV",
+            "engine_size": "1,580 cc",
+            "list_price": 274499.0,
+            "final_price": 203999.0
+          }
+        ]
+      },
+      {
+        "brand": "HYUNDAI",
+        "model_name": "TUCSON",
+        "category": "SUV",
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "AWD SUV 1.6T",
+            "engine_size": "1,598 cc",
+            "list_price": 313999.0,
+            "final_price": 245999.0
+          },
+          {
+            "variant_name": "AWD SUV 1.6T N-Line",
+            "engine_size": "1,598 cc",
+            "list_price": 325999.0,
+            "final_price": 257999.0
+          }
+        ]
+      },
+      {
+        "brand": "HYUNDAI",
+        "model_name": "SANTA FE",
+        "category": "SUV",
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "SUV 1.6T",
+            "engine_size": "1,598 cc",
+            "list_price": 347999.0,
+            "final_price": 279999.0
+          },
+          {
+            "variant_name": "SUV 1.6T Calligraphy",
+            "engine_size": "1,598 cc",
+            "list_price": 367999.0,
+            "final_price": 299999.0
+          },
+          {
+            "variant_name": "SUV 1.6T Calligraphy (6-seater)",
+            "engine_size": "1,598 cc",
+            "list_price": 369999.0,
+            "final_price": 301999.0
+          }
+        ]
+      },
+      {
+        "brand": "HYUNDAI",
+        "model_name": "STARIA",
+        "category": "MPV",
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "MPV 3.5 Sunroof",
+            "engine_size": "3,470 cc",
+            "list_price": 330999.0,
+            "final_price": 287999.0
+          }
+        ]
+      },
+      {
+        "brand": "HYUNDAI",
+        "model_name": "IONIQ 5",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Prestige",
+            "engine_size": null,
+            "list_price": 267888.0,
+            "final_price": 211900.0
+          }
+        ]
+      },
+      {
+        "brand": "HYUNDAI",
+        "model_name": "IONIQ 6",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Exclusive",
+            "engine_size": null,
+            "list_price": 265888.0,
+            "final_price": 210150.0
+          },
+          {
+            "variant_name": "Prestige",
+            "engine_size": null,
+            "list_price": 272888.0,
+            "final_price": 217150.0
+          },
+          {
+            "variant_name": "Prestige",
+            "engine_size": null,
+            "list_price": 303888.0,
+            "final_price": 248800.0
+          },
+          {
+            "variant_name": "Inspiration",
+            "engine_size": null,
+            "list_price": 329888.0,
+            "final_price": 274800.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
