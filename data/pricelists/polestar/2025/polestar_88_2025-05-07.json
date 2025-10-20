@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "source_filename": "dealer_88_2025-05-07.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "88",
+    "pdf_date": "2025-05-07",
+    "brand_folder": "polestar",
+    "year_folder": 2025,
+    "pdf_size_kb": 4.48828125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1777,
+      "output_tokens": 788,
+      "total_tokens": 2565,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Polestar",
+        "model_name": "Polestar 2",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Electric Standard Range Single Motor Core Edition 69 kWh(A)",
+            "engine_size": null,
+            "list_price": 229000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Standard Range Single Motor 69 kWh (A)",
+            "engine_size": null,
+            "list_price": 268000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Long Range Dual Motor Performance Pack 82 kWh (A)",
+            "engine_size": null,
+            "list_price": 333000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Polestar",
+        "model_name": "Polestar 3",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Electric Long Range Single Motor 111 kWh (A)",
+            "engine_size": null,
+            "list_price": 428000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Long Range Dual Motor 111 kWh (A)",
+            "engine_size": null,
+            "list_price": 481000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Long Range Dual Motor Performance Pack 111 kWh (A)",
+            "engine_size": null,
+            "list_price": 535000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Polestar",
+        "model_name": "Polestar 4",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Electric Long Range Single Motor 100 kWh (A)",
+            "engine_size": null,
+            "list_price": 340000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Long Range Dual Motor 100 kWh (A)",
+            "engine_size": null,
+            "list_price": 390000.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
