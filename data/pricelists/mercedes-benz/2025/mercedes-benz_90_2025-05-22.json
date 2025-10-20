@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "source_filename": "dealer_90_2025-05-22.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "90",
+    "pdf_date": "2025-05-22",
+    "brand_folder": "mercedes-benz",
+    "year_folder": 2025,
+    "pdf_size_kb": 512.7822265625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1003,
+      "output_tokens": 645,
+      "total_tokens": 1648,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Vito 114 CDI Van",
+        "category": "Commercial",
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "Long ECO Version",
+            "engine_size": null,
+            "list_price": 91988.0,
+            "final_price": 172988.0
+          },
+          {
+            "variant_name": "Long PRO Version 5-Doors",
+            "engine_size": null,
+            "list_price": 96988.0,
+            "final_price": 177988.0
+          },
+          {
+            "variant_name": "Long PRO Version 6-Doors",
+            "engine_size": null,
+            "list_price": 97988.0,
+            "final_price": 178988.0
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "eVito 112 Van",
+        "category": "Commercial",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Long",
+            "engine_size": null,
+            "list_price": 83988.0,
+            "final_price": 164988.0
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "V-Class V 250 CDI Coach",
+        "category": "Commercial",
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "Extra-Long",
+            "engine_size": null,
+            "list_price": 64988.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
