@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "source_filename": "dealer_120_2025-03-10.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "120",
+    "pdf_date": "2025-03-10",
+    "brand_folder": "skyworth",
+    "year_folder": 2025,
+    "pdf_size_kb": 614.7841796875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1777,
+      "output_tokens": 335,
+      "total_tokens": 2112,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SKYWORTH",
+        "model_name": "K",
+        "category": "SUV",
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Silver Package (6-Bid Non-Guaranteed COE)",
+            "engine_size": null,
+            "list_price": 246888.0,
+            "final_price": 169888.0
+          },
+          {
+            "variant_name": "Gold Package (6-Bid Guaranteed COE)",
+            "engine_size": null,
+            "list_price": 246888.0,
+            "final_price": 177888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
