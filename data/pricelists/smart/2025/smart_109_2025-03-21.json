@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "source_filename": "dealer_109_2025-03-21.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "109",
+    "pdf_date": "2025-03-21",
+    "brand_folder": "smart",
+    "year_folder": 2025,
+    "pdf_size_kb": 1346.6123046875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1003,
+      "output_tokens": 701,
+      "total_tokens": 1704,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "smart",
+        "model_name": "#1",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Pro+",
+            "engine_size": null,
+            "list_price": 313888.0,
+            "final_price": 210000.0
+          },
+          {
+            "variant_name": "Pro+",
+            "engine_size": null,
+            "list_price": 313888.0,
+            "final_price": 198000.0
+          },
+          {
+            "variant_name": "BRABUS",
+            "engine_size": null,
+            "list_price": 361888.0,
+            "final_price": 258000.0
+          },
+          {
+            "variant_name": "BRABUS",
+            "engine_size": null,
+            "list_price": 361888.0,
+            "final_price": 240000.0
+          }
+        ]
+      },
+      {
+        "brand": "smart",
+        "model_name": "#3",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "Pro+",
+            "engine_size": null,
+            "list_price": 321888.0,
+            "final_price": 218000.0
+          },
+          {
+            "variant_name": "BRABUS",
+            "engine_size": null,
+            "list_price": 382888.0,
+            "final_price": 279000.0
+          },
+          {
+            "variant_name": "BRABUS",
+            "engine_size": null,
+            "list_price": 382888.0,
+            "final_price": 261000.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Prices are extracted from the 'Standard Package Effective Price' and 'Savers Package Effective Price' columns, which are assumed to be the final prices after COE rebates.",
+    "The vehicle type is assumed to be Electric since the document mentions kWh/100km."
+  ]
+}
