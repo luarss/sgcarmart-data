@@ -1,0 +1,453 @@
+{
+  "metadata": {
+    "source_filename": "dealer_35_2025-04-08.pdf",
+    "extraction_date": "2025-10-20",
+    "dealer_id": "35",
+    "pdf_date": "2025-04-08",
+    "brand_folder": "porsche",
+    "year_folder": 2025,
+    "pdf_size_kb": 10.42578125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1003,
+      "output_tokens": 3871,
+      "total_tokens": 4874,
+      "input_cost_usd": 0.0001003,
+      "output_cost_usd": 0.0015484000000000001,
+      "total_cost_usd": 0.0016487000000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Porsche",
+        "model_name": "718 Boxster",
+        "category": null,
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "2.0 (A)",
+            "engine_size": "2.0",
+            "list_price": 306468.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Style Edition 2.0 (A)",
+            "engine_size": "2.0",
+            "list_price": 327368.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "S 2.5 (A)",
+            "engine_size": "2.5",
+            "list_price": 381668.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "GTS 4.0 (M)",
+            "engine_size": "4.0",
+            "list_price": 476068.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Porsche",
+        "model_name": "718 Cayman",
+        "category": null,
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "2.0 (A)",
+            "engine_size": "2.0",
+            "list_price": 301768.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Style Edition 2.0 (A)",
+            "engine_size": "2.0",
+            "list_price": 322668.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "S 2.5 (A)",
+            "engine_size": "2.5",
+            "list_price": 378668.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "GTS 4.0 (A)",
+            "engine_size": "4.0",
+            "list_price": 473768.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "GT4 RS (A)",
+            "engine_size": null,
+            "list_price": 760538.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Porsche",
+        "model_name": "911 Carrera",
+        "category": null,
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "3.0 (A)",
+            "engine_size": "3.0",
+            "list_price": 569268.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "T 3.0 (A)",
+            "engine_size": "3.0",
+            "list_price": 620488.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "S 3.0 (A)",
+            "engine_size": "3.0",
+            "list_price": 682988.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "GTS 3.0 (A)",
+            "engine_size": "3.0",
+            "list_price": 781168.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "4 GTS 3.0 (A)",
+            "engine_size": "3.0",
+            "list_price": 832368.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Porsche",
+        "model_name": "911 Turbo",
+        "category": null,
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "3.8 (A)",
+            "engine_size": "3.8",
+            "list_price": 982168.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "S 3.8 (A)",
+            "engine_size": "3.8",
+            "list_price": 1153268.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Porsche",
+        "model_name": "911 Cabriolet Carrera",
+        "category": null,
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "3.0 (A)",
+            "engine_size": "3.0",
+            "list_price": 655668.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "S 3.0 (A)",
+            "engine_size": "3.0",
+            "list_price": 768988.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "GTS 3.0 (A)",
+            "engine_size": "3.0",
+            "list_price": 867468.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "4 GTS 3.0 (A)",
+            "engine_size": "3.0",
+            "list_price": 918668.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Porsche",
+        "model_name": "911 Cabriolet Turbo",
+        "category": null,
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "3.8 (A)",
+            "engine_size": "3.8",
+            "list_price": 1068368.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "S 3.8 (A)",
+            "engine_size": "3.8",
+            "list_price": 1240668.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Porsche",
+        "model_name": "911 GT3",
+        "category": null,
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "4.0 (A)",
+            "engine_size": "4.0",
+            "list_price": 890088.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "RS 4.0 (A)",
+            "engine_size": "4.0",
+            "list_price": 1138138.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Porsche",
+        "model_name": "911 Targa 4 GTS",
+        "category": null,
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "3.0 (A)",
+            "engine_size": "3.0",
+            "list_price": 918668.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Porsche",
+        "model_name": "Cayenne",
+        "category": null,
+        "vehicle_type": "ICE",
+        "variants": [
+          {
+            "variant_name": "3.0 (A)",
+            "engine_size": "3.0",
+            "list_price": 401068.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "S 4.0 (A)",
+            "engine_size": "4.0",
+            "list_price": 532368.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Porsche",
+        "model_name": "Cayenne Coupe",
+        "category": null,
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "3.0 (A)",
+            "engine_size": "3.0",
+            "list_price": 413268.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "S 4.0 (A)",
+            "engine_size": "4.0",
+            "list_price": 548268.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Plug-in Hybrid 3.0 (A)",
+            "engine_size": "3.0",
+            "list_price": 478668.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Plug-in Hybrid S 3.0 (A)",
+            "engine_size": "3.0",
+            "list_price": 529568.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Plug-in Hybrid Turbo 4.0 (A)",
+            "engine_size": "4.0",
+            "list_price": 833868.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Plug-in Hybrid Turbo w/ GT Package (A)",
+            "engine_size": null,
+            "list_price": 982868.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Porsche",
+        "model_name": "Cayenne Plug-in Hybrid",
+        "category": null,
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "3.0 (A)",
+            "engine_size": "3.0",
+            "list_price": 470068.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "S 3.0 (A)",
+            "engine_size": "3.0",
+            "list_price": 516668.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Turbo 4.0 (A)",
+            "engine_size": "4.0",
+            "list_price": 823068.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Porsche",
+        "model_name": "Macan",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "2.0 (A)",
+            "engine_size": "2.0",
+            "list_price": 270668.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "T 2.0 (A)",
+            "engine_size": "2.0",
+            "list_price": 279568.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "S 2.9 (A)",
+            "engine_size": "2.9",
+            "list_price": 317068.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "GTS 2.9 (A)",
+            "engine_size": "2.9",
+            "list_price": 391168.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Turbo 100kWh (A)",
+            "engine_size": null,
+            "list_price": 391787.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Porsche",
+        "model_name": "Panamera",
+        "category": null,
+        "vehicle_type": "Hybrid",
+        "variants": [
+          {
+            "variant_name": "2.9 (A)",
+            "engine_size": "2.9",
+            "list_price": 498468.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Plug-in Hybrid 4 2.9 (A)",
+            "engine_size": "2.9",
+            "list_price": 559568.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Plug-in Hybrid 4S 2.9 (A)",
+            "engine_size": "2.9",
+            "list_price": 630468.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Plug-in Hybrid Turbo 4.0 (A)",
+            "engine_size": "4.0",
+            "list_price": 1054568.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Porsche",
+        "model_name": "Taycan Cross Turismo Electric",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "4 93.4 kWh (A)",
+            "engine_size": null,
+            "list_price": 441007.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "4S 93.4 kWh (A)",
+            "engine_size": null,
+            "list_price": 571607.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Turbo 93.4 kWh (A)",
+            "engine_size": null,
+            "list_price": 755607.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Porsche",
+        "model_name": "Taycan Electric",
+        "category": null,
+        "vehicle_type": "Electric",
+        "variants": [
+          {
+            "variant_name": "GTS 93.4 kWh (A)",
+            "engine_size": null,
+            "list_price": 671307.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Turbo 93.4 kWh (A)",
+            "engine_size": null,
+            "list_price": 749607.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Turbo S 93.4 kWh (A)",
+            "engine_size": null,
+            "list_price": 899907.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
