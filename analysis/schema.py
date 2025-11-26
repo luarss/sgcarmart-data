@@ -27,6 +27,7 @@ class VehicleCategory(str, Enum):
 class Variant(BaseModel):
     variant_name: str = Field(..., description="e.g., '1.6 STANDARD', '2.5 PREMIUM HYBRID', 'Long'")
     engine_size: Optional[str] = Field(None, description="e.g., '1.6', '2.0', '3.0L'")
+    vehicle_type: Optional[VehicleType] = Field(None, description="Powertrain type for this specific variant - 'ICE', 'Hybrid', or 'Electric'")
     list_price: Optional[float] = Field(None, description="List price without COE (base price)")
     final_price: Optional[float] = Field(None, description="Final/Classic/Guaranteed COE price (after rebates/promotions)")
 
@@ -44,8 +45,7 @@ class CarModel(BaseModel):
     brand: str = Field(..., description="e.g., 'Toyota', 'Mercedes-Benz', 'BYD'")
     model_name: str = Field(..., description="e.g., 'COROLLA ALTIS', 'Vito 114 CDI Van', 'eT3'")
     category: Optional[VehicleCategory] = Field(None, description="Vehicle category type")
-    vehicle_type: Optional[VehicleType] = Field(None, description="Powertrain type")
-    variants: List[Variant] = Field(default_factory=list, description="Different trim levels or configurations")
+    variants: List[Variant] = Field(default_factory=list, description="Different trim levels or configurations. Each variant can have its own powertrain type.")
 
 
 class PriceListDocument(BaseModel):
