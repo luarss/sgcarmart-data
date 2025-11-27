@@ -319,7 +319,7 @@ def main():
         "--output-dir",
         type=str,
         default=None,
-        help="Output directory for extracted JSON (default: same directory as PDF)",
+        help="Output directory for extracted JSON (default: data/pricelists/<brand>/<year>)",
     )
     parser.add_argument("--model", type=str, default="gemini-2.0-flash-exp", help="Gemini model to use")
     parser.add_argument("--api-key", type=str, help="Gemini API key (or set GEMINI_API_KEY env var)")

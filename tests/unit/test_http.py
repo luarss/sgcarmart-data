@@ -4,7 +4,7 @@ from requests.exceptions import HTTPError, Timeout
 from sgcarmart.utils.http import (
     get_random_user_agent,
     fetch_with_retry,
-    RateLimitException,
+    RateLimitError,
 )
 from constants import USER_AGENTS
 
@@ -41,7 +41,7 @@ class TestFetchWithRetry:
         url = "https://example.com/test"
         responses.add(responses.GET, url, status=429)
 
-        with pytest.raises(RateLimitException):
+        with pytest.raises(RateLimitError):
             fetch_with_retry(url, timeout=10)
 
     @responses.activate
@@ -77,7 +77,7 @@ class TestFetchWithRetry:
         responses.add(responses.GET, url, status=429)
         responses.add(responses.GET, url, status=429)
 
-        with pytest.raises(RateLimitException):
+        with pytest.raises(RateLimitError):
             fetch_with_retry(url, timeout=10)
 
         assert len(responses.calls) == 3

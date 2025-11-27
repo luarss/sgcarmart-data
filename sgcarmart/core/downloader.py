@@ -15,7 +15,7 @@ from sgcarmart.utils.file_utils import (
     extract_metadata_from_url,
     normalize_brand_name,
 )
-from sgcarmart.utils.http import RateLimitException, fetch_with_retry
+from sgcarmart.utils.http import RateLimitError, fetch_with_retry
 from sgcarmart.utils.validation import validate_pdf
 
 
@@ -50,7 +50,7 @@ def download_pricelist(pricelist_url, brand_name, dealer_id, date, output_dir="d
         file_size = len(response.content)
         return filepath, f"Downloaded ({file_size} bytes)"
 
-    except RateLimitException:
+    except RateLimitError:
         return None, f"429 Too Many Requests after {MAX_RETRIES} attempts"
     except Exception as e:
         return None, f"Failed: {e!s}"
@@ -119,7 +119,7 @@ def download_pdf(pdf_url, brand_name=None, output_dir="data/pricelists"):
             "message": f"Downloaded ({file_size} bytes)",
         }
 
-    except RateLimitException:
+    except RateLimitError:
         return {
             "url": pdf_url,
             "filepath": None,
@@ -177,7 +177,7 @@ def process_dealer(dealer_id, brand_name):
                 }
         else:
             return {"dealer_id": dealer_id, "brand": brand_name, "status": "not_found"}
-    except RateLimitException:
+    except RateLimitError:
         return {
             "dealer_id": dealer_id,
             "brand": brand_name,
@@ -203,7 +203,7 @@ def download_all_pdfs_from_page(
     try:
         response = fetch_with_retry(page_url, DEFAULT_PAGE_TIMEOUT)
         html_content = response.text
-    except RateLimitException:
+    except RateLimitError:
         print(f"Error: 429 Too Many Requests after {MAX_RETRIES} attempts")
         return []
     except Exception as e:

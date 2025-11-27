@@ -5,7 +5,7 @@ from constants import (
     PRICELIST_CONTAINER_CLASS,
     PRICELIST_LINK_CLASS,
 )
-from sgcarmart.utils.http import RateLimitException, fetch_with_retry
+from sgcarmart.utils.http import RateLimitError, fetch_with_retry
 
 
 def scrape_pricelist_links(html_content):
@@ -36,7 +36,7 @@ def fetch_pricelist_page(page_url):
     try:
         response = fetch_with_retry(page_url, DEFAULT_PAGE_TIMEOUT)
         return response.text, None
-    except RateLimitException:
+    except RateLimitError:
         return None, "Rate limited after retries"
     except Exception as e:
         return None, str(e)
