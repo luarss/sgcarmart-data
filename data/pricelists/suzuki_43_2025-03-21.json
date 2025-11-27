@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "source_filename": "dealer_43_2025-03-21.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "43",
+    "pdf_date": "2025-03-21",
+    "brand_folder": "suzuki",
+    "year_folder": 2025,
+    "pdf_size_kb": 256.1630859375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 730,
+      "total_tokens": 3031,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.000292,
+      "total_cost_usd": 0.0005221,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SUZUKI",
+        "model_name": "SWIFT",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "1.2L DUALJET HYBRID",
+            "engine_size": "1.2",
+            "vehicle_type": "Hybrid",
+            "list_price": 140888.0,
+            "final_price": 138888.0
+          },
+          {
+            "variant_name": "STANDARD",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 139888.0,
+            "final_price": 137888.0
+          },
+          {
+            "variant_name": "STANDARD (Two Tones)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 140888.0,
+            "final_price": 138888.0
+          }
+        ]
+      },
+      {
+        "brand": "SUZUKI",
+        "model_name": "Jimny",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5L GLX",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 149888.0,
+            "final_price": 147888.0
+          },
+          {
+            "variant_name": "STANDARD (Two Tones)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 150888.0,
+            "final_price": 148888.0
+          }
+        ]
+      },
+      {
+        "brand": "SUZUKI",
+        "model_name": "S-CROSS",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.4L MILD HYBRID",
+            "engine_size": "1.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 169888.0,
+            "final_price": 167888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

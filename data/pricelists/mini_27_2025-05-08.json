@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "source_filename": "dealer_27_2025-05-08.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "27",
+    "pdf_date": "2025-05-08",
+    "brand_folder": "mini",
+    "year_folder": 2025,
+    "pdf_size_kb": 372.9443359375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 1243,
+      "total_tokens": 3544,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.0004972,
+      "total_cost_usd": 0.0007273000000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MINI",
+        "model_name": "MINI COOPER",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "C (5-DOOR)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 251888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "S (3-DOOR)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 264888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "MINI COOPER",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 207888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "SE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 237888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "MINI COOPER CONVERTIBLE",
+        "category": "CONVERTIBLE",
+        "variants": [
+          {
+            "variant_name": "S CONVERTIBLE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 292888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "JCW CONVERTIBLE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 312888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "MINI ACEMAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 214888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "SE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 243888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "MINI COUNTRYMAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "C",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 242888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "S ALL4",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 278888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "JCW ALL4",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 314888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "MINI COUNTRYMAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 249888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "SE ALL4",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 268888.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

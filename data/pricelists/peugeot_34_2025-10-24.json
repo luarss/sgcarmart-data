@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source_filename": "dealer_34_2025-10-24.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "34",
+    "pdf_date": "2025-10-24",
+    "brand_folder": "peugeot",
+    "year_folder": 2025,
+    "pdf_size_kb": 558.798828125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 279,
+      "total_tokens": 1806,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.0001116,
+      "total_cost_usd": 0.0002643,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "PEUGEOT",
+        "model_name": "408",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "1.2 GT Fastback",
+            "engine_size": "1.2",
+            "vehicle_type": "ICE",
+            "list_price": 225999.0,
+            "final_price": 191999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

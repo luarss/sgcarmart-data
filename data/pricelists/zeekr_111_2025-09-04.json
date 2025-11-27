@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "source_filename": "dealer_111_2025-09-04.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "111",
+    "pdf_date": "2025-09-04",
+    "brand_folder": "zeekr",
+    "year_folder": 2025,
+    "pdf_size_kb": 104.4619140625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 807,
+      "total_tokens": 3108,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.00032280000000000004,
+      "total_cost_usd": 0.0005529,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "ZEEKR",
+        "model_name": "ZEEKR X",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "RWD",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 209999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "AWD",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 224999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "ZEEKR",
+        "model_name": "ZEEKR 7X",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "RWD-Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 238999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "RWD - Long Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 259999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "AWD Performance",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 279999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "ZEEKR",
+        "model_name": "ZEEKR 009",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Deluxe (7-seater)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 359999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Premium (7-seater)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 409999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Flagship (6-seater)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 419999.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

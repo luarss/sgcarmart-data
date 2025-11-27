@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "source_filename": "dealer_108_2025-11-07.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "108",
+    "pdf_date": "2025-11-07",
+    "brand_folder": "aion",
+    "year_folder": 2025,
+    "pdf_size_kb": 335.380859375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 834,
+      "total_tokens": 2361,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.00033360000000000003,
+      "total_cost_usd": 0.00048630000000000006,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "GAC AION",
+        "model_name": "Y PLUS",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "ELITE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 239988.0,
+            "final_price": 170988.0
+          },
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 246988.0,
+            "final_price": 177988.0
+          }
+        ]
+      },
+      {
+        "brand": "GAC AION",
+        "model_name": "S",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 228988.0,
+            "final_price": 162988.0
+          }
+        ]
+      },
+      {
+        "brand": "GAC AION",
+        "model_name": "V",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 249988.0,
+            "final_price": 180988.0
+          },
+          {
+            "variant_name": "LUXURY",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 256988.0,
+            "final_price": 187988.0
+          }
+        ]
+      },
+      {
+        "brand": "GAC HYPTEC",
+        "model_name": "HT",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 269988.0,
+            "final_price": 204988.0
+          },
+          {
+            "variant_name": "LUXURY (GULL WING)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 299988.0,
+            "final_price": 234988.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

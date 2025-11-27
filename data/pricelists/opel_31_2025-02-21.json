@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "source_filename": "dealer_31_2025-02-21.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "31",
+    "pdf_date": "2025-02-21",
+    "brand_folder": "opel",
+    "year_folder": 2025,
+    "pdf_size_kb": 713.7294921875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1536,
+      "output_tokens": 961,
+      "total_tokens": 2497,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "OPEL",
+        "model_name": "MOKKA-C",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "VES Banding: A1",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 228500.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "OPEL",
+        "model_name": "COMBO-E LIFE",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "VES Banding : A1",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 248500.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "VES Banding: A1",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 244500.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "OPEL",
+        "model_name": "ZAFIRA-LIFE",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "VES Banding: A1",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 269500.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "VES Banding : A2",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 265500.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "OPEL",
+        "model_name": "COMBO-C (WHITE)",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "CVES Banding : A",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 141500.0,
+            "final_price": 49500.0
+          }
+        ]
+      },
+      {
+        "brand": "OPEL",
+        "model_name": "VIVARO-C (WHITE)",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "CVES Banding : A",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 159000.0,
+            "final_price": 59500.0
+          },
+          {
+            "variant_name": "WITH CREW SEATS CVES Banding : A",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 174000.0,
+            "final_price": 74500.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

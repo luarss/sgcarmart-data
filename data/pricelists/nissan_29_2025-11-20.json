@@ -1,0 +1,230 @@
+{
+  "metadata": {
+    "source_filename": "dealer_29_2025-11-20.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "29",
+    "pdf_date": "2025-11-20",
+    "brand_folder": "nissan",
+    "year_folder": 2025,
+    "pdf_size_kb": 424.4033203125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2043,
+      "output_tokens": 2151,
+      "total_tokens": 4194,
+      "input_cost_usd": 0.00020430000000000003,
+      "output_cost_usd": 0.0008604000000000001,
+      "total_cost_usd": 0.0010647,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "NISSAN",
+        "model_name": "Note e-POWER",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "e-POWER Premium",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 203276.0,
+            "final_price": 179776.0
+          }
+        ]
+      },
+      {
+        "brand": "NISSAN",
+        "model_name": "Kicks e-POWER",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "e-POWER Premium",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 213276.0,
+            "final_price": 189776.0
+          },
+          {
+            "variant_name": "e-POWER Premium Plus",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 218276.0,
+            "final_price": 194776.0
+          },
+          {
+            "variant_name": "e-POWER Premium Adventure Series",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 216276.0,
+            "final_price": 192776.0
+          },
+          {
+            "variant_name": "e-POWER Premium Plus Adventure Series",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 221276.0,
+            "final_price": 197776.0
+          }
+        ]
+      },
+      {
+        "brand": "NISSAN",
+        "model_name": "Serena e-POWER",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "e-POWER Premium Smart 8 (Single-Tone)",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 265276.0,
+            "final_price": 231776.0
+          },
+          {
+            "variant_name": "e-POWER Highway Star Prestige Smart 8 (Single-Tone)",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 275276.0,
+            "final_price": 241776.0
+          },
+          {
+            "variant_name": "e-POWER Highway Star Prestige 7-Seater (Single-Tone)",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 273276.0,
+            "final_price": 239776.0
+          },
+          {
+            "variant_name": "e-POWER Highway Star Prestige 7-Seater (Dual-Tone)",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 275276.0,
+            "final_price": 241776.0
+          },
+          {
+            "variant_name": "e-POWER Highway Star Prestige 7-seater Touring Edition (Single-Tone)",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 278276.0,
+            "final_price": 244776.0
+          },
+          {
+            "variant_name": "e-POWER Highway Star Prestige 7-seater Touring Edition (Dual-Tone)",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 280276.0,
+            "final_price": 246776.0
+          }
+        ]
+      },
+      {
+        "brand": "NISSAN",
+        "model_name": "Qashqai",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.3T MHEV Premium",
+            "engine_size": "1.3T",
+            "vehicle_type": "Hybrid",
+            "list_price": 248276.0,
+            "final_price": 214776.0
+          },
+          {
+            "variant_name": "1.3T MHEV Prestige",
+            "engine_size": "1.3T",
+            "vehicle_type": "Hybrid",
+            "list_price": 263276.0,
+            "final_price": 229776.0
+          }
+        ]
+      },
+      {
+        "brand": "NISSAN",
+        "model_name": "X-Trail e-POWER e-4ORCE",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Prestige (Single-Tone)",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 293276.0,
+            "final_price": 259776.0
+          },
+          {
+            "variant_name": "Prestige (Dual-Tone)",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 295276.0,
+            "final_price": 261776.0
+          }
+        ]
+      },
+      {
+        "brand": "NISSAN",
+        "model_name": "Ariya",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "EV (Single-Tone)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 298276.0,
+            "final_price": 264776.0
+          },
+          {
+            "variant_name": "EV (Dual-Tone)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 300276.0,
+            "final_price": 266776.0
+          }
+        ]
+      },
+      {
+        "brand": "NISSAN",
+        "model_name": "NV200 Petrol Panel Van",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "(CVT)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 110276.0,
+            "final_price": 107776.0
+          }
+        ]
+      },
+      {
+        "brand": "NISSAN",
+        "model_name": "NV350 Urvan Diesel Panel Van",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "(7AT)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 143276.0,
+            "final_price": 140776.0
+          }
+        ]
+      },
+      {
+        "brand": "NISSAN",
+        "model_name": "NV350 Urvan Diesel Microbus",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "(7AT)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 150276.0,
+            "final_price": 147776.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

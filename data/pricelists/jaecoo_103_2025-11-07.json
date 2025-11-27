@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "source_filename": "dealer_103_2025-11-07.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "103",
+    "pdf_date": "2025-11-07",
+    "brand_folder": "jaecoo",
+    "year_folder": 2025,
+    "pdf_size_kb": 1534.9169921875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 596,
+      "total_tokens": 2906,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "OMODA",
+        "model_name": "E5",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "99kW A1",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 204999.0,
+            "final_price": 169999.0
+          }
+        ]
+      },
+      {
+        "brand": "JAECOO",
+        "model_name": "6",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "BEV 99kW A1",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 214999.0,
+            "final_price": 179999.0
+          },
+          {
+            "variant_name": "BEV 205kW A2",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 254999.0,
+            "final_price": 219999.0
+          }
+        ]
+      },
+      {
+        "brand": "JAECOO",
+        "model_name": "J7",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "PHEV 255kW A2",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 254999.0,
+            "final_price": 219999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

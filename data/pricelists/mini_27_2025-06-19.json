@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "source_filename": "dealer_27_2025-06-19.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "27",
+    "pdf_date": "2025-06-19",
+    "brand_folder": "mini",
+    "year_folder": 2025,
+    "pdf_size_kb": 373.734375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 1273,
+      "total_tokens": 3574,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.0005092,
+      "total_cost_usd": 0.0007393,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MINI",
+        "model_name": "MINI COOPER",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "COOPER C (5-DOOR)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 248888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "COOPER S (3-DOOR)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 261888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "MINI COOPER",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "COOPER E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 202888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "COOPER SE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 234888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "MINI COOPER CONVERTIBLE",
+        "category": "CONVERTIBLE",
+        "variants": [
+          {
+            "variant_name": "COOPER S CONVERTIBLE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 289888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "JCW COOPER CONVERTIBLE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 309888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "MINI ACEMAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "ACEMAN E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 210888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "ACEMAN SE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 241888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "MINI COUNTRYMAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "COUNTRYMAN C",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 237888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "COUNTRYMAN S ALL4",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 275888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "JCW COUNTRYMAN ALL4",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 311888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "MINI COUNTRYMAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "COUNTRYMAN E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 247888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "COUNTRYMAN SE ALL4",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 266888.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

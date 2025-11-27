@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "source_filename": "dealer_111_2025-08-07.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "111",
+    "pdf_date": "2025-08-07",
+    "brand_folder": "zeekr",
+    "year_folder": 2025,
+    "pdf_size_kb": 393.96875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 620,
+      "total_tokens": 2921,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.000248,
+      "total_cost_usd": 0.0004781,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "ZEEKR",
+        "model_name": "ZEEKR X",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "RWD",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 209999.0,
+            "final_price": 202999.0
+          },
+          {
+            "variant_name": "AWD",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 224999.0,
+            "final_price": 217999.0
+          }
+        ]
+      },
+      {
+        "brand": "ZEEKR",
+        "model_name": "ZEEKR 009",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Deluxe (7-Seater)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 359999.0,
+            "final_price": 352999.0
+          },
+          {
+            "variant_name": "Premium (7-Seater)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 409999.0,
+            "final_price": 402999.0
+          },
+          {
+            "variant_name": "Flagship (6-Seater)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 419999.0,
+            "final_price": 412999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

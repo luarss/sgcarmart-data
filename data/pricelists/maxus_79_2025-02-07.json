@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "source_filename": "dealer_79_2025-02-07.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "79",
+    "pdf_date": "2025-02-07",
+    "brand_folder": "maxus",
+    "year_folder": 2025,
+    "pdf_size_kb": 663.41796875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1536,
+      "output_tokens": 530,
+      "total_tokens": 2066,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MAXUS",
+        "model_name": "MIFA 7",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Luxury",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 282999.0,
+            "final_price": 226999.0
+          },
+          {
+            "variant_name": "Premium",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 287999.0,
+            "final_price": 231999.0
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "MIFA 9",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Luxury",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 328999.0,
+            "final_price": 272999.0
+          },
+          {
+            "variant_name": "Premium",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 334999.0,
+            "final_price": 278999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

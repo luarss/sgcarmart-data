@@ -110,34 +110,68 @@ class GeminiPDFExtractor:
 
 Extract the following information from this PDF pricelist:
 
-1. VALIDITY DATES:
-   - valid_from: Start date of price validity
-   - valid_to: End date of price validity
+1. CAR MODELS:
+   CRITICAL: Group ALL variants under a SINGLE model entry, regardless of powertrain type.
+   DO NOT create duplicate model entries for different powertrains.
 
-2. CAR MODELS:
    For each car model in the pricelist, extract:
    - brand: Brand name (e.g., "Toyota", "BMW", "Mercedes-Benz")
-   - model_name: Model name (e.g., "COROLLA ALTIS", "YARIS CROSS")
-   - category: Vehicle category (e.g., "SEDAN", "SUV", "MPV", "SPORTS")
-   - vehicle_type: Powertrain type - "ICE", "Hybrid", or "Electric"
+   - model_name: Model name (e.g., "COROLLA ALTIS", "YARIS CROSS", "HARRIER")
+   - category: Vehicle category - use these guidelines:
+     * SEDAN: Traditional 4-door passenger cars with separate trunk (Corolla Altis, Camry, Crown)
+     * SUV: Sport Utility Vehicles with higher ground clearance (Harrier, RAV4, Corolla Cross, Yaris Cross, Fortuner, Land Cruiser)
+     * MPV: Multi-Purpose Vehicles, people movers (Alphard, Vellfire, Sienta, Noah, Voxy, Granace)
+     * HATCHBACK: Compact cars with rear door/liftback (Yaris, Aqua)
+     * SPORTS: Performance-oriented vehicles (GR86, GR Supra, GR Yaris)
+     * VAN: Commercial or passenger vans (HiAce, Proace)
+     * COMMERCIAL: Work vehicles, trucks, light commercial vehicles
 
-3. VARIANTS:
+2. VARIANTS:
    For each variant/trim level of a model:
-   - variant_name: Full variant name (e.g., "1.6 STANDARD", "2.5 PREMIUM HYBRID")
+   - variant_name: Full variant name (e.g., "1.6 STANDARD", "1.8 HYBRID", "2.5 PREMIUM HYBRID")
    - engine_size: Engine size if mentioned (e.g., "1.6", "2.0", "3.0L")
+   - vehicle_type: Powertrain type for THIS SPECIFIC VARIANT:
+     * "ICE" for gasoline/diesel engines (e.g., "1.6 STANDARD", "2.0 TURBO")
+     * "Hybrid" for hybrid variants (e.g., "1.8 HYBRID", "2.5 PREMIUM HYBRID")
+     * "Electric" for fully electric vehicles (e.g., "bZ4X", "eT3")
    - list_price: The base list price WITHOUT COE (often labeled as "LIST PRICE W/O COE")
    - final_price: The final/guaranteed COE price (often labeled as "CLASSIC PRICE (W/O F&I REBATE)" or "CLASSIC PRICE (NON-GUARANTEED COE)" or similar)
 
-IMPORTANT GUIDELINES FOR PRICES:
-- Extract BOTH the list_price and final_price if available
-- list_price is typically the higher base price (left column)
-- final_price is typically the lower guaranteed COE price (right column, often labeled as "CLASSIC PRICE")
-- For prices: extract the number only, no currency symbols or commas
-- If only one price is available, put it in list_price and set final_price to null
-- Extract EVERY model and variant mentioned
-- If a field is not present, set it to null
-- Set extraction_confidence to "high", "medium", or "low" based on data clarity
-- Add any extraction issues to extraction_notes
+CRITICAL EXTRACTION RULES:
+
+1. MODEL GROUPING:
+   - A model like "COROLLA ALTIS" should appear ONCE with ALL its variants
+   - Example: COROLLA ALTIS has "1.6 STANDARD" (ICE) and "1.8 HYBRID" (Hybrid) variants
+   - DO NOT create separate "COROLLA ALTIS" entries for ICE and Hybrid
+   - Group by model_name, NOT by powertrain type
+
+2. CATEGORY CLASSIFICATION:
+   - Harrier → SUV (not sedan, not commercial)
+   - Alphard → MPV (not sports, not sedan)
+   - Vellfire → MPV (not sports)
+   - Yaris Cross → SUV (not hatchback)
+   - Corolla Cross → SUV (not sedan)
+   - When uncertain, consider: body style, seating position, ground clearance, and intended use
+
+3. VEHICLE TYPE (POWERTRAIN):
+   - Determine powertrain for EACH VARIANT individually
+   - Look for keywords: "HYBRID", "ELECTRIC", "EV", "PLUG-IN"
+   - If no keyword, assume "ICE" (conventional gasoline/diesel)
+   - DO NOT put vehicle_type at model level - it belongs to each variant
+
+4. PRICE EXTRACTION:
+   - Extract BOTH list_price and final_price if available
+   - list_price is typically the higher base price (left column)
+   - final_price is typically the lower guaranteed COE price (right column, often labeled as "CLASSIC PRICE")
+   - Extract numbers only, no currency symbols or commas
+   - If only one price is available, put it in list_price and set final_price to null
+
+5. QUALITY ASSURANCE:
+   - Extract EVERY model and variant mentioned
+   - If a field is not present, set it to null
+   - Set extraction_confidence to "high", "medium", or "low" based on data clarity
+   - Add any extraction issues to extraction_notes
+   - Check for duplicate models before finalizing
 
 Extract the data now from the provided PDF."""
 
@@ -146,6 +180,7 @@ Extract the data now from the provided PDF."""
         pdf_path: Path,
         model: str = "gemini-2.0-flash-exp",
         temperature: float = 0.1,
+        fallback_model: str = "gemini-2.0-flash",
     ) -> SGCarMartPriceListExtraction:
         pdf_path = Path(pdf_path)
         if not pdf_path.exists():
@@ -157,10 +192,11 @@ Extract the data now from the provided PDF."""
         print("Extracting metadata from file path...")
         metadata_dict = self.extract_metadata_from_path(pdf_path)
 
-        print(f"Calling Gemini API (model: {model})...")
+        current_model = model
+        print(f"Calling Gemini API (model: {current_model})...")
         try:
             response = self.client.chat.completions.create(
-                model=model,
+                model=current_model,
                 messages=[
                     {
                         "role": "user",
@@ -187,6 +223,45 @@ Extract the data now from the provided PDF."""
                     },
                 },
             )
+        except Exception as e:
+            error_str = str(e)
+            if "429" in error_str and ("quota" in error_str.lower() or "RESOURCE_EXHAUSTED" in error_str):
+                print(f"⚠ Daily quota exhausted for {current_model}")
+                print(f"↻ Switching to fallback model: {fallback_model}")
+                current_model = fallback_model
+
+                response = self.client.chat.completions.create(
+                    model=current_model,
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": self.create_extraction_prompt(),
+                                },
+                                {
+                                    "type": "image_url",
+                                    "image_url": {
+                                        "url": f"data:application/pdf;base64,{pdf_base64}"
+                                    },
+                                },
+                            ],
+                        }
+                    ],
+                    temperature=temperature,
+                    response_format={
+                        "type": "json_schema",
+                        "json_schema": {
+                            "name": "pricelist_extraction",
+                            "schema": SGCarMartPriceListExtraction.model_json_schema(),
+                        },
+                    },
+                )
+            else:
+                raise
+
+        try:
 
             print("Parsing response...")
             response_content = response.choices[0].message.content
@@ -201,7 +276,7 @@ Extract the data now from the provided PDF."""
             output_tokens = usage.completion_tokens
 
             print(f"Calculating API costs...")
-            api_usage = self.calculate_cost(model, input_tokens, output_tokens)
+            api_usage = self.calculate_cost(current_model, input_tokens, output_tokens)
 
             metadata_dict["api_usage"] = api_usage.model_dump()
             extraction_data["metadata"] = metadata_dict
@@ -213,7 +288,7 @@ Extract the data now from the provided PDF."""
             print(f"✓ Extracted {len(extraction.pricelist.models)} model(s)")
             print(f"✓ Tokens: {api_usage.total_tokens:,} (in: {api_usage.input_tokens:,}, out: {api_usage.output_tokens:,})")
             if api_usage.is_free_tier:
-                print(f"✓ Cost: FREE (using {model} free tier)")
+                print(f"✓ Cost: FREE (using {current_model} free tier)")
             else:
                 print(f"✓ Cost: ${api_usage.total_cost_usd:.6f} USD")
 

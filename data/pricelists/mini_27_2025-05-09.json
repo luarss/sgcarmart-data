@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "source_filename": "dealer_27_2025-05-09.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "27",
+    "pdf_date": "2025-05-09",
+    "brand_folder": "mini",
+    "year_folder": 2025,
+    "pdf_size_kb": 711.7275390625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 1248,
+      "total_tokens": 3549,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.0004992,
+      "total_cost_usd": 0.0007293,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MINI",
+        "model_name": "COOPER",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "C (5-DOOR)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 251888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "S (3-DOOR)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 264888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "COOPER",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 207888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "SE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 237888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "COOPER CONVERTIBLE",
+        "category": "CONVERTIBLE",
+        "variants": [
+          {
+            "variant_name": "S CONVERTIBLE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 292888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "JCW COOPER CONVERTIBLE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 312888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "ACEMAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 215888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "SE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 244888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "COUNTRYMAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "C",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 242888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "S ALL4",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 278888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "JCW COUNTRYMAN ALL4",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 314888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "COUNTRYMAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 250888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "SE ALL4",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 269888.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

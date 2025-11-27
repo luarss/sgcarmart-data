@@ -1,0 +1,167 @@
+{
+  "metadata": {
+    "source_filename": "dealer_13_2025-11-10.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "13",
+    "pdf_date": "2025-11-10",
+    "brand_folder": "honda",
+    "year_folder": 2025,
+    "pdf_size_kb": 367.8408203125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 1482,
+      "total_tokens": 3009,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.0005928000000000001,
+      "total_cost_usd": 0.0007455000000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "HONDA",
+        "model_name": "CIVIC",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "1.5L TURBO",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 214999.0,
+            "final_price": 211999.0
+          },
+          {
+            "variant_name": "2.0L",
+            "engine_size": "2.0L",
+            "vehicle_type": "Hybrid",
+            "list_price": 244999.0,
+            "final_price": 243999.0
+          }
+        ]
+      },
+      {
+        "brand": "HONDA",
+        "model_name": "FREED",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "1.5L HS7",
+            "engine_size": "1.5L",
+            "vehicle_type": "Hybrid",
+            "list_price": 196999.0,
+            "final_price": 193999.0
+          },
+          {
+            "variant_name": "1.5L HE7",
+            "engine_size": "1.5L",
+            "vehicle_type": "Hybrid",
+            "list_price": 199999.0,
+            "final_price": 196999.0
+          }
+        ]
+      },
+      {
+        "brand": "HONDA",
+        "model_name": "HR-V",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5L DX",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 194999.0,
+            "final_price": 191999.0
+          },
+          {
+            "variant_name": "1.5L DX+",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 197999.0,
+            "final_price": 194999.0
+          },
+          {
+            "variant_name": "1.5L HX",
+            "engine_size": "1.5L",
+            "vehicle_type": "Hybrid",
+            "list_price": 211999.0,
+            "final_price": 210999.0
+          }
+        ]
+      },
+      {
+        "brand": "HONDA",
+        "model_name": "JAZZ",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "1.5L H-LUXE",
+            "engine_size": "1.5L",
+            "vehicle_type": "Hybrid",
+            "list_price": 188999.0,
+            "final_price": 185999.0
+          },
+          {
+            "variant_name": "1.5L CROSSTAR MONO",
+            "engine_size": "1.5L",
+            "vehicle_type": "Hybrid",
+            "list_price": 188999.0,
+            "final_price": 185999.0
+          }
+        ]
+      },
+      {
+        "brand": "HONDA",
+        "model_name": "ACCORD",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "2.0L RS",
+            "engine_size": "2.0L",
+            "vehicle_type": "Hybrid",
+            "list_price": 298999.0,
+            "final_price": 297999.0
+          }
+        ]
+      },
+      {
+        "brand": "HONDA",
+        "model_name": "CR-V",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5L 5-SEATER",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 262999.0,
+            "final_price": 261999.0
+          },
+          {
+            "variant_name": "1.5L 7-SEATER",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 272999.0,
+            "final_price": 271999.0
+          }
+        ]
+      },
+      {
+        "brand": "HONDA",
+        "model_name": "STEP WGN",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "2.0L SPADA",
+            "engine_size": "2.0L",
+            "vehicle_type": "Hybrid",
+            "list_price": 247999.0,
+            "final_price": 246999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

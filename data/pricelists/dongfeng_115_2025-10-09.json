@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "source_filename": "dealer_115_2025-10-09.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "115",
+    "pdf_date": "2025-10-09",
+    "brand_folder": "dongfeng",
+    "year_folder": 2025,
+    "pdf_size_kb": 2561.0458984375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 342,
+      "total_tokens": 1869,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.00013680000000000002,
+      "total_cost_usd": 0.00028950000000000004,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "DONGFENG",
+        "model_name": "BOX",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "BOX",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 237888.0,
+            "final_price": 190888.0
+          },
+          {
+            "variant_name": "BOX - R",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 248888.0,
+            "final_price": 201888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

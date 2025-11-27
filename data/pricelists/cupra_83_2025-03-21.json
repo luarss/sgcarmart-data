@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "source_filename": "dealer_83_2025-03-21.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "83",
+    "pdf_date": "2025-03-21",
+    "brand_folder": "cupra",
+    "year_folder": 2025,
+    "pdf_size_kb": 177.5029296875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 645,
+      "total_tokens": 2946,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.000258,
+      "total_cost_usd": 0.0004881,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Cupra",
+        "model_name": "BORN",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "eBoost 59kWh 170kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 265400.0,
+            "final_price": 201900.0
+          }
+        ]
+      },
+      {
+        "brand": "Cupra",
+        "model_name": "BORN VZ",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "VZ 79kWh 240kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 297400.0,
+            "final_price": 231900.0
+          }
+        ]
+      },
+      {
+        "brand": "Cupra",
+        "model_name": "TAVASCAN",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "Endurance 77kWh 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 300900.0,
+            "final_price": 215900.0
+          }
+        ]
+      },
+      {
+        "brand": "Cupra",
+        "model_name": "TAVASCAN VZ",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "VZ 77kWh 250kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 320900.0,
+            "final_price": 235900.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

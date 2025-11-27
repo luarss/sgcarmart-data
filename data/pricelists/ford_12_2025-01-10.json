@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "source_filename": "dealer_12_2025-01-10.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "12",
+    "pdf_date": "2025-01-10",
+    "brand_folder": "ford",
+    "year_folder": 2025,
+    "pdf_size_kb": 472.22265625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 393,
+      "total_tokens": 2694,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.00015720000000000003,
+      "total_cost_usd": 0.00038730000000000004,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Ford",
+        "model_name": "Ranger Raptor",
+        "category": "TRUCK",
+        "variants": [
+          {
+            "variant_name": "2.0 Twin-Turbo 4X4 Double Cab",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 182888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Ford",
+        "model_name": "Ranger WildTrak",
+        "category": "TRUCK",
+        "variants": [
+          {
+            "variant_name": "2.0 Twin-Turbo 4X4 Double Cab",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 136888.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

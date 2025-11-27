@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "source_filename": "dealer_45_2025-01-10.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "45",
+    "pdf_date": "2025-01-10",
+    "brand_folder": "volkswagen",
+    "year_folder": 2025,
+    "pdf_size_kb": 6.89453125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 2211,
+      "total_tokens": 3738,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.0008844,
+      "total_cost_usd": 0.0010371,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Volkswagen",
+        "model_name": "Caddy Diesel",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "2.0 TDI DSG Maxi Panel Van [Euro VI] (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "2.0 TDI DSG Maxi Window Van [Euro VI] (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "2.0 TDI DSG NWB Panel Van [Euro VI] (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "2.0 TDI DSG NWB Window Van [Euro VI] (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "Golf GTI",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "2.0 TSI DSG (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "Golf Mild Hybrid",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "1.5 eTSI DSG R-Line (A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 189900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "Golf R",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "2.0 TSI DSG (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 338900.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "2.0 TSI DSG Performance Pack (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 358900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "ID. Buzz Cargo",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Electric 79 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 160900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "ID. Buzz",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Electric Pro NWB 5-Seater 79 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 319900.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Pro LWB 7-Seater 86 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 344900.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Pro LWB 6-Seater 86 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 349900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "ID.4",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Electric 82 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 239900.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "GTX Electric 82 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 259900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "ID.5",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Electric 82 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 249900.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "GTX Electric 82 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 269900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "T-Cross",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.0 TSI DSG Style (A)",
+            "engine_size": "1.0",
+            "vehicle_type": "ICE",
+            "list_price": 167900.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "1.0 TSI DSG R-Line (A)",
+            "engine_size": "1.0",
+            "vehicle_type": "ICE",
+            "list_price": 173900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "Tiguan",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Mild Hybrid 1.5 eTSI Life (A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 226900.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Mild Hybrid 1.5 eTSI Life Plus (A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 236900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "Transporter",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Diesel T30 Panel Van LED [Euro VI] (A)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "Diesel T30 Panel Van [Euro VI] (A)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "POA means Price On Application, which is represented as null in the JSON output."
+  ]
+}

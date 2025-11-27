@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "source_filename": "dealer_34_2025-09-19.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "34",
+    "pdf_date": "2025-09-19",
+    "brand_folder": "peugeot",
+    "year_folder": 2025,
+    "pdf_size_kb": 549.529296875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 358,
+      "total_tokens": 1885,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.00014319999999999998,
+      "total_cost_usd": 0.0002959,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "PEUGEOT",
+        "model_name": "408",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.2 GT Fastback",
+            "engine_size": "1.2",
+            "vehicle_type": "ICE",
+            "list_price": 220999.0,
+            "final_price": 196999.0
+          },
+          {
+            "variant_name": "1.2 GT Vision Fastback",
+            "engine_size": "1.2",
+            "vehicle_type": "ICE",
+            "list_price": 225999.0,
+            "final_price": 201999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

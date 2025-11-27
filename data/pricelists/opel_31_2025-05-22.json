@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "source_filename": "dealer_31_2025-05-22.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "31",
+    "pdf_date": "2025-05-22",
+    "brand_folder": "opel",
+    "year_folder": 2025,
+    "pdf_size_kb": 397.048828125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 669,
+      "total_tokens": 2979,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "OPEL",
+        "model_name": "MOKKA-C",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "VES Banding: A1",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 224500.0,
+            "final_price": 139500.0
+          }
+        ]
+      },
+      {
+        "brand": "OPEL",
+        "model_name": "COMBO-E LIFE",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "VES Banding : A1",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 244500.0,
+            "final_price": 169500.0
+          },
+          {
+            "variant_name": "VES Banding: A1",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 240500.0,
+            "final_price": 165500.0
+          }
+        ]
+      },
+      {
+        "brand": "OPEL",
+        "model_name": "ZAFIRA-E LIFE",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "VES Banding: A1",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 265500.0,
+            "final_price": 199500.0
+          },
+          {
+            "variant_name": "VES Banding : A2",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 261500.0,
+            "final_price": 195500.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

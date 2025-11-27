@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "source_filename": "dealer_1_2025-01-27.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "1",
+    "pdf_date": "2025-01-27",
+    "brand_folder": "alfa-romeo",
+    "year_folder": 2025,
+    "pdf_size_kb": 505.6279296875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 651,
+      "total_tokens": 2952,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.0002604,
+      "total_cost_usd": 0.0004905,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Alfa Romeo",
+        "model_name": "Tonale",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5L Turbo MHEV Veloce",
+            "engine_size": "1.5L",
+            "vehicle_type": "Hybrid",
+            "list_price": 264888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Alfa Romeo",
+        "model_name": "Stelvio",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "2.0L Turbo Veloce",
+            "engine_size": "2.0L",
+            "vehicle_type": "ICE",
+            "list_price": 314888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "2.9L Turbo Quadrifoglio",
+            "engine_size": "2.9L",
+            "vehicle_type": "ICE",
+            "list_price": 488888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Alfa Romeo",
+        "model_name": "GIULIA",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "2.0L Turbo Veloce",
+            "engine_size": "2.0L",
+            "vehicle_type": "ICE",
+            "list_price": 304888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "2.9L Turbo Quadrifoglio",
+            "engine_size": "2.9L",
+            "vehicle_type": "ICE",
+            "list_price": 493888.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

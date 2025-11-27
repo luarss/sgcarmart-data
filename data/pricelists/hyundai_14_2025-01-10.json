@@ -1,0 +1,237 @@
+{
+  "metadata": {
+    "source_filename": "dealer_14_2025-01-10.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "14",
+    "pdf_date": "2025-01-10",
+    "brand_folder": "hyundai",
+    "year_folder": 2025,
+    "pdf_size_kb": 1614.90234375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 2013,
+      "total_tokens": 4323,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "HYUNDAI",
+        "model_name": "IONIQ 5",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "N AWD",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 453888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Prestige",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 274900.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Inspiration",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 335800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "HYUNDAI",
+        "model_name": "KONA Electric SUV",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 249888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Sunroof",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 259888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Sunroof (Long Range)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 273888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "HYUNDAI",
+        "model_name": "AVANTE",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "1.6 Hybrid S",
+            "engine_size": "1,580 cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 228499.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "1.6 Hybrid Elite",
+            "engine_size": "1,580 cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 234499.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "HYUNDAI",
+        "model_name": "KONA",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.6 Hybrid GL SUV",
+            "engine_size": "1,580 cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 229499.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "1.6 Hybrid Elite Sunroof SUV",
+            "engine_size": "1,580 cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 241499.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "HYUNDAI",
+        "model_name": "TUCSON",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "AWD SUV 1.6T",
+            "engine_size": "1,598 cc",
+            "vehicle_type": "ICE",
+            "list_price": 290999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "AWD SUV 1.6T N-Line",
+            "engine_size": "1,598 cc",
+            "vehicle_type": "ICE",
+            "list_price": 302999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "HYUNDAI",
+        "model_name": "SANTA FE",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SUV 1.6T",
+            "engine_size": "1,598 cc",
+            "vehicle_type": "ICE",
+            "list_price": 331999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "SUV 1.6T Calligraphy",
+            "engine_size": "1,598 cc",
+            "vehicle_type": "ICE",
+            "list_price": 351999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "SUV 1.6T Calligraphy (6-seater)",
+            "engine_size": "1,598 cc",
+            "vehicle_type": "ICE",
+            "list_price": 353999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "HYUNDAI",
+        "model_name": "STARIA",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "MPV 3.5 Sunroof",
+            "engine_size": "3,470 cc",
+            "vehicle_type": "ICE",
+            "list_price": 317999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "HYUNDAI",
+        "model_name": "PALISADE",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SUV 3.5 Sunroof",
+            "engine_size": "3,470 cc",
+            "vehicle_type": "ICE",
+            "list_price": 344999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "HYUNDAI",
+        "model_name": "IONIQ 6",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Exclusive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 269150.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Prestige",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 276150.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Prestige",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 315800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Inspiration",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 341800.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "medium",
+  "extraction_notes": []
+}

@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "source_filename": "dealer_109_2025-09-29.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "109",
+    "pdf_date": "2025-09-29",
+    "brand_folder": "smart",
+    "year_folder": 2025,
+    "pdf_size_kb": 1299.51953125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 710,
+      "total_tokens": 2237,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.000284,
+      "total_cost_usd": 0.00043670000000000004,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "smart",
+        "model_name": "#1",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "#1 Pro+",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 341888.0,
+            "final_price": 248000.0
+          },
+          {
+            "variant_name": "#1 BRABUS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 380888.0,
+            "final_price": 287000.0
+          }
+        ]
+      },
+      {
+        "brand": "smart",
+        "model_name": "#3",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "#3 Pro+",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 361888.0,
+            "final_price": 268000.0
+          },
+          {
+            "variant_name": "#3 BRABUS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 396888.0,
+            "final_price": 303000.0
+          }
+        ]
+      },
+      {
+        "brand": "smart",
+        "model_name": "#5",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "#5 Pro",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 367888.0,
+            "final_price": 259000.0
+          },
+          {
+            "variant_name": "#5 Premium",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 407888.0,
+            "final_price": 299000.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

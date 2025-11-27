@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "source_filename": "dealer_43_2025-02-06.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "43",
+    "pdf_date": "2025-02-06",
+    "brand_folder": "suzuki",
+    "year_folder": 2025,
+    "pdf_size_kb": 259.5380859375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 837,
+      "total_tokens": 3138,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.0003348,
+      "total_cost_usd": 0.0005649,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Suzuki",
+        "model_name": "SWIFT",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "1.2L STANDARD",
+            "engine_size": "1.2",
+            "vehicle_type": "ICE",
+            "list_price": 133888.0,
+            "final_price": 131888.0
+          },
+          {
+            "variant_name": "1.2L STANDARD (Two Tones)",
+            "engine_size": "1.2",
+            "vehicle_type": "ICE",
+            "list_price": 134888.0,
+            "final_price": 132888.0
+          },
+          {
+            "variant_name": "DUALJET HYBRID",
+            "engine_size": "1.2",
+            "vehicle_type": "Hybrid",
+            "list_price": 130888.0,
+            "final_price": 129888.0
+          },
+          {
+            "variant_name": "DUALJET HYBRID",
+            "engine_size": "1.2",
+            "vehicle_type": "Hybrid",
+            "list_price": 131888.0,
+            "final_price": 130888.0
+          }
+        ]
+      },
+      {
+        "brand": "Suzuki",
+        "model_name": "Jimny",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5L GLX STANDARD",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 143888.0,
+            "final_price": 141888.0
+          },
+          {
+            "variant_name": "1.5L GLX STANDARD (Two Tones)",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 144888.0,
+            "final_price": 142888.0
+          }
+        ]
+      },
+      {
+        "brand": "Suzuki",
+        "model_name": "S-CROSS",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.4L STANDARD",
+            "engine_size": "1.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 161888.0,
+            "final_price": 159888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

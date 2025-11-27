@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "source_filename": "dealer_82_2025-11-06.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "82",
+    "pdf_date": "2025-11-06",
+    "brand_folder": "mg",
+    "year_folder": 2025,
+    "pdf_size_kb": 3912.4560546875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2043,
+      "output_tokens": 884,
+      "total_tokens": 2927,
+      "input_cost_usd": 0.00020430000000000003,
+      "output_cost_usd": 0.00035360000000000003,
+      "total_cost_usd": 0.0005579000000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MG",
+        "model_name": "MGS5 LUXURY",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "A",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 196888.0,
+            "final_price": 186888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "MG4 TROPHY",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "A",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 178888.0,
+            "final_price": 168888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "CYBERSTER",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "RWD 250kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 331888.0,
+            "final_price": 321888.0
+          },
+          {
+            "variant_name": "AWD 375kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 347888.0,
+            "final_price": 337888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "M9",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "TROPHY",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 291888.0,
+            "final_price": 281888.0
+          },
+          {
+            "variant_name": "GRAND TROPHY",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 315888.0,
+            "final_price": 305888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "HS1.5T",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "EXCLUSIVE",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 203888.0,
+            "final_price": 203888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

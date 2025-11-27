@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "source_filename": "dealer_81_2025-03-21.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "81",
+    "pdf_date": "2025-03-21",
+    "brand_folder": "byd",
+    "year_folder": 2025,
+    "pdf_size_kb": 218.9873046875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1536,
+      "output_tokens": 1222,
+      "total_tokens": 2758,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "BYD",
+        "model_name": "e6",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "7-Seater",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 227388.0,
+            "final_price": 167388.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "M6",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "7-Seater",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 234388.0,
+            "final_price": 174388.0
+          },
+          {
+            "variant_name": "CarbonEdge",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 237388.0,
+            "final_price": 177388.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "SEAL",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Dynamic 100kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 248388.0,
+            "final_price": 188388.0
+          },
+          {
+            "variant_name": "Premium",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 281388.0,
+            "final_price": 216388.0
+          },
+          {
+            "variant_name": "Performance",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 330388.0,
+            "final_price": 265388.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "DOLPHIN",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "Dynamic",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 227388.0,
+            "final_price": 167388.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "ATTO 3 2024",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 234388.0,
+            "final_price": 174388.0
+          },
+          {
+            "variant_name": "CarbonEdge",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 238388.0,
+            "final_price": 178388.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "SEALION 7",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Premium",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 281388.0,
+            "final_price": 216388.0
+          },
+          {
+            "variant_name": "Performance",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 306388.0,
+            "final_price": 241388.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

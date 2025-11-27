@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "source_filename": "dealer_42_2025-08-28.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "42",
+    "pdf_date": "2025-08-28",
+    "brand_folder": "subaru",
+    "year_folder": 2025,
+    "pdf_size_kb": 167.2861328125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 642,
+      "total_tokens": 2952,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SUBARU",
+        "model_name": "CROSSTREK",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "CROSSTREK 2.0I-S EYESIGHT HYBRID AWD CVT",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 202600.0,
+            "final_price": 199800.0
+          }
+        ]
+      },
+      {
+        "brand": "SUBARU",
+        "model_name": "FORESTER",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "FORESTER 2.0I-S EYESIGHT HYBRID AWD CVT",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 206600.0,
+            "final_price": 203800.0
+          }
+        ]
+      },
+      {
+        "brand": "SUBARU",
+        "model_name": "BRZ",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "BRZ 2.4 EYESIGHT RWD 6MT",
+            "engine_size": "2.4",
+            "vehicle_type": "ICE",
+            "list_price": 255600.0,
+            "final_price": 252800.0
+          },
+          {
+            "variant_name": "BRZ 2.4 EYESIGHT RWD 6AT",
+            "engine_size": "2.4",
+            "vehicle_type": "ICE",
+            "list_price": 260600.0,
+            "final_price": 257800.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

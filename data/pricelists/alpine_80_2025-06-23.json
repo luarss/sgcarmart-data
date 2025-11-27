@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source_filename": "dealer_80_2025-06-23.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "80",
+    "pdf_date": "2025-06-23",
+    "brand_folder": "alpine",
+    "year_folder": 2025,
+    "pdf_size_kb": 3.8330078125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 263,
+      "total_tokens": 2573,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Alpine",
+        "model_name": "A110",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "1.8 S (A)",
+            "engine_size": "1.8",
+            "vehicle_type": "ICE",
+            "list_price": 373800.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "source_filename": "dealer_12_2025-03-21.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "12",
+    "pdf_date": "2025-03-21",
+    "brand_folder": "ford",
+    "year_folder": 2025,
+    "pdf_size_kb": 347.5556640625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 476,
+      "total_tokens": 2777,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.00019040000000000002,
+      "total_cost_usd": 0.00042050000000000003,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Ford",
+        "model_name": "Ranger WildTrak",
+        "category": "TRUCK",
+        "variants": [
+          {
+            "variant_name": "2.0 Twin-Turbo 4X4 Double Cab",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 199888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Ford",
+        "model_name": "Mustang GT",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "Coupe 5.0L",
+            "engine_size": "5.0L",
+            "vehicle_type": "ICE",
+            "list_price": 368888.0,
+            "final_price": 258888.0
+          },
+          {
+            "variant_name": "Cabriolet 5.0L",
+            "engine_size": "5.0L",
+            "vehicle_type": "ICE",
+            "list_price": 388888.0,
+            "final_price": 278888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

@@ -9,6 +9,12 @@ from analysis.pdf_extractor import GeminiPDFExtractor
 
 load_dotenv(Path(__file__).parent / ".env")
 
+EXCLUDED_BRANDS = {
+    'bac', 'bentley', 'mclaren', 'morgan', 'aston-martin',
+    'lamborghini', 'maserati', 'lotus', 'rolls-royce', 'ferrari',
+    'porsche', 'isuzu', 'levc', 'ssangyong', 'jeep',
+}
+
 
 def extract_brand_samples(
     brands: List[str],
@@ -39,6 +45,12 @@ def extract_brand_samples(
     }
 
     for brand in brands:
+        if brand in EXCLUDED_BRANDS:
+            print(f"\n{'='*60}")
+            print(f"❌ ERROR: Brand '{brand}' is in EXCLUDED list")
+            print(f"{'='*60}")
+            continue
+
         brand_dir = base_dir / brand / str(year)
 
         if not brand_dir.exists():

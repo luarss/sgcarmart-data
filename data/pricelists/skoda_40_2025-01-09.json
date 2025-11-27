@@ -1,0 +1,132 @@
+{
+  "metadata": {
+    "source_filename": "dealer_40_2025-01-09.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "40",
+    "pdf_date": "2025-01-09",
+    "brand_folder": "skoda",
+    "year_folder": 2025,
+    "pdf_size_kb": 200.3896484375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 1170,
+      "total_tokens": 3471,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.00046800000000000005,
+      "total_cost_usd": 0.0006981000000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SKODA",
+        "model_name": "OCTAVIA",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "1.5 TSI Selection",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 225900.0,
+            "final_price": 169900.0
+          },
+          {
+            "variant_name": "1.5 TSI Combi Selection",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 230900.0,
+            "final_price": 177900.0
+          },
+          {
+            "variant_name": "2.0 TSI RS",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 293900.0,
+            "final_price": 248900.0
+          },
+          {
+            "variant_name": "2.0 TSI Combi RS",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 298900.0,
+            "final_price": 256900.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "KAMIQ",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.0 TSI Selection",
+            "engine_size": "1.0",
+            "vehicle_type": "ICE",
+            "list_price": 248900.0,
+            "final_price": 170400.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "KODIAQ",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5 TSI Selection",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 335900.0,
+            "final_price": 233900.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "ENYAQ",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "82kWh 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 354900.0,
+            "final_price": 239900.0
+          },
+          {
+            "variant_name": "82kWh 210kW Sportline",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 357900.0,
+            "final_price": 246900.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "ENYAQ COUP\u00c9",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "82kWh 210kW Sportline",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 364900.0,
+            "final_price": 249900.0
+          },
+          {
+            "variant_name": "COUP\u00c9 RS 82kWh 250kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 384900.0,
+            "final_price": 272900.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
