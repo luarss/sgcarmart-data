@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
+from pathlib import Path
+
+from dotenv import load_dotenv
 
 from constants import DEFAULT_BROWSER_MAX_WORKERS, DEFAULT_MAX_WORKERS
 from sgcarmart.core.downloader import process_dealer
 from sgcarmart.core.year_navigator import discover_historical_pdfs
 from sgcarmart.utils.file_utils import load_dealer_brand_mapping
+
+load_dotenv(Path(__file__).parent / "analysis" / ".env")
 
 
 def parse_year_range(year_arg: str) -> list:
@@ -27,7 +33,9 @@ def parse_year_range(year_arg: str) -> list:
         return [year_arg]
 
 
-def process_dealer_historical(dealer_id: str, brand_name: str, years: list | None = None) -> dict:
+def process_dealer_historical(
+    dealer_id: str, brand_name: str, years: list | None = None, auto_extract=False, extract_model="gemini-2.0-flash-exp"
+) -> dict:
     """
     Process a dealer with historical PDF discovery and download.
 
@@ -35,6 +43,7 @@ def process_dealer_historical(dealer_id: str, brand_name: str, years: list | Non
         dealer_id: Dealer ID
         brand_name: Brand name
         years: List of years to download (None = all years)
+        extraction_pipeline: Optional ExtractionPipeline instance
 
     Returns:
         Dict with download results
@@ -52,7 +61,13 @@ def process_dealer_historical(dealer_id: str, brand_name: str, years: list | Non
 
         for _year, pdfs in filtered_pdfs.items():
             for pdf_info in pdfs:
-                result = download_pdf(pdf_info["url"], brand_name, output_dir="data/pricelists")
+                result = download_pdf(
+                    pdf_info["url"],
+                    brand_name,
+                    output_dir="data/pricelists",
+                    auto_extract=auto_extract,
+                    extract_model=extract_model,
+                )
 
                 if result["status"] == "success":
                     downloaded += 1
@@ -107,6 +122,31 @@ Examples:
         help=f"Number of parallel browser instances for historical downloads (default: {DEFAULT_BROWSER_MAX_WORKERS})",
     )
 
+    parser.add_argument(
+        "--no-extract",
+        action="store_true",
+        help="Disable automatic PDF extraction (default: enabled if GEMINI_API_KEY is set)",
+    )
+
+    parser.add_argument(
+        "--extract-only", action="store_true", help="Extract existing PDFs without downloading new ones"
+    )
+
+    parser.add_argument(
+        "--extract-model",
+        type=str,
+        default="gemini-2.0-flash-exp",
+        help="Gemini model to use for extraction (default: gemini-2.0-flash-exp)",
+    )
+
+    parser.add_argument("--extract-workers", type=int, default=3, help="Number of concurrent extractions (default: 3)")
+
+    parser.add_argument(
+        "--force-extract",
+        action="store_true",
+        help="Force re-extraction of PDFs that already have JSON (only with --extract-only)",
+    )
+
     args = parser.parse_args()
 
     dealer_brand_mapping = load_dealer_brand_mapping()
@@ -128,7 +168,25 @@ Examples:
         print("LATEST MODE: Downloading only latest pricelists")
         mode = "latest"
 
-    print(f"Total dealers to check: {len(dealer_brand_mapping)}\n")
+    print(f"Total dealers to check: {len(dealer_brand_mapping)}")
+
+    auto_extract = False
+    extract_model = args.extract_model
+
+    if args.extract_only:
+        print("\nEXTRACT-ONLY MODE: Not yet implemented in simplified version")
+        print("Use: uv run python analysis/batch_extract.py --brands <brand> --year 2025")
+        return
+    elif not args.no_extract and os.getenv("GEMINI_API_KEY"):
+        auto_extract = True
+        print(f"Extraction: ENABLED (model: {extract_model})")
+    elif not args.no_extract and not os.getenv("GEMINI_API_KEY"):
+        print("⚠ Warning: GEMINI_API_KEY not set. Skipping auto-extraction.")
+        print("⚠ Set GEMINI_API_KEY environment variable to enable automatic extraction.")
+    elif args.no_extract:
+        print("Extraction: DISABLED (--no-extract flag)")
+
+    print()
 
     results = []
 
@@ -136,10 +194,9 @@ Examples:
         print(f"Processing dealers for historical PDFs with {args.browser_workers} parallel browsers...")
         with ThreadPoolExecutor(max_workers=args.browser_workers) as executor:
             futures = {
-                executor.submit(process_dealer_historical, dealer_id, brand_name, years_to_download): (
-                    dealer_id,
-                    brand_name,
-                )
+                executor.submit(
+                    process_dealer_historical, dealer_id, brand_name, years_to_download, auto_extract, extract_model
+                ): (dealer_id, brand_name)
                 for dealer_id, brand_name in dealer_brand_mapping.items()
             }
 
@@ -168,7 +225,10 @@ Examples:
         print("Processing dealers in parallel...")
         with ThreadPoolExecutor(max_workers=DEFAULT_MAX_WORKERS) as executor:
             futures = {
-                executor.submit(process_dealer, dealer_id, brand_name): (dealer_id, brand_name)
+                executor.submit(process_dealer, dealer_id, brand_name, auto_extract, extract_model): (
+                    dealer_id,
+                    brand_name,
+                )
                 for dealer_id, brand_name in dealer_brand_mapping.items()
             }
 
@@ -198,7 +258,7 @@ Examples:
         print(f"Pricelists found: {found_count}")
         print(f"Successfully downloaded: {downloaded_count}")
 
-    print(f"\nReport saved to: {report_file}")
+    print(f"\nDownload report: {report_file}")
 
 
 if __name__ == "__main__":
