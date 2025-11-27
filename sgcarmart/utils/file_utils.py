@@ -1,5 +1,5 @@
-import os
 import json
+import os
 
 from constants import DEALER_BRAND_MAPPING_FILE
 
@@ -14,22 +14,18 @@ def ensure_directory(path):
 
 
 def load_dealer_brand_mapping():
-    with open(DEALER_BRAND_MAPPING_FILE, 'r') as f:
+    with open(DEALER_BRAND_MAPPING_FILE) as f:
         return json.load(f)
 
 
 def extract_metadata_from_url(pdf_url):
-    parts = pdf_url.rstrip('/').split('/')
-    filename = parts[-1].replace('.pdf', '')
+    parts = pdf_url.rstrip("/").split("/")
+    filename = parts[-1].replace(".pdf", "")
     dealer_id = None
 
-    if 'pricelist' in pdf_url:
-        pricelist_index = parts.index('pricelist')
+    if "pricelist" in pdf_url:
+        pricelist_index = parts.index("pricelist")
         if pricelist_index + 1 < len(parts):
             dealer_id = parts[pricelist_index + 1]
 
-    return {
-        'filename': filename,
-        'dealer_id': dealer_id,
-        'date': filename
-    }
+    return {"filename": filename, "dealer_id": dealer_id, "date": filename}

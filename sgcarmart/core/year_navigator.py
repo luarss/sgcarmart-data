@@ -1,13 +1,14 @@
 """
 Simplified year navigation using direct PDF URL construction.
 """
-from playwright.sync_api import sync_playwright
-from typing import List, Dict
-from datetime import datetime
-import time
-import re
 
-from constants import PRICELIST_URL_TEMPLATE, PDF_URL_TEMPLATE
+import re
+import time
+from datetime import datetime
+
+from playwright.sync_api import sync_playwright
+
+from constants import PDF_URL_TEMPLATE, PRICELIST_URL_TEMPLATE
 
 
 class SimpleYearNavigator:
@@ -62,12 +63,12 @@ class SimpleYearNavigator:
             Date in format 'YYYY-MM-DD'
         """
         try:
-            dt = datetime.strptime(date_text, '%d %B %Y')
-            return dt.strftime('%Y-%m-%d')
-        except:
+            dt = datetime.strptime(date_text, "%d %B %Y")
+            return dt.strftime("%Y-%m-%d")
+        except (ValueError, TypeError):
             return None
 
-    def get_available_years(self, dealer_id: str, brand_name: str) -> List[str]:
+    def get_available_years(self, dealer_id: str, brand_name: str) -> list[str]:
         """Get all available years by parsing the year dropdown."""
         url = PRICELIST_URL_TEMPLATE.format(dealer_id=dealer_id, brand=brand_name)
 
@@ -79,15 +80,15 @@ class SimpleYearNavigator:
             year_selector.click()
             time.sleep(0.5)
 
-            all_divs = self.page.locator('div').all()
+            all_divs = self.page.locator("div").all()
             years = []
 
             for div in all_divs:
                 try:
                     text = div.inner_text(timeout=500).strip()
-                    if text.isdigit() and len(text) == 4 and text.startswith('20'):
+                    if text.isdigit() and len(text) == 4 and text.startswith("20"):
                         years.append(text)
-                except:
+                except Exception:
                     continue
 
             self.page.keyboard.press("Escape")
@@ -99,7 +100,7 @@ class SimpleYearNavigator:
             print(f"Error getting years: {e}")
             return []
 
-    def get_pdfs_for_year(self, dealer_id: str, brand_name: str, year: str) -> List[Dict[str, str]]:
+    def get_pdfs_for_year(self, dealer_id: str, brand_name: str, year: str) -> list[dict[str, str]]:
         """
         Get all PDFs for a specific year by extracting dates from dropdown.
 
@@ -116,7 +117,7 @@ class SimpleYearNavigator:
             year_selector.click()
             time.sleep(0.5)
 
-            all_divs = self.page.locator('div').all()
+            all_divs = self.page.locator("div").all()
             year_elem = None
             for div in all_divs:
                 try:
@@ -124,7 +125,7 @@ class SimpleYearNavigator:
                     if text == year:
                         year_elem = div
                         break
-                except:
+                except Exception:
                     continue
 
             if not year_elem:
@@ -138,16 +139,15 @@ class SimpleYearNavigator:
             date_selector.click()
             time.sleep(0.5)
 
-            all_text_elements = self.page.locator('div').all()
+            all_text_elements = self.page.locator("div").all()
             date_texts = []
 
             for elem in all_text_elements:
                 try:
                     text = elem.inner_text(timeout=500).strip()
-                    if text and len(text) > 5 and len(text) < 50:
-                        if re.match(r'^\d{2}\s+\w+\s+\d{4}$', text):
-                            date_texts.append(text)
-                except:
+                    if text and len(text) > 5 and len(text) < 50 and re.match(r"^\d{2}\s+\w+\s+\d{4}$", text):
+                        date_texts.append(text)
+                except Exception:
                     continue
 
             self.page.keyboard.press("Escape")
@@ -158,13 +158,15 @@ class SimpleYearNavigator:
                 url_date = self.parse_date_to_url_format(date_text)
                 if url_date:
                     pdf_url = PDF_URL_TEMPLATE.format(dealer_id=dealer_id, date=url_date)
-                    pdfs.append({
-                        'url': pdf_url,
-                        'date': url_date,
-                        'filename': f"dealer_{dealer_id}_{url_date}.pdf",
-                        'year': year,
-                        'date_text': date_text
-                    })
+                    pdfs.append(
+                        {
+                            "url": pdf_url,
+                            "date": url_date,
+                            "filename": f"dealer_{dealer_id}_{url_date}.pdf",
+                            "year": year,
+                            "date_text": date_text,
+                        }
+                    )
 
             return pdfs
 
@@ -172,7 +174,9 @@ class SimpleYearNavigator:
             print(f"Error getting PDFs for year {year}: {e}")
             return []
 
-    def discover_all_pdfs(self, dealer_id: str, brand_name: str, target_years: List[str] = None) -> Dict[str, List[Dict[str, str]]]:
+    def discover_all_pdfs(
+        self, dealer_id: str, brand_name: str, target_years: list[str] | None = None
+    ) -> dict[str, list[dict[str, str]]]:
         """
         Discover all available PDFs across all years for a dealer.
 
@@ -217,7 +221,9 @@ class SimpleYearNavigator:
         return all_pdfs
 
 
-def discover_historical_pdfs(dealer_id: str, brand_name: str, headless: bool = True, target_years: List[str] = None) -> Dict[str, List[Dict[str, str]]]:
+def discover_historical_pdfs(
+    dealer_id: str, brand_name: str, headless: bool = True, target_years: list[str] | None = None
+) -> dict[str, list[dict[str, str]]]:
     """
     Convenience function to discover all historical PDFs for a dealer.
 

@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 import argparse
 import json
-import sys
 import os
+import sys
 from datetime import datetime
 
 from constants import BASE_URL
-from sgcarmart.utils.file_utils import load_dealer_brand_mapping, normalize_brand_name
 from sgcarmart.core.downloader import download_all_pdfs_from_page
+from sgcarmart.utils.file_utils import load_dealer_brand_mapping, normalize_brand_name
 
 
 def main():
@@ -19,21 +19,12 @@ Examples:
   %(prog)s --all
   %(prog)s --brand mg
   %(prog)s --brand toyota
-        """
+        """,
     )
 
     group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument(
-        "--all",
-        action="store_true",
-        help="Download all PDFs for all dealers"
-    )
-    group.add_argument(
-        "--brand",
-        type=str,
-        metavar="NAME",
-        help="Download all PDFs for specific brand"
-    )
+    group.add_argument("--all", action="store_true", help="Download all PDFs for all dealers")
+    group.add_argument("--brand", type=str, metavar="NAME", help="Download all PDFs for specific brand")
 
     args = parser.parse_args()
 
@@ -54,8 +45,11 @@ Examples:
             all_results.extend(results)
 
     elif args.brand:
-        matching_dealers = {did: dbrand for did, dbrand in dealer_brand_mapping.items()
-                          if normalize_brand_name(dbrand) == normalize_brand_name(args.brand)}
+        matching_dealers = {
+            did: dbrand
+            for did, dbrand in dealer_brand_mapping.items()
+            if normalize_brand_name(dbrand) == normalize_brand_name(args.brand)
+        }
 
         if not matching_dealers:
             print(f"Error: No dealers found for brand '{args.brand}'")
@@ -84,20 +78,24 @@ Examples:
 
     report_file = f"data/pdf_download_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
     os.makedirs("data", exist_ok=True)
-    with open(report_file, 'w') as f:
-        json.dump({
-            "mode": "all" if args.all else "brand",
-            "brand_filter": args.brand if args.brand else None,
-            "output_directory": output_dir,
-            "timestamp": datetime.now().isoformat(),
-            "results": all_results,
-            "summary": {
-                "total": len(all_results),
-                "downloaded": success_count,
-                "skipped": skipped_count,
-                "failed": failed_count
-            }
-        }, f, indent=2)
+    with open(report_file, "w") as f:
+        json.dump(
+            {
+                "mode": "all" if args.all else "brand",
+                "brand_filter": args.brand if args.brand else None,
+                "output_directory": output_dir,
+                "timestamp": datetime.now().isoformat(),
+                "results": all_results,
+                "summary": {
+                    "total": len(all_results),
+                    "downloaded": success_count,
+                    "skipped": skipped_count,
+                    "failed": failed_count,
+                },
+            },
+            f,
+            indent=2,
+        )
 
     print(f"\nReport saved to: {report_file}")
 

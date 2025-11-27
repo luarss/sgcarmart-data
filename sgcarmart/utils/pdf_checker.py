@@ -1,13 +1,23 @@
+import logging
 from pathlib import Path
+
 from pypdf import PdfReader
 from pypdf.errors import PdfReadError
-import logging
 
 logger = logging.getLogger(__name__)
 
 
 class PDFCheckResult:
-    def __init__(self, file_path, is_valid=True, error_type=None, error_message=None, page_count=None, has_text=None, is_encrypted=False):
+    def __init__(
+        self,
+        file_path,
+        is_valid=True,
+        error_type=None,
+        error_message=None,
+        page_count=None,
+        has_text=None,
+        is_encrypted=False,
+    ):
         self.file_path = file_path
         self.is_valid = is_valid
         self.error_type = error_type
@@ -22,13 +32,13 @@ class PDFCheckResult:
 
     def to_dict(self):
         return {
-            'file_path': str(self.file_path),
-            'is_valid': self.is_valid,
-            'error_type': self.error_type,
-            'error_message': self.error_message,
-            'page_count': self.page_count,
-            'has_text': self.has_text,
-            'is_encrypted': self.is_encrypted,
+            "file_path": str(self.file_path),
+            "is_valid": self.is_valid,
+            "error_type": self.error_type,
+            "error_message": self.error_message,
+            "page_count": self.page_count,
+            "has_text": self.has_text,
+            "is_encrypted": self.is_encrypted,
         }
 
 
@@ -37,18 +47,12 @@ def check_pdf_corruption(pdf_path):
 
     if not pdf_path.exists():
         return PDFCheckResult(
-            pdf_path,
-            is_valid=False,
-            error_type="FILE_NOT_FOUND",
-            error_message=f"File does not exist: {pdf_path}"
+            pdf_path, is_valid=False, error_type="FILE_NOT_FOUND", error_message=f"File does not exist: {pdf_path}"
         )
 
     if pdf_path.stat().st_size == 0:
         return PDFCheckResult(
-            pdf_path,
-            is_valid=False,
-            error_type="EMPTY_FILE",
-            error_message="File is empty (0 bytes)"
+            pdf_path, is_valid=False, error_type="EMPTY_FILE", error_message="File is empty (0 bytes)"
         )
 
     try:
@@ -67,27 +71,13 @@ def check_pdf_corruption(pdf_path):
                 has_text = None
 
         return PDFCheckResult(
-            pdf_path,
-            is_valid=True,
-            page_count=page_count,
-            has_text=has_text,
-            is_encrypted=is_encrypted
+            pdf_path, is_valid=True, page_count=page_count, has_text=has_text, is_encrypted=is_encrypted
         )
 
     except PdfReadError as e:
-        return PDFCheckResult(
-            pdf_path,
-            is_valid=False,
-            error_type="PDF_READ_ERROR",
-            error_message=str(e)
-        )
+        return PDFCheckResult(pdf_path, is_valid=False, error_type="PDF_READ_ERROR", error_message=str(e))
     except Exception as e:
-        return PDFCheckResult(
-            pdf_path,
-            is_valid=False,
-            error_type="UNKNOWN_ERROR",
-            error_message=str(e)
-        )
+        return PDFCheckResult(pdf_path, is_valid=False, error_type="UNKNOWN_ERROR", error_message=str(e))
 
 
 def check_pdfs_in_directory(directory, pattern="**/*.pdf", recursive=True):
@@ -113,17 +103,21 @@ def print_summary(results):
     valid = sum(1 for r in results if r.is_valid)
     invalid = total - valid
 
-    print(f"\n{'='*80}")
-    print(f"PDF Corruption Check Summary")
-    print(f"{'='*80}")
+    print(f"\n{'=' * 80}")
+    print("PDF Corruption Check Summary")
+    print(f"{'=' * 80}")
     print(f"Total PDFs checked: {total}")
-    print(f"Valid PDFs: {valid} ({valid/total*100:.1f}%)" if total > 0 else "Valid PDFs: 0")
-    print(f"Invalid/Corrupted PDFs: {invalid} ({invalid/total*100:.1f}%)" if total > 0 else "Invalid/Corrupted PDFs: 0")
+    print(f"Valid PDFs: {valid} ({valid / total * 100:.1f}%)" if total > 0 else "Valid PDFs: 0")
+    print(
+        f"Invalid/Corrupted PDFs: {invalid} ({invalid / total * 100:.1f}%)"
+        if total > 0
+        else "Invalid/Corrupted PDFs: 0"
+    )
 
     if invalid > 0:
-        print(f"\n{'='*80}")
-        print(f"Invalid PDFs Details:")
-        print(f"{'='*80}")
+        print(f"\n{'=' * 80}")
+        print("Invalid PDFs Details:")
+        print(f"{'=' * 80}")
 
         error_types = {}
         for result in results:
@@ -145,9 +139,9 @@ def print_summary(results):
 
     encrypted = [r for r in results if r.is_valid and r.is_encrypted]
     if encrypted:
-        print(f"\n{'='*80}")
+        print(f"\n{'=' * 80}")
         print(f"Encrypted PDFs: {len(encrypted)}")
-        print(f"{'='*80}")
+        print(f"{'=' * 80}")
         for result in encrypted[:5]:
             print(f"  - {result.file_path}")
         if len(encrypted) > 5:
@@ -155,9 +149,9 @@ def print_summary(results):
 
     no_text = [r for r in results if r.is_valid and r.has_text is False]
     if no_text:
-        print(f"\n{'='*80}")
+        print(f"\n{'=' * 80}")
         print(f"PDFs with no extractable text: {len(no_text)}")
-        print(f"{'='*80}")
+        print(f"{'=' * 80}")
         for result in no_text[:5]:
             print(f"  - {result.file_path} ({result.page_count} pages)")
         if len(no_text) > 5:
