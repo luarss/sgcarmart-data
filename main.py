@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 import argparse
 import json
-from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime
 
+from constants import DEFAULT_BROWSER_MAX_WORKERS, DEFAULT_MAX_WORKERS
 from sgcarmart.core.downloader import process_dealer
 from sgcarmart.core.year_navigator import discover_historical_pdfs
 from sgcarmart.utils.file_utils import load_dealer_brand_mapping
-
-from constants import DEFAULT_MAX_WORKERS, DEFAULT_BROWSER_MAX_WORKERS
 
 
 def parse_year_range(year_arg: str) -> list:
@@ -21,14 +20,14 @@ def parse_year_range(year_arg: str) -> list:
     Returns:
         List of year strings
     """
-    if '-' in year_arg:
-        start, end = year_arg.split('-')
+    if "-" in year_arg:
+        start, end = year_arg.split("-")
         return [str(y) for y in range(int(start), int(end) + 1)]
     else:
         return [year_arg]
 
 
-def process_dealer_historical(dealer_id: str, brand_name: str, years: list = None) -> dict:
+def process_dealer_historical(dealer_id: str, brand_name: str, years: list | None = None) -> dict:
     """
     Process a dealer with historical PDF discovery and download.
 
@@ -40,29 +39,24 @@ def process_dealer_historical(dealer_id: str, brand_name: str, years: list = Non
     Returns:
         Dict with download results
     """
-    import os
-    from sgcarmart.utils.file_utils import normalize_brand_name
     from sgcarmart.core.downloader import download_pdf
 
     try:
         all_pdfs = discover_historical_pdfs(dealer_id, brand_name, headless=True, target_years=years)
 
-        if years:
-            filtered_pdfs = {year: pdfs for year, pdfs in all_pdfs.items() if year in years}
-        else:
-            filtered_pdfs = all_pdfs
+        filtered_pdfs = {year: pdfs for year, pdfs in all_pdfs.items() if year in years} if years else all_pdfs
 
         downloaded = 0
         skipped = 0
         failed = 0
 
-        for year, pdfs in filtered_pdfs.items():
+        for _year, pdfs in filtered_pdfs.items():
             for pdf_info in pdfs:
-                result = download_pdf(pdf_info['url'], brand_name, output_dir="data/pricelists")
+                result = download_pdf(pdf_info["url"], brand_name, output_dir="data/pricelists")
 
-                if result['status'] == 'success':
+                if result["status"] == "success":
                     downloaded += 1
-                elif result['status'] == 'skipped':
+                elif result["status"] == "skipped":
                     skipped += 1
                 else:
                     failed += 1
@@ -79,15 +73,10 @@ def process_dealer_historical(dealer_id: str, brand_name: str, years: list = Non
             "downloaded": downloaded,
             "skipped": skipped,
             "failed": failed,
-            "pdfs": filtered_pdfs
+            "pdfs": filtered_pdfs,
         }
     except Exception as e:
-        return {
-            "dealer_id": dealer_id,
-            "brand_name": brand_name,
-            "status": "error",
-            "error": str(e)
-        }
+        return {"dealer_id": dealer_id, "brand_name": brand_name, "status": "error", "error": str(e)}
 
 
 def main():
@@ -100,26 +89,22 @@ Examples:
   %(prog)s --test
   %(prog)s --year 2024
   %(prog)s --year 2023-2025
-        """
+        """,
     )
 
-    parser.add_argument(
-        "--test",
-        action="store_true",
-        help="Run in test mode (only download MG, Toyota, BMW)"
-    )
+    parser.add_argument("--test", action="store_true", help="Run in test mode (only download MG, Toyota, BMW)")
 
     parser.add_argument(
         "--year",
         type=str,
-        help="Specify year or year range (e.g., 2024 or 2023-2025). If not specified, downloads only latest."
+        help="Specify year or year range (e.g., 2024 or 2023-2025). If not specified, downloads only latest.",
     )
 
     parser.add_argument(
         "--browser-workers",
         type=int,
         default=DEFAULT_BROWSER_MAX_WORKERS,
-        help=f"Number of parallel browser instances for historical downloads (default: {DEFAULT_BROWSER_MAX_WORKERS})"
+        help=f"Number of parallel browser instances for historical downloads (default: {DEFAULT_BROWSER_MAX_WORKERS})",
     )
 
     args = parser.parse_args()
@@ -151,33 +136,34 @@ Examples:
         print(f"Processing dealers for historical PDFs with {args.browser_workers} parallel browsers...")
         with ThreadPoolExecutor(max_workers=args.browser_workers) as executor:
             futures = {
-                executor.submit(process_dealer_historical, dealer_id, brand_name, years_to_download): (dealer_id, brand_name)
+                executor.submit(process_dealer_historical, dealer_id, brand_name, years_to_download): (
+                    dealer_id,
+                    brand_name,
+                )
                 for dealer_id, brand_name in dealer_brand_mapping.items()
             }
 
-            completed = 0
             total = len(futures)
 
-            for future in as_completed(futures):
+            for completed, future in enumerate(as_completed(futures), 1):
                 dealer_id, brand_name = futures[future]
-                completed += 1
 
                 try:
                     result = future.result()
                     results.append(result)
 
                     if result.get("status") == "success":
-                        print(f"[{completed}/{total}] ✓ {brand_name}: Downloaded: {result['downloaded']}, Skipped: {result['skipped']}, Failed: {result['failed']}")
+                        print(
+                            f"[{completed}/{total}] ✓ {brand_name}: Downloaded: {result['downloaded']}, "
+                            f"Skipped: {result['skipped']}, Failed: {result['failed']}"
+                        )
                     else:
                         print(f"[{completed}/{total}] ✗ {brand_name}: {result.get('error', 'Unknown error')}")
                 except Exception as e:
-                    print(f"[{completed}/{total}] ✗ {brand_name}: Exception: {str(e)}")
-                    results.append({
-                        "dealer_id": dealer_id,
-                        "brand_name": brand_name,
-                        "status": "error",
-                        "error": str(e)
-                    })
+                    print(f"[{completed}/{total}] ✗ {brand_name}: Exception: {e!s}")
+                    results.append(
+                        {"dealer_id": dealer_id, "brand_name": brand_name, "status": "error", "error": str(e)}
+                    )
     else:
         print("Processing dealers in parallel...")
         with ThreadPoolExecutor(max_workers=DEFAULT_MAX_WORKERS) as executor:
@@ -193,7 +179,7 @@ Examples:
         print()
 
     report_file = f"data/download_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-    with open(report_file, 'w') as f:
+    with open(report_file, "w") as f:
         json.dump(results, f, indent=2)
 
     print("\n" + "=" * 60)

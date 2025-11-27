@@ -1,7 +1,7 @@
 from constants import (
     MIN_PDF_SIZE_BYTES,
-    PDF_MAGIC_HEADER,
     PDF_CONTENT_TYPE,
+    PDF_MAGIC_HEADER,
 )
 
 
@@ -19,5 +19,5 @@ def is_valid_pdf_content(content, content_type=None):
 
 
 def validate_pdf(response):
-    content_type = response.headers.get('content-type', '')
+    content_type = response.headers.get("content-type", "")
     return is_valid_pdf_content(response.content, content_type)

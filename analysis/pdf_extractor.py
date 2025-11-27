@@ -2,58 +2,39 @@ import base64
 import json
 import os
 import sys
-from pathlib import Path
 from datetime import date
-from typing import Optional
+from pathlib import Path
+from typing import ClassVar
 
+from dotenv import load_dotenv
 from openai import OpenAI
 from pydantic import ValidationError
-from dotenv import load_dotenv
 
-from analysis.schema import SGCarMartPriceListExtraction, APIUsageStats
+from analysis.schema import APIUsageStats, SGCarMartPriceListExtraction
 
 load_dotenv(Path(__file__).parent / ".env")
 
 
 class GeminiPDFExtractor:
-    PRICING = {
+    PRICING: ClassVar = {
         "gemini-2.0-flash-exp": {
             "input_per_million": 0.00,
             "output_per_million": 0.00,
             "is_free": True,
-            "free_until": "2025-05-31"
+            "free_until": "2025-05-31",
         },
-        "gemini-2.0-flash": {
-            "input_per_million": 0.10,
-            "output_per_million": 0.40,
-            "is_free": False
-        },
-        "gemini-1.5-flash": {
-            "input_per_million": 0.075,
-            "output_per_million": 0.30,
-            "is_free": False
-        },
-        "gemini-1.5-flash-8b": {
-            "input_per_million": 0.0375,
-            "output_per_million": 0.15,
-            "is_free": False
-        },
-        "gemini-1.5-pro": {
-            "input_per_million": 1.25,
-            "output_per_million": 5.00,
-            "is_free": False
-        },
+        "gemini-2.0-flash": {"input_per_million": 0.10, "output_per_million": 0.40, "is_free": False},
+        "gemini-1.5-flash": {"input_per_million": 0.075, "output_per_million": 0.30, "is_free": False},
+        "gemini-1.5-flash-8b": {"input_per_million": 0.0375, "output_per_million": 0.15, "is_free": False},
+        "gemini-1.5-pro": {"input_per_million": 1.25, "output_per_million": 5.00, "is_free": False},
     }
 
-    def __init__(self, api_key: Optional[str] = None):
+    def __init__(self, api_key: str | None = None):
         self.api_key = api_key or os.getenv("GEMINI_API_KEY")
         if not self.api_key:
             raise ValueError("GEMINI_API_KEY not found in environment or constructor")
 
-        self.client = OpenAI(
-            api_key=self.api_key,
-            base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
-        )
+        self.client = OpenAI(api_key=self.api_key, base_url="https://generativelanguage.googleapis.com/v1beta/openai/")
 
     def calculate_cost(self, model: str, input_tokens: int, output_tokens: int) -> APIUsageStats:
         pricing = self.PRICING.get(model, self.PRICING["gemini-2.0-flash"])
@@ -70,7 +51,7 @@ class GeminiPDFExtractor:
             input_cost_usd=input_cost,
             output_cost_usd=output_cost,
             total_cost_usd=total_cost,
-            is_free_tier=pricing.get("is_free", False)
+            is_free_tier=pricing.get("is_free", False),
         )
 
     def encode_pdf(self, pdf_path: Path) -> str:
@@ -106,7 +87,8 @@ class GeminiPDFExtractor:
         }
 
     def create_extraction_prompt(self) -> str:
-        return """You are an expert data extraction assistant specialized in extracting car pricing information from Singapore dealer price lists.
+        return """You are an expert data extraction assistant specialized in extracting car pricing \
+information from Singapore dealer price lists.
 
 Extract the following information from this PDF pricelist:
 
@@ -119,7 +101,8 @@ Extract the following information from this PDF pricelist:
    - model_name: Model name (e.g., "COROLLA ALTIS", "YARIS CROSS", "HARRIER")
    - category: Vehicle category - use these guidelines:
      * SEDAN: Traditional 4-door passenger cars with separate trunk (Corolla Altis, Camry, Crown)
-     * SUV: Sport Utility Vehicles with higher ground clearance (Harrier, RAV4, Corolla Cross, Yaris Cross, Fortuner, Land Cruiser)
+     * SUV: Sport Utility Vehicles with higher ground clearance (Harrier, RAV4, Corolla Cross, \
+Yaris Cross, Fortuner, Land Cruiser)
      * MPV: Multi-Purpose Vehicles, people movers (Alphard, Vellfire, Sienta, Noah, Voxy, Granace)
      * HATCHBACK: Compact cars with rear door/liftback (Yaris, Aqua)
      * SPORTS: Performance-oriented vehicles (GR86, GR Supra, GR Yaris)
@@ -135,7 +118,8 @@ Extract the following information from this PDF pricelist:
      * "Hybrid" for hybrid variants (e.g., "1.8 HYBRID", "2.5 PREMIUM HYBRID")
      * "Electric" for fully electric vehicles (e.g., "bZ4X", "eT3")
    - list_price: The base list price WITHOUT COE (often labeled as "LIST PRICE W/O COE")
-   - final_price: The final/guaranteed COE price (often labeled as "CLASSIC PRICE (W/O F&I REBATE)" or "CLASSIC PRICE (NON-GUARANTEED COE)" or similar)
+   - final_price: The final/guaranteed COE price (often labeled as "CLASSIC PRICE (W/O F&I REBATE)" \
+or "CLASSIC PRICE (NON-GUARANTEED COE)" or similar)
 
 CRITICAL EXTRACTION RULES:
 
@@ -207,9 +191,7 @@ Extract the data now from the provided PDF."""
                             },
                             {
                                 "type": "image_url",
-                                "image_url": {
-                                    "url": f"data:application/pdf;base64,{pdf_base64}"
-                                },
+                                "image_url": {"url": f"data:application/pdf;base64,{pdf_base64}"},
                             },
                         ],
                     }
@@ -242,9 +224,7 @@ Extract the data now from the provided PDF."""
                                 },
                                 {
                                     "type": "image_url",
-                                    "image_url": {
-                                        "url": f"data:application/pdf;base64,{pdf_base64}"
-                                    },
+                                    "image_url": {"url": f"data:application/pdf;base64,{pdf_base64}"},
                                 },
                             ],
                         }
@@ -262,7 +242,6 @@ Extract the data now from the provided PDF."""
                 raise
 
         try:
-
             print("Parsing response...")
             response_content = response.choices[0].message.content
             if not response_content:
@@ -275,7 +254,7 @@ Extract the data now from the provided PDF."""
             input_tokens = usage.prompt_tokens
             output_tokens = usage.completion_tokens
 
-            print(f"Calculating API costs...")
+            print("Calculating API costs...")
             api_usage = self.calculate_cost(current_model, input_tokens, output_tokens)
 
             metadata_dict["api_usage"] = api_usage.model_dump()
@@ -286,7 +265,10 @@ Extract the data now from the provided PDF."""
 
             print(f"✓ Extraction successful! Confidence: {extraction.extraction_confidence}")
             print(f"✓ Extracted {len(extraction.pricelist.models)} model(s)")
-            print(f"✓ Tokens: {api_usage.total_tokens:,} (in: {api_usage.input_tokens:,}, out: {api_usage.output_tokens:,})")
+            print(
+                f"✓ Tokens: {api_usage.total_tokens:,} "
+                f"(in: {api_usage.input_tokens:,}, out: {api_usage.output_tokens:,})"
+            )
             if api_usage.is_free_tier:
                 print(f"✓ Cost: FREE (using {current_model} free tier)")
             else:
@@ -302,29 +284,25 @@ Extract the data now from the provided PDF."""
             raise
 
     def save_extraction(
-        self,
-        extraction: SGCarMartPriceListExtraction,
-        output_dir: Optional[Path] = None,
-        format: str = "json"
+        self, extraction: SGCarMartPriceListExtraction, output_dir: Path | None = None, format: str = "json"
     ) -> Path:
         if output_dir is None:
-            output_dir = Path("data/pricelists") / extraction.metadata.brand_folder / str(extraction.metadata.year_folder)
+            output_dir = (
+                Path("data/pricelists") / extraction.metadata.brand_folder / str(extraction.metadata.year_folder)
+            )
         else:
             output_dir = Path(output_dir)
 
         output_dir.mkdir(parents=True, exist_ok=True)
 
-        base_filename = f"{extraction.metadata.brand_folder}_{extraction.metadata.dealer_id}_{extraction.metadata.pdf_date}"
+        base_filename = (
+            f"{extraction.metadata.brand_folder}_{extraction.metadata.dealer_id}_{extraction.metadata.pdf_date}"
+        )
 
         if format == "json":
             output_path = output_dir / f"{base_filename}.json"
             with open(output_path, "w") as f:
-                json.dump(
-                    extraction.model_dump(mode="json"),
-                    f,
-                    indent=2,
-                    default=str
-                )
+                json.dump(extraction.model_dump(mode="json"), f, indent=2, default=str)
         else:
             raise ValueError(f"Unsupported format: {format}")
 
@@ -341,38 +319,23 @@ def main():
         "--output-dir",
         type=str,
         default=None,
-        help="Output directory for extracted JSON (default: same directory as PDF)"
+        help="Output directory for extracted JSON (default: data/pricelists/<brand>/<year>)",
     )
-    parser.add_argument(
-        "--model",
-        type=str,
-        default="gemini-2.0-flash-exp",
-        help="Gemini model to use"
-    )
-    parser.add_argument(
-        "--api-key",
-        type=str,
-        help="Gemini API key (or set GEMINI_API_KEY env var)"
-    )
+    parser.add_argument("--model", type=str, default="gemini-2.0-flash-exp", help="Gemini model to use")
+    parser.add_argument("--api-key", type=str, help="Gemini API key (or set GEMINI_API_KEY env var)")
 
     args = parser.parse_args()
 
     extractor = GeminiPDFExtractor(api_key=args.api_key)
 
     try:
-        extraction = extractor.extract_from_pdf(
-            pdf_path=args.pdf_path,
-            model=args.model
-        )
+        extraction = extractor.extract_from_pdf(pdf_path=args.pdf_path, model=args.model)
 
-        output_path = extractor.save_extraction(
-            extraction=extraction,
-            output_dir=args.output_dir
-        )
+        output_path = extractor.save_extraction(extraction=extraction, output_dir=args.output_dir)
 
-        print(f"\n{'='*60}")
+        print(f"\n{'=' * 60}")
         print("EXTRACTION SUMMARY")
-        print(f"{'='*60}")
+        print(f"{'=' * 60}")
         print(f"Brand: {extraction.metadata.brand_folder}")
         print(f"Dealer ID: {extraction.metadata.dealer_id}")
         print(f"PDF Date: {extraction.metadata.pdf_date}")
@@ -381,16 +344,16 @@ def main():
 
         if extraction.metadata.api_usage:
             api = extraction.metadata.api_usage
-            print(f"\nAPI Usage:")
+            print("\nAPI Usage:")
             print(f"  Model: {api.model_name}")
             print(f"  Tokens: {api.total_tokens:,} (in: {api.input_tokens:,}, out: {api.output_tokens:,})")
             if api.is_free_tier:
-                print(f"  Cost: FREE")
+                print("  Cost: FREE")
             else:
                 print(f"  Cost: ${api.total_cost_usd:.6f} USD")
 
         print(f"\nOutput: {output_path}")
-        print(f"{'='*60}\n")
+        print(f"{'=' * 60}\n")
 
     except Exception as e:
         print(f"\n✗ Failed to extract: {e}")

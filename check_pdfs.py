@@ -1,21 +1,18 @@
 import argparse
-import sys
-import logging
-from pathlib import Path
 import json
+import logging
+import sys
+from pathlib import Path
 
-from sgcarmart.utils.pdf_checker import check_pdfs_in_directory, print_summary, check_pdf_corruption
+from sgcarmart.utils.pdf_checker import check_pdf_corruption, check_pdfs_in_directory, print_summary
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Check PDFs for corruption using pypdf',
+        description="Check PDFs for corruption using pypdf",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -25,45 +22,25 @@ Examples:
   python check_pdfs.py --brand byd                        # Check only BYD PDFs
   python check_pdfs.py --year 2025                        # Check only 2025 PDFs
   python check_pdfs.py --output results.json              # Save results to JSON
-        """
+        """,
     )
 
     parser.add_argument(
-        '--directory',
+        "--directory",
         type=str,
-        default='data/pricelists',
-        help='Directory to check for PDFs (default: data/pricelists)'
+        default="data/pricelists",
+        help="Directory to check for PDFs (default: data/pricelists)",
     )
 
-    parser.add_argument(
-        '--file',
-        type=str,
-        help='Check a single PDF file'
-    )
+    parser.add_argument("--file", type=str, help="Check a single PDF file")
 
-    parser.add_argument(
-        '--brand',
-        type=str,
-        help='Check only PDFs for a specific brand (e.g., toyota, byd)'
-    )
+    parser.add_argument("--brand", type=str, help="Check only PDFs for a specific brand (e.g., toyota, byd)")
 
-    parser.add_argument(
-        '--year',
-        type=str,
-        help='Check only PDFs from a specific year (e.g., 2025)'
-    )
+    parser.add_argument("--year", type=str, help="Check only PDFs from a specific year (e.g., 2025)")
 
-    parser.add_argument(
-        '--output',
-        type=str,
-        help='Output results to JSON file'
-    )
+    parser.add_argument("--output", type=str, help="Output results to JSON file")
 
-    parser.add_argument(
-        '--verbose',
-        action='store_true',
-        help='Show detailed information for all PDFs'
-    )
+    parser.add_argument("--verbose", action="store_true", help="Show detailed information for all PDFs")
 
     args = parser.parse_args()
 
@@ -83,7 +60,7 @@ Examples:
             print(f"Is Encrypted: {result.is_encrypted}")
 
         if args.output:
-            with open(args.output, 'w') as f:
+            with open(args.output, "w") as f:
                 json.dump(result.to_dict(), f, indent=2)
             logger.info(f"Results saved to {args.output}")
 
@@ -108,7 +85,7 @@ Examples:
             print_summary(results)
 
             if args.output:
-                with open(args.output, 'w') as f:
+                with open(args.output, "w") as f:
                     json.dump([r.to_dict() for r in results], f, indent=2)
                 logger.info(f"Results saved to {args.output}")
 
@@ -119,11 +96,11 @@ Examples:
     results = check_pdfs_in_directory(directory)
 
     if args.verbose:
-        print(f"\n{'='*80}")
-        print(f"Detailed Results:")
-        print(f"{'='*80}")
+        print(f"\n{'=' * 80}")
+        print("Detailed Results:")
+        print(f"{'=' * 80}")
         for result in results:
-            status = 'VALID' if result.is_valid else f'INVALID ({result.error_type})'
+            status = "VALID" if result.is_valid else f"INVALID ({result.error_type})"
             print(f"\n{result.file_path}: {status}")
             if result.is_valid:
                 print(f"  Pages: {result.page_count}, Has Text: {result.has_text}, Encrypted: {result.is_encrypted}")
@@ -133,7 +110,7 @@ Examples:
     print_summary(results)
 
     if args.output:
-        with open(args.output, 'w') as f:
+        with open(args.output, "w") as f:
             json.dump([r.to_dict() for r in results], f, indent=2)
         logger.info(f"Results saved to {args.output}")
 
@@ -141,5 +118,5 @@ Examples:
     sys.exit(0 if invalid_count == 0 else 1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
