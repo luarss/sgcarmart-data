@@ -180,6 +180,7 @@ Extract the data now from the provided PDF."""
         pdf_path: Path,
         model: str = "gemini-2.0-flash-exp",
         temperature: float = 0.1,
+        fallback_model: str = "gemini-2.0-flash",
     ) -> SGCarMartPriceListExtraction:
         pdf_path = Path(pdf_path)
         if not pdf_path.exists():
@@ -191,10 +192,11 @@ Extract the data now from the provided PDF."""
         print("Extracting metadata from file path...")
         metadata_dict = self.extract_metadata_from_path(pdf_path)
 
-        print(f"Calling Gemini API (model: {model})...")
+        current_model = model
+        print(f"Calling Gemini API (model: {current_model})...")
         try:
             response = self.client.chat.completions.create(
-                model=model,
+                model=current_model,
                 messages=[
                     {
                         "role": "user",
@@ -221,6 +223,45 @@ Extract the data now from the provided PDF."""
                     },
                 },
             )
+        except Exception as e:
+            error_str = str(e)
+            if "429" in error_str and ("quota" in error_str.lower() or "RESOURCE_EXHAUSTED" in error_str):
+                print(f"⚠ Daily quota exhausted for {current_model}")
+                print(f"↻ Switching to fallback model: {fallback_model}")
+                current_model = fallback_model
+
+                response = self.client.chat.completions.create(
+                    model=current_model,
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": self.create_extraction_prompt(),
+                                },
+                                {
+                                    "type": "image_url",
+                                    "image_url": {
+                                        "url": f"data:application/pdf;base64,{pdf_base64}"
+                                    },
+                                },
+                            ],
+                        }
+                    ],
+                    temperature=temperature,
+                    response_format={
+                        "type": "json_schema",
+                        "json_schema": {
+                            "name": "pricelist_extraction",
+                            "schema": SGCarMartPriceListExtraction.model_json_schema(),
+                        },
+                    },
+                )
+            else:
+                raise
+
+        try:
 
             print("Parsing response...")
             response_content = response.choices[0].message.content
@@ -235,7 +276,7 @@ Extract the data now from the provided PDF."""
             output_tokens = usage.completion_tokens
 
             print(f"Calculating API costs...")
-            api_usage = self.calculate_cost(model, input_tokens, output_tokens)
+            api_usage = self.calculate_cost(current_model, input_tokens, output_tokens)
 
             metadata_dict["api_usage"] = api_usage.model_dump()
             extraction_data["metadata"] = metadata_dict
@@ -247,7 +288,7 @@ Extract the data now from the provided PDF."""
             print(f"✓ Extracted {len(extraction.pricelist.models)} model(s)")
             print(f"✓ Tokens: {api_usage.total_tokens:,} (in: {api_usage.input_tokens:,}, out: {api_usage.output_tokens:,})")
             if api_usage.is_free_tier:
-                print(f"✓ Cost: FREE (using {model} free tier)")
+                print(f"✓ Cost: FREE (using {current_model} free tier)")
             else:
                 print(f"✓ Cost: ${api_usage.total_cost_usd:.6f} USD")
 
