@@ -82,7 +82,7 @@ def download_pdf(
 
     if os.path.exists(filepath):
         file_size = os.path.getsize(filepath)
-        return {
+        result = {
             "url": pdf_url,
             "filepath": filepath,
             "filename": filename,
@@ -91,6 +91,28 @@ def download_pdf(
             "status": "skipped",
             "message": f"Already exists ({file_size} bytes)",
         }
+
+        if auto_extract and brand_name:
+            try:
+                from analysis.pdf_extractor import GeminiPDFExtractor
+
+                brand_normalized = normalize_brand_name(brand_name)
+                json_filename = f"{brand_normalized}_{dealer_id}_{date}.json"
+                json_path = Path(filepath).parent / json_filename
+
+                if not json_path.exists():
+                    extractor = GeminiPDFExtractor()
+                    extraction = extractor.extract_from_pdf(Path(filepath), model=extract_model)
+                    output_path = extractor.save_extraction(extraction, output_dir=None)
+                    result["extraction"] = "success"
+                    result["json_path"] = str(output_path)
+                else:
+                    result["extraction"] = "skipped"
+            except Exception as e:
+                result["extraction"] = "failed"
+                result["extraction_error"] = str(e)
+
+        return result
 
     try:
         response = fetch_with_retry(pdf_url, DEFAULT_REQUEST_TIMEOUT)
