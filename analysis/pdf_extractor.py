@@ -287,17 +287,18 @@ Extract the data now from the provided PDF."""
         self, extraction: SGCarMartPriceListExtraction, output_dir: Path | None = None, format: str = "json"
     ) -> Path:
         if output_dir is None:
-            output_dir = (
-                Path("data/pricelists") / extraction.metadata.brand_folder / str(extraction.metadata.year_folder)
-            )
+            brand_folder = extraction.metadata.brand_folder
+            year_folder = str(extraction.metadata.year_folder)
+            output_dir = Path("data/pricelists") / brand_folder / year_folder
         else:
             output_dir = Path(output_dir)
 
         output_dir.mkdir(parents=True, exist_ok=True)
 
-        base_filename = (
-            f"{extraction.metadata.brand_folder}_{extraction.metadata.dealer_id}_{extraction.metadata.pdf_date}"
-        )
+        brand_folder = extraction.metadata.brand_folder
+        dealer_id = extraction.metadata.dealer_id
+        pdf_date = extraction.metadata.pdf_date
+        base_filename = f"{brand_folder}_{dealer_id}_{pdf_date}"
 
         if format == "json":
             output_path = output_dir / f"{base_filename}.json"

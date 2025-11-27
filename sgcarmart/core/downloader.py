@@ -1,5 +1,6 @@
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
 
 from constants import (
     BASE_URL,
@@ -19,19 +20,39 @@ from sgcarmart.utils.http import RateLimitError, fetch_with_retry
 from sgcarmart.utils.validation import validate_pdf
 
 
-def download_pricelist(pricelist_url, brand_name, dealer_id, date, output_dir="data/pricelists"):
-    ensure_directory(output_dir)
-
+def _setup_filepath(brand_name, dealer_id, date, output_dir):
     brand_dir = os.path.join(output_dir, normalize_brand_name(brand_name))
     ensure_directory(brand_dir)
 
-    # Extract year from date and create year folder
     year = date.split("-")[0] if "-" in date else date[:4]
     year_dir = os.path.join(brand_dir, year)
     ensure_directory(year_dir)
 
     filename = f"dealer_{dealer_id}_{date}.pdf"
     filepath = os.path.join(year_dir, filename)
+
+    return filepath, filename
+
+
+def _attempt_extraction(filepath, brand_name, dealer_id, date, extract_model):
+    from analysis.pdf_extractor import GeminiPDFExtractor
+
+    brand_normalized = normalize_brand_name(brand_name)
+    json_filename = f"{brand_normalized}_{dealer_id}_{date}.json"
+    json_path = Path(filepath).parent / json_filename
+
+    if not json_path.exists():
+        extractor = GeminiPDFExtractor()
+        extraction = extractor.extract_from_pdf(Path(filepath), model=extract_model)
+        output_path = extractor.save_extraction(extraction, output_dir=None)
+        return "success", str(output_path)
+    else:
+        return "skipped", None
+
+
+def download_pricelist(pricelist_url, brand_name, dealer_id, date, output_dir="data/pricelists"):
+    ensure_directory(output_dir)
+    filepath, _ = _setup_filepath(brand_name, dealer_id, date, output_dir)
 
     if os.path.exists(filepath):
         file_size = os.path.getsize(filepath)
@@ -56,23 +77,15 @@ def download_pricelist(pricelist_url, brand_name, dealer_id, date, output_dir="d
         return None, f"Failed: {e!s}"
 
 
-def download_pdf(pdf_url, brand_name=None, output_dir="data/pricelists"):
+def download_pdf(
+    pdf_url, brand_name=None, output_dir="data/pricelists", auto_extract=False, extract_model="gemini-2.0-flash-exp"
+):
     metadata = extract_metadata_from_url(pdf_url)
     dealer_id = metadata["dealer_id"]
     date = metadata["date"]
 
     if brand_name:
-        brand_dir = os.path.join(output_dir, normalize_brand_name(brand_name))
-        ensure_directory(brand_dir)
-
-        # Extract year from date and create year folder
-        year = date.split("-")[0] if "-" in date else date[:4]
-        year_dir = os.path.join(brand_dir, year)
-        ensure_directory(year_dir)
-
-        filename = f"dealer_{dealer_id}_{date}.pdf" if dealer_id else f"{date}.pdf"
-
-        filepath = os.path.join(year_dir, filename)
+        filepath, filename = _setup_filepath(brand_name, dealer_id, date, output_dir)
     else:
         ensure_directory(output_dir)
         filename = pdf_url.split("/")[-1]
@@ -80,7 +93,7 @@ def download_pdf(pdf_url, brand_name=None, output_dir="data/pricelists"):
 
     if os.path.exists(filepath):
         file_size = os.path.getsize(filepath)
-        return {
+        result = {
             "url": pdf_url,
             "filepath": filepath,
             "filename": filename,
@@ -89,6 +102,18 @@ def download_pdf(pdf_url, brand_name=None, output_dir="data/pricelists"):
             "status": "skipped",
             "message": f"Already exists ({file_size} bytes)",
         }
+
+        if auto_extract and brand_name:
+            try:
+                extraction_status, json_path = _attempt_extraction(filepath, brand_name, dealer_id, date, extract_model)
+                result["extraction"] = extraction_status
+                if json_path:
+                    result["json_path"] = json_path
+            except Exception as e:
+                result["extraction"] = "failed"
+                result["extraction_error"] = str(e)
+
+        return result
 
     try:
         response = fetch_with_retry(pdf_url, DEFAULT_REQUEST_TIMEOUT)
@@ -109,7 +134,8 @@ def download_pdf(pdf_url, brand_name=None, output_dir="data/pricelists"):
             f.write(response.content)
 
         file_size = len(response.content)
-        return {
+
+        result = {
             "url": pdf_url,
             "filepath": filepath,
             "filename": filename,
@@ -118,6 +144,18 @@ def download_pdf(pdf_url, brand_name=None, output_dir="data/pricelists"):
             "status": "success",
             "message": f"Downloaded ({file_size} bytes)",
         }
+
+        if auto_extract and brand_name:
+            try:
+                extraction_status, json_path = _attempt_extraction(filepath, brand_name, dealer_id, date, extract_model)
+                result["extraction"] = extraction_status
+                if json_path:
+                    result["json_path"] = json_path
+            except Exception as e:
+                result["extraction"] = "failed"
+                result["extraction_error"] = str(e)
+
+        return result
 
     except RateLimitError:
         return {
@@ -141,7 +179,7 @@ def download_pdf(pdf_url, brand_name=None, output_dir="data/pricelists"):
         }
 
 
-def process_dealer(dealer_id, brand_name):
+def process_dealer(dealer_id, brand_name, auto_extract=False, extract_model="gemini-2.0-flash-exp"):
     brand_url = PRICELIST_URL_TEMPLATE.format(dealer_id=dealer_id, brand=normalize_brand_name(brand_name))
 
     try:
@@ -153,28 +191,10 @@ def process_dealer(dealer_id, brand_name):
         if extracted_links:
             latest_url = extracted_links[0]
             full_url = latest_url if latest_url.startswith("http") else f"{BASE_URL}{latest_url}"
-            date_match = latest_url.split("/")[-1].replace(".pdf", "")
 
-            filepath, status = download_pricelist(full_url, brand_name, dealer_id, date_match)
-
-            if filepath:
-                return {
-                    "dealer_id": dealer_id,
-                    "brand": brand_name,
-                    "url": full_url,
-                    "date": date_match,
-                    "filepath": filepath,
-                    "status": "success",
-                }
-            else:
-                return {
-                    "dealer_id": dealer_id,
-                    "brand": brand_name,
-                    "url": full_url,
-                    "date": date_match,
-                    "status": "failed",
-                    "error": status,
-                }
+            result = download_pdf(full_url, brand_name, auto_extract=auto_extract, extract_model=extract_model)
+            result["brand"] = brand_name
+            return result
         else:
             return {"dealer_id": dealer_id, "brand": brand_name, "status": "not_found"}
     except RateLimitError:
@@ -189,7 +209,12 @@ def process_dealer(dealer_id, brand_name):
 
 
 def download_all_pdfs_from_page(
-    page_url, brand_name=None, output_dir="data/pricelists", max_workers=DEFAULT_PDF_MAX_WORKERS
+    page_url,
+    brand_name=None,
+    output_dir="data/pricelists",
+    max_workers=DEFAULT_PDF_MAX_WORKERS,
+    auto_extract=False,
+    extract_model="gemini-2.0-flash-exp",
 ):
     from sgcarmart.core.scraper import extract_brand_from_url
 
@@ -230,7 +255,10 @@ def download_all_pdfs_from_page(
 
     results = []
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = {executor.submit(download_pdf, url, brand_name, output_dir): url for url in full_urls}
+        futures = {
+            executor.submit(download_pdf, url, brand_name, output_dir, auto_extract, extract_model): url
+            for url in full_urls
+        }
 
         for future in as_completed(futures):
             result = future.result()
