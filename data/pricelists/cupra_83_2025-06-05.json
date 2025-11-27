@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "source_filename": "dealer_83_2025-06-05.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "83",
+    "pdf_date": "2025-06-05",
+    "brand_folder": "cupra",
+    "year_folder": 2025,
+    "pdf_size_kb": 228.201171875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 656,
+      "total_tokens": 2183,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.00026240000000000004,
+      "total_cost_usd": 0.00041510000000000006,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "CUPRA",
+        "model_name": "BORN",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "eBoost 59kWh 170kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 276900.0,
+            "final_price": 206900.0
+          }
+        ]
+      },
+      {
+        "brand": "CUPRA",
+        "model_name": "BORN VZ",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "VZ 79kWh 240kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 306900.0,
+            "final_price": 236900.0
+          }
+        ]
+      },
+      {
+        "brand": "CUPRA",
+        "model_name": "TAVASCAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Endurance 77kWh 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 292900.0,
+            "final_price": 222900.0
+          }
+        ]
+      },
+      {
+        "brand": "CUPRA",
+        "model_name": "TAVASCAN VZ",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "VZ 77kWh 250kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 312900.0,
+            "final_price": 242900.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

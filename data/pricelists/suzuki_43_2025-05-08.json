@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "source_filename": "dealer_43_2025-05-08.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "43",
+    "pdf_date": "2025-05-08",
+    "brand_folder": "suzuki",
+    "year_folder": 2025,
+    "pdf_size_kb": 5641.1142578125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 676,
+      "total_tokens": 2203,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.0002704,
+      "total_cost_usd": 0.00042310000000000004,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SUZUKI",
+        "model_name": "SWIFT",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "1.2L Standard",
+            "engine_size": "1.2",
+            "vehicle_type": "Hybrid",
+            "list_price": 151888.0,
+            "final_price": 149888.0
+          },
+          {
+            "variant_name": "Dualjet Hybrid Standard (Two Tones)",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 152888.0,
+            "final_price": 150888.0
+          }
+        ]
+      },
+      {
+        "brand": "SUZUKI",
+        "model_name": "JIMNY",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5L GLX Standard",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 161888.0,
+            "final_price": 159888.0
+          },
+          {
+            "variant_name": "GLX Standard (Two Tones)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 162888.0,
+            "final_price": 160888.0
+          }
+        ]
+      },
+      {
+        "brand": "SUZUKI",
+        "model_name": "S-CROSS",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.4IL Mild Hybrid Standard",
+            "engine_size": "1.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 181888.0,
+            "final_price": 179888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

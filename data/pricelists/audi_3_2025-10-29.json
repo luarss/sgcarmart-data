@@ -1,0 +1,370 @@
+{
+  "metadata": {
+    "source_filename": "dealer_3_2025-10-29.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "3",
+    "pdf_date": "2025-10-29",
+    "brand_folder": "audi",
+    "year_folder": 2025,
+    "pdf_size_kb": 129.7353515625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 2950,
+      "total_tokens": 5251,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.00118,
+      "total_cost_usd": 0.0014101,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Audi",
+        "model_name": "A3 Sportback",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "S line 30 TFSI mild-hybrid",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 241999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "S3 Sportback",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "TFSI quattro",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 338999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "RS 3 Sportback",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "TFSI quattro",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 406999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "A3 Sedan",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "S line 30 TFSI mild-hybrid",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 242999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "S3 Sedan",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "TFSI quattro",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 340999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "RS 3 Sedan",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "TFSI quattro",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 409999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "A5 Sedan",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "advanced TFSI 150 kW",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 304999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "edition 1 TFSI 150 kW",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 319999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "S5 Sedan",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "TFSI quattro mild-hybrid",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 441999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "A6 Sedan",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "S line 40 TFSI mild-hybrid",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 331999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "Q3",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "S line 35 TFSI",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 259999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "Q3 Sportback",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "S line 35 TFSI",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 265999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "Q5",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "S line 40 TFSI quattro mild-hybrid",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 337999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "Q5 Sportback",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "S line 40 TFSI quattro mild-hybrid",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 349999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "Q7",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "45 TFSI quattro",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 472999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "S line 55 TFSI quattro mild-hybrid",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 496999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "SQ7",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "TFSI quattro",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 541999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "Q8",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "55 TFSI quattro mild-hybrid",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 498999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "SQ8",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "TFSI quattro",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 553999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "RS Q8 performance",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "mild-hybrid",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 734999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "Q4",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "advanced e-tron",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 299999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "edition 1 e-tron",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 319999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "Q4 Sportback",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "advanced e-tron",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 304999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "edition 1 e-tron",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 324999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Audi",
+        "model_name": "Q6",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "e-tron",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 358999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "edition 1 e-tron",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 383999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "e-tron quattro",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 434999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "edition 1 e-tron quattro",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 444999.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

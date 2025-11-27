@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "source_filename": "dealer_115_2025-11-06.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "115",
+    "pdf_date": "2025-11-06",
+    "brand_folder": "dongfeng",
+    "year_folder": 2025,
+    "pdf_size_kb": 1003.9375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 622,
+      "total_tokens": 2149,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.00024880000000000003,
+      "total_cost_usd": 0.00040150000000000006,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "DONGFENG",
+        "model_name": "BOX",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "BOX",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 219888.0,
+            "final_price": 169888.0
+          },
+          {
+            "variant_name": "BOX - R",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 225888.0,
+            "final_price": 175888.0
+          }
+        ]
+      },
+      {
+        "brand": "DONGFENG",
+        "model_name": "007",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "PRESTIGE (99kW)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 254888.0,
+            "final_price": 181888.0
+          },
+          {
+            "variant_name": "PREMIUM (200kW)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 293888.0,
+            "final_price": 210888.0
+          },
+          {
+            "variant_name": "PERFORMANCE (400kW)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 329888.0,
+            "final_price": 236888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

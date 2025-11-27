@@ -1,0 +1,202 @@
+{
+  "metadata": {
+    "source_filename": "dealer_20_2025-09-09.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "20",
+    "pdf_date": "2025-09-09",
+    "brand_folder": "land-rover",
+    "year_folder": 2025,
+    "pdf_size_kb": 5.96875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 1802,
+      "total_tokens": 4112,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Land Rover",
+        "model_name": "Defender 110",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "5.0 Carpathian Edition 5-Seater (A)",
+            "engine_size": "5.0",
+            "vehicle_type": "ICE",
+            "list_price": 643888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Mild Hybrid 3.0 SE X-Dynamic 7-Seater (A)",
+            "engine_size": "3.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 347888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Plug-in Hybrid 2.0 X-Dynamic SE 5-Seater (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "Plug-in Hybrid 2.0 X-Dynamic HSE 5-Seater (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 336888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Land Rover",
+        "model_name": "Defender 130",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "5.0 LWB X-Dynamic HSE 8-seater (A)",
+            "engine_size": "5.0",
+            "vehicle_type": "ICE",
+            "list_price": 391888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "5.0 LWB X-Dynamic HSE 7-seater (A)",
+            "engine_size": "5.0",
+            "vehicle_type": "ICE",
+            "list_price": 415888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Land Rover",
+        "model_name": "Defender 90",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Mild Hybrid 3.0 75th Limited Edition (A)",
+            "engine_size": "3.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 372888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Land Rover",
+        "model_name": "Discovery Sport",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Mild Hybrid 2.0 S 7-Seater (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 199888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Land Rover",
+        "model_name": "Range Rover Evoque",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Mild Hybrid 1.5 S (A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 172888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Mild Hybrid 1.5 S Premium Pack(A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 182888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Land Rover",
+        "model_name": "Range Rover",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Mild Hybrid 3.0 Autobiography (A)",
+            "engine_size": "3.0",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "Mild Hybrid 4.4 Autobiography LWB 7-Seater (A)",
+            "engine_size": "4.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 849888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Plug-in Hybrid 3.0 Autobiography SWB (A)",
+            "engine_size": "3.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 779888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Plug-in Hybrid 3.0 Autobiography LWB (A)",
+            "engine_size": "3.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 805888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Land Rover",
+        "model_name": "Range Rover Sport",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Mild Hybrid 3.0 S (A)",
+            "engine_size": "3.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 409888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Mild Hybrid 3.0 Dynamic HSE (A)",
+            "engine_size": "3.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 513888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Land Rover",
+        "model_name": "Range Rover Velar",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Mild Hybrid 3.0 S (A)",
+            "engine_size": "3.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 316888.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

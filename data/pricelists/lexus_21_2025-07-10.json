@@ -1,0 +1,230 @@
+{
+  "metadata": {
+    "source_filename": "dealer_21_2025-07-10.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "21",
+    "pdf_date": "2025-07-10",
+    "brand_folder": "lexus",
+    "year_folder": 2025,
+    "pdf_size_kb": 1142.837890625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2043,
+      "output_tokens": 1971,
+      "total_tokens": 4014,
+      "input_cost_usd": 0.00020430000000000003,
+      "output_cost_usd": 0.0007884000000000001,
+      "total_cost_usd": 0.0009927,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Lexus",
+        "model_name": "IS",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "IS 300h EXECUTIVE",
+            "engine_size": "2.494",
+            "vehicle_type": "Hybrid",
+            "list_price": 315800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "ES",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "ES 300h EXECUTIVE",
+            "engine_size": "2.487",
+            "vehicle_type": "Hybrid",
+            "list_price": 359800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "ES 300h LUXURY",
+            "engine_size": "2.487",
+            "vehicle_type": "Hybrid",
+            "list_price": 379800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "UX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "UX 300h LUXURY",
+            "engine_size": "1.987",
+            "vehicle_type": "Hybrid",
+            "list_price": 298800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "NX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "NX 350h EXECUTIVE",
+            "engine_size": "2.487",
+            "vehicle_type": "Hybrid",
+            "list_price": 356800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "NX 350h LUXURY",
+            "engine_size": "2.487",
+            "vehicle_type": "Hybrid",
+            "list_price": 373800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "NX 450h+ F SPORT (PLUG-IN HYBRID)",
+            "engine_size": "2.487",
+            "vehicle_type": "Hybrid",
+            "list_price": 437800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "RX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "RX 350h EXECUTIVE",
+            "engine_size": "2.487",
+            "vehicle_type": "Hybrid",
+            "list_price": 426800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "RX 350h LUXURY",
+            "engine_size": "2.487",
+            "vehicle_type": "Hybrid",
+            "list_price": 458800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "RX 450h+ (PLUG-IN HYBRID) LUXURY",
+            "engine_size": "2.487",
+            "vehicle_type": "Hybrid",
+            "list_price": 511800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "RX 500h F SPORT",
+            "engine_size": "2.393",
+            "vehicle_type": "Hybrid",
+            "list_price": 526800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "RZ",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "RZ 450e EXECUTIVE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 421800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "LBX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "LBX ELEGANT",
+            "engine_size": "1.490",
+            "vehicle_type": "ICE",
+            "list_price": 239800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "LBX COOL",
+            "engine_size": "1.490",
+            "vehicle_type": "ICE",
+            "list_price": 244800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "LS",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "LS 500h LUXURY",
+            "engine_size": "3.456",
+            "vehicle_type": "Hybrid",
+            "list_price": 797800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "LC",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "LC 500 CONVERTIBLE",
+            "engine_size": "4.969",
+            "vehicle_type": "ICE",
+            "list_price": 807800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "LC 500 COUPE",
+            "engine_size": "4.969",
+            "vehicle_type": "ICE",
+            "list_price": 765800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "LM",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "LM 350h LUXURY",
+            "engine_size": "2.487",
+            "vehicle_type": "Hybrid",
+            "list_price": 676800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "LM 500h ULTRA LUXURY",
+            "engine_size": "2.393",
+            "vehicle_type": "Hybrid",
+            "list_price": 823800.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

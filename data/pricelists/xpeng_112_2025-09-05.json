@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "source_filename": "dealer_112_2025-09-05.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "112",
+    "pdf_date": "2025-09-05",
+    "brand_folder": "xpeng",
+    "year_folder": 2025,
+    "pdf_size_kb": 1061.7822265625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 498,
+      "total_tokens": 2025,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.0001992,
+      "total_cost_usd": 0.0003519,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "XPENG",
+        "model_name": "G6",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Pro RWD Long Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 225999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Pro AWD Performance",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 255999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "XPENG",
+        "model_name": "X9",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Premium Seat",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 340999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Grand Seat",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 355999.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

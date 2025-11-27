@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "source_filename": "dealer_108_2025-01-23.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "108",
+    "pdf_date": "2025-01-23",
+    "brand_folder": "aion",
+    "year_folder": 2025,
+    "pdf_size_kb": 414.154296875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 455,
+      "total_tokens": 1982,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.000182,
+      "total_cost_usd": 0.0003347,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "AION",
+        "model_name": "Y PLUS",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Y PLUS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 212988.0,
+            "final_price": 146988.0
+          },
+          {
+            "variant_name": "Y PLUS PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 222988.0,
+            "final_price": 156988.0
+          }
+        ]
+      },
+      {
+        "brand": "AION",
+        "model_name": "ES",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "ES",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 205988.0,
+            "final_price": 142988.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

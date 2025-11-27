@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "source_filename": "dealer_115_2025-10-23.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "115",
+    "pdf_date": "2025-10-23",
+    "brand_folder": "dongfeng",
+    "year_folder": 2025,
+    "pdf_size_kb": 2521.5478515625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 350,
+      "total_tokens": 1877,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.00014000000000000001,
+      "total_cost_usd": 0.0002927,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "DONGFENG",
+        "model_name": "007",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "200kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 313888.0,
+            "final_price": 233888.0
+          },
+          {
+            "variant_name": "400kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 349888.0,
+            "final_price": 259888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

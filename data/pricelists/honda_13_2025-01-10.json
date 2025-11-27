@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "source_filename": "dealer_13_2025-01-10.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "13",
+    "pdf_date": "2025-01-10",
+    "brand_folder": "honda",
+    "year_folder": 2025,
+    "pdf_size_kb": 365.275390625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 1939,
+      "total_tokens": 3466,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.0007756,
+      "total_cost_usd": 0.0009283,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "HONDA",
+        "model_name": "CITY",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "1.5L SV DOHC i-VTEC - NEW",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 158999.0,
+            "final_price": 152999.0
+          },
+          {
+            "variant_name": "1.5L RS DOHC i-VTEC - NEW",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 161999.0,
+            "final_price": 155999.0
+          }
+        ]
+      },
+      {
+        "brand": "HONDA",
+        "model_name": "CIVIC",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "1.5L TURBO DOHC - NEW",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 187999.0,
+            "final_price": 181999.0
+          },
+          {
+            "variant_name": "2.0L DOHC i-VTEC e:HEV - NEW",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 247999.0,
+            "final_price": 241999.0
+          }
+        ]
+      },
+      {
+        "brand": "HONDA",
+        "model_name": "FREED",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "1.5L HS7 DOHC i-VTEC - NEW",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 176999.0,
+            "final_price": 170999.0
+          },
+          {
+            "variant_name": "1.5L HE7 DOHC i-VTEC- NEW",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 182999.0,
+            "final_price": 176999.0
+          },
+          {
+            "variant_name": "1.5L S7 DOHC i-VTEC",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 164999.0,
+            "final_price": 158999.0
+          }
+        ]
+      },
+      {
+        "brand": "HONDA",
+        "model_name": "HR-V",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5L DX DOHC i-VTEC \u2013 NEW",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 168999.0,
+            "final_price": 162999.0
+          },
+          {
+            "variant_name": "1.5L DX+DOHC i-VTEC - NEW",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 171999.0,
+            "final_price": 165999.0
+          },
+          {
+            "variant_name": "1.5L HX DOHC i-VTEC \u2013 NEW",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 207999.0,
+            "final_price": 201999.0
+          }
+        ]
+      },
+      {
+        "brand": "HONDA",
+        "model_name": "JAZZ",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "1.5L H-LUXE DOHC i-VTEC",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 164999.0,
+            "final_price": 158999.0
+          },
+          {
+            "variant_name": "1.5L CROSSTAR DOHC i-VTEC MO\u039f\u039d\u039f\u03a4\u039f\u039d\u0395",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 164999.0,
+            "final_price": 158999.0
+          },
+          {
+            "variant_name": "1.5L CROSSTAR DOHC i-VTEC DUAL TONE",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 168999.0,
+            "final_price": 162999.0
+          }
+        ]
+      },
+      {
+        "brand": "HONDA",
+        "model_name": "ACCORD",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "2.0L RS DOHC i-VTEC - NEW",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 309999.0,
+            "final_price": 303999.0
+          }
+        ]
+      },
+      {
+        "brand": "HONDA",
+        "model_name": "CR-V",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5L TURBO CVT 5-SEATER - NEW",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 253999.0,
+            "final_price": 247999.0
+          },
+          {
+            "variant_name": "1.5L TURBO CVT 7-SEATER - NEW",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 262999.0,
+            "final_price": 256999.0
+          },
+          {
+            "variant_name": "1.5L VTEC TURBO CVT 5-SEATER",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 246999.0,
+            "final_price": 240999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

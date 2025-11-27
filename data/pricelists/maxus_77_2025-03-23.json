@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "source_filename": "dealer_77_2025-03-23.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "77",
+    "pdf_date": "2025-03-23",
+    "brand_folder": "maxus",
+    "year_folder": 2025,
+    "pdf_size_kb": 528.1044921875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 591,
+      "total_tokens": 2901,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MAXUS",
+        "model_name": "eDeliver 9 FL",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eDeliver 9 FL",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 85999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "T90EV",
+        "category": "Commercial",
+        "variants": [
+          {
+            "variant_name": "T90EV",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 147999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "eDeliver 7 FL",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eDeliver 7 FL",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 63999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "eDeliver 5",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eDeliver 5",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 58999.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

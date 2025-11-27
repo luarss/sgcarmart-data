@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "source_filename": "dealer_1_2025-03-21.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "1",
+    "pdf_date": "2025-03-21",
+    "brand_folder": "alfa-romeo",
+    "year_folder": 2025,
+    "pdf_size_kb": 4.6201171875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 622,
+      "total_tokens": 2923,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.00024880000000000003,
+      "total_cost_usd": 0.00047890000000000004,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Alfa Romeo",
+        "model_name": "Giulia",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "2.0 Veloce (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "2.9 Quadrifoglio (A)",
+            "engine_size": "2.9",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Alfa Romeo",
+        "model_name": "Stelvio",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "2.0 Veloce (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "2.9 Quadrifoglio (A)",
+            "engine_size": "2.9",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Alfa Romeo",
+        "model_name": "Tonale",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Mild Hybrid 1.5 Veloce (A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Prices are listed as POA, so list_price and final_price are null."
+  ]
+}

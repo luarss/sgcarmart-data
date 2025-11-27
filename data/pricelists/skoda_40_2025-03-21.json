@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "source_filename": "dealer_40_2025-03-21.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "40",
+    "pdf_date": "2025-03-21",
+    "brand_folder": "skoda",
+    "year_folder": 2025,
+    "pdf_size_kb": 314.92578125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 1433,
+      "total_tokens": 3734,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.0005732000000000001,
+      "total_cost_usd": 0.0008033000000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SKODA",
+        "model_name": "KAMIQ",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SELECTION 1.0 TSI",
+            "engine_size": "1.0",
+            "vehicle_type": "ICE",
+            "list_price": 222400.0,
+            "final_price": 171900.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "OCTAVIA",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "SELECTION 1.5 TSI",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 241900.0,
+            "final_price": 191900.0
+          },
+          {
+            "variant_name": "RS 2.0 TSI",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 343900.0,
+            "final_price": 274400.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "OCTAVIA COMBI",
+        "category": "WAGON",
+        "variants": [
+          {
+            "variant_name": "COMBI SELECTION 1.5 TSI",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 249900.0,
+            "final_price": 199900.0
+          },
+          {
+            "variant_name": "COMBI RS 2.0 TSI",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 351900.0,
+            "final_price": 282400.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "KODIAQ",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SELECTION 1.5 TSI",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 299900.0,
+            "final_price": 230400.0
+          },
+          {
+            "variant_name": "SPORTLINE 1.5 TSI",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 311900.0,
+            "final_price": 243400.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "SUPERB COMBI",
+        "category": "WAGON",
+        "variants": [
+          {
+            "variant_name": "LAURIN & KLEMENT 1.5 TSI",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 310900.0,
+            "final_price": 242400.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "ENYAQ",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SUITE 82kWh 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 305900.0,
+            "final_price": 236400.0
+          },
+          {
+            "variant_name": "SPORTLINE 82kWh 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 312900.0,
+            "final_price": 243400.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "ENYAQ COUPE",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SPORTLINE 82kWh 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 315900.0,
+            "final_price": 246400.0
+          },
+          {
+            "variant_name": "RS 82kWh 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 338900.0,
+            "final_price": 269400.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "source_filename": "dealer_109_2025-05-22.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "109",
+    "pdf_date": "2025-05-22",
+    "brand_folder": "smart",
+    "year_folder": 2025,
+    "pdf_size_kb": 1282.033203125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 522,
+      "total_tokens": 2049,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.0002088,
+      "total_cost_usd": 0.0003615,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "smart",
+        "model_name": "#1",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "Pro+",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 311888.0,
+            "final_price": 208000.0
+          },
+          {
+            "variant_name": "BRABUS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 349888.0,
+            "final_price": 246000.0
+          }
+        ]
+      },
+      {
+        "brand": "smart",
+        "model_name": "#3",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "Pro+",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 331888.0,
+            "final_price": 228000.0
+          },
+          {
+            "variant_name": "BRABUS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 365888.0,
+            "final_price": 262000.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

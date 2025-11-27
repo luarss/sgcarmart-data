@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "source_filename": "dealer_86_2025-01-09.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "86",
+    "pdf_date": "2025-01-09",
+    "brand_folder": "tesla",
+    "year_folder": 2025,
+    "pdf_size_kb": 1873.9013671875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2817,
+      "output_tokens": 776,
+      "total_tokens": 3593,
+      "input_cost_usd": 0.0002817,
+      "output_cost_usd": 0.0003104,
+      "total_cost_usd": 0.0005921,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "TESLA",
+        "model_name": "Model 3",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Model 3 Rear-Wheel Drive 110",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 88402.0,
+            "final_price": 93699.0
+          },
+          {
+            "variant_name": "Model 3 Rear-Wheel Drive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 90086.0,
+            "final_price": 121501.0
+          },
+          {
+            "variant_name": "Model 3 Long Range Dual Motor All-Wheel Drive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 109371.0,
+            "final_price": 121501.0
+          },
+          {
+            "variant_name": "Model 3 Performance Dual Motor All-Wheel Drive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 139051.0,
+            "final_price": 121501.0
+          }
+        ]
+      },
+      {
+        "brand": "TESLA",
+        "model_name": "Model Y",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Model Y Rear-Wheel Drive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 101012.0,
+            "final_price": 121501.0
+          },
+          {
+            "variant_name": "Model Y Long Range Dual Motor All-Wheel Drive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 126408.0,
+            "final_price": 121501.0
+          },
+          {
+            "variant_name": "Model Y Performance Dual Motor All-Wheel Drive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 144406.0,
+            "final_price": 121501.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

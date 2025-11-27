@@ -1,0 +1,300 @@
+{
+  "metadata": {
+    "source_filename": "dealer_45_2025-01-23.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "45",
+    "pdf_date": "2025-01-23",
+    "brand_folder": "volkswagen",
+    "year_folder": 2025,
+    "pdf_size_kb": 7.4052734375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 2567,
+      "total_tokens": 4094,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.0010268,
+      "total_cost_usd": 0.0011795,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Volkswagen",
+        "model_name": "Caddy Diesel",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "2.0 TDI DSG Maxi Panel Van [Euro VI] (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "2.0 TDI DSG Maxi Window Van [Euro VI] (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "2.0 TDI DSG NWB Panel Van [Euro VI] (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "2.0 TDI DSG NWB Window Van [Euro VI] (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "Golf GTI",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "2.0 TSI DSG (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "Golf Mild Hybrid",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "1.5 eTSI DSG Life Plus (A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "1.5 ETSI DSG Life Plus 50th Anniversary Edition(A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 169900.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "1.5 ETSI DSG R-Line (A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 179900.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "1.5 ETSI DSG Life Plus (A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 189900.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "1.5 ETSI DSG R-Line (A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 199900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "Golf R",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "2.0 TSI DSG (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 289900.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "2.0 TSI DSG Performance Pack (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 299900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "ID. Buzz Cargo Electric",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Electric 79 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 149900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "ID. Buzz Electric Pro",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "NWB 5-Seater 79 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 289900.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "LWB 7-Seater 86 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 314900.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "LWB 6-Seater 86 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 319900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "ID.4 Electric",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "82 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 219900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "ID.4 GTX Electric",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "82 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 239900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "ID.5 Electric",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "82 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 229900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "ID.5 GTX Electric",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "82 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 249900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "T-Cross",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.0 TSI DSG Style (A)",
+            "engine_size": "1.0",
+            "vehicle_type": "ICE",
+            "list_price": 159900.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "1.0 TSI DSG R-Line (A)",
+            "engine_size": "1.0",
+            "vehicle_type": "ICE",
+            "list_price": 165900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "Tiguan Mild Hybrid",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5 ETSI Life (A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 209900.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "1.5 eTSI Life Plus (A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 216900.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "Transporter Diesel T30",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Panel Van LED [Euro VI] (A)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "Panel Van [Euro VI] (A)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

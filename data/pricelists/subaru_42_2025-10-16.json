@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "source_filename": "dealer_42_2025-10-16.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "42",
+    "pdf_date": "2025-10-16",
+    "brand_folder": "subaru",
+    "year_folder": 2025,
+    "pdf_size_kb": 4.9609375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 671,
+      "total_tokens": 2981,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Subaru",
+        "model_name": "BRZ",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "2.4 EyeSight (M)",
+            "engine_size": "2.4",
+            "vehicle_type": "ICE",
+            "list_price": 262800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "2.4 EyeSight (A)",
+            "engine_size": "2.4",
+            "vehicle_type": "ICE",
+            "list_price": 267800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Subaru",
+        "model_name": "Crosstrek",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "e-BOXER Mild Hybrid 2.0i-S Eyesight (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 193800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Subaru",
+        "model_name": "Forester",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "e-BOXER Hybrid 2.5i-S EyeSight (A)",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 219800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "e-BOXER Mild Hybrid 2.0i-S EyeSight (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 194800.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

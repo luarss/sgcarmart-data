@@ -1,0 +1,755 @@
+{
+  "metadata": {
+    "source_filename": "dealer_25_2025-10-09.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "25",
+    "pdf_date": "2025-10-09",
+    "brand_folder": "mercedes-benz",
+    "year_folder": 2025,
+    "pdf_size_kb": 4007.11328125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1536,
+      "output_tokens": 6137,
+      "total_tokens": 7673,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "B 180",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "Progressive",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 279888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "CLA 180",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Progressive",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 284888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Shadow Edition",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 290888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG CLA 35",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "4MATIC",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 406888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG CLA 45 S",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "4MATIC+",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 474888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "GLA 180",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Progressive",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 293888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG GLA 35",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "4MATIC",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 391888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "GLB 180",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Progressive",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 300888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG GLB 35",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "4MATIC",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 392888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "C 180",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "AVANTGARDE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 328888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "AMG Line",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 338888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG C 63 S",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "E PERFORMANCE",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 725888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "GLC 200",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "4MATIC AVANTGARDE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 383888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "GLC 300",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "4MATIC AMG Line",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 447888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG GLC 43",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "4MATIC",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 482888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG GLC 63 S",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "E PERFORMANCE 4MATIC SUV",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 702888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "GLC 300 Coup\u00e9",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "4MATIC Coup\u00e9 AMG Line",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 449888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG GLC 43 Coup\u00e9",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "4MATIC Coup\u00e9 - NEW",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 486888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG GLC 63 S Coup\u00e9",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "E PERFORMANCE 4MATIC Coup\u00e9 - NEW",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 717888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "CLE 180",
+        "category": "COUPE",
+        "variants": [
+          {
+            "variant_name": "AVANTGARDE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 374888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "CLE 200",
+        "category": "COUPE",
+        "variants": [
+          {
+            "variant_name": "AMG Line",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 409888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG CLE 53",
+        "category": "COUPE",
+        "variants": [
+          {
+            "variant_name": "4MATIC+",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 495888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "CLE 180 Cabriolet",
+        "category": "CONVERTIBLE",
+        "variants": [
+          {
+            "variant_name": "AVANTGARDE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 396888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "CLE 200 Cabriolet",
+        "category": "CONVERTIBLE",
+        "variants": [
+          {
+            "variant_name": "AMG Line",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 432888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG CLE 53 Cabriolet",
+        "category": "CONVERTIBLE",
+        "variants": [
+          {
+            "variant_name": "4MATIC+ CABRIOLET - NEW",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 514888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "E 200",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "AVANTGARDE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 427888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "EXCLUSIVE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 437888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "AMG Line",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 465888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "E 300 e",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "AVANTGARDE",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 444888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG E 53",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "HYBRID 4MATIC+",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 560888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "S 450 L",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "4MATIC",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 730888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "GLE 450",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "4MATIC",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 581888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG GLE 53",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "4MATIC+ SUV",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 646888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG GLE 53 Coup\u00e9",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "4MATIC+ Coup\u00e9",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 677888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "GLS 450",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "4MATIC",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 698888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "G 500",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "-NEW",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 802888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "G 580",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "with EQ Technology - NEW",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 802888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG G 63",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "NEW",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 1082888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG SL 55",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "4MATIC+",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 1039888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG GT 63",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "4MATIC+ Coupe",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 1248888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-Maybach S 580",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "4MATIC",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 1139888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-Maybach S 680",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "4MATIC",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 1496888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-Maybach GLS 600",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "4MATIC (2-Tone)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 1315088.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-Maybach EQS 680",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "4MATIC SUV (2-Tone)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 1120888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-Maybach SL 680",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "Monogram Series - NEW",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 1396888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "EQA 250+",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Progressive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 314888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "AMG Line",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 349888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "EQB 250+",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Progressive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 322888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "AMG Line",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 365888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "EQE 300",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Electric Art",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 424888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "EQE 300 SUV",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Electric Art SUV",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 449888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Mercedes-AMG EQE 43",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "4MATIC SUV",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 588888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "EQS 450+",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Electric Art",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 591888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "EQS 450 SUV",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "4MATIC Electric Art SUV",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 643888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "EQV 300",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "AVANTGARDE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 509888.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

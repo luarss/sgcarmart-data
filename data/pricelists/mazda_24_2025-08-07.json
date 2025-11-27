@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "source_filename": "dealer_24_2025-08-07.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "24",
+    "pdf_date": "2025-08-07",
+    "brand_folder": "mazda",
+    "year_folder": 2025,
+    "pdf_size_kb": 3620.0771484375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2043,
+      "output_tokens": 1665,
+      "total_tokens": 3708,
+      "input_cost_usd": 0.00020430000000000003,
+      "output_cost_usd": 0.000666,
+      "total_cost_usd": 0.0008703000000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Mazda",
+        "model_name": "MAZDA 2",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "1.5L Hatchback Sports",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 221888.0,
+            "final_price": 176888.0
+          }
+        ]
+      },
+      {
+        "brand": "Mazda",
+        "model_name": "MAZDA 3 SEDAN",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "1.5L Sedan Classic Plus",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 233888.0,
+            "final_price": 190888.0
+          },
+          {
+            "variant_name": "1.5L Sedan Executive",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 239888.0,
+            "final_price": 196888.0
+          },
+          {
+            "variant_name": "1.5L Sedan Luxury",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 244888.0,
+            "final_price": 201888.0
+          }
+        ]
+      },
+      {
+        "brand": "Mazda",
+        "model_name": "MAZDA 3 HATCHBACK",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "1.5L Hatchback Astina",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 248888.0,
+            "final_price": 205888.0
+          }
+        ]
+      },
+      {
+        "brand": "Mazda",
+        "model_name": "MAZDA 6",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "2.0L Sedan Executive",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 272888.0,
+            "final_price": 224888.0
+          },
+          {
+            "variant_name": "2.0L Sedan Luxury",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 277888.0,
+            "final_price": 229888.0
+          }
+        ]
+      },
+      {
+        "brand": "Mazda",
+        "model_name": "MAZDA CX-30",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "2.0L Luxury",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 269888.0,
+            "final_price": 221888.0
+          }
+        ]
+      },
+      {
+        "brand": "Mazda",
+        "model_name": "MAZDA CX-5",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "2.0L Luxury",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 279888.0,
+            "final_price": 231888.0
+          },
+          {
+            "variant_name": "2.0L Luxury Sports",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 299888.0,
+            "final_price": 251888.0
+          }
+        ]
+      },
+      {
+        "brand": "Mazda",
+        "model_name": "MAZDA CX-60",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "2.5L Luxury",
+            "engine_size": "2.5",
+            "vehicle_type": "ICE",
+            "list_price": 356888.0,
+            "final_price": 308888.0
+          }
+        ]
+      },
+      {
+        "brand": "Mazda",
+        "model_name": "MAZDA CX-80 PHEV",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "2.5L Luxury Sports (7-seater)",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 396888.0,
+            "final_price": 348888.0
+          },
+          {
+            "variant_name": "2.5L Luxury Sports (6-seater)",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 406888.0,
+            "final_price": 358888.0
+          }
+        ]
+      },
+      {
+        "brand": "Mazda",
+        "model_name": "MAZDA MX-5 RF",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "2.0L AT",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

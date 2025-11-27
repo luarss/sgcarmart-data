@@ -1,0 +1,167 @@
+{
+  "metadata": {
+    "source_filename": "dealer_40_2025-10-24.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "40",
+    "pdf_date": "2025-10-24",
+    "brand_folder": "skoda",
+    "year_folder": 2025,
+    "pdf_size_kb": 425.28515625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 1472,
+      "total_tokens": 3773,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.0005888,
+      "total_cost_usd": 0.0008189,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SKODA",
+        "model_name": "KAMIQ",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SELECTION 1.0 TSI",
+            "engine_size": "1.0",
+            "vehicle_type": "ICE",
+            "list_price": 247400.0,
+            "final_price": 190900.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "OCTAVIA",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "SELECTION 1.5 TSI",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 266900.0,
+            "final_price": 206900.0
+          },
+          {
+            "variant_name": "RS 2.0 TSI",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 357900.0,
+            "final_price": 286900.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "OCTAVIA COMBI",
+        "category": "WAGON",
+        "variants": [
+          {
+            "variant_name": "COMBI SELECTION 1.5 TSI",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 274900.0,
+            "final_price": 213900.0
+          },
+          {
+            "variant_name": "COMBI RS 2.0 TSI",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 365900.0,
+            "final_price": 296900.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "KODIAQ",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SELECTION 1.5 TSI",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 313900.0,
+            "final_price": 246900.0
+          },
+          {
+            "variant_name": "SPORTLINE 1.5 TSI",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 325900.0,
+            "final_price": 261900.0
+          },
+          {
+            "variant_name": "RS 2.0 TSI",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 359900.0,
+            "final_price": 297900.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "SUPERB COMBI",
+        "category": "WAGON",
+        "variants": [
+          {
+            "variant_name": "LAURIN & KLEMENT 1.5 TSI",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 324900.0,
+            "final_price": 256900.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "ENYAQ",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SPORTLINE 82kWh 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 326900.0,
+            "final_price": 242900.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "ENYAQ COUP\u00c9",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SPORTLINE 82kWh 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 329900.0,
+            "final_price": 246900.0
+          }
+        ]
+      },
+      {
+        "brand": "SKODA",
+        "model_name": "ELROQ",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "63kWh 150kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 289900.0,
+            "final_price": 225900.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

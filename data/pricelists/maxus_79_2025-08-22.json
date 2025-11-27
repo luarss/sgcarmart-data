@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "source_filename": "dealer_79_2025-08-22.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "79",
+    "pdf_date": "2025-08-22",
+    "brand_folder": "maxus",
+    "year_folder": 2025,
+    "pdf_size_kb": 1521.5986328125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1536,
+      "output_tokens": 699,
+      "total_tokens": 2235,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MAXUS",
+        "model_name": "MIFA 7",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "108kW CATA (Luxury)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 279999.0,
+            "final_price": 216999.0
+          },
+          {
+            "variant_name": "108kW CAT A (Premium)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 284999.0,
+            "final_price": 221999.0
+          },
+          {
+            "variant_name": "180kW CAT B (Luxury)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 296999.0,
+            "final_price": 233999.0
+          },
+          {
+            "variant_name": "180kW CAT B (Premium)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 306999.0,
+            "final_price": 243999.0
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "MIFA 9",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "(Luxury)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 318999.0,
+            "final_price": 255999.0
+          },
+          {
+            "variant_name": "(Premium)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 333999.0,
+            "final_price": 270999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

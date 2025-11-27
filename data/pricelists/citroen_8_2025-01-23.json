@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "source_filename": "dealer_8_2025-01-23.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "8",
+    "pdf_date": "2025-01-23",
+    "brand_folder": "citroen",
+    "year_folder": 2025,
+    "pdf_size_kb": 1805.892578125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 786,
+      "total_tokens": 2313,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.00031440000000000005,
+      "total_cost_usd": 0.0004671,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "CITRO\u00cbN",
+        "model_name": "\u00eb-C4",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "\u00eb-C4",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 232999.0,
+            "final_price": 164999.0
+          }
+        ]
+      },
+      {
+        "brand": "CITRO\u00cbN",
+        "model_name": "\u00eb-C4X",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "\u00eb-C4X SHINE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 238999.0,
+            "final_price": 170999.0
+          },
+          {
+            "variant_name": "\u00eb-C4X SHINE PLUS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 242999.0,
+            "final_price": 174999.0
+          }
+        ]
+      },
+      {
+        "brand": "CITRO\u00cbN",
+        "model_name": "\u00eb-Berlingo",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "\u00eb-Berlingo 7-Seater",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 246999.0,
+            "final_price": 178999.0
+          },
+          {
+            "variant_name": "Electric Berlingo (ML)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 57999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "CITRO\u00cbN",
+        "model_name": "Electric Dispatch",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Electric Dispatch",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 65999.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

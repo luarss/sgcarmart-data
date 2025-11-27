@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "source_filename": "dealer_108_2025-08-21.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "108",
+    "pdf_date": "2025-08-21",
+    "brand_folder": "aion",
+    "year_folder": 2025,
+    "pdf_size_kb": 332.470703125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 749,
+      "total_tokens": 2276,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.0002996,
+      "total_cost_usd": 0.0004523,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "GAC",
+        "model_name": "Y PLUS",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "ELITE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 231988.0,
+            "final_price": 162988.0
+          },
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 238988.0,
+            "final_price": 169988.0
+          }
+        ]
+      },
+      {
+        "brand": "GAC",
+        "model_name": "ES",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 218988.0,
+            "final_price": 152988.0
+          }
+        ]
+      },
+      {
+        "brand": "GAC",
+        "model_name": "V",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "LUXURY",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 248988.0,
+            "final_price": 179988.0
+          }
+        ]
+      },
+      {
+        "brand": "GAC",
+        "model_name": "HT",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 298988.0,
+            "final_price": 233988.0
+          },
+          {
+            "variant_name": "LUXURY",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 328988.0,
+            "final_price": 263988.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

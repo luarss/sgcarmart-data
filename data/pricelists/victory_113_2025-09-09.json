@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "source_filename": "dealer_113_2025-09-09.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "113",
+    "pdf_date": "2025-09-09",
+    "brand_folder": "victory",
+    "year_folder": 2025,
+    "pdf_size_kb": 3.4599609375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 374,
+      "total_tokens": 2684,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Victory",
+        "model_name": "e-Reliance",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "Electric 41.86 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 37800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Victory",
+        "model_name": "e-Response",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "Electric 41.86 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 37800.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

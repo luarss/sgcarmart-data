@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "source_filename": "dealer_103_2025-07-11.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "103",
+    "pdf_date": "2025-07-11",
+    "brand_folder": "jaecoo",
+    "year_folder": 2025,
+    "pdf_size_kb": 1302.30859375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 472,
+      "total_tokens": 2782,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "JAECOO",
+        "model_name": "J6",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "BEV 99kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 220888.0,
+            "final_price": 175888.0
+          },
+          {
+            "variant_name": "BEV 205kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 252888.0,
+            "final_price": 207888.0
+          }
+        ]
+      },
+      {
+        "brand": "JAECOO",
+        "model_name": "J7",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "PHEV 255kW",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 277888.0,
+            "final_price": 232888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

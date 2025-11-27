@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "source_filename": "dealer_63_2025-05-15.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "63",
+    "pdf_date": "2025-05-15",
+    "brand_folder": "golden-dragon",
+    "year_folder": 2025,
+    "pdf_size_kb": 4.8837890625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 1310,
+      "total_tokens": 3620,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Golden Dragon",
+        "model_name": "ABS EV Electric Van",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "50.23 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 91988.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Fridge 50.23 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 94988.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Golden Dragon",
+        "model_name": "ABS EV Electric Truck",
+        "category": "TRUCK",
+        "variants": [
+          {
+            "variant_name": "50.23 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 102988.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Golden Dragon",
+        "model_name": "Big Coaster Bus",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Diesel 30 Seater (A)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 114988.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Golden Dragon",
+        "model_name": "XML5036 Minibus Electric",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "11-Seater 50.23 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 97988.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Golden Dragon",
+        "model_name": "XML6107",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Diesel 45+1 Seater 1-door [Euro VI] (M)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 187988.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Diesel 45+1 Seater 2-door [Euro VI] (M)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 187988.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Golden Dragon",
+        "model_name": "XML6112",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Diesel 6.7 [Euro VI] (A)",
+            "engine_size": "6.7",
+            "vehicle_type": "ICE",
+            "list_price": 207988.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Golden Dragon",
+        "model_name": "XML6129",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Diesel 49-Seater 2-door [Euro VI] (A)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "Diesel 53-Seater 1-door [Euro VI] (A)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Golden Dragon",
+        "model_name": "XML6957",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Diesel 43+1 Seater 1-door [Euro VI] (M)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

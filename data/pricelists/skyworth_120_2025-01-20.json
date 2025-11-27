@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source_filename": "dealer_120_2025-01-20.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "120",
+    "pdf_date": "2025-01-20",
+    "brand_folder": "skyworth",
+    "year_folder": 2025,
+    "pdf_size_kb": 429.083984375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 259,
+      "total_tokens": 2560,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.00010360000000000001,
+      "total_cost_usd": 0.00033370000000000003,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SKYWORTH",
+        "model_name": "SKYWORTH K",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SKYWORTH K",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 214888.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

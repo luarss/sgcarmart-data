@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "source_filename": "dealer_31_2025-03-06.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "31",
+    "pdf_date": "2025-03-06",
+    "brand_folder": "opel",
+    "year_folder": 2025,
+    "pdf_size_kb": 713.708984375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1536,
+      "output_tokens": 878,
+      "total_tokens": 2414,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "OPEL",
+        "model_name": "MOKKA",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "MOKKA-C",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 228500.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "OPEL",
+        "model_name": "COMBO-E LIFE",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "COMBO-E LIFE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 248500.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "OPEL",
+        "model_name": "ZAFIRA-LIFE",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "ZAFIRA-E LIFE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 269500.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "ZAFIRA-E LIFE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 265500.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "OPEL",
+        "model_name": "COMBO-C (WHITE)",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "COMBO-C (WHITE)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 141500.0,
+            "final_price": 49500.0
+          }
+        ]
+      },
+      {
+        "brand": "OPEL",
+        "model_name": "VIVARO-C (WHITE)",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "VIVARO-C (WHITE)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 159000.0,
+            "final_price": 59500.0
+          },
+          {
+            "variant_name": "VIVARO-C (WHITE) WITH CREW SEATS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 174000.0,
+            "final_price": 74500.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

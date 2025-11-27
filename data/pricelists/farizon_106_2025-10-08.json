@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "source_filename": "dealer_106_2025-10-08.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "106",
+    "pdf_date": "2025-10-08",
+    "brand_folder": "farizon",
+    "year_folder": 2025,
+    "pdf_size_kb": 4.5986328125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 1031,
+      "total_tokens": 3341,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Farizon",
+        "model_name": "H9E Electric",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "14 Footer 106.95 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 108000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "20 Footer 162.28 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 128000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Farizon",
+        "model_name": "SuperVan Electric",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "5FR 66 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 61000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "5FR 83 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 66000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "5.5MR 83 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 74000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "5.5HR 83 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 76000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "6HR 106 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 86000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Farizon",
+        "model_name": "SuperVan Minibus Electric",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "5FR 9+1 Seater 66 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 149000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "5FR 9+1 Seater 83 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 154000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "5.5MR 13+1 Seater 83 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 166000.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

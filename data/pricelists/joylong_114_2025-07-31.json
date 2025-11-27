@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "source_filename": "dealer_114_2025-07-31.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "114",
+    "pdf_date": "2025-07-31",
+    "brand_folder": "joylong",
+    "year_folder": 2025,
+    "pdf_size_kb": 123.8134765625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 524,
+      "total_tokens": 2825,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.00020960000000000003,
+      "total_cost_usd": 0.0004397,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "JOYLONG",
+        "model_name": "EW4",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "EW4",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 71000.0,
+            "final_price": 56000.0
+          },
+          {
+            "variant_name": "EW4 12+1 MINIBUS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 81000.0,
+            "final_price": 67000.0
+          }
+        ]
+      },
+      {
+        "brand": "JOYLONG",
+        "model_name": "EA5",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "EA5",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 92000.0,
+            "final_price": 77000.0
+          },
+          {
+            "variant_name": "EA5 III",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 86000.0,
+            "final_price": 71000.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

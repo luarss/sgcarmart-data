@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "source_filename": "dealer_83_2025-07-09.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "83",
+    "pdf_date": "2025-07-09",
+    "brand_folder": "cupra",
+    "year_folder": 2025,
+    "pdf_size_kb": 228.1728515625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1527,
+      "output_tokens": 559,
+      "total_tokens": 2086,
+      "input_cost_usd": 0.0001527,
+      "output_cost_usd": 0.00022360000000000001,
+      "total_cost_usd": 0.0003763,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "CUPRA",
+        "model_name": "BORN",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "eBoost 59kWh 170kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 283900.0,
+            "final_price": 192900.0
+          },
+          {
+            "variant_name": "VZ 79kWh 240kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 313900.0,
+            "final_price": 241900.0
+          }
+        ]
+      },
+      {
+        "brand": "CUPRA",
+        "model_name": "TAVASCAN",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "Endurance 77kWh 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 299900.0,
+            "final_price": 225900.0
+          },
+          {
+            "variant_name": "VZ 77kWh 250kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 319900.0,
+            "final_price": 245900.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

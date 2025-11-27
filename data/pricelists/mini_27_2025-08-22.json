@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "source_filename": "dealer_27_2025-08-22.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "27",
+    "pdf_date": "2025-08-22",
+    "brand_folder": "mini",
+    "year_folder": 2025,
+    "pdf_size_kb": 807.328125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 1638,
+      "total_tokens": 3939,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.0006552,
+      "total_cost_usd": 0.0008853,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MINI",
+        "model_name": "MINI COOPER",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "MINI COOPER C (5-DOOR)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 256888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "MINI COOPER S (3-DOOR)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 269888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "MINI JCW COOPER (3-DOOR)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 289888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "MINI JCW COOPER (3-DOOR) - MINI 66 COLLECTION",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 307888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "ALL-ELECTRIC MINI COOPER",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "MINI COOPER E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 209888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "MINI COOPER SE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 242888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "MINI JCW COOPER E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 262888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "MINI JCW COOPER E - MINI 66 COLLECTION",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 272888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "MINI COOPER CONVERTIBLE",
+        "category": "CONVERTIBLE",
+        "variants": [
+          {
+            "variant_name": "MINI COOPER S CONVERTIBLE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 297888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "MINI JCW COOPER CONVERTIBLE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 317888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "ALL-ELECTRIC MINI ACEMAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "MINI ACEMAN E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 217888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "MINI ACEMAN SE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 249888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "MINI JCW ACEMAN E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 269888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "MINI COUNTRYMAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "MINI COUNTRYMAN C",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 247888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "MINI COUNTRYMAN S ALL4",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 286888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "MINI JCW COUNTRYMAN ALL4",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 322888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "ALL-ELECTRIC MINI COUNTRYMAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "MINI COUNTRYMAN E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 258888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "MINI COUNTRYMAN SE ALL4",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 277888.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

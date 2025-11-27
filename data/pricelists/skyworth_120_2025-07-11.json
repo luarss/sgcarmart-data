@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source_filename": "dealer_120_2025-07-11.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "120",
+    "pdf_date": "2025-07-11",
+    "brand_folder": "skyworth",
+    "year_folder": 2025,
+    "pdf_size_kb": 438.6494140625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 275,
+      "total_tokens": 2576,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.00011000000000000002,
+      "total_cost_usd": 0.0003401,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SKYWORTH",
+        "model_name": "K",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "PREMIUM 5-SEATER ELECTRIC SUV",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 248888.0,
+            "final_price": 169888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

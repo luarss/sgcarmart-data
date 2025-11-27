@@ -12,7 +12,7 @@ load_dotenv(Path(__file__).parent / ".env")
 EXCLUDED_BRANDS = {
     'bac', 'bentley', 'mclaren', 'morgan', 'aston-martin',
     'lamborghini', 'maserati', 'lotus', 'rolls-royce', 'ferrari',
-    'porsche', 'isuzu',
+    'porsche', 'isuzu', 'levc', 'ssangyong', 'jeep',
 }
 
 

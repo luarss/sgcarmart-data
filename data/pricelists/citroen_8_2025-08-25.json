@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "source_filename": "dealer_8_2025-08-25.pdf",
+    "extraction_date": "2025-11-27",
+    "dealer_id": "8",
+    "pdf_date": "2025-08-25",
+    "brand_folder": "citroen",
+    "year_folder": 2025,
+    "pdf_size_kb": 978.892578125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1785,
+      "output_tokens": 485,
+      "total_tokens": 2270,
+      "input_cost_usd": 0.0001785,
+      "output_cost_usd": 0.00019400000000000003,
+      "total_cost_usd": 0.0003725,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "CITRO\u00cbN",
+        "model_name": "\u00eb-C4X",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "SHINE PLUS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 189999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "CITRO\u00cbN",
+        "model_name": "Electric Dispatch",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Electric Dispatch",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 65999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "CITRO\u00cbN",
+        "model_name": "Electric Berlingo",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Electric Berlingo (ML)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 57999.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

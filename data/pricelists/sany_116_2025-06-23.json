@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "source_filename": "dealer_116_2025-06-23.pdf",
+    "extraction_date": "2025-11-26",
+    "dealer_id": "116",
+    "pdf_date": "2025-06-23",
+    "brand_folder": "sany",
+    "year_folder": 2025,
+    "pdf_size_kb": 3.6015625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 461,
+      "total_tokens": 2771,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SANY",
+        "model_name": "EV490",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "Electric 490-20 350 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 280000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric 490-30 350 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 300000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "SANY",
+        "model_name": "FR601",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "Electric 84.48 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 88000.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
