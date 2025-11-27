@@ -42,7 +42,8 @@ def process_dealer_historical(
         dealer_id: Dealer ID
         brand_name: Brand name
         years: List of years to download (None = all years)
-        extraction_pipeline: Optional ExtractionPipeline instance
+        auto_extract: Whether to run automatic extraction
+        extract_model: Model name used for extraction (default: "gemini-2.0-flash-exp")
 
     Returns:
         Dict with download results
@@ -136,14 +137,6 @@ Examples:
         type=str,
         default="gemini-2.0-flash-exp",
         help="Gemini model to use for extraction (default: gemini-2.0-flash-exp)",
-    )
-
-    parser.add_argument("--extract-workers", type=int, default=3, help="Number of concurrent extractions (default: 3)")
-
-    parser.add_argument(
-        "--force-extract",
-        action="store_true",
-        help="Force re-extraction of PDFs that already have JSON (only with --extract-only)",
     )
 
     args = parser.parse_args()

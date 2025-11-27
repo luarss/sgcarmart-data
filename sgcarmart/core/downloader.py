@@ -20,19 +20,39 @@ from sgcarmart.utils.http import RateLimitError, fetch_with_retry
 from sgcarmart.utils.validation import validate_pdf
 
 
-def download_pricelist(pricelist_url, brand_name, dealer_id, date, output_dir="data/pricelists"):
-    ensure_directory(output_dir)
-
+def _setup_filepath(brand_name, dealer_id, date, output_dir):
     brand_dir = os.path.join(output_dir, normalize_brand_name(brand_name))
     ensure_directory(brand_dir)
 
-    # Extract year from date and create year folder
     year = date.split("-")[0] if "-" in date else date[:4]
     year_dir = os.path.join(brand_dir, year)
     ensure_directory(year_dir)
 
     filename = f"dealer_{dealer_id}_{date}.pdf"
     filepath = os.path.join(year_dir, filename)
+
+    return filepath, filename
+
+
+def _attempt_extraction(filepath, brand_name, dealer_id, date, extract_model):
+    from analysis.pdf_extractor import GeminiPDFExtractor
+
+    brand_normalized = normalize_brand_name(brand_name)
+    json_filename = f"{brand_normalized}_{dealer_id}_{date}.json"
+    json_path = Path(filepath).parent / json_filename
+
+    if not json_path.exists():
+        extractor = GeminiPDFExtractor()
+        extraction = extractor.extract_from_pdf(Path(filepath), model=extract_model)
+        output_path = extractor.save_extraction(extraction, output_dir=None)
+        return "success", str(output_path)
+    else:
+        return "skipped", None
+
+
+def download_pricelist(pricelist_url, brand_name, dealer_id, date, output_dir="data/pricelists"):
+    ensure_directory(output_dir)
+    filepath, _ = _setup_filepath(brand_name, dealer_id, date, output_dir)
 
     if os.path.exists(filepath):
         file_size = os.path.getsize(filepath)
@@ -65,16 +85,7 @@ def download_pdf(
     date = metadata["date"]
 
     if brand_name:
-        brand_dir = os.path.join(output_dir, normalize_brand_name(brand_name))
-        ensure_directory(brand_dir)
-
-        year = date.split("-")[0] if "-" in date else date[:4]
-        year_dir = os.path.join(brand_dir, year)
-        ensure_directory(year_dir)
-
-        filename = f"dealer_{dealer_id}_{date}.pdf" if dealer_id else f"{date}.pdf"
-
-        filepath = os.path.join(year_dir, filename)
+        filepath, filename = _setup_filepath(brand_name, dealer_id, date, output_dir)
     else:
         ensure_directory(output_dir)
         filename = pdf_url.split("/")[-1]
@@ -94,20 +105,10 @@ def download_pdf(
 
         if auto_extract and brand_name:
             try:
-                from analysis.pdf_extractor import GeminiPDFExtractor
-
-                brand_normalized = normalize_brand_name(brand_name)
-                json_filename = f"{brand_normalized}_{dealer_id}_{date}.json"
-                json_path = Path(filepath).parent / json_filename
-
-                if not json_path.exists():
-                    extractor = GeminiPDFExtractor()
-                    extraction = extractor.extract_from_pdf(Path(filepath), model=extract_model)
-                    output_path = extractor.save_extraction(extraction, output_dir=None)
-                    result["extraction"] = "success"
-                    result["json_path"] = str(output_path)
-                else:
-                    result["extraction"] = "skipped"
+                extraction_status, json_path = _attempt_extraction(filepath, brand_name, dealer_id, date, extract_model)
+                result["extraction"] = extraction_status
+                if json_path:
+                    result["json_path"] = json_path
             except Exception as e:
                 result["extraction"] = "failed"
                 result["extraction_error"] = str(e)
@@ -144,22 +145,12 @@ def download_pdf(
             "message": f"Downloaded ({file_size} bytes)",
         }
 
-        if auto_extract:
+        if auto_extract and brand_name:
             try:
-                from analysis.pdf_extractor import GeminiPDFExtractor
-
-                brand_normalized = normalize_brand_name(brand_name)
-                json_filename = f"{brand_normalized}_{dealer_id}_{date}.json"
-                json_path = Path(filepath).parent / json_filename
-
-                if not json_path.exists():
-                    extractor = GeminiPDFExtractor()
-                    extraction = extractor.extract_from_pdf(Path(filepath), model=extract_model)
-                    output_path = extractor.save_extraction(extraction, output_dir=None)
-                    result["extraction"] = "success"
-                    result["json_path"] = str(output_path)
-                else:
-                    result["extraction"] = "skipped"
+                extraction_status, json_path = _attempt_extraction(filepath, brand_name, dealer_id, date, extract_model)
+                result["extraction"] = extraction_status
+                if json_path:
+                    result["json_path"] = json_path
             except Exception as e:
                 result["extraction"] = "failed"
                 result["extraction_error"] = str(e)
@@ -202,6 +193,7 @@ def process_dealer(dealer_id, brand_name, auto_extract=False, extract_model="gem
             full_url = latest_url if latest_url.startswith("http") else f"{BASE_URL}{latest_url}"
 
             result = download_pdf(full_url, brand_name, auto_extract=auto_extract, extract_model=extract_model)
+            result["brand"] = brand_name
             return result
         else:
             return {"dealer_id": dealer_id, "brand": brand_name, "status": "not_found"}
