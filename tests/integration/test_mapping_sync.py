@@ -18,7 +18,7 @@ def parse_sitemap_for_dealers():
 
     root = ElementTree.fromstring(response.content)
 
-    namespace = {'ns': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+    namespace = {'ns': 'https://www.sitemaps.org/schemas/sitemap/0.9'}
     urls = root.findall('.//ns:url/ns:loc', namespace)
 
     if not urls:
