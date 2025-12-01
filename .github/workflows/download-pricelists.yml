@@ -41,6 +41,10 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      - name: Set environment
+        run: |
+          echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" > analysis/.env
+
       - name: Download pricelists
         run: uv run python main.py
 
@@ -52,7 +56,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update pricelists ${{ steps.date.outputs.date }}"
-          file_pattern: 'data/pricelists/*.pdf'
+          file_pattern: 'data/pricelists/**/*.pdf data/pricelists/**/*.json'
           commit_user_name: github-actions[bot]
           commit_user_email: github-actions[bot]@users.noreply.github.com
           commit_author: GitHub Actions <github-actions[bot]@users.noreply.github.com>
