@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source_filename": "dealer_28_2023-04-21.pdf",
+    "extraction_date": "2025-12-01",
+    "dealer_id": "28",
+    "pdf_date": "2023-04-21",
+    "brand_folder": "mitsubishi",
+    "year_folder": 2023,
+    "pdf_size_kb": 668.8935546875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1536,
+      "output_tokens": 282,
+      "total_tokens": 1818,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Mitsubishi",
+        "model_name": "Eclipse Cross",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5L Turbo (Style) (Facelift)",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 241999.0,
+            "final_price": 188999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

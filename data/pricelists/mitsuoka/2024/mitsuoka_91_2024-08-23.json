@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "source_filename": "dealer_91_2024-08-23.pdf",
+    "extraction_date": "2025-12-01",
+    "dealer_id": "91",
+    "pdf_date": "2024-08-23",
+    "brand_folder": "mitsuoka",
+    "year_folder": 2024,
+    "pdf_size_kb": 3.7548828125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2301,
+      "output_tokens": 378,
+      "total_tokens": 2679,
+      "input_cost_usd": 0.0002301,
+      "output_cost_usd": 0.00015120000000000002,
+      "total_cost_usd": 0.0003813,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Mitsuoka",
+        "model_name": "Rock Star",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "1.5 S (A)",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 279800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Mitsuoka",
+        "model_name": "Viewt",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "1.2 ST (A)",
+            "engine_size": "1.2",
+            "vehicle_type": "ICE",
+            "list_price": 173800.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
