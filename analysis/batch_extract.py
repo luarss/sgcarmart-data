@@ -1,29 +1,15 @@
+import sys
 from datetime import datetime
 from pathlib import Path
 
 from dotenv import load_dotenv
 
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 from analysis.pdf_extractor import GeminiPDFExtractor
+from constants import EXCLUDED_BRANDS
 
 load_dotenv(Path(__file__).parent / ".env")
-
-EXCLUDED_BRANDS = {
-    "bac",
-    "bentley",
-    "mclaren",
-    "morgan",
-    "aston-martin",
-    "lamborghini",
-    "maserati",
-    "lotus",
-    "rolls-royce",
-    "ferrari",
-    "porsche",
-    "isuzu",
-    "levc",
-    "ssangyong",
-    "jeep",
-}
 
 
 def extract_brand_samples(

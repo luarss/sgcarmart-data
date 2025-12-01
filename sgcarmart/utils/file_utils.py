@@ -13,9 +13,20 @@ def ensure_directory(path):
     return path
 
 
-def load_dealer_brand_mapping():
+def load_dealer_brand_mapping(exclude_brands=True):
+    from constants import EXCLUDED_BRANDS
+
     with open(DEALER_BRAND_MAPPING_FILE) as f:
-        return json.load(f)
+        mapping = json.load(f)
+
+    if exclude_brands:
+        mapping = {
+            dealer_id: brand
+            for dealer_id, brand in mapping.items()
+            if normalize_brand_name(brand) not in EXCLUDED_BRANDS
+        }
+
+    return mapping
 
 
 def extract_metadata_from_url(pdf_url):

@@ -49,3 +49,21 @@ INITIAL_RETRY_DELAY = 5
 MIN_PDF_SIZE_BYTES = 1000
 PDF_MAGIC_HEADER = b"%PDF"
 PDF_CONTENT_TYPE = "application/pdf"
+
+EXCLUDED_BRANDS = {
+    "bac",
+    "bentley",
+    "mclaren",
+    "morgan",
+    "aston-martin",
+    "lamborghini",
+    "maserati",
+    "lotus",
+    "rolls-royce",
+    "ferrari",
+    "porsche",
+    "isuzu",
+    "levc",
+    "ssangyong",
+    "jeep",
+}
