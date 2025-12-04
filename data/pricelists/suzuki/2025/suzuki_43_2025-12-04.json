@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "source_filename": "dealer_43_2025-12-04.pdf",
+    "extraction_date": "2025-12-04",
+    "dealer_id": "43",
+    "pdf_date": "2025-12-04",
+    "brand_folder": "suzuki",
+    "year_folder": 2025,
+    "pdf_size_kb": 5492.65625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1536,
+      "output_tokens": 875,
+      "total_tokens": 2411,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SUZUKI",
+        "model_name": "SWIFT",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": "1.2L",
+            "vehicle_type": "ICE",
+            "list_price": 152888.0,
+            "final_price": 150888.0
+          },
+          {
+            "variant_name": "Dualjet Hybrid (Two Tones)",
+            "engine_size": "1.2L",
+            "vehicle_type": "Hybrid",
+            "list_price": 153888.0,
+            "final_price": 151888.0
+          }
+        ]
+      },
+      {
+        "brand": "SUZUKI",
+        "model_name": "Jimny",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "GLX",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 167888.0,
+            "final_price": 165888.0
+          },
+          {
+            "variant_name": "GLX (Two Tones)",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 168888.0,
+            "final_price": 166888.0
+          }
+        ]
+      },
+      {
+        "brand": "SUZUKI",
+        "model_name": "Jimny 5-door",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "GLX",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 203888.0,
+            "final_price": 201888.0
+          },
+          {
+            "variant_name": "GLX (Two Tones)",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 204888.0,
+            "final_price": 202888.0
+          }
+        ]
+      },
+      {
+        "brand": "SUZUKI",
+        "model_name": "S-CROSS",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Mild Hybrid",
+            "engine_size": "1.4L",
+            "vehicle_type": "Hybrid",
+            "list_price": 183888.0,
+            "final_price": 181888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
