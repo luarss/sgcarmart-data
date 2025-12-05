@@ -1,0 +1,223 @@
+{
+  "metadata": {
+    "source_filename": "dealer_21_2025-12-04.pdf",
+    "extraction_date": "2025-12-05",
+    "dealer_id": "21",
+    "pdf_date": "2025-12-04",
+    "brand_folder": "lexus",
+    "year_folder": 2025,
+    "pdf_size_kb": 1070.583984375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2052,
+      "output_tokens": 1965,
+      "total_tokens": 4017,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Lexus",
+        "model_name": "IS",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "IS 300h EXECUTIVE",
+            "engine_size": "2.494 cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 330800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "ES",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "ES 300h EXECUTIVE",
+            "engine_size": "2.487cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 371800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "ES 300h LUXURY",
+            "engine_size": "2.487cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 391800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "UX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "UX 300h LUXURY",
+            "engine_size": "1.987 cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 313800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "NX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "NX 350h EXECUTIVE",
+            "engine_size": "2.487cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 368800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "NX 350h LUXURY",
+            "engine_size": "2.487cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 385800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "NX 450h+ F SPORT (PLUG-IN HYBRID)",
+            "engine_size": "2.487cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 452800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "RX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "RX 350h EXECUTIVE",
+            "engine_size": "2.487cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 441800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "RX 350h LUXURY",
+            "engine_size": "2.487cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 473800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "RX 450h+ (PLUG-IN HYBRID) LUXURY",
+            "engine_size": "2.487cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 526800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "RX 500h F SPORT",
+            "engine_size": "2.393 cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 541800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "LBX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "LBX ELEGANT",
+            "engine_size": "1.490 cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 254800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "LBX URBANITE",
+            "engine_size": "1.490 cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 258800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "LBX COOL",
+            "engine_size": "1.490 cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 259800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "LS",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "LS 500h LUXURY",
+            "engine_size": "3.456cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 812800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "LC",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "LC 500 CONVERTIBLE",
+            "engine_size": "4.969cc",
+            "vehicle_type": "ICE",
+            "list_price": 822800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "LC 500 COUPE",
+            "engine_size": "4.969cc",
+            "vehicle_type": "ICE",
+            "list_price": 780800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "LM",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "LM 350h LUXURY",
+            "engine_size": "2.487cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 691800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "LM 500h ULTRA LUXURY",
+            "engine_size": "2.393cc",
+            "vehicle_type": "Hybrid",
+            "list_price": 838800.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
