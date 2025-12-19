@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "source_filename": "dealer_86_2025-12-18.pdf",
+    "extraction_date": "2025-12-19",
+    "dealer_id": "86",
+    "pdf_date": "2025-12-18",
+    "brand_folder": "tesla",
+    "year_folder": 2025,
+    "pdf_size_kb": 1803.7021484375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 4632,
+      "output_tokens": 706,
+      "total_tokens": 5338,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "TESLA",
+        "model_name": "Model 3",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Rear-Wheel Drive 110",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 98402.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Rear-Wheel Drive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 100086.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Long Range Rear-Wheel Drive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 112215.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Performance All-Wheel Drive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 149051.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "TESLA",
+        "model_name": "Model Y",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Rear-Wheel Drive 110",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 113476.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Rear-Wheel Drive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 116502.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Long Range All-Wheel Drive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 140626.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
