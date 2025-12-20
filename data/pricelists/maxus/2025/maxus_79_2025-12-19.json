@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "source_filename": "dealer_79_2025-12-19.pdf",
+    "extraction_date": "2025-12-20",
+    "dealer_id": "79",
+    "pdf_date": "2025-12-19",
+    "brand_folder": "maxus",
+    "year_folder": 2025,
+    "pdf_size_kb": 1758.5908203125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1536,
+      "output_tokens": 621,
+      "total_tokens": 2157,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MAXUS",
+        "model_name": "MIFA 7",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "108kW CAT A (Premium)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 274999.0,
+            "final_price": 228999.0
+          },
+          {
+            "variant_name": "180kW CAT B (Luxury)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 288999.0,
+            "final_price": 242999.0
+          },
+          {
+            "variant_name": "180kW CAT B (Premium)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 293999.0,
+            "final_price": 247999.0
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "MIFA 9",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "(Luxury)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 308999.0,
+            "final_price": 262999.0
+          },
+          {
+            "variant_name": "(Premium)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 323999.0,
+            "final_price": 277999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
