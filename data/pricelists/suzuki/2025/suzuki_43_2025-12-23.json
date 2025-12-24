@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "source_filename": "dealer_43_2025-12-23.pdf",
+    "extraction_date": "2025-12-24",
+    "dealer_id": "43",
+    "pdf_date": "2025-12-23",
+    "brand_folder": "suzuki",
+    "year_folder": 2025,
+    "pdf_size_kb": 5874.0361328125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1536,
+      "output_tokens": 721,
+      "total_tokens": 2257,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SUZUKI",
+        "model_name": "SWIFT",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 158888.0,
+            "final_price": 98000.0
+          },
+          {
+            "variant_name": "1.2L Dualjet Hybrid",
+            "engine_size": "1.2",
+            "vehicle_type": "Hybrid",
+            "list_price": 159888.0,
+            "final_price": 157888.0
+          }
+        ]
+      },
+      {
+        "brand": "SUZUKI",
+        "model_name": "JIMNY",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5L GLX",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 177888.0,
+            "final_price": 175888.0
+          },
+          {
+            "variant_name": "1.5L GLX (Two Tones)",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 178888.0,
+            "final_price": 176888.0
+          },
+          {
+            "variant_name": "Jimny 5-door 1.5L GLX",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 205888.0,
+            "final_price": 203888.0
+          },
+          {
+            "variant_name": "1.5L GLX (Two Tones)",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 206888.0,
+            "final_price": 204888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
