@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source_filename": "dealer_37_2025-12-26.pdf",
+    "extraction_date": "2025-12-26",
+    "dealer_id": "37",
+    "pdf_date": "2025-12-26",
+    "brand_folder": "renault",
+    "year_folder": 2025,
+    "pdf_size_kb": 3.9296875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 266,
+      "total_tokens": 2576,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Renault",
+        "model_name": "Kangoo E-Tech Electric 3-Seater",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "46 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 53800.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
