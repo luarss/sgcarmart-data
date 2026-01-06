@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "source_filename": "dealer_82_2026-01-05.pdf",
+    "extraction_date": "2026-01-06",
+    "dealer_id": "82",
+    "pdf_date": "2026-01-05",
+    "brand_folder": "mg",
+    "year_folder": 2026,
+    "pdf_size_kb": 1615.4970703125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1536,
+      "output_tokens": 381,
+      "total_tokens": 1917,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MG",
+        "model_name": "MGS5 LUXURY",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "A",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 194888.0,
+            "final_price": 184888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "MG4 TROPHY",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "A",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 175888.0,
+            "final_price": 165888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
