@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "source_filename": "dealer_20_2026-01-07.pdf",
+    "extraction_date": "2026-01-08",
+    "dealer_id": "20",
+    "pdf_date": "2026-01-07",
+    "brand_folder": "land-rover",
+    "year_folder": 2026,
+    "pdf_size_kb": 337.154296875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 1639,
+      "total_tokens": 3949,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "LAND-ROVER",
+        "model_name": "DEFENDER 110",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "110 2.0 X-Dynamic HSE",
+            "engine_size": "1.997",
+            "vehicle_type": "Hybrid",
+            "list_price": 346888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "110 3.0 X-Dynamic SE (7 Seater)",
+            "engine_size": "2.996",
+            "vehicle_type": "Hybrid",
+            "list_price": 357888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "110 4.4 \u041e\u0421\u0422\u0410",
+            "engine_size": "4.395",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "110 4.4 \u041e\u0421TA Black",
+            "engine_size": "4.395",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "LAND-ROVER",
+        "model_name": "DEFENDER 130",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "130 5.0 X-Dynamic HSE (7 Seater)",
+            "engine_size": "5.000",
+            "vehicle_type": "ICE",
+            "list_price": 401888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "130 5.0 X-Dynamic HSE (8 Seater)",
+            "engine_size": "5.000",
+            "vehicle_type": "ICE",
+            "list_price": 391888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "LAND-ROVER",
+        "model_name": "RANGE ROVER EVOQUE",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5 S",
+            "engine_size": "1.498",
+            "vehicle_type": "Hybrid",
+            "list_price": 182888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "1.5 S (Premium Pack)",
+            "engine_size": "1.498",
+            "vehicle_type": "Hybrid",
+            "list_price": 192888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "LAND-ROVER",
+        "model_name": "RANGE ROVER VELAR",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "3.0 S",
+            "engine_size": "2.996",
+            "vehicle_type": "Hybrid",
+            "list_price": 326888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "LAND-ROVER",
+        "model_name": "RANGE ROVER SPORT",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "3.0 S",
+            "engine_size": "2.996",
+            "vehicle_type": "Hybrid",
+            "list_price": 423888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "3.0 Dynamic HSE",
+            "engine_size": "2.996",
+            "vehicle_type": "Hybrid",
+            "list_price": 523888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "4.4 SV",
+            "engine_size": "4.395",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "4.4 SV Black",
+            "engine_size": "4.395",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "LAND-ROVER",
+        "model_name": "RANGE ROVER",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "3.0 Autobiography SWB",
+            "engine_size": "2.996",
+            "vehicle_type": "Hybrid",
+            "list_price": 779888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "3.0 Autobiography LWB (5 Seater)",
+            "engine_size": "2.996",
+            "vehicle_type": "Hybrid",
+            "list_price": 805888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "3.0 SV LWB (4 Seater)",
+            "engine_size": "2.996",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "4.4 SV LWB (5 Seater)",
+            "engine_size": "4.395",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

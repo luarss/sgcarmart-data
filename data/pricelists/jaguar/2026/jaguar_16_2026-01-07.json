@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "source_filename": "dealer_16_2026-01-07.pdf",
+    "extraction_date": "2026-01-08",
+    "dealer_id": "16",
+    "pdf_date": "2026-01-07",
+    "brand_folder": "jaguar",
+    "year_folder": 2026,
+    "pdf_size_kb": 451.0751953125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 375,
+      "total_tokens": 2685,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "JAGUAR",
+        "model_name": "F-PACE",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "2.0 R-Dynamic S",
+            "engine_size": "1.997",
+            "vehicle_type": "Hybrid",
+            "list_price": 244888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "JAGUAR",
+        "model_name": "I-PACE",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 356888.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
