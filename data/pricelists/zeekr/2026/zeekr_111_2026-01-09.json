@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "source_filename": "dealer_111_2026-01-09.pdf",
+    "extraction_date": "2026-01-11",
+    "dealer_id": "111",
+    "pdf_date": "2026-01-09",
+    "brand_folder": "zeekr",
+    "year_folder": 2026,
+    "pdf_size_kb": 4.9248046875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 935,
+      "total_tokens": 3245,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "ZEEKR",
+        "model_name": "009",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Electric Deluxe 116 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 342999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Premium 116 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 403999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Flagship 116 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 413999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "ZEEKR",
+        "model_name": "7X",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Electric Standard RWD 75 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 242999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Long Range RWD 100 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 265999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Performance AWD 100 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 288999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "ZEEKR",
+        "model_name": "X",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Electric Urban RWD 66 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 188999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Standard RWD 66 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 198999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Flagship AWD 66 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 228999.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
