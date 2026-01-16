@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source_filename": "dealer_8_2026-01-15.pdf",
+    "extraction_date": "2026-01-16",
+    "dealer_id": "8",
+    "pdf_date": "2026-01-15",
+    "brand_folder": "citroen",
+    "year_folder": 2026,
+    "pdf_size_kb": 709.087890625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1536,
+      "output_tokens": 278,
+      "total_tokens": 1814,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "CITRO\u00cbN",
+        "model_name": "\u00eb-C4X",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "SHINE PLUS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 197999.0,
+            "final_price": 169999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
