@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "source_filename": "dealer_83_2026-01-22.pdf",
+    "extraction_date": "2026-01-22",
+    "dealer_id": "83",
+    "pdf_date": "2026-01-22",
+    "brand_folder": "cupra",
+    "year_folder": 2026,
+    "pdf_size_kb": 490.6845703125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1536,
+      "output_tokens": 938,
+      "total_tokens": 2474,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "CUPRA",
+        "model_name": "LEON",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "LEON 1.5 eTSI 110kW mHEV DSG",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 301900.0,
+            "final_price": 207900.0
+          }
+        ]
+      },
+      {
+        "brand": "CUPRA",
+        "model_name": "TERRAMAR",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "TERRAMAR 1.5 eTSI 110kW mHEV DSG",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 329900.0,
+            "final_price": 233900.0
+          }
+        ]
+      },
+      {
+        "brand": "CUPRA",
+        "model_name": "BORN",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "BORN eBoost 59kWh 170kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 301900.0,
+            "final_price": 199900.0
+          },
+          {
+            "variant_name": "BORN eBoost 77kWh 170kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 311900.0,
+            "final_price": 219900.0
+          },
+          {
+            "variant_name": "BORN VZ 79kWh 240kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 329900.0,
+            "final_price": 236900.0
+          }
+        ]
+      },
+      {
+        "brand": "CUPRA",
+        "model_name": "TAVASCAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "TAVASCAN ENDURANCE 77kWh 210KW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 317900.0,
+            "final_price": 229900.0
+          },
+          {
+            "variant_name": "TAVASCAN VZ 77kWh 250kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 337900.0,
+            "final_price": 242900.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
