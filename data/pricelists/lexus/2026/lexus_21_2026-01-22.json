@@ -1,0 +1,216 @@
+{
+  "metadata": {
+    "source_filename": "dealer_21_2026-01-22.pdf",
+    "extraction_date": "2026-01-23",
+    "dealer_id": "21",
+    "pdf_date": "2026-01-22",
+    "brand_folder": "lexus",
+    "year_folder": 2026,
+    "pdf_size_kb": 2052.529296875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2052,
+      "output_tokens": 2002,
+      "total_tokens": 4054,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Lexus",
+        "model_name": "IS",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "IS 300h | 2,494 cc EXECUTIVE",
+            "engine_size": "2.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 339800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "ES",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "ES 300h | 2,487cc EXECUTIVE",
+            "engine_size": "2.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 366800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "ES 300h | 2,487cc LUXURY",
+            "engine_size": "2.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 386800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "UX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "UX 300h | 1,987 cc LUXURY",
+            "engine_size": "1.9",
+            "vehicle_type": "Hybrid",
+            "list_price": 317800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "NX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "NX 350h | 2,487cc EXECUTIVE",
+            "engine_size": "2.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 372800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "NX 350h | 2,487cc LUXURY",
+            "engine_size": "2.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 397800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "NX 450h+ F SPORT (PLUG-IN HYBRID) | 2,487cc F SPORT",
+            "engine_size": "2.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 456800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "RX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "RX 350h | 2,487cc EXECUTIVE",
+            "engine_size": "2.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 450800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "RX 350h | 2,487cc LUXURY",
+            "engine_size": "2.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 482800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "RX 450h+ (PLUG-IN HYBRID) | 2,487cc LUXURY",
+            "engine_size": "2.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 530800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "RX 500h F SPORT | 2,393 cc F SPORT",
+            "engine_size": "2.3",
+            "vehicle_type": "Hybrid",
+            "list_price": 552800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "LBX",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "LBX | 1,490 cc ELEGANT",
+            "engine_size": "1.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 262800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "LBX | 1,490 cc COOL",
+            "engine_size": "1.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 267800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "LS",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "LS 500h | 3,456cc LUXURY",
+            "engine_size": "3.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 821800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "LC",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "LC 500 | 4,969cc CONVERTIBLE",
+            "engine_size": "4.9",
+            "vehicle_type": "ICE",
+            "list_price": 833800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "LC 500 | 4,969cc COUPE",
+            "engine_size": "4.9",
+            "vehicle_type": "ICE",
+            "list_price": 791800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "LM",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "LM 350h | 2,487cc LUXURY",
+            "engine_size": "2.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 700800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "LM 500h | 2,393cc ULTRA LUXURY",
+            "engine_size": "2.3",
+            "vehicle_type": "Hybrid",
+            "list_price": 847800.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
