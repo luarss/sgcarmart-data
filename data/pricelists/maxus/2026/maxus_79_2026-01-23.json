@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "source_filename": "dealer_79_2026-01-23.pdf",
+    "extraction_date": "2026-01-24",
+    "dealer_id": "79",
+    "pdf_date": "2026-01-23",
+    "brand_folder": "maxus",
+    "year_folder": 2026,
+    "pdf_size_kb": 1782.35546875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1536,
+      "output_tokens": 474,
+      "total_tokens": 2010,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MAXUS",
+        "model_name": "MIFA 7",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "108kW CAT A (Premium)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 274999.0,
+            "final_price": 228999.0
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "MIFA 9",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "(Luxury) Pre-FL",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 311999.0,
+            "final_price": 265999.0
+          },
+          {
+            "variant_name": "(Premium) Pre-FL",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 326999.0,
+            "final_price": 280999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
