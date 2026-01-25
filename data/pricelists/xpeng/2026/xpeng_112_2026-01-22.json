@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "source_filename": "dealer_112_2026-01-22.pdf",
+    "extraction_date": "2026-01-25",
+    "dealer_id": "112",
+    "pdf_date": "2026-01-22",
+    "brand_folder": "xpeng",
+    "year_folder": 2026,
+    "pdf_size_kb": 1017.5234375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 1536,
+      "output_tokens": 608,
+      "total_tokens": 2144,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "XPENG",
+        "model_name": "G6",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Air RWD Standard Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 217999.0,
+            "final_price": 198999.0
+          },
+          {
+            "variant_name": "Pro RWD Long Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 239999.0,
+            "final_price": 220999.0
+          },
+          {
+            "variant_name": "Pro AWD Performance",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 264999.0,
+            "final_price": 245999.0
+          }
+        ]
+      },
+      {
+        "brand": "XPENG",
+        "model_name": "X9",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Premium Seat",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 360999.0,
+            "final_price": 341999.0
+          },
+          {
+            "variant_name": "Grand Seat",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 375999.0,
+            "final_price": 356999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

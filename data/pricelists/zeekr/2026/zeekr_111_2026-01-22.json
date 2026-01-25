@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "source_filename": "dealer_111_2026-01-22.pdf",
+    "extraction_date": "2026-01-25",
+    "dealer_id": "111",
+    "pdf_date": "2026-01-22",
+    "brand_folder": "zeekr",
+    "year_folder": 2026,
+    "pdf_size_kb": 444.517578125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash-exp",
+      "input_tokens": 2310,
+      "output_tokens": 977,
+      "total_tokens": 3287,
+      "input_cost_usd": 0.0,
+      "output_cost_usd": 0.0,
+      "total_cost_usd": 0.0,
+      "is_free_tier": true
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "ZEEKR",
+        "model_name": "ZEEKR X",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "RWD (Cat A COE)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 202999.0,
+            "final_price": 188999.0
+          },
+          {
+            "variant_name": "RWD",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 228999.0,
+            "final_price": 198999.0
+          },
+          {
+            "variant_name": "AWD",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 240999.0,
+            "final_price": 228999.0
+          }
+        ]
+      },
+      {
+        "brand": "ZEEKR",
+        "model_name": "ZEEKR 7X",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "RWD (Standard)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 249999.0,
+            "final_price": 242999.0
+          },
+          {
+            "variant_name": "RWD (Long Range)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 272999.0,
+            "final_price": 265999.0
+          },
+          {
+            "variant_name": "AWD (Performance)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 295999.0,
+            "final_price": 288999.0
+          }
+        ]
+      },
+      {
+        "brand": "ZEEKR",
+        "model_name": "ZEEKR 009",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Deluxe\n(Single Motor, 7-\nSeater)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 349999.0,
+            "final_price": 342999.0
+          },
+          {
+            "variant_name": "Premium (7-Seater)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 410999.0,
+            "final_price": 403999.0
+          },
+          {
+            "variant_name": "Flagship (6-Seater)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 420999.0,
+            "final_price": 413999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
