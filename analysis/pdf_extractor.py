@@ -17,10 +17,12 @@ load_dotenv(Path(__file__).parent / ".env")
 
 class GeminiPDFExtractor:
     PRICING: ClassVar = {
+        "gemini-3-pro": {"input_per_million": 2.00, "output_per_million": 12.00, "is_free": False},
+        "gemini-2.5-pro": {"input_per_million": 1.25, "output_per_million": 10.00, "is_free": False},
+        "gemini-2.5-flash": {"input_per_million": 0.15, "output_per_million": 0.60, "is_free": False},
+        "gemini-2.5-flash-lite": {"input_per_million": 0.10, "output_per_million": 0.40, "is_free": False},
         "gemini-2.0-flash": {"input_per_million": 0.10, "output_per_million": 0.40, "is_free": False},
-        "gemini-1.5-flash": {"input_per_million": 0.075, "output_per_million": 0.30, "is_free": False},
-        "gemini-1.5-flash-8b": {"input_per_million": 0.0375, "output_per_million": 0.15, "is_free": False},
-        "gemini-1.5-pro": {"input_per_million": 1.25, "output_per_million": 5.00, "is_free": False},
+        "gemini-2.0-flash-lite": {"input_per_million": 0.05, "output_per_million": 0.20, "is_free": False},
     }
 
     def __init__(self, api_key: str | None = None):
