@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "source_filename": "dealer_18_2026-01-30.pdf",
+    "extraction_date": "2026-02-03",
+    "dealer_id": "18",
+    "pdf_date": "2026-01-30",
+    "brand_folder": "kia",
+    "year_folder": 2026,
+    "pdf_size_kb": 3510.689453125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2052,
+      "output_tokens": 1469,
+      "total_tokens": 3521,
+      "input_cost_usd": 0.0002052,
+      "output_cost_usd": 0.0005876000000000001,
+      "total_cost_usd": 0.0007928000000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Kia",
+        "model_name": "Niro Hybrid",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Niro Hybrid EX",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 201999.0,
+            "final_price": 189999.0
+          },
+          {
+            "variant_name": "Niro Hybrid EX Comfort",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 209999.0,
+            "final_price": 197999.0
+          },
+          {
+            "variant_name": "Niro Hybrid SX",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 219999.0,
+            "final_price": 207999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "Sorento Hybrid",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Sorento Hybrid SX",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 270999.0,
+            "final_price": 258999.0
+          },
+          {
+            "variant_name": "Sorento Hybrid SX Tech Pack",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 280999.0,
+            "final_price": 268999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "Carnival Hybrid",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Carnival Hybrid - 7-Seater",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 315999.0,
+            "final_price": 303999.0
+          },
+          {
+            "variant_name": "Carnival Hybrid - 8-Seater",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 310999.0,
+            "final_price": 298999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "EV5",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "EV5 Air Standard Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 203999.0,
+            "final_price": 183999.0
+          },
+          {
+            "variant_name": "EV5 Earth Long Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 223999.0,
+            "final_price": 203999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "EV6",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "EV6 RWD",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 262999.0,
+            "final_price": 250999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "EV4",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "The all-new EV4",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 247999.0,
+            "final_price": 235999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "EV9",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "EV9 Dual Motor Long Range GT-Line",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 415999.0,
+            "final_price": 399999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
