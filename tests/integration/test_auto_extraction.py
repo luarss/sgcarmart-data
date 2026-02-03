@@ -35,7 +35,7 @@ class TestAutoExtractionInDownloadPdf:
             brand_name="mg",
             output_dir=temp_output_dir,
             auto_extract=True,
-            extract_model="gemini-2.0-flash-exp"
+            extract_model="gemini-2.0-flash"
         )
 
         assert result["status"] == "success"
@@ -92,7 +92,7 @@ class TestAutoExtractionInDownloadPdf:
             brand_name="mg",
             output_dir=temp_output_dir,
             auto_extract=True,
-            extract_model="gemini-2.0-flash-exp"
+            extract_model="gemini-2.0-flash"
         )
 
         assert result["status"] == "skipped"
@@ -123,7 +123,7 @@ class TestAutoExtractionInDownloadPdf:
             brand_name="mg",
             output_dir=temp_output_dir,
             auto_extract=True,
-            extract_model="gemini-2.0-flash-exp"
+            extract_model="gemini-2.0-flash"
         )
 
         assert result["status"] == "success"
@@ -197,7 +197,7 @@ class TestAutoExtractionInProcessDealer:
         mock_extractor.save_extraction.return_value = "data/pricelists/mg/2025/mg_82_2025-01-15.json"
         mock_extractor_class.return_value = mock_extractor
 
-        result = process_dealer("82", "mg", auto_extract=True, extract_model="gemini-2.0-flash-exp")
+        result = process_dealer("82", "mg", auto_extract=True, extract_model="gemini-2.0-flash")
 
         assert result["status"] == "success"
         assert result["brand"] == "mg"
@@ -291,7 +291,7 @@ class TestExtractionWithDifferentBrands:
             brand_name="Mercedes-Benz",
             output_dir=temp_output_dir,
             auto_extract=True,
-            extract_model="gemini-2.0-flash-exp"
+            extract_model="gemini-2.0-flash"
         )
 
         assert result["status"] == "success"

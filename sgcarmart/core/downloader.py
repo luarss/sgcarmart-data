@@ -78,7 +78,7 @@ def download_pricelist(pricelist_url, brand_name, dealer_id, date, output_dir="d
 
 
 def download_pdf(
-    pdf_url, brand_name=None, output_dir="data/pricelists", auto_extract=False, extract_model="gemini-2.0-flash-exp"
+    pdf_url, brand_name=None, output_dir="data/pricelists", auto_extract=False, extract_model="gemini-2.0-flash"
 ):
     metadata = extract_metadata_from_url(pdf_url)
     dealer_id = metadata["dealer_id"]
@@ -112,6 +112,7 @@ def download_pdf(
             except Exception as e:
                 result["extraction"] = "failed"
                 result["extraction_error"] = str(e)
+                print(f"⚠ Extraction failed for {filename}: {e}")
 
         return result
 
@@ -154,6 +155,7 @@ def download_pdf(
             except Exception as e:
                 result["extraction"] = "failed"
                 result["extraction_error"] = str(e)
+                print(f"⚠ Extraction failed for {filename}: {e}")
 
         return result
 
@@ -179,7 +181,7 @@ def download_pdf(
         }
 
 
-def process_dealer(dealer_id, brand_name, auto_extract=False, extract_model="gemini-2.0-flash-exp"):
+def process_dealer(dealer_id, brand_name, auto_extract=False, extract_model="gemini-2.0-flash"):
     brand_url = PRICELIST_URL_TEMPLATE.format(dealer_id=dealer_id, brand=normalize_brand_name(brand_name))
 
     try:
@@ -214,7 +216,7 @@ def download_all_pdfs_from_page(
     output_dir="data/pricelists",
     max_workers=DEFAULT_PDF_MAX_WORKERS,
     auto_extract=False,
-    extract_model="gemini-2.0-flash-exp",
+    extract_model="gemini-2.0-flash",
 ):
     from sgcarmart.core.scraper import extract_brand_from_url
 

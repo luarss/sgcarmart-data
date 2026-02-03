@@ -37,7 +37,7 @@ uv run main.py --year 2023-2025
 uv run main.py --no-extract
 
 # Use specific Gemini model for extraction
-uv run main.py --extract-model gemini-2.0-flash-exp
+uv run main.py --extract-model gemini-2.0-flash
 
 # Control parallel browser instances for historical downloads
 uv run main.py --year 2024 --browser-workers 5
@@ -49,7 +49,7 @@ uv run main.py --year 2024 --browser-workers 5
 uv run python analysis/batch_extract.py --brands toyota bmw --year 2025
 
 # Extract with specific model
-uv run python analysis/batch_extract.py --brands toyota --year 2025 --model gemini-2.0-flash-exp
+uv run python analysis/batch_extract.py --brands toyota --year 2025 --model gemini-2.0-flash
 ```
 
 ### Code Quality

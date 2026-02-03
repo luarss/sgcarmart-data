@@ -51,7 +51,7 @@ class TestAttemptExtraction:
         mock_extractor_class.return_value = mock_extractor
 
         status, output_path = _attempt_extraction(
-            str(pdf_path), "Toyota", "44", "2025-01-15", "gemini-2.0-flash-exp"
+            str(pdf_path), "Toyota", "44", "2025-01-15", "gemini-2.0-flash"
         )
 
         assert status == "success"
@@ -69,7 +69,7 @@ class TestAttemptExtraction:
         json_path.write_text('{"test": "data"}')
 
         status, output_path = _attempt_extraction(
-            str(pdf_path), "Toyota", "44", "2025-01-15", "gemini-2.0-flash-exp"
+            str(pdf_path), "Toyota", "44", "2025-01-15", "gemini-2.0-flash"
         )
 
         assert status == "skipped"
@@ -105,7 +105,7 @@ class TestAttemptExtraction:
         json_path.write_text('{"test": "data"}')
 
         status, output_path = _attempt_extraction(
-            str(pdf_path), "Mercedes-Benz", "10", "2025-01-15", "gemini-2.0-flash-exp"
+            str(pdf_path), "Mercedes-Benz", "10", "2025-01-15", "gemini-2.0-flash"
         )
 
         assert status == "skipped"
@@ -126,7 +126,7 @@ class TestExtractionErrorHandling:
 
         with pytest.raises(Exception, match="API timeout"):
             _attempt_extraction(
-                str(pdf_path), "Toyota", "44", "2025-01-15", "gemini-2.0-flash-exp"
+                str(pdf_path), "Toyota", "44", "2025-01-15", "gemini-2.0-flash"
             )
 
     @patch('analysis.pdf_extractor.GeminiPDFExtractor')
@@ -141,5 +141,5 @@ class TestExtractionErrorHandling:
 
         with pytest.raises(ValueError, match="Invalid PDF format"):
             _attempt_extraction(
-                str(pdf_path), "Toyota", "44", "2025-01-15", "gemini-2.0-flash-exp"
+                str(pdf_path), "Toyota", "44", "2025-01-15", "gemini-2.0-flash"
             )

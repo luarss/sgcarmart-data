@@ -59,7 +59,7 @@ class PriceListDocument(BaseModel):
 
 
 class APIUsageStats(BaseModel):
-    model_name: str = Field(..., description="Gemini model used (e.g., gemini-2.0-flash-exp)")
+    model_name: str = Field(..., description="Gemini model used (e.g., gemini-2.0-flash)")
     input_tokens: int = Field(..., description="Number of input tokens used")
     output_tokens: int = Field(..., description="Number of output tokens generated")
     total_tokens: int = Field(..., description="Total tokens (input + output)")
