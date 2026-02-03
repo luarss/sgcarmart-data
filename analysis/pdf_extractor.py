@@ -17,16 +17,12 @@ load_dotenv(Path(__file__).parent / ".env")
 
 class GeminiPDFExtractor:
     PRICING: ClassVar = {
-        "gemini-2.0-flash-exp": {
-            "input_per_million": 0.00,
-            "output_per_million": 0.00,
-            "is_free": True,
-            "free_until": "2025-05-31",
-        },
+        "gemini-3-pro": {"input_per_million": 2.00, "output_per_million": 12.00, "is_free": False},
+        "gemini-2.5-pro": {"input_per_million": 1.25, "output_per_million": 10.00, "is_free": False},
+        "gemini-2.5-flash": {"input_per_million": 0.15, "output_per_million": 0.60, "is_free": False},
+        "gemini-2.5-flash-lite": {"input_per_million": 0.10, "output_per_million": 0.40, "is_free": False},
         "gemini-2.0-flash": {"input_per_million": 0.10, "output_per_million": 0.40, "is_free": False},
-        "gemini-1.5-flash": {"input_per_million": 0.075, "output_per_million": 0.30, "is_free": False},
-        "gemini-1.5-flash-8b": {"input_per_million": 0.0375, "output_per_million": 0.15, "is_free": False},
-        "gemini-1.5-pro": {"input_per_million": 1.25, "output_per_million": 5.00, "is_free": False},
+        "gemini-2.0-flash-lite": {"input_per_million": 0.05, "output_per_million": 0.20, "is_free": False},
     }
 
     def __init__(self, api_key: str | None = None):
@@ -162,7 +158,7 @@ Extract the data now from the provided PDF."""
     def extract_from_pdf(
         self,
         pdf_path: Path,
-        model: str = "gemini-2.0-flash-exp",
+        model: str = "gemini-2.0-flash",
         temperature: float = 0.1,
         fallback_model: str = "gemini-2.0-flash",
     ) -> SGCarMartPriceListExtraction:
@@ -322,7 +318,7 @@ def main():
         default=None,
         help="Output directory for extracted JSON (default: data/pricelists/<brand>/<year>)",
     )
-    parser.add_argument("--model", type=str, default="gemini-2.0-flash-exp", help="Gemini model to use")
+    parser.add_argument("--model", type=str, default="gemini-2.0-flash", help="Gemini model to use")
     parser.add_argument("--api-key", type=str, help="Gemini API key (or set GEMINI_API_KEY env var)")
 
     args = parser.parse_args()

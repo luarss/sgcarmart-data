@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
@@ -33,7 +34,7 @@ def parse_year_range(year_arg: str) -> list:
 
 
 def process_dealer_historical(
-    dealer_id: str, brand_name: str, years: list | None = None, auto_extract=False, extract_model="gemini-2.0-flash-exp"
+    dealer_id: str, brand_name: str, years: list | None = None, auto_extract=False, extract_model="gemini-2.0-flash"
 ) -> dict:
     """
     Process a dealer with historical PDF discovery and download.
@@ -43,7 +44,7 @@ def process_dealer_historical(
         brand_name: Brand name
         years: List of years to download (None = all years)
         auto_extract: Whether to run automatic extraction
-        extract_model: Model name used for extraction (default: "gemini-2.0-flash-exp")
+        extract_model: Model name used for extraction (default: "gemini-2.0-flash")
 
     Returns:
         Dict with download results
@@ -135,8 +136,8 @@ Examples:
     parser.add_argument(
         "--extract-model",
         type=str,
-        default="gemini-2.0-flash-exp",
-        help="Gemini model to use for extraction (default: gemini-2.0-flash-exp)",
+        default="gemini-2.0-flash",
+        help="Gemini model to use for extraction (default: gemini-2.0-flash)",
     )
 
     args = parser.parse_args()
@@ -227,7 +228,15 @@ Examples:
             for future in as_completed(futures):
                 result = future.result()
                 results.append(result)
-                print(".", end="", flush=True)
+
+                # Show extraction failures immediately
+                if result.get("extraction") == "failed":
+                    brand = result.get("brand", "unknown")
+                    error = result.get("extraction_error", "Unknown error")
+                    print(f"\n⚠ {brand}: Extraction failed - {error}")
+                    print(".", end="", flush=True)
+                else:
+                    print(".", end="", flush=True)
         print()
 
     report_file = f"data/download_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
@@ -250,7 +259,34 @@ Examples:
         print(f"Pricelists found: {found_count}")
         print(f"Successfully downloaded: {downloaded_count}")
 
+    # Extraction summary (if auto-extraction was enabled)
+    if auto_extract:
+        extraction_success = sum(1 for r in results if r.get("extraction") == "success")
+        extraction_skipped = sum(1 for r in results if r.get("extraction") == "skipped")
+        extraction_failed = sum(1 for r in results if r.get("extraction") == "failed")
+        extraction_total = extraction_success + extraction_skipped + extraction_failed
+
+        if extraction_total > 0:
+            print("\nExtraction Summary:")
+            print(f"  Extracted: {extraction_success}")
+            print(f"  Skipped: {extraction_skipped}")
+            if extraction_failed > 0:
+                print(f"  ⚠ Failed: {extraction_failed}")
+                print("\nExtraction Failures:")
+                for r in results:
+                    if r.get("extraction") == "failed":
+                        error_msg = r.get("extraction_error", "Unknown error")
+                        brand = r.get("brand", "unknown")
+                        print(f"  • {brand}: {error_msg}")
+
     print(f"\nDownload report: {report_file}")
+
+    # Exit with error if extraction failures occurred
+    if auto_extract:
+        extraction_failed = sum(1 for r in results if r.get("extraction") == "failed")
+        if extraction_failed > 0:
+            print(f"\n✗ Exiting with error code due to {extraction_failed} extraction failure(s)")
+            sys.exit(1)
 
 
 if __name__ == "__main__":
