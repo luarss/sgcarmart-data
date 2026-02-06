@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "source_filename": "dealer_31_2026-02-06.pdf",
+    "extraction_date": "2026-02-06",
+    "dealer_id": "31",
+    "pdf_date": "2026-02-06",
+    "brand_folder": "opel",
+    "year_folder": 2026,
+    "pdf_size_kb": 5.900390625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 936,
+      "total_tokens": 2472,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.0003744,
+      "total_cost_usd": 0.000528,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Opel",
+        "model_name": "Combo-e",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Electric 50 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 49800.0
+          },
+          {
+            "variant_name": "Life Electric 50 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 175500.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Life Electric 50 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 179500.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Opel",
+        "model_name": "Corsa-e",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "Electric 50 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 142800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Opel",
+        "model_name": "Mokka-e",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Electric 50 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 149500.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Opel",
+        "model_name": "Vivaro-e",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Electric 75 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 63800.0
+          }
+        ]
+      },
+      {
+        "brand": "Opel",
+        "model_name": "Zafira-e Life",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Electric 50 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 205500.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric 75 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 209500.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

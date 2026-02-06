@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source_filename": "dealer_84_2026-02-05.pdf",
+    "extraction_date": "2026-02-06",
+    "dealer_id": "84",
+    "pdf_date": "2026-02-05",
+    "brand_folder": "byd",
+    "year_folder": 2026,
+    "pdf_size_kb": 228.9638671875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2310,
+      "output_tokens": 279,
+      "total_tokens": 2589,
+      "input_cost_usd": 0.000231,
+      "output_cost_usd": 0.0001116,
+      "total_cost_usd": 0.0003426,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "BYD",
+        "model_name": "eT3",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 140800.0,
+            "final_price": 119800.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
