@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "source_filename": "dealer_77_2026-02-06.pdf",
+    "extraction_date": "2026-02-07",
+    "dealer_id": "77",
+    "pdf_date": "2026-02-06",
+    "brand_folder": "maxus",
+    "year_folder": 2026,
+    "pdf_size_kb": 640.3330078125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2310,
+      "output_tokens": 704,
+      "total_tokens": 3014,
+      "input_cost_usd": 0.000231,
+      "output_cost_usd": 0.0002816,
+      "total_cost_usd": 0.0005126,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MAXUS",
+        "model_name": "eDeliver 5",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eDeliver 5",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 148999.0,
+            "final_price": 129999.0
+          },
+          {
+            "variant_name": "eDeliver 5 High Roof",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 153999.0,
+            "final_price": 134999.0
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "eDeliver 7",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eDeliver 7",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 153999.0,
+            "final_price": 134999.0
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "eDeliver 9",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eDeliver 9",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 170999.0,
+            "final_price": 151999.0
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "eTerron 9",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eTerron 9",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 242999.0,
+            "final_price": 223999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
