@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "source_filename": "dealer_95_2026-02-11.pdf",
+    "extraction_date": "2026-02-12",
+    "dealer_id": "95",
+    "pdf_date": "2026-02-11",
+    "brand_folder": "sokon",
+    "year_folder": 2026,
+    "pdf_size_kb": 4.265625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2310,
+      "output_tokens": 380,
+      "total_tokens": 2690,
+      "input_cost_usd": 0.000231,
+      "output_cost_usd": 0.000152,
+      "total_cost_usd": 0.000383,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SOKON",
+        "model_name": "EC31",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Electric 38.6 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 105000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "SOKON",
+        "model_name": "EC3511",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Electric 38.6 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 99000.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
