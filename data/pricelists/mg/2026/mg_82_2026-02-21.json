@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "source_filename": "dealer_82_2026-02-21.pdf",
+    "extraction_date": "2026-02-21",
+    "dealer_id": "82",
+    "pdf_date": "2026-02-21",
+    "brand_folder": "mg",
+    "year_folder": 2026,
+    "pdf_size_kb": 3061.7158203125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1794,
+      "output_tokens": 879,
+      "total_tokens": 2673,
+      "input_cost_usd": 0.00017940000000000002,
+      "output_cost_usd": 0.00035160000000000004,
+      "total_cost_usd": 0.000531,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MG",
+        "model_name": "MGS5",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "LUXURY A",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 187888.0,
+            "final_price": 177888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "MGS6",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "LUXURY A",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 216888.0,
+            "final_price": 196888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "MG4",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "TROPHY",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 168888.0,
+            "final_price": 158888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "CYBERSTER",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "RWD 250kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 301888.0,
+            "final_price": 281888.0
+          },
+          {
+            "variant_name": "AWD 375kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 348888.0,
+            "final_price": 328888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "M9",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "TROPHY",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 305888.0,
+            "final_price": 285888.0
+          },
+          {
+            "variant_name": "GRAND TROPHY",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 325888.0,
+            "final_price": 305888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
