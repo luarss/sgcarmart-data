@@ -164,8 +164,10 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
-# mkdocs documentation
-/site
+# Observable Framework
+site/node_modules/
+site/dist/
+site/**/.observablehq/
 
 # mypy
 .mypy_cache/
@@ -217,6 +219,12 @@ __marimo__/
 
 ##################################
 # Project specific
+# Archived years - stored in Cloudflare R2
+data/pricelists/*/2021/
+data/pricelists/*/2022/
+data/pricelists/*/2023/
+data/pricelists/*/2024/
+
 download_report_*.json
 scrape_report_*.json
 pdf_download_report_*.json
