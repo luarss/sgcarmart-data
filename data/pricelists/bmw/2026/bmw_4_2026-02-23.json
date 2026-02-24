@@ -1,0 +1,601 @@
+{
+  "metadata": {
+    "source_filename": "dealer_4_2026-02-23.pdf",
+    "extraction_date": "2026-02-24",
+    "dealer_id": "4",
+    "pdf_date": "2026-02-23",
+    "brand_folder": "bmw",
+    "year_folder": 2026,
+    "pdf_size_kb": 92.92578125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1794,
+      "output_tokens": 5111,
+      "total_tokens": 6905,
+      "input_cost_usd": 0.00017940000000000002,
+      "output_cost_usd": 0.0020444,
+      "total_cost_usd": 0.0022238,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "BMW",
+        "model_name": "1 Series",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "116",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 237888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "M135 xDrive",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 350888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "2 Series Coup\u00e9",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "220i",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 296888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "M240i xDrive",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 388888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "2 Series Gran Coup\u00e9",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "216",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 246888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "M235 xDrive",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 360888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "2 Series Active Tourer",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "216i Inspiring",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 247888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "216i M Sport",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 254888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "3 Series Sedan",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "318i Inspiring",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 295888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "318i M Sport",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 307888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "M340i xDrive",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 464888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "4 Series Coup\u00e9",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "420i M Sport Pro",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 338888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "4 Series Convertible",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "420i M Sport Pro",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 356888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "4 Series Gran Coup\u00e9",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "420i M Sport Pro",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 342888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "i4 M60 xDrive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 457888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "5 Series Sedan",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "520i",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 364888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "520i M Sport",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 374888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "530i Signature",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 386888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "i5 eDrive40",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 415888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "i5 eDrive40 M Sport",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 428888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "i5 M60 xDrive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 539888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "5 Series Touring",
+        "category": "WAGON",
+        "variants": [
+          {
+            "variant_name": "520i M Sport",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 385888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "i5 eDrive40 M Sport",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 438888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "7 Series Sedan",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "735i Pinnacle",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 615888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "735i M Sport",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 649888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "i7 eDrive50 Pinnacle",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 636888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "i7 eDrive50 M Sport",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 672888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "i7 xDrive60 Pinnacle",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 713888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "i7 xDrive60 Pure Excellence",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 752888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "i7 xDrive60 M Sport Pro",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 787888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "X1",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "X1 sDrive16i Inspiring",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 269888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "X1 sDrive16i M Sport",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 274888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "X1 M35i xDrive",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 366888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "iX1 eDrive20 xLine",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 288888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "X2",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "X2 sDrive16i M Sport",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 280888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "X2 M35i xDrive",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 371888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "iX2 eDrive20 M Sport",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 299888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "X3",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "X3 20 xDrive",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 351888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "X3 20 xDrive M Sport",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 365888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "X3 M50 xDrive",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 461888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "X5",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "X5 xDrive40i 7-Seater",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 563888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "X5 xDrive40i M Sport 7-Seater",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 573888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "iX xDrive45 Sport",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 460888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "iX xDrive45 M Sport",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 482888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "X6",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "X6 xDrive40i M Sport Pro",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 584888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "X7",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "X7 xDrive40i",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 658888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "X7 xDrive40i M Sport",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 675888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "X7 M60i xDrive 6-Seater",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 840888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "i4 Gran Coup\u00e9",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "i4 eDrive35 M Sport",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 349888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "M2 Coup\u00e9",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "M2",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 517888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "M2 CS",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 661888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "M3 Sedan",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "M3 Competition",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 612888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "M3 Touring",
+        "category": "WAGON",
+        "variants": [
+          {
+            "variant_name": "M3 Competition",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 635888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "M4 Coup\u00e9",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "M4 Competition",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 623888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "M4 Convertible",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "M4 Competition",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 641888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "M5 Sedan",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "M5",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 761888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "BMW",
+        "model_name": "M5 Touring",
+        "category": "WAGON",
+        "variants": [
+          {
+            "variant_name": "M5",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 781888.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
