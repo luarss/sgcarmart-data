@@ -1,0 +1,279 @@
+{
+  "metadata": {
+    "source_filename": "dealer_44_2026-03-05.pdf",
+    "extraction_date": "2026-03-05",
+    "dealer_id": "44",
+    "pdf_date": "2026-03-05",
+    "brand_folder": "toyota",
+    "year_folder": 2026,
+    "pdf_size_kb": 657.837890625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1794,
+      "output_tokens": 2377,
+      "total_tokens": 4171,
+      "input_cost_usd": 0.00017940000000000002,
+      "output_cost_usd": 0.0009508000000000001,
+      "total_cost_usd": 0.0011302,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "TOYOTA",
+        "model_name": "VIOS",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "1.5 HYBRID",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 180888.0,
+            "final_price": 185888.0
+          }
+        ]
+      },
+      {
+        "brand": "TOYOTA",
+        "model_name": "COROLLA ALTIS",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "1.6 STANDARD",
+            "engine_size": "1.6",
+            "vehicle_type": "ICE",
+            "list_price": 185888.0,
+            "final_price": 190888.0
+          },
+          {
+            "variant_name": "1.6 ELEGANCE (WITH TSS)",
+            "engine_size": "1.6",
+            "vehicle_type": "ICE",
+            "list_price": 193888.0,
+            "final_price": 198888.0
+          },
+          {
+            "variant_name": "1.8 HYBRID",
+            "engine_size": "1.8",
+            "vehicle_type": "Hybrid",
+            "list_price": 210888.0,
+            "final_price": 215888.0
+          }
+        ]
+      },
+      {
+        "brand": "TOYOTA",
+        "model_name": "YARIS CROSS",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5 ACTIVE HYBRID",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 197888.0,
+            "final_price": 202888.0
+          }
+        ]
+      },
+      {
+        "brand": "TOYOTA",
+        "model_name": "SIENTA",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "1.5 ELEGANCE HYBRID",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 198888.0,
+            "final_price": 203888.0
+          }
+        ]
+      },
+      {
+        "brand": "TOYOTA",
+        "model_name": "PRIUS",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "1.8 HYBRID",
+            "engine_size": "1.8",
+            "vehicle_type": "Hybrid",
+            "list_price": 219888.0,
+            "final_price": 224888.0
+          }
+        ]
+      },
+      {
+        "brand": "TOYOTA",
+        "model_name": "CAMRY",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "2.5 ELEGANCE HYBRID",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 265888.0,
+            "final_price": 270888.0
+          }
+        ]
+      },
+      {
+        "brand": "TOYOTA",
+        "model_name": "COROLLA CROSS",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "2.0 PREMIUM HYBRID",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 222888.0,
+            "final_price": 227888.0
+          }
+        ]
+      },
+      {
+        "brand": "TOYOTA",
+        "model_name": "bZ4X",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "73kWh BATTERY ELECTRIC",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 218888.0,
+            "final_price": 223888.0
+          }
+        ]
+      },
+      {
+        "brand": "TOYOTA",
+        "model_name": "HARRIER",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "2.5 PREMIUM HYBRID",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 265888.0,
+            "final_price": 270888.0
+          }
+        ]
+      },
+      {
+        "brand": "TOYOTA",
+        "model_name": "NOAH",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "1.8 ELEGANCE HYBRID",
+            "engine_size": "1.8",
+            "vehicle_type": "Hybrid",
+            "list_price": 228888.0,
+            "final_price": 233888.0
+          }
+        ]
+      },
+      {
+        "brand": "TOYOTA",
+        "model_name": "ALPHARD",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "2.5 STANDARD HYBRID",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": 398888.0
+          },
+          {
+            "variant_name": "2.5 ELEGANCE HYBRID",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": 414888.0
+          }
+        ]
+      },
+      {
+        "brand": "TOYOTA",
+        "model_name": "VELLFIRE",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "2.5 ELEGANCE HYBRID",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": 417888.0
+          }
+        ]
+      },
+      {
+        "brand": "TOYOTA",
+        "model_name": "GR SUPRA TRACK EDITION",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "3.0 MANUAL",
+            "engine_size": "3.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "3.0 AUTO",
+            "engine_size": "3.0",
+            "vehicle_type": "ICE",
+            "list_price": 344888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "TOYOTA",
+        "model_name": "GR86",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "2.4 MANUAL",
+            "engine_size": "2.4",
+            "vehicle_type": "ICE",
+            "list_price": 172888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "2.4 AUTO",
+            "engine_size": "2.4",
+            "vehicle_type": "ICE",
+            "list_price": 179888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "TOYOTA",
+        "model_name": "GR YARIS",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "1.6 MANUAL",
+            "engine_size": "1.6",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "1.6 AUTO",
+            "engine_size": "1.6",
+            "vehicle_type": "ICE",
+            "list_price": 249888.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

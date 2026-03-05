@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "source_filename": "dealer_43_2026-03-05.pdf",
+    "extraction_date": "2026-03-05",
+    "dealer_id": "43",
+    "pdf_date": "2026-03-05",
+    "brand_folder": "suzuki",
+    "year_folder": 2026,
+    "pdf_size_kb": 4578.732421875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 944,
+      "total_tokens": 2480,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.0003776,
+      "total_cost_usd": 0.0005312,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SUZUKI",
+        "model_name": "FRONX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": "1.5L",
+            "vehicle_type": "Hybrid",
+            "list_price": 181888.0,
+            "final_price": 179888.0
+          },
+          {
+            "variant_name": "Two Tones",
+            "engine_size": "1.5L",
+            "vehicle_type": "Hybrid",
+            "list_price": 182888.0,
+            "final_price": 180888.0
+          }
+        ]
+      },
+      {
+        "brand": "SUZUKI",
+        "model_name": "SWIFT",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": "1.2L",
+            "vehicle_type": "Hybrid",
+            "list_price": 152888.0,
+            "final_price": 150888.0
+          },
+          {
+            "variant_name": "Two Tones",
+            "engine_size": "1.2L",
+            "vehicle_type": "Hybrid",
+            "list_price": 153888.0,
+            "final_price": 151888.0
+          }
+        ]
+      },
+      {
+        "brand": "SUZUKI",
+        "model_name": "Jimny",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 168888.0,
+            "final_price": 166888.0
+          },
+          {
+            "variant_name": "GLX Two Tones",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 169888.0,
+            "final_price": 167888.0
+          }
+        ]
+      },
+      {
+        "brand": "SUZUKI",
+        "model_name": "Jimny 5-door",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 198888.0,
+            "final_price": 196888.0
+          },
+          {
+            "variant_name": "GLX Two Tones",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 199888.0,
+            "final_price": 197888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
