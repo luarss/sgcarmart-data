@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "source_filename": "dealer_42_2026-03-06.pdf",
+    "extraction_date": "2026-03-06",
+    "dealer_id": "42",
+    "pdf_date": "2026-03-06",
+    "brand_folder": "subaru",
+    "year_folder": 2026,
+    "pdf_size_kb": 160.0966796875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2310,
+      "output_tokens": 718,
+      "total_tokens": 3028,
+      "input_cost_usd": 0.000231,
+      "output_cost_usd": 0.0002872,
+      "total_cost_usd": 0.0005182,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SUBARU",
+        "model_name": "SOLTERRA XT",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SOLTERRA XT ELECTRIC AWD 73.1KWH - ENERGY CONSUMPTION: 16.7KWH/100KM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 223600.0,
+            "final_price": 220800.0
+          }
+        ]
+      },
+      {
+        "brand": "SUBARU",
+        "model_name": "FORESTER",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "FORESTER 2.5 HYBRID",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 214600.0,
+            "final_price": 211800.0
+          },
+          {
+            "variant_name": "FORESTER 2.5I-S EYESIGHT HYBRID AWD CVT",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "SUBARU",
+        "model_name": "BRZ",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "SUBARU BRZ 2.4 RWD 6MT",
+            "engine_size": "2.4",
+            "vehicle_type": "ICE",
+            "list_price": 251600.0,
+            "final_price": 248800.0
+          },
+          {
+            "variant_name": "SUBARU BRZ 2.4 EYESIGHT RWD 6AT",
+            "engine_size": "2.4",
+            "vehicle_type": "ICE",
+            "list_price": 256600.0,
+            "final_price": 253800.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
