@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "source_filename": "dealer_12_2026-03-06.pdf",
+    "extraction_date": "2026-03-07",
+    "dealer_id": "12",
+    "pdf_date": "2026-03-06",
+    "brand_folder": "ford",
+    "year_folder": 2026,
+    "pdf_size_kb": 4.447265625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2310,
+      "output_tokens": 378,
+      "total_tokens": 2688,
+      "input_cost_usd": 0.000231,
+      "output_cost_usd": 0.00015120000000000002,
+      "total_cost_usd": 0.0003822,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Ford",
+        "model_name": "Ford Ranger Raptor Double Cab",
+        "category": "TRUCK",
+        "variants": [
+          {
+            "variant_name": "Diesel 2.0 (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Ford",
+        "model_name": "Ford Ranger Wildtrak Double Cab",
+        "category": "TRUCK",
+        "variants": [
+          {
+            "variant_name": "Diesel 2.0 (A)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 199888.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
