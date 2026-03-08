@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "source_filename": "dealer_101_2026-03-06.pdf",
+    "extraction_date": "2026-03-08",
+    "dealer_id": "101",
+    "pdf_date": "2026-03-06",
+    "brand_folder": "ora",
+    "year_folder": 2026,
+    "pdf_size_kb": 420.966796875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 321,
+      "total_tokens": 1857,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.0001284,
+      "total_cost_usd": 0.000282,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "ORA",
+        "model_name": "GOOD CAT",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "GOOD CAT",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 219999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "GOOD CAT GT",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 224999.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
