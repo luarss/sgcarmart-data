@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "source_filename": "dealer_86_2026-03-12.pdf",
+    "extraction_date": "2026-03-13",
+    "dealer_id": "86",
+    "pdf_date": "2026-03-12",
+    "brand_folder": "tesla",
+    "year_folder": 2026,
+    "pdf_size_kb": 4.5263671875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2310,
+      "output_tokens": 681,
+      "total_tokens": 2991,
+      "input_cost_usd": 0.000231,
+      "output_cost_usd": 0.0002724,
+      "total_cost_usd": 0.0005034,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Tesla",
+        "model_name": "Model 3",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Electric Premium RWD 110 62.5 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 187888.0
+          },
+          {
+            "variant_name": "Electric Premium Long Range RWD 84 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 209888.0
+          },
+          {
+            "variant_name": "Electric Performance AWD 84 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 246121.0
+          }
+        ]
+      },
+      {
+        "brand": "Tesla",
+        "model_name": "Model Y",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Electric Premium RWD 110 62.5 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 201888.0
+          },
+          {
+            "variant_name": "Electric Premium Long Range RWD 84 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 226888.0
+          },
+          {
+            "variant_name": "Electric Premium Long Range AWD 84 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 238545.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
