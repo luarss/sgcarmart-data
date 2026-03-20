@@ -1,4 +1,5 @@
 export default {
+  root: "src",
   title: "SGCarMart Price History",
   pages: [
     {name: "Home", path: "/"},
