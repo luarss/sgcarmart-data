@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "source_filename": "dealer_109_2026-03-20.pdf",
+    "extraction_date": "2026-03-24",
+    "dealer_id": "109",
+    "pdf_date": "2026-03-20",
+    "brand_folder": "smart",
+    "year_folder": 2026,
+    "pdf_size_kb": 2546.49609375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 692,
+      "total_tokens": 2228,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.0002768,
+      "total_cost_usd": 0.00043040000000000005,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "smart",
+        "model_name": "#1",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "Pro+",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 285888.0,
+            "final_price": 200000.0
+          },
+          {
+            "variant_name": "BRABUS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 334888.0,
+            "final_price": 244000.0
+          }
+        ]
+      },
+      {
+        "brand": "smart",
+        "model_name": "#3",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "Pro+",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 308888.0,
+            "final_price": 218000.0
+          },
+          {
+            "variant_name": "BRABUS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 361888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "smart",
+        "model_name": "#5",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "Pro",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 335888.0,
+            "final_price": 227000.0
+          },
+          {
+            "variant_name": "Premium",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 375888.0,
+            "final_price": 267000.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
