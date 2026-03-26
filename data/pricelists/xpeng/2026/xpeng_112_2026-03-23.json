@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "source_filename": "dealer_112_2026-03-23.pdf",
+    "extraction_date": "2026-03-26",
+    "dealer_id": "112",
+    "pdf_date": "2026-03-23",
+    "brand_folder": "xpeng",
+    "year_folder": 2026,
+    "pdf_size_kb": 1017.5751953125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 563,
+      "total_tokens": 2099,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.00022520000000000003,
+      "total_cost_usd": 0.00037880000000000005,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "XPENG",
+        "model_name": "G6",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Air RWD Standard Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 213999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Pro RWD Long Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 235999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Pro AWD Performance",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 264999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "XPENG",
+        "model_name": "X9",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Premium Seat",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 355999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Grand Seat",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 370999.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
