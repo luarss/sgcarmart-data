@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "source_filename": "dealer_115_2026-04-08.pdf",
+    "extraction_date": "2026-04-09",
+    "dealer_id": "115",
+    "pdf_date": "2026-04-08",
+    "brand_folder": "dongfeng",
+    "year_folder": 2026,
+    "pdf_size_kb": 1258.7724609375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 773,
+      "total_tokens": 2309,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.00030920000000000003,
+      "total_cost_usd": 0.0004628000000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "DONGFENG",
+        "model_name": "BOX",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "BOX",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 229888.0,
+            "final_price": 165888.0
+          }
+        ]
+      },
+      {
+        "brand": "DONGFENG",
+        "model_name": "BOX - R",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "BOX - R",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 235888.0,
+            "final_price": 171888.0
+          }
+        ]
+      },
+      {
+        "brand": "DONGFENG",
+        "model_name": "VIGO",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "VIGO",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 239888.0,
+            "final_price": 177888.0
+          }
+        ]
+      },
+      {
+        "brand": "DONGFENG",
+        "model_name": "007",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "PRESTIGE (99kW)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 264888.0,
+            "final_price": 194888.0
+          },
+          {
+            "variant_name": "PREMIUM (200kW)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 296888.0,
+            "final_price": 216888.0
+          },
+          {
+            "variant_name": "PERFORMANCE (400kW)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 332888.0,
+            "final_price": 242888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

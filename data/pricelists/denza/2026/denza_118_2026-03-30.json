@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "source_filename": "dealer_118_2026-03-30.pdf",
+    "extraction_date": "2026-04-09",
+    "dealer_id": "118",
+    "pdf_date": "2026-03-30",
+    "brand_folder": "denza",
+    "year_folder": 2026,
+    "pdf_size_kb": 4011.1318359375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2310,
+      "output_tokens": 459,
+      "total_tokens": 2769,
+      "input_cost_usd": 0.000231,
+      "output_cost_usd": 0.00018360000000000002,
+      "total_cost_usd": 0.0004146,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "DENZA",
+        "model_name": "D9",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Elite VES A",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 359888.0,
+            "final_price": 294888.0
+          },
+          {
+            "variant_name": "Grandeur VES B",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 407388.0,
+            "final_price": 342388.0
+          }
+        ]
+      },
+      {
+        "brand": "DENZA",
+        "model_name": "B5 Orion",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "VES C2",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 418888.0,
+            "final_price": 348888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

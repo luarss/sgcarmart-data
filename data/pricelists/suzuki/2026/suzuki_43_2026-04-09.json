@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "source_filename": "dealer_43_2026-04-09.pdf",
+    "extraction_date": "2026-04-09",
+    "dealer_id": "43",
+    "pdf_date": "2026-04-09",
+    "brand_folder": "suzuki",
+    "year_folder": 2026,
+    "pdf_size_kb": 7615.041015625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 642,
+      "total_tokens": 2178,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.0002568,
+      "total_cost_usd": 0.0004104,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SUZUKI",
+        "model_name": "VITARA",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "THE ALL-NEW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 107000.0,
+            "final_price": 110000.0
+          }
+        ]
+      },
+      {
+        "brand": "SUZUKI",
+        "model_name": "FRONX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5L Dualjet Hybrid",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 191888.0,
+            "final_price": 189888.0
+          }
+        ]
+      },
+      {
+        "brand": "SUZUKI",
+        "model_name": "Jimny",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5L GLX",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 178888.0,
+            "final_price": 176888.0
+          }
+        ]
+      },
+      {
+        "brand": "SUZUKI",
+        "model_name": "Jimny",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "5-door 1.5L GLX",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 208888.0,
+            "final_price": 206888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
