@@ -1,0 +1,258 @@
+{
+  "metadata": {
+    "source_filename": "dealer_14_2026-04-09.pdf",
+    "extraction_date": "2026-04-10",
+    "dealer_id": "14",
+    "pdf_date": "2026-04-09",
+    "brand_folder": "hyundai",
+    "year_folder": 2026,
+    "pdf_size_kb": 3108.013671875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1794,
+      "output_tokens": 2358,
+      "total_tokens": 4152,
+      "input_cost_usd": 0.00017940000000000002,
+      "output_cost_usd": 0.0009431999999999999,
+      "total_cost_usd": 0.0011226,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Hyundai",
+        "model_name": "AVANTE Hybrid",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "S",
+            "engine_size": "1.580",
+            "vehicle_type": "Hybrid",
+            "list_price": 244999.0,
+            "final_price": 194999.0
+          },
+          {
+            "variant_name": "Elite",
+            "engine_size": "1.580",
+            "vehicle_type": "Hybrid",
+            "list_price": 250999.0,
+            "final_price": 200999.0
+          },
+          {
+            "variant_name": "S",
+            "engine_size": "1.580",
+            "vehicle_type": "Hybrid",
+            "list_price": 248999.0,
+            "final_price": 198999.0
+          },
+          {
+            "variant_name": "Elite",
+            "engine_size": "1.580",
+            "vehicle_type": "Hybrid",
+            "list_price": 258999.0,
+            "final_price": 208999.0
+          }
+        ]
+      },
+      {
+        "brand": "Hyundai",
+        "model_name": "KONA Hybrid",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "S",
+            "engine_size": "1.580",
+            "vehicle_type": "Hybrid",
+            "list_price": 244999.0,
+            "final_price": 194999.0
+          },
+          {
+            "variant_name": "Elite",
+            "engine_size": "1.580",
+            "vehicle_type": "Hybrid",
+            "list_price": 250999.0,
+            "final_price": 200999.0
+          },
+          {
+            "variant_name": "S",
+            "engine_size": "1.580",
+            "vehicle_type": "Hybrid",
+            "list_price": 248999.0,
+            "final_price": 198999.0
+          },
+          {
+            "variant_name": "Elite",
+            "engine_size": "1.580",
+            "vehicle_type": "Hybrid",
+            "list_price": 258999.0,
+            "final_price": 208999.0
+          }
+        ]
+      },
+      {
+        "brand": "Hyundai",
+        "model_name": "TUCSON Hybrid",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "N-Line",
+            "engine_size": "1.598",
+            "vehicle_type": "Hybrid",
+            "list_price": 318499.0,
+            "final_price": 265999.0
+          }
+        ]
+      },
+      {
+        "brand": "Hyundai",
+        "model_name": "SANTA FE Hybrid",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": "1.598",
+            "vehicle_type": "Hybrid",
+            "list_price": 314499.0,
+            "final_price": 261999.0
+          },
+          {
+            "variant_name": "Calligraphy",
+            "engine_size": "1.598",
+            "vehicle_type": "Hybrid",
+            "list_price": 334499.0,
+            "final_price": 281999.0
+          },
+          {
+            "variant_name": "Calligraphy (6-Seater)",
+            "engine_size": "1.598",
+            "vehicle_type": "Hybrid",
+            "list_price": 336499.0,
+            "final_price": 283999.0
+          }
+        ]
+      },
+      {
+        "brand": "Hyundai",
+        "model_name": "KONA Electric",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 274388.0,
+            "final_price": 201888.0
+          },
+          {
+            "variant_name": "Sunroof",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 284388.0,
+            "final_price": 211888.0
+          },
+          {
+            "variant_name": "Sunroof (Long Range)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 305388.0,
+            "final_price": 232888.0
+          }
+        ]
+      },
+      {
+        "brand": "Hyundai",
+        "model_name": "IONIQ 5 N",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "2025 Edition",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 463388.0,
+            "final_price": 380888.0
+          }
+        ]
+      },
+      {
+        "brand": "Hyundai",
+        "model_name": "IONIQ 5",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 386499.0,
+            "final_price": 303999.0
+          },
+          {
+            "variant_name": "Calligraphy",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 416499.0,
+            "final_price": 333999.0
+          },
+          {
+            "variant_name": "Prestige",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 292388.0,
+            "final_price": 249888.0
+          }
+        ]
+      },
+      {
+        "brand": "Hyundai",
+        "model_name": "IONIQ 6",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Exclusive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 290388.0,
+            "final_price": 247888.0
+          },
+          {
+            "variant_name": "Prestige",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 297388.0,
+            "final_price": 254888.0
+          },
+          {
+            "variant_name": "Prestige",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 336388.0,
+            "final_price": 293888.0
+          },
+          {
+            "variant_name": "Inspiration",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 362388.0,
+            "final_price": 319888.0
+          }
+        ]
+      },
+      {
+        "brand": "Hyundai",
+        "model_name": "IONIQ 9",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "Calligraphy",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 422499.0,
+            "final_price": 339999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

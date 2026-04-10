@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "source_filename": "dealer_86_2026-04-09.pdf",
+    "extraction_date": "2026-04-10",
+    "dealer_id": "86",
+    "pdf_date": "2026-04-09",
+    "brand_folder": "tesla",
+    "year_folder": 2026,
+    "pdf_size_kb": 2247.0126953125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 4632,
+      "output_tokens": 708,
+      "total_tokens": 5340,
+      "input_cost_usd": 0.0004632,
+      "output_cost_usd": 0.0002832,
+      "total_cost_usd": 0.0007463999999999999,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "TESLA",
+        "model_name": "Model 3",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Premium Rear-Wheel Drive 110",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 91153.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Premium Long Range Rear-Wheel Drive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 103427.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Performance All-Wheel Drive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 139660.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "TESLA",
+        "model_name": "Model Y",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "L Premium All-Wheel Drive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 144264.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Premium Rear-Wheel Drive 110",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 105519.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Premium Long Range Rear-Wheel Drive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 119913.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Premium Long Range All-Wheel Drive",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 131570.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "source_filename": "dealer_46_2026-04-09.pdf",
+    "extraction_date": "2026-04-10",
+    "dealer_id": "46",
+    "pdf_date": "2026-04-09",
+    "brand_folder": "volvo",
+    "year_folder": 2026,
+    "pdf_size_kb": 426.5078125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2310,
+      "output_tokens": 1328,
+      "total_tokens": 3638,
+      "input_cost_usd": 0.000231,
+      "output_cost_usd": 0.0005312,
+      "total_cost_usd": 0.0007622,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Volvo",
+        "model_name": "XC40",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "B4 Plus (Mild hybrid)",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 290000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volvo",
+        "model_name": "XC60",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "B5 Plus (Mild hybrid)",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 367000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "T8 Plus (Plug-in hybrid)",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 377000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volvo",
+        "model_name": "XC90",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "B5 Ultra (Mild hybrid)",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 456000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "T8 Ultra (Plug-in hybrid)",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 526000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volvo",
+        "model_name": "EX30",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Plus",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 235000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Ultra",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 255000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volvo",
+        "model_name": "EC40",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Ultra",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 305000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volvo",
+        "model_name": "EX40",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Plus",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 290000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volvo",
+        "model_name": "EX90",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Plus",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 451000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Ultra",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 521000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Volvo",
+        "model_name": "ES90",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Plus",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 358000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Ultra",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 398000.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

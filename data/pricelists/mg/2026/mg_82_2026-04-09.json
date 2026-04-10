@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "source_filename": "dealer_82_2026-04-09.pdf",
+    "extraction_date": "2026-04-10",
+    "dealer_id": "82",
+    "pdf_date": "2026-04-09",
+    "brand_folder": "mg",
+    "year_folder": 2026,
+    "pdf_size_kb": 1884.486328125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 594,
+      "total_tokens": 2130,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.00023760000000000003,
+      "total_cost_usd": 0.0003912000000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MG",
+        "model_name": "MGS5 LUXURY",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "MGS5 LUXURY",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 191888.0,
+            "final_price": 181888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "MGS6 LUXURY",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "MGS6 LUXURY",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 211888.0,
+            "final_price": 201888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "CYBERSTER",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "CYBERSTER RWD 250kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 322888.0,
+            "final_price": 312888.0
+          },
+          {
+            "variant_name": "CYBERSTER AWD 375kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 337888.0,
+            "final_price": 327888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

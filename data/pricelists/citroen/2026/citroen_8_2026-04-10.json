@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "source_filename": "dealer_8_2026-04-10.pdf",
+    "extraction_date": "2026-04-10",
+    "dealer_id": "8",
+    "pdf_date": "2026-04-10",
+    "brand_folder": "citroen",
+    "year_folder": 2026,
+    "pdf_size_kb": 2347.365234375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1794,
+      "output_tokens": 503,
+      "total_tokens": 2297,
+      "input_cost_usd": 0.00017940000000000002,
+      "output_cost_usd": 0.0002012,
+      "total_cost_usd": 0.00038060000000000004,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "CITRO\u00cbN",
+        "model_name": "\u00eb-C4X",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "SHINE PLUS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 98999.0,
+            "final_price": 74999.0
+          }
+        ]
+      },
+      {
+        "brand": "CITRO\u00cbN",
+        "model_name": "E-BERLINGO",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "E-BERLINGO",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 126000.0
+          }
+        ]
+      },
+      {
+        "brand": "CITRO\u00cbN",
+        "model_name": "E-DISPATCH",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "E-DISPATCH",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 123000.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
