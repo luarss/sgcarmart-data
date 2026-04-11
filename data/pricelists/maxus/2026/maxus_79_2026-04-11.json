@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "source_filename": "dealer_79_2026-04-11.pdf",
+    "extraction_date": "2026-04-11",
+    "dealer_id": "79",
+    "pdf_date": "2026-04-11",
+    "brand_folder": "maxus",
+    "year_folder": 2026,
+    "pdf_size_kb": 2090.3896484375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 956,
+      "total_tokens": 2492,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.0003824,
+      "total_cost_usd": 0.000536,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MAXUS",
+        "model_name": "MIFA 7",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Elite",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 246999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Premium",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 281999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Flexi",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 189999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 196999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Platinum Guaranteed COE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 200999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "MIFA 9",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Luxury",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 312999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Premium",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 327999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 262999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Platinum Guaranteed COE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 266999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 277999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Platinum Guaranteed COE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 281999.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
