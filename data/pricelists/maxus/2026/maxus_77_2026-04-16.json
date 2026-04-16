@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "source_filename": "dealer_77_2026-04-16.pdf",
+    "extraction_date": "2026-04-16",
+    "dealer_id": "77",
+    "pdf_date": "2026-04-16",
+    "brand_folder": "maxus",
+    "year_folder": 2026,
+    "pdf_size_kb": 646.4443359375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 670,
+      "total_tokens": 2206,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.000268,
+      "total_cost_usd": 0.00042160000000000006,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MAXUS",
+        "model_name": "eDeliver 5",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eDeliver 5",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 133000.0
+          },
+          {
+            "variant_name": "eDeliver 5 High Roof",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 138000.0
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "eDeliver 9 FL",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eDeliver 9 FL",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 151000.0
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "eTerron 9",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "eTerron 9",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 184000.0
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "eDeliver 7 N",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eDeliver 7 N",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 147000.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
