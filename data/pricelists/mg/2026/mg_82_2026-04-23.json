@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "source_filename": "dealer_82_2026-04-23.pdf",
+    "extraction_date": "2026-04-24",
+    "dealer_id": "82",
+    "pdf_date": "2026-04-23",
+    "brand_folder": "mg",
+    "year_folder": 2026,
+    "pdf_size_kb": 2710.7255859375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1794,
+      "output_tokens": 715,
+      "total_tokens": 2509,
+      "input_cost_usd": 0.00017940000000000002,
+      "output_cost_usd": 0.000286,
+      "total_cost_usd": 0.00046540000000000004,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MG",
+        "model_name": "MGS5 LUXURY",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "MGS5 LUXURY",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 201888.0,
+            "final_price": 191888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "MGS6 LUXURY",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "MGS6 LUXURY",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 221888.0,
+            "final_price": 211888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "CYBERSTER",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "CYBERSTER RWD 250kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 322888.0,
+            "final_price": 312888.0
+          },
+          {
+            "variant_name": "CYBERSTER AWD 375kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 337888.0,
+            "final_price": 327888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "MG4 URBAN",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "MG4 URBAN",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 200888.0,
+            "final_price": 185888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

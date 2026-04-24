@@ -1,0 +1,209 @@
+{
+  "metadata": {
+    "source_filename": "dealer_45_2026-04-23.pdf",
+    "extraction_date": "2026-04-24",
+    "dealer_id": "45",
+    "pdf_date": "2026-04-23",
+    "brand_folder": "volkswagen",
+    "year_folder": 2026,
+    "pdf_size_kb": 1883.9931640625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 1943,
+      "total_tokens": 3479,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.0007772,
+      "total_cost_usd": 0.0009308000000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Volkswagen",
+        "model_name": "T-Cross",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Style 1.0 TSI",
+            "engine_size": "1.0",
+            "vehicle_type": "ICE",
+            "list_price": 247400.0,
+            "final_price": 197900.0
+          },
+          {
+            "variant_name": "R-Line 1.0 TSI",
+            "engine_size": "1.0",
+            "vehicle_type": "ICE",
+            "list_price": 253400.0,
+            "final_price": 201900.0
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "Golf Mk8.5",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "Life Plus 1.5 eTSI Mild Hybrid",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 277400.0,
+            "final_price": 208900.0
+          },
+          {
+            "variant_name": "R-Line 1.5 eTSI Mild Hybrid",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 287400.0,
+            "final_price": 216900.0
+          },
+          {
+            "variant_name": "GTI 2.0 TSI",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 353400.0,
+            "final_price": 278900.0
+          },
+          {
+            "variant_name": "R 2.0 TSI with performance pack",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 415400.0,
+            "final_price": 331900.0
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "Tiguan",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Life 1.5 eTSI Mild Hybrid",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 284400.0,
+            "final_price": 225900.0
+          },
+          {
+            "variant_name": "Life Plus 1.5 eTSI Mild Hybrid",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 294400.0,
+            "final_price": 230900.0
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "ID.4",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Pro 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 295900.0,
+            "final_price": 214900.0
+          },
+          {
+            "variant_name": "GTX 250kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 315900.0,
+            "final_price": 231900.0
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "ID.5",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Pro 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 315900.0,
+            "final_price": 221900.0
+          },
+          {
+            "variant_name": "GTX 250kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 325900.0,
+            "final_price": 232900.0
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "ID. Buzz",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "5-seater 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 367900.0,
+            "final_price": 294900.0
+          },
+          {
+            "variant_name": "7-seater 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 390900.0,
+            "final_price": 311900.0
+          },
+          {
+            "variant_name": "6-seater 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 395900.0,
+            "final_price": 314900.0
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "ID. Buzz SG60 Edition",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "7-seater 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 393900.0,
+            "final_price": 311900.0
+          }
+        ]
+      },
+      {
+        "brand": "Volkswagen",
+        "model_name": "ID. Buzz Cargo",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Cargo 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 186400.0,
+            "final_price": 161900.0
+          },
+          {
+            "variant_name": "Cargo w/ Electric Tailgate & Sliding Doors 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 199400.0,
+            "final_price": 167900.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
