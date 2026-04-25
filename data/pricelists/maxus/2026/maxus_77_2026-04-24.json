@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "source_filename": "dealer_77_2026-04-24.pdf",
+    "extraction_date": "2026-04-25",
+    "dealer_id": "77",
+    "pdf_date": "2026-04-24",
+    "brand_folder": "maxus",
+    "year_folder": 2026,
+    "pdf_size_kb": 1551.583984375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 555,
+      "total_tokens": 2091,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.00022200000000000003,
+      "total_cost_usd": 0.0003756,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Maxus",
+        "model_name": "eDeliver 5",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eDeliver 5",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 136500.0
+          },
+          {
+            "variant_name": "eDeliver 5 High Roof Bus",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 151000.0
+          }
+        ]
+      },
+      {
+        "brand": "Maxus",
+        "model_name": "eDeliver 9 FL",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eDeliver 9 FL",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 154500.0
+          }
+        ]
+      },
+      {
+        "brand": "Maxus",
+        "model_name": "eDeliver 7 N",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eDeliver 7 N",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 150500.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
