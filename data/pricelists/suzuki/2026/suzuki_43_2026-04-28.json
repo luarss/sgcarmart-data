@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "source_filename": "dealer_43_2026-04-28.pdf",
+    "extraction_date": "2026-04-30",
+    "dealer_id": "43",
+    "pdf_date": "2026-04-28",
+    "brand_folder": "suzuki",
+    "year_folder": 2026,
+    "pdf_size_kb": 7637.61328125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 596,
+      "total_tokens": 2132,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.0002384,
+      "total_cost_usd": 0.000392,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SUZUKI",
+        "model_name": "VITARA",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "BEV",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 187888.0,
+            "final_price": 110000.0
+          }
+        ]
+      },
+      {
+        "brand": "SUZUKI",
+        "model_name": "FRONX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5L Dualjet Hybrid",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 196888.0,
+            "final_price": 194888.0
+          }
+        ]
+      },
+      {
+        "brand": "SUZUKI",
+        "model_name": "JIMNY",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5L GLX",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 183888.0,
+            "final_price": 181888.0
+          },
+          {
+            "variant_name": "1.5L GLX 5-door",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 213888.0,
+            "final_price": 211888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
