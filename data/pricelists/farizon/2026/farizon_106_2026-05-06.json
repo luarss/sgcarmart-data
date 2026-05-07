@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "source_filename": "dealer_106_2026-05-06.pdf",
+    "extraction_date": "2026-05-07",
+    "dealer_id": "106",
+    "pdf_date": "2026-05-06",
+    "brand_folder": "farizon",
+    "year_folder": 2026,
+    "pdf_size_kb": 30.7314453125,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2310,
+      "output_tokens": 1309,
+      "total_tokens": 3619,
+      "input_cost_usd": 0.000231,
+      "output_cost_usd": 0.0005236,
+      "total_cost_usd": 0.0007546,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Farizon",
+        "model_name": "H5E Electric",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "14 Footer 5T 100.46 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 98000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Farizon",
+        "model_name": "H9E Electric",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "14 Footer 106.95 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 108000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "20 Footer 162.28 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 128000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Farizon",
+        "model_name": "SuperVan Electric",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "5FR 66 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 58000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "5.5MR 66 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 62000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "5FR 83 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 65000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "5.5MR 83 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 73000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "5.5HR 83 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 75000.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "6HR 106 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 85000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Farizon",
+        "model_name": "SuperVan Minibus Electric",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "5FR 9+1 Seater 66 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 164500.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "5FR 9+1 Seater 83 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 169500.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "5.5MR 13+1 Seater 83 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 181500.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Farizon",
+        "model_name": "V7E Electric",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "67 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 47800.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
