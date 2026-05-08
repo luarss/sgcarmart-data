@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "source_filename": "dealer_42_2026-05-07.pdf",
+    "extraction_date": "2026-05-08",
+    "dealer_id": "42",
+    "pdf_date": "2026-05-07",
+    "brand_folder": "subaru",
+    "year_folder": 2026,
+    "pdf_size_kb": 170.5615234375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 2310,
+      "output_tokens": 800,
+      "total_tokens": 3110,
+      "input_cost_usd": 0.000231,
+      "output_cost_usd": 0.00032,
+      "total_cost_usd": 0.0005510000000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "SUBARU",
+        "model_name": "E-OUTBACK ELECTRIC",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "E-OUTBACK ELECTRIC AWD 74.7KWH - ENERGY CONSUMPTION : 17.5KWH/100KM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 230600.0,
+            "final_price": 227800.0
+          }
+        ]
+      },
+      {
+        "brand": "SUBARU",
+        "model_name": "SOLTERRA XT ELECTRIC",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SOLTERRA XT ELECTRIC AWD 73.1KWH - ENERGY CONSUMPTION: 16.7KWH/100KM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 223600.0,
+            "final_price": 220800.0
+          }
+        ]
+      },
+      {
+        "brand": "SUBARU",
+        "model_name": "FORESTER",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "FORESTER 2.5I-S EYESIGHT HYBRID AWD CVT",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 214600.0,
+            "final_price": 211800.0
+          }
+        ]
+      },
+      {
+        "brand": "SUBARU",
+        "model_name": "BRZ",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "SUBARU BRZ 2.4 RWD 6MT",
+            "engine_size": "2.4",
+            "vehicle_type": "ICE",
+            "list_price": 251600.0,
+            "final_price": 248800.0
+          },
+          {
+            "variant_name": "SUBARU BRZ 2.4 EYESIGHT RWD 6AT",
+            "engine_size": "2.4",
+            "vehicle_type": "ICE",
+            "list_price": 256600.0,
+            "final_price": 253800.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
