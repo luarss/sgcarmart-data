@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source_filename": "dealer_122_2026-05-08.pdf",
+    "extraction_date": "2026-05-09",
+    "dealer_id": "122",
+    "pdf_date": "2026-05-08",
+    "brand_folder": "deepal",
+    "year_folder": 2026,
+    "pdf_size_kb": 765.4794921875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 275,
+      "total_tokens": 1811,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.00011000000000000002,
+      "total_cost_usd": 0.0002636,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "DEEPAL",
+        "model_name": "S07",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "S07",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 218999.0,
+            "final_price": 199999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

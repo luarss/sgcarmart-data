@@ -1,0 +1,132 @@
+{
+  "metadata": {
+    "source_filename": "dealer_108_2026-05-09.pdf",
+    "extraction_date": "2026-05-09",
+    "dealer_id": "108",
+    "pdf_date": "2026-05-09",
+    "brand_folder": "aion",
+    "year_folder": 2026,
+    "pdf_size_kb": 800.859375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1794,
+      "output_tokens": 1042,
+      "total_tokens": 2836,
+      "input_cost_usd": 0.00017940000000000002,
+      "output_cost_usd": 0.0004168,
+      "total_cost_usd": 0.0005962000000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "GAC",
+        "model_name": "AION UT",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 245988.0,
+            "final_price": 168988.0
+          }
+        ]
+      },
+      {
+        "brand": "GAC",
+        "model_name": "AION Y PLUS",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 257988.0,
+            "final_price": 176988.0
+          }
+        ]
+      },
+      {
+        "brand": "GAC",
+        "model_name": "AION ES",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 263988.0,
+            "final_price": 182988.0
+          }
+        ]
+      },
+      {
+        "brand": "GAC",
+        "model_name": "AION V",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "LUXURY",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 272988.0,
+            "final_price": 191988.0
+          }
+        ]
+      },
+      {
+        "brand": "GAC",
+        "model_name": "HYPTEC HT PREMIUM",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 290988.0,
+            "final_price": 216988.0
+          }
+        ]
+      },
+      {
+        "brand": "GAC",
+        "model_name": "HYPTEC HT LUXURY",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "LUXURY (GULL WING)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 320988.0,
+            "final_price": 246988.0
+          }
+        ]
+      },
+      {
+        "brand": "GAC",
+        "model_name": "AION",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "STANDARD",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 241988.0,
+            "final_price": 164988.0
+          },
+          {
+            "variant_name": "ELITE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 251988.0,
+            "final_price": 170988.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

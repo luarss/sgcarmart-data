@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "source_filename": "dealer_77_2026-05-09.pdf",
+    "extraction_date": "2026-05-09",
+    "dealer_id": "77",
+    "pdf_date": "2026-05-09",
+    "brand_folder": "maxus",
+    "year_folder": 2026,
+    "pdf_size_kb": 1552.271484375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 676,
+      "total_tokens": 2212,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.0002704,
+      "total_cost_usd": 0.000424,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MAXUS",
+        "model_name": "eDeliver 5",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eDeliver 5",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 140000.0
+          },
+          {
+            "variant_name": "eDeliver 5 High Roof Bus",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 15000.0,
+            "final_price": 153500.0
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "eDeliver 9 FL",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eDeliver 9 FL",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 159000.0
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "eDeliver 7 N",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eDeliver 7 N",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 40000.0,
+            "final_price": 154000.0
+          }
+        ]
+      },
+      {
+        "brand": "MAXUS",
+        "model_name": "eTerron 9",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "eTerron 9",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
