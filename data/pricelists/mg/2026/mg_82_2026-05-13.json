@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "source_filename": "dealer_82_2026-05-13.pdf",
+    "extraction_date": "2026-05-14",
+    "dealer_id": "82",
+    "pdf_date": "2026-05-13",
+    "brand_folder": "mg",
+    "year_folder": 2026,
+    "pdf_size_kb": 3164.8544921875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1794,
+      "output_tokens": 696,
+      "total_tokens": 2490,
+      "input_cost_usd": 0.00017940000000000002,
+      "output_cost_usd": 0.0002784,
+      "total_cost_usd": 0.0004578,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MG",
+        "model_name": "MG55 LUXURY",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "LUXURY",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 203888.0,
+            "final_price": 193888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "MG56 LUXURY",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "LUXURY",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 211888.0,
+            "final_price": 201888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "CYBERSTER",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "RWD 250kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 333888.0,
+            "final_price": 323888.0
+          },
+          {
+            "variant_name": "AWD 375kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 352888.0,
+            "final_price": 342888.0
+          }
+        ]
+      },
+      {
+        "brand": "MG",
+        "model_name": "MG4 URBAN",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "URBAN",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 202888.0,
+            "final_price": 187888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
