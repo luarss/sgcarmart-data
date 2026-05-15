@@ -1,0 +1,251 @@
+{
+  "metadata": {
+    "source_filename": "dealer_44_2026-05-14.pdf",
+    "extraction_date": "2026-05-15",
+    "dealer_id": "44",
+    "pdf_date": "2026-05-14",
+    "brand_folder": "toyota",
+    "year_folder": 2026,
+    "pdf_size_kb": 32.248046875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 2056,
+      "total_tokens": 3592,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.0008224,
+      "total_cost_usd": 0.0009760000000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Toyota",
+        "model_name": "Alphard",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Hybrid 2.5 Standard(A)",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 411888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Hybrid 2.5 Elegance(A)",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 427888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "bZ4X",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Electric 73.1 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 219888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Camry",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Hybrid 2.5 Elegance(A)",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 278888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Corolla Altis",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "1.6 Standard(A)",
+            "engine_size": "1.6",
+            "vehicle_type": "ICE",
+            "list_price": 202888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "1.6 Elegance(A)",
+            "engine_size": "1.6",
+            "vehicle_type": "ICE",
+            "list_price": 210888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Hybrid 1.8(A)",
+            "engine_size": "1.8",
+            "vehicle_type": "Hybrid",
+            "list_price": 223888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Corolla Cross",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Hybrid 2.0 Premium(A)",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 212888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "GR Yaris",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "1.6(M)",
+            "engine_size": "1.6",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "GR86",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "2.4(M)",
+            "engine_size": "2.4",
+            "vehicle_type": "ICE",
+            "list_price": 172888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "2.4(A)",
+            "engine_size": "2.4",
+            "vehicle_type": "ICE",
+            "list_price": 179888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Harrier",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Hybrid 2.5 Premium(A)",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 278888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Noah",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Hybrid 1.8 Elegance(A)",
+            "engine_size": "1.8",
+            "vehicle_type": "Hybrid",
+            "list_price": 224888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Prius",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "Hybrid 1.8(A)",
+            "engine_size": "1.8",
+            "vehicle_type": "Hybrid",
+            "list_price": 199888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Sienta",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Hybrid 1.5 Elegance(A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 215888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Vellfire",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Hybrid 2.5 Elegance(A)",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 430888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Vios",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Hybrid 1.5 eCVT(A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 194888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Yaris Cross",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Hybrid 1.5 Active(A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 214888.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
