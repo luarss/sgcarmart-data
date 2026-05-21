@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "source_filename": "dealer_112_2026-05-21.pdf",
+    "extraction_date": "2026-05-21",
+    "dealer_id": "112",
+    "pdf_date": "2026-05-21",
+    "brand_folder": "xpeng",
+    "year_folder": 2026,
+    "pdf_size_kb": 1687.7607421875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1794,
+      "output_tokens": 626,
+      "total_tokens": 2420,
+      "input_cost_usd": 0.00017940000000000002,
+      "output_cost_usd": 0.0002504,
+      "total_cost_usd": 0.00042980000000000004,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "XPENG",
+        "model_name": "G6",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Air RWD Standard Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 220999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Pro RWD Long Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 240999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Pro AWD Performance",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 269999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "XPENG",
+        "model_name": "X9",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Standard Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 355999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Long Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 366999.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Grand Seat",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 375999.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
