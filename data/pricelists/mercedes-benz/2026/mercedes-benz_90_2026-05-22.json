@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "source_filename": "dealer_90_2026-05-22.pdf",
+    "extraction_date": "2026-05-22",
+    "dealer_id": "90",
+    "pdf_date": "2026-05-22",
+    "brand_folder": "mercedes-benz",
+    "year_folder": 2026,
+    "pdf_size_kb": 1171.515625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 714,
+      "total_tokens": 2250,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.0002856,
+      "total_cost_usd": 0.00043920000000000005,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Vito 114 CDI Van",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Long PRO Version 5-Doors",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 104988.0,
+            "final_price": 193988.0
+          },
+          {
+            "variant_name": "Long PRO Version 6-Doors",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 106988.0,
+            "final_price": 195988.0
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "eVito 112 Van",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Long",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 87988.0,
+            "final_price": 176988.0
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "eCitan",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "SG",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 67988.0,
+            "final_price": 156988.0
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "V-Class V 250 CDI Coach",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Extra-Long",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 197988.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

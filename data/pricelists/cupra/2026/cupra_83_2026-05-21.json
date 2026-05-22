@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "source_filename": "dealer_83_2026-05-21.pdf",
+    "extraction_date": "2026-05-22",
+    "dealer_id": "83",
+    "pdf_date": "2026-05-21",
+    "brand_folder": "cupra",
+    "year_folder": 2026,
+    "pdf_size_kb": 436.546875,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 794,
+      "total_tokens": 2330,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.0003176,
+      "total_cost_usd": 0.00047120000000000007,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "CUPRA",
+        "model_name": "LEON",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "1.5 eTSI 110kW mHEV DSG",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 302900.0,
+            "final_price": 202900.0
+          }
+        ]
+      },
+      {
+        "brand": "CUPRA",
+        "model_name": "TERRAMAR",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5 eTSI 110kW mHEV DSG",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 330900.0,
+            "final_price": 232900.0
+          }
+        ]
+      },
+      {
+        "brand": "CUPRA",
+        "model_name": "BORN",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "eBoost 59kWh 170kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 305900.0,
+            "final_price": 197900.0
+          },
+          {
+            "variant_name": "VZ 79kWh 240kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "CUPRA",
+        "model_name": "TAVASCAN",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "ENDURANCE 77kWh 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 312900.0,
+            "final_price": 229900.0
+          },
+          {
+            "variant_name": "VZ 77kWh 250kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

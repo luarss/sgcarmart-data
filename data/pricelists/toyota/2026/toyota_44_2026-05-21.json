@@ -1,0 +1,216 @@
+{
+  "metadata": {
+    "source_filename": "dealer_44_2026-05-21.pdf",
+    "extraction_date": "2026-05-22",
+    "dealer_id": "44",
+    "pdf_date": "2026-05-21",
+    "brand_folder": "toyota",
+    "year_folder": 2026,
+    "pdf_size_kb": 1008.150390625,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 1752,
+      "total_tokens": 3288,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.0007008000000000001,
+      "total_cost_usd": 0.0008544000000000002,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Toyota",
+        "model_name": "Corolla Altis",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Standard 1.6L",
+            "engine_size": "1.6",
+            "vehicle_type": "ICE",
+            "list_price": 212888.0,
+            "final_price": 194888.0
+          },
+          {
+            "variant_name": "Elegance 1.6L",
+            "engine_size": "1.6",
+            "vehicle_type": "ICE",
+            "list_price": 220888.0,
+            "final_price": 202888.0
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "bZ4X",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "bZ4X",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 247888.0,
+            "final_price": 219888.0
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Vios",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Vios",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 212888.0,
+            "final_price": 194888.0
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Yaris Cross",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Yaris Cross",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 227888.0,
+            "final_price": 209888.0
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Sienta",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Sienta",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 224888.0,
+            "final_price": 206888.0
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Hiace MT",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Hiace MT",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 227888.0,
+            "final_price": 199888.0
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Hiace 3L",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Hiace 3L",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 227888.0,
+            "final_price": 199888.0
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Prius",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "Prius",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 250888.0,
+            "final_price": 222888.0
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Corolla Cross",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Corolla Cross",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 260888.0,
+            "final_price": 232888.0
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Harrier",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Harrier",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 290888.0,
+            "final_price": 262888.0
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Camry",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Camry",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 299888.0,
+            "final_price": 262888.0
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Alphard",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Alphard",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 411888.0,
+            "final_price": 411888.0
+          }
+        ]
+      },
+      {
+        "brand": "Toyota",
+        "model_name": "Vellfire",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Vellfire",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 430888.0,
+            "final_price": 430888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
