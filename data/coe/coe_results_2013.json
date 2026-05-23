@@ -1,0 +1,1202 @@
+[
+  {
+    "_id": 361,
+    "month": "2013-01",
+    "bidding_no": "1",
+    "vehicle_class": "Category A",
+    "quota": "410",
+    "bids_success": "409",
+    "bids_received": "555",
+    "premium": "92100"
+  },
+  {
+    "_id": 362,
+    "month": "2013-01",
+    "bidding_no": "1",
+    "vehicle_class": "Category B",
+    "quota": "363",
+    "bids_success": "363",
+    "bids_received": "470",
+    "premium": "96210"
+  },
+  {
+    "_id": 363,
+    "month": "2013-01",
+    "bidding_no": "1",
+    "vehicle_class": "Category C",
+    "quota": "193",
+    "bids_success": "188",
+    "bids_received": "244",
+    "premium": "60000"
+  },
+  {
+    "_id": 364,
+    "month": "2013-01",
+    "bidding_no": "1",
+    "vehicle_class": "Category D",
+    "quota": "462",
+    "bids_success": "462",
+    "bids_received": "523",
+    "premium": "1933"
+  },
+  {
+    "_id": 365,
+    "month": "2013-01",
+    "bidding_no": "1",
+    "vehicle_class": "Category E",
+    "quota": "256",
+    "bids_success": "256",
+    "bids_received": "393",
+    "premium": "96101"
+  },
+  {
+    "_id": 366,
+    "month": "2013-01",
+    "bidding_no": "2",
+    "vehicle_class": "Category A",
+    "quota": "409",
+    "bids_success": "409",
+    "bids_received": "489",
+    "premium": "91010"
+  },
+  {
+    "_id": 367,
+    "month": "2013-01",
+    "bidding_no": "2",
+    "vehicle_class": "Category B",
+    "quota": "351",
+    "bids_success": "351",
+    "bids_received": "452",
+    "premium": "95501"
+  },
+  {
+    "_id": 368,
+    "month": "2013-01",
+    "bidding_no": "2",
+    "vehicle_class": "Category C",
+    "quota": "184",
+    "bids_success": "184",
+    "bids_received": "262",
+    "premium": "57051"
+  },
+  {
+    "_id": 369,
+    "month": "2013-01",
+    "bidding_no": "2",
+    "vehicle_class": "Category D",
+    "quota": "461",
+    "bids_success": "461",
+    "bids_received": "530",
+    "premium": "1781"
+  },
+  {
+    "_id": 370,
+    "month": "2013-01",
+    "bidding_no": "2",
+    "vehicle_class": "Category E",
+    "quota": "251",
+    "bids_success": "248",
+    "bids_received": "344",
+    "premium": "97889"
+  },
+  {
+    "_id": 371,
+    "month": "2013-02",
+    "bidding_no": "1",
+    "vehicle_class": "Category A",
+    "quota": "335",
+    "bids_success": "333",
+    "bids_received": "418",
+    "premium": "87109"
+  },
+  {
+    "_id": 372,
+    "month": "2013-02",
+    "bidding_no": "1",
+    "vehicle_class": "Category B",
+    "quota": "302",
+    "bids_success": "278",
+    "bids_received": "431",
+    "premium": "92901"
+  },
+  {
+    "_id": 373,
+    "month": "2013-02",
+    "bidding_no": "1",
+    "vehicle_class": "Category C",
+    "quota": "230",
+    "bids_success": "230",
+    "bids_received": "316",
+    "premium": "54989"
+  },
+  {
+    "_id": 374,
+    "month": "2013-02",
+    "bidding_no": "1",
+    "vehicle_class": "Category D",
+    "quota": "506",
+    "bids_success": "502",
+    "bids_received": "637",
+    "premium": "1782"
+  },
+  {
+    "_id": 375,
+    "month": "2013-02",
+    "bidding_no": "1",
+    "vehicle_class": "Category E",
+    "quota": "238",
+    "bids_success": "221",
+    "bids_received": "295",
+    "premium": "94890"
+  },
+  {
+    "_id": 376,
+    "month": "2013-02",
+    "bidding_no": "2",
+    "vehicle_class": "Category A",
+    "quota": "333",
+    "bids_success": "329",
+    "bids_received": "427",
+    "premium": "78301"
+  },
+  {
+    "_id": 377,
+    "month": "2013-02",
+    "bidding_no": "2",
+    "vehicle_class": "Category B",
+    "quota": "303",
+    "bids_success": "299",
+    "bids_received": "409",
+    "premium": "92667"
+  },
+  {
+    "_id": 378,
+    "month": "2013-02",
+    "bidding_no": "2",
+    "vehicle_class": "Category C",
+    "quota": "225",
+    "bids_success": "225",
+    "bids_received": "285",
+    "premium": "53489"
+  },
+  {
+    "_id": 379,
+    "month": "2013-02",
+    "bidding_no": "2",
+    "vehicle_class": "Category D",
+    "quota": "506",
+    "bids_success": "469",
+    "bids_received": "589",
+    "premium": "1512"
+  },
+  {
+    "_id": 380,
+    "month": "2013-02",
+    "bidding_no": "2",
+    "vehicle_class": "Category E",
+    "quota": "241",
+    "bids_success": "200",
+    "bids_received": "370",
+    "premium": "91910"
+  },
+  {
+    "_id": 381,
+    "month": "2013-03",
+    "bidding_no": "1",
+    "vehicle_class": "Category A",
+    "quota": "336",
+    "bids_success": "329",
+    "bids_received": "1180",
+    "premium": "74689"
+  },
+  {
+    "_id": 382,
+    "month": "2013-03",
+    "bidding_no": "1",
+    "vehicle_class": "Category B",
+    "quota": "326",
+    "bids_success": "326",
+    "bids_received": "1028",
+    "premium": "58090"
+  },
+  {
+    "_id": 383,
+    "month": "2013-03",
+    "bidding_no": "1",
+    "vehicle_class": "Category C",
+    "quota": "225",
+    "bids_success": "223",
+    "bids_received": "374",
+    "premium": "53900"
+  },
+  {
+    "_id": 384,
+    "month": "2013-03",
+    "bidding_no": "1",
+    "vehicle_class": "Category D",
+    "quota": "510",
+    "bids_success": "510",
+    "bids_received": "669",
+    "premium": "1895"
+  },
+  {
+    "_id": 385,
+    "month": "2013-03",
+    "bidding_no": "1",
+    "vehicle_class": "Category E",
+    "quota": "255",
+    "bids_success": "248",
+    "bids_received": "1036",
+    "premium": "65001"
+  },
+  {
+    "_id": 386,
+    "month": "2013-03",
+    "bidding_no": "2",
+    "vehicle_class": "Category A",
+    "quota": "337",
+    "bids_success": "337",
+    "bids_received": "923",
+    "premium": "64209"
+  },
+  {
+    "_id": 387,
+    "month": "2013-03",
+    "bidding_no": "2",
+    "vehicle_class": "Category B",
+    "quota": "307",
+    "bids_success": "300",
+    "bids_received": "940",
+    "premium": "73900"
+  },
+  {
+    "_id": 388,
+    "month": "2013-03",
+    "bidding_no": "2",
+    "vehicle_class": "Category C",
+    "quota": "225",
+    "bids_success": "225",
+    "bids_received": "312",
+    "premium": "54111"
+  },
+  {
+    "_id": 389,
+    "month": "2013-03",
+    "bidding_no": "2",
+    "vehicle_class": "Category D",
+    "quota": "543",
+    "bids_success": "543",
+    "bids_received": "634",
+    "premium": "1909"
+  },
+  {
+    "_id": 390,
+    "month": "2013-03",
+    "bidding_no": "2",
+    "vehicle_class": "Category E",
+    "quota": "279",
+    "bids_success": "277",
+    "bids_received": "635",
+    "premium": "73301"
+  },
+  {
+    "_id": 391,
+    "month": "2013-04",
+    "bidding_no": "1",
+    "vehicle_class": "Category A",
+    "quota": "341",
+    "bids_success": "339",
+    "bids_received": "966",
+    "premium": "61029"
+  },
+  {
+    "_id": 392,
+    "month": "2013-04",
+    "bidding_no": "1",
+    "vehicle_class": "Category B",
+    "quota": "302",
+    "bids_success": "287",
+    "bids_received": "835",
+    "premium": "67010"
+  },
+  {
+    "_id": 393,
+    "month": "2013-04",
+    "bidding_no": "1",
+    "vehicle_class": "Category C",
+    "quota": "227",
+    "bids_success": "227",
+    "bids_received": "334",
+    "premium": "56011"
+  },
+  {
+    "_id": 394,
+    "month": "2013-04",
+    "bidding_no": "1",
+    "vehicle_class": "Category D",
+    "quota": "506",
+    "bids_success": "412",
+    "bids_received": "680",
+    "premium": "1812"
+  },
+  {
+    "_id": 395,
+    "month": "2013-04",
+    "bidding_no": "1",
+    "vehicle_class": "Category E",
+    "quota": "245",
+    "bids_success": "244",
+    "bids_received": "450",
+    "premium": "66989"
+  },
+  {
+    "_id": 396,
+    "month": "2013-04",
+    "bidding_no": "2",
+    "vehicle_class": "Category A",
+    "quota": "333",
+    "bids_success": "333",
+    "bids_received": "993",
+    "premium": "62497"
+  },
+  {
+    "_id": 397,
+    "month": "2013-04",
+    "bidding_no": "2",
+    "vehicle_class": "Category B",
+    "quota": "310",
+    "bids_success": "281",
+    "bids_received": "683",
+    "premium": "62000"
+  },
+  {
+    "_id": 398,
+    "month": "2013-04",
+    "bidding_no": "2",
+    "vehicle_class": "Category C",
+    "quota": "225",
+    "bids_success": "218",
+    "bids_received": "354",
+    "premium": "58502"
+  },
+  {
+    "_id": 399,
+    "month": "2013-04",
+    "bidding_no": "2",
+    "vehicle_class": "Category D",
+    "quota": "506",
+    "bids_success": "505",
+    "bids_received": "545",
+    "premium": "1791"
+  },
+  {
+    "_id": 400,
+    "month": "2013-04",
+    "bidding_no": "2",
+    "vehicle_class": "Category E",
+    "quota": "240",
+    "bids_success": "227",
+    "bids_received": "421",
+    "premium": "62000"
+  },
+  {
+    "_id": 401,
+    "month": "2013-05",
+    "bidding_no": "1",
+    "vehicle_class": "Category A",
+    "quota": "336",
+    "bids_success": "329",
+    "bids_received": "912",
+    "premium": "62999"
+  },
+  {
+    "_id": 402,
+    "month": "2013-05",
+    "bidding_no": "1",
+    "vehicle_class": "Category B",
+    "quota": "317",
+    "bids_success": "317",
+    "bids_received": "601",
+    "premium": "61700"
+  },
+  {
+    "_id": 403,
+    "month": "2013-05",
+    "bidding_no": "1",
+    "vehicle_class": "Category C",
+    "quota": "225",
+    "bids_success": "223",
+    "bids_received": "312",
+    "premium": "57051"
+  },
+  {
+    "_id": 404,
+    "month": "2013-05",
+    "bidding_no": "1",
+    "vehicle_class": "Category D",
+    "quota": "600",
+    "bids_success": "595",
+    "bids_received": "719",
+    "premium": "1700"
+  },
+  {
+    "_id": 405,
+    "month": "2013-05",
+    "bidding_no": "1",
+    "vehicle_class": "Category E",
+    "quota": "239",
+    "bids_success": "238",
+    "bids_received": "447",
+    "premium": "62301"
+  },
+  {
+    "_id": 406,
+    "month": "2013-05",
+    "bidding_no": "2",
+    "vehicle_class": "Category A",
+    "quota": "333",
+    "bids_success": "324",
+    "bids_received": "888",
+    "premium": "64839"
+  },
+  {
+    "_id": 407,
+    "month": "2013-05",
+    "bidding_no": "2",
+    "vehicle_class": "Category B",
+    "quota": "332",
+    "bids_success": "329",
+    "bids_received": "749",
+    "premium": "67304"
+  },
+  {
+    "_id": 408,
+    "month": "2013-05",
+    "bidding_no": "2",
+    "vehicle_class": "Category C",
+    "quota": "233",
+    "bids_success": "232",
+    "bids_received": "288",
+    "premium": "56889"
+  },
+  {
+    "_id": 409,
+    "month": "2013-05",
+    "bidding_no": "2",
+    "vehicle_class": "Category D",
+    "quota": "507",
+    "bids_success": "459",
+    "bids_received": "642",
+    "premium": "1663"
+  },
+  {
+    "_id": 410,
+    "month": "2013-05",
+    "bidding_no": "2",
+    "vehicle_class": "Category E",
+    "quota": "251",
+    "bids_success": "239",
+    "bids_received": "466",
+    "premium": "66701"
+  },
+  {
+    "_id": 411,
+    "month": "2013-06",
+    "bidding_no": "1",
+    "vehicle_class": "Category A",
+    "quota": "341",
+    "bids_success": "336",
+    "bids_received": "855",
+    "premium": "67301"
+  },
+  {
+    "_id": 412,
+    "month": "2013-06",
+    "bidding_no": "1",
+    "vehicle_class": "Category B",
+    "quota": "302",
+    "bids_success": "274",
+    "bids_received": "732",
+    "premium": "75000"
+  },
+  {
+    "_id": 413,
+    "month": "2013-06",
+    "bidding_no": "1",
+    "vehicle_class": "Category C",
+    "quota": "227",
+    "bids_success": "226",
+    "bids_received": "292",
+    "premium": "57989"
+  },
+  {
+    "_id": 414,
+    "month": "2013-06",
+    "bidding_no": "1",
+    "vehicle_class": "Category D",
+    "quota": "511",
+    "bids_success": "479",
+    "bids_received": "616",
+    "premium": "1701"
+  },
+  {
+    "_id": 415,
+    "month": "2013-06",
+    "bidding_no": "1",
+    "vehicle_class": "Category E",
+    "quota": "239",
+    "bids_success": "189",
+    "bids_received": "534",
+    "premium": "76000"
+  },
+  {
+    "_id": 416,
+    "month": "2013-06",
+    "bidding_no": "2",
+    "vehicle_class": "Category A",
+    "quota": "342",
+    "bids_success": "341",
+    "bids_received": "788",
+    "premium": "69903"
+  },
+  {
+    "_id": 417,
+    "month": "2013-06",
+    "bidding_no": "2",
+    "vehicle_class": "Category B",
+    "quota": "305",
+    "bids_success": "304",
+    "bids_received": "734",
+    "premium": "81751"
+  },
+  {
+    "_id": 418,
+    "month": "2013-06",
+    "bidding_no": "2",
+    "vehicle_class": "Category C",
+    "quota": "227",
+    "bids_success": "221",
+    "bids_received": "289",
+    "premium": "59001"
+  },
+  {
+    "_id": 419,
+    "month": "2013-06",
+    "bidding_no": "2",
+    "vehicle_class": "Category D",
+    "quota": "554",
+    "bids_success": "534",
+    "bids_received": "647",
+    "premium": "1712"
+  },
+  {
+    "_id": 420,
+    "month": "2013-06",
+    "bidding_no": "2",
+    "vehicle_class": "Category E",
+    "quota": "251",
+    "bids_success": "250",
+    "bids_received": "466",
+    "premium": "83001"
+  },
+  {
+    "_id": 421,
+    "month": "2013-07",
+    "bidding_no": "1",
+    "vehicle_class": "Category A",
+    "quota": "338",
+    "bids_success": "328",
+    "bids_received": "716",
+    "premium": "73100"
+  },
+  {
+    "_id": 422,
+    "month": "2013-07",
+    "bidding_no": "1",
+    "vehicle_class": "Category B",
+    "quota": "331",
+    "bids_success": "325",
+    "bids_received": "652",
+    "premium": "77110"
+  },
+  {
+    "_id": 423,
+    "month": "2013-07",
+    "bidding_no": "1",
+    "vehicle_class": "Category C",
+    "quota": "226",
+    "bids_success": "226",
+    "bids_received": "301",
+    "premium": "61011"
+  },
+  {
+    "_id": 424,
+    "month": "2013-07",
+    "bidding_no": "1",
+    "vehicle_class": "Category D",
+    "quota": "538",
+    "bids_success": "536",
+    "bids_received": "679",
+    "premium": "1610"
+  },
+  {
+    "_id": 425,
+    "month": "2013-07",
+    "bidding_no": "1",
+    "vehicle_class": "Category E",
+    "quota": "288",
+    "bids_success": "284",
+    "bids_received": "485",
+    "premium": "77000"
+  },
+  {
+    "_id": 426,
+    "month": "2013-07",
+    "bidding_no": "2",
+    "vehicle_class": "Category A",
+    "quota": "334",
+    "bids_success": "332",
+    "bids_received": "621",
+    "premium": "73989"
+  },
+  {
+    "_id": 427,
+    "month": "2013-07",
+    "bidding_no": "2",
+    "vehicle_class": "Category B",
+    "quota": "303",
+    "bids_success": "301",
+    "bids_received": "574",
+    "premium": "76389"
+  },
+  {
+    "_id": 428,
+    "month": "2013-07",
+    "bidding_no": "2",
+    "vehicle_class": "Category C",
+    "quota": "232",
+    "bids_success": "226",
+    "bids_received": "335",
+    "premium": "65036"
+  },
+  {
+    "_id": 429,
+    "month": "2013-07",
+    "bidding_no": "2",
+    "vehicle_class": "Category D",
+    "quota": "526",
+    "bids_success": "516",
+    "bids_received": "652",
+    "premium": "1712"
+  },
+  {
+    "_id": 430,
+    "month": "2013-07",
+    "bidding_no": "2",
+    "vehicle_class": "Category E",
+    "quota": "240",
+    "bids_success": "237",
+    "bids_received": "425",
+    "premium": "76802"
+  },
+  {
+    "_id": 431,
+    "month": "2013-08",
+    "bidding_no": "1",
+    "vehicle_class": "Category A",
+    "quota": "373",
+    "bids_success": "371",
+    "bids_received": "754",
+    "premium": "75556"
+  },
+  {
+    "_id": 432,
+    "month": "2013-08",
+    "bidding_no": "1",
+    "vehicle_class": "Category B",
+    "quota": "380",
+    "bids_success": "373",
+    "bids_received": "682",
+    "premium": "77600"
+  },
+  {
+    "_id": 433,
+    "month": "2013-08",
+    "bidding_no": "1",
+    "vehicle_class": "Category C",
+    "quota": "258",
+    "bids_success": "257",
+    "bids_received": "364",
+    "premium": "68251"
+  },
+  {
+    "_id": 434,
+    "month": "2013-08",
+    "bidding_no": "1",
+    "vehicle_class": "Category D",
+    "quota": "482",
+    "bids_success": "481",
+    "bids_received": "568",
+    "premium": "1792"
+  },
+  {
+    "_id": 435,
+    "month": "2013-08",
+    "bidding_no": "1",
+    "vehicle_class": "Category E",
+    "quota": "264",
+    "bids_success": "261",
+    "bids_received": "407",
+    "premium": "77989"
+  },
+  {
+    "_id": 436,
+    "month": "2013-08",
+    "bidding_no": "2",
+    "vehicle_class": "Category A",
+    "quota": "366",
+    "bids_success": "360",
+    "bids_received": "596",
+    "premium": "76223"
+  },
+  {
+    "_id": 437,
+    "month": "2013-08",
+    "bidding_no": "2",
+    "vehicle_class": "Category B",
+    "quota": "375",
+    "bids_success": "371",
+    "bids_received": "627",
+    "premium": "76607"
+  },
+  {
+    "_id": 438,
+    "month": "2013-08",
+    "bidding_no": "2",
+    "vehicle_class": "Category C",
+    "quota": "263",
+    "bids_success": "257",
+    "bids_received": "385",
+    "premium": "71001"
+  },
+  {
+    "_id": 439,
+    "month": "2013-08",
+    "bidding_no": "2",
+    "vehicle_class": "Category D",
+    "quota": "491",
+    "bids_success": "449",
+    "bids_received": "615",
+    "premium": "1722"
+  },
+  {
+    "_id": 440,
+    "month": "2013-08",
+    "bidding_no": "2",
+    "vehicle_class": "Category E",
+    "quota": "264",
+    "bids_success": "264",
+    "bids_received": "385",
+    "premium": "79223"
+  },
+  {
+    "_id": 441,
+    "month": "2013-09",
+    "bidding_no": "1",
+    "vehicle_class": "Category A",
+    "quota": "366",
+    "bids_success": "365",
+    "bids_received": "609",
+    "premium": "77304"
+  },
+  {
+    "_id": 442,
+    "month": "2013-09",
+    "bidding_no": "1",
+    "vehicle_class": "Category B",
+    "quota": "381",
+    "bids_success": "378",
+    "bids_received": "623",
+    "premium": "77100"
+  },
+  {
+    "_id": 443,
+    "month": "2013-09",
+    "bidding_no": "1",
+    "vehicle_class": "Category C",
+    "quota": "258",
+    "bids_success": "254",
+    "bids_received": "340",
+    "premium": "73999"
+  },
+  {
+    "_id": 444,
+    "month": "2013-09",
+    "bidding_no": "1",
+    "vehicle_class": "Category D",
+    "quota": "481",
+    "bids_success": "481",
+    "bids_received": "569",
+    "premium": "1660"
+  },
+  {
+    "_id": 445,
+    "month": "2013-09",
+    "bidding_no": "1",
+    "vehicle_class": "Category E",
+    "quota": "263",
+    "bids_success": "181",
+    "bids_received": "431",
+    "premium": "80000"
+  },
+  {
+    "_id": 446,
+    "month": "2013-09",
+    "bidding_no": "2",
+    "vehicle_class": "Category A",
+    "quota": "370",
+    "bids_success": "361",
+    "bids_received": "654",
+    "premium": "83751"
+  },
+  {
+    "_id": 447,
+    "month": "2013-09",
+    "bidding_no": "2",
+    "vehicle_class": "Category B",
+    "quota": "377",
+    "bids_success": "368",
+    "bids_received": "703",
+    "premium": "86239"
+  },
+  {
+    "_id": 448,
+    "month": "2013-09",
+    "bidding_no": "2",
+    "vehicle_class": "Category C",
+    "quota": "263",
+    "bids_success": "257",
+    "bids_received": "321",
+    "premium": "76001"
+  },
+  {
+    "_id": 449,
+    "month": "2013-09",
+    "bidding_no": "2",
+    "vehicle_class": "Category D",
+    "quota": "523",
+    "bids_success": "521",
+    "bids_received": "579",
+    "premium": "1703"
+  },
+  {
+    "_id": 450,
+    "month": "2013-09",
+    "bidding_no": "2",
+    "vehicle_class": "Category E",
+    "quota": "261",
+    "bids_success": "253",
+    "bids_received": "459",
+    "premium": "87001"
+  },
+  {
+    "_id": 451,
+    "month": "2013-10",
+    "bidding_no": "1",
+    "vehicle_class": "Category A",
+    "quota": "365",
+    "bids_success": "361",
+    "bids_received": "615",
+    "premium": "85000"
+  },
+  {
+    "_id": 452,
+    "month": "2013-10",
+    "bidding_no": "1",
+    "vehicle_class": "Category B",
+    "quota": "376",
+    "bids_success": "373",
+    "bids_received": "649",
+    "premium": "93500"
+  },
+  {
+    "_id": 453,
+    "month": "2013-10",
+    "bidding_no": "1",
+    "vehicle_class": "Category C",
+    "quota": "261",
+    "bids_success": "261",
+    "bids_received": "315",
+    "premium": "76310"
+  },
+  {
+    "_id": 454,
+    "month": "2013-10",
+    "bidding_no": "1",
+    "vehicle_class": "Category D",
+    "quota": "481",
+    "bids_success": "475",
+    "bids_received": "567",
+    "premium": "1961"
+  },
+  {
+    "_id": 455,
+    "month": "2013-10",
+    "bidding_no": "1",
+    "vehicle_class": "Category E",
+    "quota": "342",
+    "bids_success": "330",
+    "bids_received": "483",
+    "premium": "93889"
+  },
+  {
+    "_id": 456,
+    "month": "2013-10",
+    "bidding_no": "2",
+    "vehicle_class": "Category A",
+    "quota": "373",
+    "bids_success": "373",
+    "bids_received": "596",
+    "premium": "76889"
+  },
+  {
+    "_id": 457,
+    "month": "2013-10",
+    "bidding_no": "2",
+    "vehicle_class": "Category B",
+    "quota": "382",
+    "bids_success": "376",
+    "bids_received": "515",
+    "premium": "87910"
+  },
+  {
+    "_id": 458,
+    "month": "2013-10",
+    "bidding_no": "2",
+    "vehicle_class": "Category C",
+    "quota": "263",
+    "bids_success": "262",
+    "bids_received": "358",
+    "premium": "68002"
+  },
+  {
+    "_id": 459,
+    "month": "2013-10",
+    "bidding_no": "2",
+    "vehicle_class": "Category D",
+    "quota": "482",
+    "bids_success": "481",
+    "bids_received": "586",
+    "premium": "1804"
+  },
+  {
+    "_id": 460,
+    "month": "2013-10",
+    "bidding_no": "2",
+    "vehicle_class": "Category E",
+    "quota": "269",
+    "bids_success": "264",
+    "bids_received": "337",
+    "premium": "92289"
+  },
+  {
+    "_id": 461,
+    "month": "2013-11",
+    "bidding_no": "1",
+    "vehicle_class": "Category A",
+    "quota": "368",
+    "bids_success": "368",
+    "bids_received": "590",
+    "premium": "72609"
+  },
+  {
+    "_id": 462,
+    "month": "2013-11",
+    "bidding_no": "1",
+    "vehicle_class": "Category B",
+    "quota": "376",
+    "bids_success": "376",
+    "bids_received": "482",
+    "premium": "84578"
+  },
+  {
+    "_id": 463,
+    "month": "2013-11",
+    "bidding_no": "1",
+    "vehicle_class": "Category C",
+    "quota": "257",
+    "bids_success": "256",
+    "bids_received": "427",
+    "premium": "55503"
+  },
+  {
+    "_id": 464,
+    "month": "2013-11",
+    "bidding_no": "1",
+    "vehicle_class": "Category D",
+    "quota": "487",
+    "bids_success": "487",
+    "bids_received": "569",
+    "premium": "1710"
+  },
+  {
+    "_id": 465,
+    "month": "2013-11",
+    "bidding_no": "1",
+    "vehicle_class": "Category E",
+    "quota": "273",
+    "bids_success": "270",
+    "bids_received": "379",
+    "premium": "89001"
+  },
+  {
+    "_id": 466,
+    "month": "2013-11",
+    "bidding_no": "2",
+    "vehicle_class": "Category A",
+    "quota": "364",
+    "bids_success": "361",
+    "bids_received": "650",
+    "premium": "74991"
+  },
+  {
+    "_id": 467,
+    "month": "2013-11",
+    "bidding_no": "2",
+    "vehicle_class": "Category B",
+    "quota": "379",
+    "bids_success": "375",
+    "bids_received": "536",
+    "premium": "79300"
+  },
+  {
+    "_id": 468,
+    "month": "2013-11",
+    "bidding_no": "2",
+    "vehicle_class": "Category C",
+    "quota": "258",
+    "bids_success": "252",
+    "bids_received": "397",
+    "premium": "55002"
+  },
+  {
+    "_id": 469,
+    "month": "2013-11",
+    "bidding_no": "2",
+    "vehicle_class": "Category D",
+    "quota": "481",
+    "bids_success": "437",
+    "bids_received": "543",
+    "premium": "1712"
+  },
+  {
+    "_id": 470,
+    "month": "2013-11",
+    "bidding_no": "2",
+    "vehicle_class": "Category E",
+    "quota": "266",
+    "bids_success": "259",
+    "bids_received": "410",
+    "premium": "83000"
+  },
+  {
+    "_id": 471,
+    "month": "2013-12",
+    "bidding_no": "1",
+    "vehicle_class": "Category A",
+    "quota": "364",
+    "bids_success": "364",
+    "bids_received": "591",
+    "premium": "73160"
+  },
+  {
+    "_id": 472,
+    "month": "2013-12",
+    "bidding_no": "1",
+    "vehicle_class": "Category B",
+    "quota": "373",
+    "bids_success": "360",
+    "bids_received": "549",
+    "premium": "73010"
+  },
+  {
+    "_id": 473,
+    "month": "2013-12",
+    "bidding_no": "1",
+    "vehicle_class": "Category C",
+    "quota": "258",
+    "bids_success": "257",
+    "bids_received": "359",
+    "premium": "51112"
+  },
+  {
+    "_id": 474,
+    "month": "2013-12",
+    "bidding_no": "1",
+    "vehicle_class": "Category D",
+    "quota": "481",
+    "bids_success": "473",
+    "bids_received": "647",
+    "premium": "1782"
+  },
+  {
+    "_id": 475,
+    "month": "2013-12",
+    "bidding_no": "1",
+    "vehicle_class": "Category E",
+    "quota": "264",
+    "bids_success": "264",
+    "bids_received": "365",
+    "premium": "76901"
+  },
+  {
+    "_id": 476,
+    "month": "2013-12",
+    "bidding_no": "2",
+    "vehicle_class": "Category A",
+    "quota": "367",
+    "bids_success": "363",
+    "bids_received": "574",
+    "premium": "74002"
+  },
+  {
+    "_id": 477,
+    "month": "2013-12",
+    "bidding_no": "2",
+    "vehicle_class": "Category B",
+    "quota": "377",
+    "bids_success": "357",
+    "bids_received": "500",
+    "premium": "75700"
+  },
+  {
+    "_id": 478,
+    "month": "2013-12",
+    "bidding_no": "2",
+    "vehicle_class": "Category C",
+    "quota": "263",
+    "bids_success": "256",
+    "bids_received": "338",
+    "premium": "48001"
+  },
+  {
+    "_id": 479,
+    "month": "2013-12",
+    "bidding_no": "2",
+    "vehicle_class": "Category D",
+    "quota": "524",
+    "bids_success": "501",
+    "bids_received": "680",
+    "premium": "1812"
+  },
+  {
+    "_id": 480,
+    "month": "2013-12",
+    "bidding_no": "2",
+    "vehicle_class": "Category E",
+    "quota": "268",
+    "bids_success": "268",
+    "bids_received": "375",
+    "premium": "77501"
+  }
+]

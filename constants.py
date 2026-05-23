@@ -50,6 +50,12 @@ MIN_PDF_SIZE_BYTES = 1000
 PDF_MAGIC_HEADER = b"%PDF"
 PDF_CONTENT_TYPE = "application/pdf"
 
+# COE data source
+COE_RESOURCE_ID = "d_69b3380ad7e51aff3a7dcc84eba52b8a"
+COE_API_BASE_URL = "https://data.gov.sg/api/action/datastore_search"
+COE_API_PAGE_LIMIT = 100
+COE_OUTPUT_DIR = "data/coe"
+
 EXCLUDED_BRANDS = {
     "bac",
     "bentley",

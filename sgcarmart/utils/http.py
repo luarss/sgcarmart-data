@@ -24,8 +24,10 @@ def get_random_user_agent():
     retry=retry_if_exception_type(RateLimitError),
     reraise=True,
 )
-def fetch_with_retry(url, timeout):
+def fetch_with_retry(url, timeout, extra_headers=None):
     headers = {"User-Agent": get_random_user_agent()}
+    if extra_headers:
+        headers.update(extra_headers)
     response = requests.get(url, headers=headers, timeout=timeout)
 
     if response.status_code == 429:
