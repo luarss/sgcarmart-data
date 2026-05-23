@@ -29,10 +29,10 @@ _COE_RENEWED_RE = re.compile(
 # Filter keys must match SEARCH_PARAMS (see sgcarmart/core/used.py for full list).
 # Modify these values to change what listings are tracked.
 DEFAULT_CONFIG = {
-    "name": "sgd-60k-80k-newest",
+    "name": "sgd-passenger",
     "filters": {
         "min_price": 60000,
-        "max_price": 80000,
+        "max_price": 100000,
         "year_from": 2016,
         "vts": 2,                  # "All Passenger Cars" — excludes vans/commercial
         "avl": "a",

@@ -1,8 +1,8 @@
 {
-  "name": "sgd-60k-80k-newest",
+  "name": "sgd-passenger",
   "filters": {
     "min_price": 60000,
-    "max_price": 80000,
+    "max_price": 100000,
     "year_from": 2016,
     "vts": 2,
     "avl": "a",
