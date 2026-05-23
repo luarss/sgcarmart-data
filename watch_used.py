@@ -23,6 +23,7 @@ DEFAULT_CONFIG = {
     "filters": {
         "min_price": 60000,
         "max_price": 80000,
+        "year_from": 2016,         # exclude COE-renewed cars (only cars ≤10 yrs old)
         "avl": "a",                # available listings only
         "sortby": "REG_DESC",      # newest registration first
         "limit": 100,
