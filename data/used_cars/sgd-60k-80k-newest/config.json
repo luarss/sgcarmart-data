@@ -4,6 +4,7 @@
     "min_price": 60000,
     "max_price": 80000,
     "year_from": 2016,
+    "vts": 2,
     "avl": "a",
     "sortby": "REG_DESC",
     "limit": 100

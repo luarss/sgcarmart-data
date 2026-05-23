@@ -16,6 +16,24 @@ DETAIL_URL = f"{BASE_URL}/used-cars/info"
 
 _BADGE_FLAGS = {"PREMIUM AD", "DIRECT OWNER", "IMPORT USED"}
 
+# filter key → SGCarMart URL parameter name
+SEARCH_PARAMS: dict[str, str] = {
+    "min_price": "pr1",
+    "max_price": "pr2",
+    "year_from": "fr",
+    "year_to": "to",
+    "sort": "ord",
+    "sortby": "sortby",
+    "make": "MAK",
+    "model": "MDL",
+    "category": "CAT",
+    "owners": "OWN",
+    "coe_left": "COE",
+    "avl": "avl",
+    "limit": "limit",
+    "vts": "vts[]",
+}
+
 
 @dataclass
 class UsedCarListing:
@@ -120,25 +138,14 @@ class UsedCarSearch:
         return self.page.url
 
     def _build_params(self, filters: dict) -> dict:
-        param_map = {
-            "min_price": "pr1",
-            "max_price": "pr2",
-            "year_from": "fr",
-            "year_to": "to",
-            "sort": "ord",
-            "sortby": "sortby",
-            "make": "MAK",
-            "model": "MDL",
-            "category": "CAT",
-            "owners": "OWN",
-            "coe_left": "COE",
-            "avl": "avl",
-            "limit": "limit",
-        }
         params = {}
         for key, value in filters.items():
-            if key in param_map and value is not None:
-                params[param_map[key]] = str(value)
+            if key in SEARCH_PARAMS and value is not None:
+                param_name = SEARCH_PARAMS[key]
+                if isinstance(value, list):
+                    params[param_name] = [str(v) for v in value]
+                else:
+                    params[param_name] = str(value)
         return params
 
     # -- listing parsing --

@@ -11,12 +11,13 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from sgcarmart.core.used import UsedCarSearch
+from sgcarmart.core.used import SEARCH_PARAMS, UsedCarSearch
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 DATA_DIR = PROJECT_ROOT / "data" / "used_cars"
 
 # ── Tunable watch configuration ─────────────────────────────────────────────
+# Filter keys must match SEARCH_PARAMS (see sgcarmart/core/used.py for full list).
 # Modify these values to change what listings are tracked.
 DEFAULT_CONFIG = {
     "name": "sgd-60k-80k-newest",
@@ -24,6 +25,7 @@ DEFAULT_CONFIG = {
         "min_price": 60000,
         "max_price": 80000,
         "year_from": 2016,         # exclude COE-renewed cars (only cars ≤10 yrs old)
+        "vts": 2,                  # "All Passenger Cars" — excludes vans/commercial
         "avl": "a",                # available listings only
         "sortby": "REG_DESC",      # newest registration first
         "limit": 100,
@@ -47,6 +49,13 @@ def run_watch(config: dict) -> dict:
     name = config["name"]
     filters = config["filters"]
     max_pages = config.get("max_pages", 10)
+
+    # Validate filter keys against centralised SEARCH_PARAMS
+    unknown = [k for k in filters if k not in SEARCH_PARAMS]
+    if unknown:
+        raise ValueError(
+            f"Unknown filter keys: {unknown}. Valid keys: {list(SEARCH_PARAMS)}"
+        )
 
     watch_dir = DATA_DIR / name
     watch_dir.mkdir(parents=True, exist_ok=True)
