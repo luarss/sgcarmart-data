@@ -8,6 +8,7 @@ Usage:
 
 import argparse
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -15,6 +16,14 @@ from sgcarmart.core.used import SEARCH_PARAMS, UsedCarSearch
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 DATA_DIR = PROJECT_ROOT / "data" / "used_cars"
+
+# COE-renewed car title patterns — these cars have had their 10-yr COE extended,
+# so the reg_date reflects the renewal date, not the car's true age.
+_COE_RENEWED_RE = re.compile(
+    r"COE\s+(?:till?|until|to)\s+\d|New\s+(?:5|10)[-\s]?yr\s+COE|\bCOE\s+renewed\b|"
+    r"\bRenewed\s+COE\b",
+    re.IGNORECASE,
+)
 
 # ── Tunable watch configuration ─────────────────────────────────────────────
 # Filter keys must match SEARCH_PARAMS (see sgcarmart/core/used.py for full list).
@@ -24,13 +33,14 @@ DEFAULT_CONFIG = {
     "filters": {
         "min_price": 60000,
         "max_price": 80000,
-        "year_from": 2016,         # exclude COE-renewed cars (only cars ≤10 yrs old)
+        "year_from": 2016,
         "vts": 2,                  # "All Passenger Cars" — excludes vans/commercial
-        "avl": "a",                # available listings only
-        "sortby": "REG_DESC",      # newest registration first
+        "avl": "a",
+        "sortby": "REG_DESC",
         "limit": 100,
     },
-    "max_pages": 50,               # fetch all matching listings (100 × 50 = 5000 max)
+    "max_pages": 50,
+    "exclude_coe_renewed": True,
 }
 
 
@@ -94,6 +104,16 @@ def run_watch(config: dict) -> dict:
                     }
             if not s.next_page():
                 break
+
+    # Post-filter: COE-renewed cars (title-based — API year_from misses them
+    # because SGCarMart uses the COE renewal date as the reg_date).
+    if config.get("exclude_coe_renewed"):
+        before = len(current)
+        current = {
+            lid: c for lid, c in current.items()
+            if not _COE_RENEWED_RE.search(c["title"])
+        }
+        print(f"Excluded {before - len(current)} COE-renewed cars")
 
     # Load previous snapshot
     previous_path = watch_dir / "latest.json"
