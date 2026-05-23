@@ -126,11 +126,14 @@ class UsedCarSearch:
             "year_from": "fr",
             "year_to": "to",
             "sort": "ord",
+            "sortby": "sortby",
             "make": "MAK",
             "model": "MDL",
             "category": "CAT",
             "owners": "OWN",
             "coe_left": "COE",
+            "avl": "avl",
+            "limit": "limit",
         }
         params = {}
         for key, value in filters.items():
@@ -302,17 +305,52 @@ class UsedCarSearch:
 
     def next_page(self) -> bool:
         """Navigate to next page. Returns False if no more pages."""
+        current = self._current_page_number()
+        next_num = current + 1
+
+        # Try "Next" link first
         next_btn = self.page.locator(
             "a:has-text('Next'), button:has-text('Next')"
         ).first
-        if next_btn.is_visible():
+        if next_btn.is_visible() and next_btn.is_enabled():
             next_btn.click()
             time.sleep(1)
             return True
+
+        # Look for the next page number link (ignore result-per-page dropdown)
+        page_items = self.page.locator(".page-item a, [class*='page-item'] a").all()
+        for link in page_items:
+            try:
+                n = int(link.inner_text().strip())
+                if n == next_num:
+                    link.click()
+                    time.sleep(1)
+                    return True
+            except Exception:
+                continue
+
         return False
 
+    def _current_page_number(self) -> int:
+        # Parse from URL query parameter
+        m = re.search(r"[?&]page=(\d+)", self.page.url)
+        if m:
+            return int(m.group(1))
+        return 1
+
     def has_next_page(self) -> bool:
-        return self.page.locator("a:has-text('Next')").first.is_visible()
+        if self.page.locator("a:has-text('Next')").first.is_visible():
+            return True
+        current = self._current_page_number()
+        page_items = self.page.locator(".page-item a, [class*='page-item'] a").all()
+        for link in page_items:
+            try:
+                n = int(link.inner_text().strip())
+                if n == current + 1:
+                    return True
+            except Exception:
+                continue
+        return False
 
     # -- detail page --
 
