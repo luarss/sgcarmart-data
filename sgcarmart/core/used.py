@@ -177,6 +177,12 @@ class UsedCarSearch:
                     )
                 except Exception:
                     pass
+                # Verify listings actually rendered (not geo-blocked)
+                if self.get_listings():
+                    return self.page.url
+                if i < len(proxies) - 1:
+                    print(f"Proxy loaded page but 0 listings, trying next...")
+                    continue
                 return self.page.url
             except Exception as e:
                 last_error = e
