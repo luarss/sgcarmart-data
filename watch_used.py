@@ -54,6 +54,23 @@ def _listing_id(href: str) -> str:
     return m.group(1) if m else ""
 
 
+def _capture_debug(search, watch_dir: Path, page_num: int) -> None:
+    """Capture screenshot and HTML when no listings found — CI debugging."""
+    debug_dir = watch_dir / "debug"
+    debug_dir.mkdir(parents=True, exist_ok=True)
+    ts = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
+    try:
+        search.page.screenshot(path=str(debug_dir / f"page-{page_num}-{ts}.png"))
+    except Exception as e:
+        print(f"DEBUG: screenshot failed: {e}")
+    try:
+        html = search.page.content()
+        (debug_dir / f"page-{page_num}-{ts}.html").write_text(html)
+    except Exception as e:
+        print(f"DEBUG: html capture failed: {e}")
+    print(f"DEBUG: no listings on page {page_num}, url={search.page.url}")
+
+
 def run_watch(config: dict) -> dict:
     """Fetch current listings, diff against previous snapshot, save new snapshot."""
     name = config["name"]
@@ -78,9 +95,10 @@ def run_watch(config: dict) -> dict:
     current = {}
     with UsedCarSearch(headless=True) as s:
         s.search(**filters)
-        for _ in range(max_pages):
+        for page_num in range(max_pages):
             cards = s.get_listings()
             if not cards:
+                _capture_debug(s, watch_dir, page_num)
                 break
             for card in cards:
                 lid = _listing_id(card.url)

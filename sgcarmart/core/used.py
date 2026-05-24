@@ -2,17 +2,26 @@
 Playwright helper for browsing and extracting SGCarMart used car listings.
 """
 
+import os
 import re
 import time
 from dataclasses import dataclass, field
 from urllib.parse import urlencode, urljoin
 
 from playwright.sync_api import Page, sync_playwright
+from playwright_stealth import Stealth
 
 from constants import BASE_URL
 
 LISTING_URL = f"{BASE_URL}/used-cars/listing"
 DETAIL_URL = f"{BASE_URL}/used-cars/info"
+
+_PROXY_SERVER = os.environ.get("PROXY_SERVER")
+
+# Comma-separated fallback proxies to rotate through on failure
+_PROXY_FALLBACKS = [
+    p.strip() for p in os.environ.get("PROXY_FALLBACKS", "").split(",") if p.strip()
+]
 
 _BADGE_FLAGS = {"PREMIUM AD", "DIRECT OWNER", "IMPORT USED"}
 
@@ -91,9 +100,21 @@ class UsedCarSearch:
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.close()
 
-    def start(self):
+    def _make_proxy(self, server: str | None = None) -> dict | None:
+        s = server or _PROXY_SERVER
+        return {"server": s} if s else None
+
+    def start(self, proxy_server: str | None = None):
         self.playwright = sync_playwright().start()
-        self.browser = self.playwright.chromium.launch(headless=self.headless)
+        proxy = self._make_proxy(proxy_server)
+        self.browser = self.playwright.chromium.launch(
+            headless=self.headless,
+            proxy=proxy,
+            args=[
+                "--disable-blink-features=AutomationControlled",
+                "--no-sandbox",
+            ],
+        )
         self.context = self.browser.new_context(
             user_agent=(
                 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -101,8 +122,13 @@ class UsedCarSearch:
                 "Chrome/131.0.0.0 Safari/537.36"
             )
         )
+        Stealth().apply_stealth_sync(self.context)
         self.page = self.context.new_page()
         self.page.set_default_timeout(self.timeout)
+
+    def _restart_with_proxy(self, proxy_server: str) -> None:
+        self.close()
+        self.start(proxy_server=proxy_server)
 
     def close(self):
         if self.page:
@@ -133,8 +159,32 @@ class UsedCarSearch:
         """
         params = self._build_params(filters)
         url = f"{LISTING_URL}?{urlencode(params, doseq=True)}" if params else LISTING_URL
-        self.page.goto(url, wait_until="domcontentloaded")
-        time.sleep(1)
+        return self._navigate(url)
+
+    def _navigate(self, url: str) -> str:
+        proxies = [p for p in [_PROXY_SERVER, *_PROXY_FALLBACKS] if p]
+        last_error = None
+        for i, proxy in enumerate(proxies or [None]):
+            try:
+                if i > 0:
+                    print(f"Retrying with proxy: {proxy}")
+                    self._restart_with_proxy(proxy)
+                self.page.goto(url, wait_until="domcontentloaded", timeout=30000)
+                try:
+                    self.page.wait_for_selector(
+                        '[class*="listing_box"]',
+                        timeout=15000,
+                    )
+                except Exception:
+                    pass
+                return self.page.url
+            except Exception as e:
+                last_error = e
+                if i < len(proxies) - 1:
+                    print(f"Proxy failed ({e}), trying next...")
+                    continue
+        if last_error and proxies:
+            raise last_error
         return self.page.url
 
     def _build_params(self, filters: dict) -> dict:
