@@ -368,31 +368,25 @@ class UsedCarSearch:
 
     def next_page(self) -> bool:
         """Navigate to next page. Returns False if no more pages."""
+        if not self.has_next_page():
+            return False
+
         current = self._current_page_number()
         next_num = current + 1
 
-        # Try "Next" link first
-        next_btn = self.page.locator(
-            "a:has-text('Next'), button:has-text('Next')"
-        ).first
-        if next_btn.is_visible() and next_btn.is_enabled():
-            next_btn.click()
-            time.sleep(1)
-            return True
+        # Build the next-page URL directly and navigate via _navigate() so
+        # proxy retry logic applies (clicking triggers a navigation that the
+        # proxy may stall on, causing a 30 s timeout).
+        current_url = self.page.url
+        if re.search(r"[?&]page=\d+", current_url):
+            next_url = re.sub(r"(page=)\d+", f"\\g<1>{next_num}", current_url)
+        elif "?" in current_url:
+            next_url = f"{current_url}&page={next_num}"
+        else:
+            next_url = f"{current_url}?page={next_num}"
 
-        # Look for the next page number link (ignore result-per-page dropdown)
-        page_items = self.page.locator(".page-item a, [class*='page-item'] a").all()
-        for link in page_items:
-            try:
-                n = int(link.inner_text().strip())
-                if n == next_num:
-                    link.click()
-                    time.sleep(1)
-                    return True
-            except Exception:
-                continue
-
-        return False
+        self._navigate(next_url)
+        return True
 
     def _current_page_number(self) -> int:
         # Parse from URL query parameter
@@ -402,7 +396,8 @@ class UsedCarSearch:
         return 1
 
     def has_next_page(self) -> bool:
-        if self.page.locator("a:has-text('Next')").first.is_visible():
+        next_btn = self.page.locator("a:has-text('Next'), button:has-text('Next')").first
+        if next_btn.is_visible() and next_btn.is_enabled():
             return True
         current = self._current_page_number()
         page_items = self.page.locator(".page-item a, [class*='page-item'] a").all()
