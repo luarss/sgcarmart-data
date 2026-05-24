@@ -19,9 +19,7 @@ DETAIL_URL = f"{BASE_URL}/used-cars/info"
 _PROXY_SERVER = os.environ.get("PROXY_SERVER")
 
 # Comma-separated fallback proxies to rotate through on failure
-_PROXY_FALLBACKS = [
-    p.strip() for p in os.environ.get("PROXY_FALLBACKS", "").split(",") if p.strip()
-]
+_PROXY_FALLBACKS = [p.strip() for p in os.environ.get("PROXY_FALLBACKS", "").split(",") if p.strip()]
 
 _BADGE_FLAGS = {"PREMIUM AD", "DIRECT OWNER", "IMPORT USED"}
 
@@ -166,19 +164,7 @@ class UsedCarSearch:
         last_error = None
         for i, proxy in enumerate(proxies or [None]):
             try:
-                if i > 0:
-                    print(f"Retrying with proxy: {proxy}")
-                    self._restart_with_proxy(proxy)
-                self.page.goto(url, wait_until="domcontentloaded", timeout=30000)
-                try:
-                    self.page.wait_for_selector(
-                        '[class*="listing_box"]',
-                        timeout=15000,
-                    )
-                except Exception:
-                    pass
-                # Verify listings actually rendered (not geo-blocked)
-                if self.get_listings():
+                if self._try_navigate_with_proxy(url, proxy, i):
                     return self.page.url
                 if i < len(proxies) - 1:
                     print(f"Proxy loaded page but 0 listings, trying next...")
@@ -192,6 +178,17 @@ class UsedCarSearch:
         if last_error and proxies:
             raise last_error
         return self.page.url
+
+    def _try_navigate_with_proxy(self, url: str, proxy: str | None, attempt: int) -> bool:
+        if attempt > 0:
+            print(f"Retrying with proxy: {proxy}")
+            self._restart_with_proxy(proxy)
+        self.page.goto(url, wait_until="domcontentloaded", timeout=30000)
+        try:
+            self.page.wait_for_selector('[class*="listing_box"]', timeout=15000)
+        except Exception:
+            pass
+        return bool(self.get_listings())
 
     def _build_params(self, filters: dict) -> dict:
         params = {}
@@ -208,9 +205,7 @@ class UsedCarSearch:
 
     def get_listings(self) -> list[UsedCarListing]:
         """Parse all listing cards on the current page."""
-        cards = self.page.locator(
-            '[class*="listing_box"][class*="flex_content"]'
-        ).all()
+        cards = self.page.locator('[class*="listing_box"][class*="flex_content"]').all()
 
         results = []
         for card in cards:
@@ -227,137 +222,151 @@ class UsedCarSearch:
         text = card.inner_text()
         lines = [l.strip() for l in text.split("\n") if l.strip()]
 
-        # Extract detail URL from the title link
-        url = ""
+        url = self._extract_card_url(card)
+        fields = self._parse_listing_lines(lines)
+
+        return UsedCarListing(
+            title=fields["title"],
+            url=url,
+            price=fields["price"],
+            instalment=fields["instalment"],
+            depreciation=fields["depreciation"],
+            reg_date=fields["reg_date"],
+            coe_left=fields["coe_left"],
+            mileage=fields["mileage"],
+            eng_cap=fields["eng_cap"],
+            owners=fields["owners"],
+            is_direct_owner=fields["is_direct"],
+            is_premium_ad=fields["is_premium"],
+            is_import_used=fields["is_import"],
+            dealer=fields["dealer"],
+            posted_date=fields["posted_date"],
+            description=" ".join(fields["desc_parts"]),
+        )
+
+    def _extract_card_url(self, card) -> str:
         link = card.locator('a[href*="/info/"]').first
         try:
             href = link.get_attribute("href", timeout=500)
-            url = urljoin(BASE_URL, href) if href else ""
+            return urljoin(BASE_URL, href) if href else ""
         except Exception:
-            pass
+            return ""
 
-        # Parse line-by-line
-        title = ""
-        price = None
-        instalment = None
-        depreciation = None
-        reg_date = None
-        coe_left = None
-        mileage = None
-        eng_cap = None
-        owners = None
-        dealer = None
-        posted_date = None
-        is_premium = False
-        is_direct = False
-        is_import = False
-        desc_parts = []
-        in_description = False
+    def _parse_listing_lines(self, lines: list[str]) -> dict:
+        fields = {
+            "title": "",
+            "price": None,
+            "instalment": None,
+            "depreciation": None,
+            "reg_date": None,
+            "coe_left": None,
+            "mileage": None,
+            "eng_cap": None,
+            "owners": None,
+            "dealer": None,
+            "posted_date": None,
+            "is_premium": False,
+            "is_direct": False,
+            "is_import": False,
+            "desc_parts": [],
+        }
 
         for line in lines:
-            if line == "Compare":
+            if self._try_parse_badge(line, fields):
                 continue
-
-            if line in _BADGE_FLAGS:
-                if line == "PREMIUM AD":
-                    is_premium = True
-                elif line == "DIRECT OWNER":
-                    is_direct = True
-                elif line == "IMPORT USED":
-                    is_import = True
+            if self._try_parse_title(line, fields):
                 continue
-
-            # Title: first non-badge line that isn't a price/number
-            if not title:
-                title = line
+            if self._try_parse_financial(line, fields):
                 continue
-
-            # Instalment line
-            if line.startswith("Instl."):
-                instalment = line.replace("Instl. ", "")
+            if self._try_parse_reg_date(line, fields):
                 continue
-
-            # Depreciation (ends with /yr)
-            if line.endswith("/yr") and line.startswith("$"):
-                depreciation = self._parse_int(line)
+            if self._try_parse_vehicle_attrs(line, fields):
                 continue
-
-            # Price (starts with $, not /yr)
-            if line.startswith("$") and not instalment and price is None:
-                price = self._parse_int(line)
+            if self._try_parse_dealer(line, fields):
                 continue
-
-            # Registration date
-            if re.match(r"^\d{1,2}-[A-Z][a-z]{2}-\d{4}$", line) and not reg_date:
-                reg_date = line
+            if self._try_parse_posted_date(line, fields):
                 continue
+            if fields["title"] and line != fields["title"]:
+                fields["desc_parts"].append(line)
 
-            # COE left
-            if "COE left" in line:
-                coe_left = line.strip("()")
-                continue
+        if fields["price"] is None:
+            fields["price"] = self._fallback_price(lines)
 
-            # Mileage
-            if re.match(r"^[\d,]+ km$", line) or line == "N.A":
-                if not mileage:
-                    mileage = None if line == "N.A" else line
-                continue
+        return fields
 
-            # Engine capacity
-            if re.match(r"^[\d,]+ cc$", line):
-                eng_cap = line
-                continue
+    def _try_parse_badge(self, line: str, fields: dict) -> bool:
+        if line == "Compare":
+            return True
+        if line not in _BADGE_FLAGS:
+            return False
+        if line == "PREMIUM AD":
+            fields["is_premium"] = True
+        elif line == "DIRECT OWNER":
+            fields["is_direct"] = True
+        elif line == "IMPORT USED":
+            fields["is_import"] = True
+        return True
 
-            # Owners
-            if re.match(r"^\d+ Owner", line) or re.match(r"^More than \d+", line):
-                owners = line
-                continue
+    def _try_parse_title(self, line: str, fields: dict) -> bool:
+        if not fields["title"]:
+            fields["title"] = line
+            return True
+        return False
 
-            # Posted date
-            if line.startswith("Posted "):
-                posted_date = line.replace("Posted ", "")
-                in_description = False
-                continue
+    def _try_parse_financial(self, line: str, fields: dict) -> bool:
+        if line.startswith("Instl."):
+            fields["instalment"] = line.replace("Instl. ", "")
+            return True
+        if line.endswith("/yr") and line.startswith("$"):
+            fields["depreciation"] = self._parse_int(line)
+            return True
+        if line.startswith("$") and not fields["instalment"] and fields["price"] is None:
+            fields["price"] = self._parse_int(line)
+            return True
+        return False
 
-            # Dealer name (line with "|" is dealer indicator, or line with "Pte Ltd")
-            if "|" in line and len(line) < 40:
-                dealer = line.replace("|", "").strip()
-                continue
+    def _try_parse_reg_date(self, line: str, fields: dict) -> bool:
+        if re.match(r"^\d{1,2}-[A-Z][a-z]{2}-\d{4}$", line) and not fields["reg_date"]:
+            fields["reg_date"] = line
+            return True
+        if "COE left" in line:
+            fields["coe_left"] = line.strip("()")
+            return True
+        return False
 
-            if "Pte Ltd" in line or "Ltd" in line:
-                dealer = line
-                continue
+    def _try_parse_vehicle_attrs(self, line: str, fields: dict) -> bool:
+        if re.match(r"^[\d,]+ km$", line) or line == "N.A":
+            if not fields["mileage"]:
+                fields["mileage"] = None if line == "N.A" else line
+            return True
+        if re.match(r"^[\d,]+ cc$", line):
+            fields["eng_cap"] = line
+            return True
+        if re.match(r"^\d+ Owner", line) or re.match(r"^More than \d+", line):
+            fields["owners"] = line
+            return True
+        return False
 
-            # Everything else after title and before posted date is description
-            if title and line != title:
-                desc_parts.append(line)
+    def _try_parse_posted_date(self, line: str, fields: dict) -> bool:
+        if line.startswith("Posted "):
+            fields["posted_date"] = line.replace("Posted ", "")
+            return True
+        return False
 
-        # Re-derive price from depreciation as fallback (since actual price
-        # appears _before_ instalment line in the card text order)
-        if price is None:
-            for line in lines:
-                if line.startswith("$") and "/yr" not in line and "Instl." not in line:
-                    price = self._parse_int(line)
-                    break
+    def _try_parse_dealer(self, line: str, fields: dict) -> bool:
+        if "|" in line and len(line) < 40:
+            fields["dealer"] = line.replace("|", "").strip()
+            return True
+        if "Pte Ltd" in line or "Ltd" in line:
+            fields["dealer"] = line
+            return True
+        return False
 
-        return UsedCarListing(
-            title=title,
-            url=url,
-            price=price,
-            instalment=instalment,
-            depreciation=depreciation,
-            reg_date=reg_date,
-            coe_left=coe_left,
-            mileage=mileage,
-            eng_cap=eng_cap,
-            owners=owners,
-            is_direct_owner=is_direct,
-            is_premium_ad=is_premium,
-            is_import_used=is_import,
-            dealer=dealer,
-            posted_date=posted_date,
-            description=" ".join(desc_parts),
-        )
+    def _fallback_price(self, lines: list[str]) -> int | None:
+        for line in lines:
+            if line.startswith("$") and "/yr" not in line and "Instl." not in line:
+                return self._parse_int(line)
+        return None
 
     @staticmethod
     def _parse_int(text: str) -> int | None:
@@ -430,9 +439,7 @@ class UsedCarSearch:
 
     def _parse_detail(self) -> UsedCarDetail:
         page = self.page
-        title = (
-            page.locator("h1, [class*='title']").first.inner_text().strip()
-        )
+        title = page.locator("h1, [class*='title']").first.inner_text().strip()
         url = page.url
         text = page.inner_text("body")
 
@@ -442,16 +449,9 @@ class UsedCarSearch:
             aid_match = re.search(r"(\d{6,})", url)
             if aid_match:
                 aid = aid_match.group(1)
-                api_url = (
-                    f"{BASE_URL}/used-cars/api/info/deregistration-value"
-                    f"?aid={aid}&date=2026-05-23"
-                )
-                resp = page.evaluate(
-                    f"fetch('{api_url}').then(r => r.json())"
-                )
-                dereg_value = (
-                    resp.get("data", {}).get("data", {}).get("deregValue_today")
-                )
+                api_url = f"{BASE_URL}/used-cars/api/info/deregistration-value?aid={aid}&date=2026-05-23"
+                resp = page.evaluate(f"fetch('{api_url}').then(r => r.json())")
+                dereg_value = resp.get("data", {}).get("data", {}).get("deregValue_today")
         except Exception:
             pass
 
@@ -482,18 +482,14 @@ class UsedCarSearch:
 
     def _extract_description(self, page: Page) -> str:
         try:
-            el = page.locator(
-                "[class*='description'], [class*='sellerComment']"
-            ).first
+            el = page.locator("[class*='description'], [class*='sellerComment']").first
             return el.inner_text().strip()
         except Exception:
             return ""
 
     def _extract_features(self, page: Page) -> list[str]:
         try:
-            els = page.locator(
-                "[class*='feature'] li, [class*='accessory'] li"
-            ).all()
+            els = page.locator("[class*='feature'] li, [class*='accessory'] li").all()
             return [e.inner_text().strip() for e in els if e.inner_text().strip()]
         except Exception:
             return []

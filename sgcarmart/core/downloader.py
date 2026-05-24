@@ -19,6 +19,9 @@ from sgcarmart.utils.file_utils import (
 from sgcarmart.utils.http import RateLimitError, fetch_with_retry
 from sgcarmart.utils.validation import validate_pdf
 
+PRICELISTS_DIR = "data/pricelists"
+DEFAULT_EXTRACT_MODEL = "gemini-2.0-flash"
+
 
 def _setup_filepath(brand_name, dealer_id, date, output_dir):
     brand_dir = os.path.join(output_dir, normalize_brand_name(brand_name))
@@ -50,7 +53,7 @@ def _attempt_extraction(filepath, brand_name, dealer_id, date, extract_model):
         return "skipped", None
 
 
-def download_pricelist(pricelist_url, brand_name, dealer_id, date, output_dir="data/pricelists"):
+def download_pricelist(pricelist_url, brand_name, dealer_id, date, output_dir=PRICELISTS_DIR):
     ensure_directory(output_dir)
     filepath, _ = _setup_filepath(brand_name, dealer_id, date, output_dir)
 
@@ -77,8 +80,34 @@ def download_pricelist(pricelist_url, brand_name, dealer_id, date, output_dir="d
         return None, f"Failed: {e!s}"
 
 
+def _make_result(pdf_url, filepath, filename, dealer_id, date, status, message):
+    return {
+        "url": pdf_url,
+        "filepath": filepath,
+        "filename": filename,
+        "dealer_id": dealer_id,
+        "date": date,
+        "status": status,
+        "message": message,
+    }
+
+
+def _maybe_extract(result, filepath, brand_name, dealer_id, date, extract_model):
+    if not brand_name:
+        return
+    try:
+        extraction_status, json_path = _attempt_extraction(filepath, brand_name, dealer_id, date, extract_model)
+        result["extraction"] = extraction_status
+        if json_path:
+            result["json_path"] = json_path
+    except Exception as e:
+        result["extraction"] = "failed"
+        result["extraction_error"] = str(e)
+        print(f"⚠ Extraction failed for {result.get('filename', filepath)}: {e}")
+
+
 def download_pdf(
-    pdf_url, brand_name=None, output_dir="data/pricelists", auto_extract=False, extract_model="gemini-2.0-flash"
+    pdf_url, brand_name=None, output_dir=PRICELISTS_DIR, auto_extract=False, extract_model=DEFAULT_EXTRACT_MODEL
 ):
     metadata = extract_metadata_from_url(pdf_url)
     dealer_id = metadata["dealer_id"]
@@ -93,95 +122,38 @@ def download_pdf(
 
     if os.path.exists(filepath):
         file_size = os.path.getsize(filepath)
-        result = {
-            "url": pdf_url,
-            "filepath": filepath,
-            "filename": filename,
-            "dealer_id": dealer_id,
-            "date": date,
-            "status": "skipped",
-            "message": f"Already exists ({file_size} bytes)",
-        }
-
-        if auto_extract and brand_name:
-            try:
-                extraction_status, json_path = _attempt_extraction(filepath, brand_name, dealer_id, date, extract_model)
-                result["extraction"] = extraction_status
-                if json_path:
-                    result["json_path"] = json_path
-            except Exception as e:
-                result["extraction"] = "failed"
-                result["extraction_error"] = str(e)
-                print(f"⚠ Extraction failed for {filename}: {e}")
-
+        result = _make_result(
+            pdf_url, filepath, filename, dealer_id, date, "skipped", f"Already exists ({file_size} bytes)"
+        )
+        if auto_extract:
+            _maybe_extract(result, filepath, brand_name, dealer_id, date, extract_model)
         return result
 
     try:
         response = fetch_with_retry(pdf_url, DEFAULT_REQUEST_TIMEOUT)
-
         is_valid, message = validate_pdf(response)
         if not is_valid:
-            return {
-                "url": pdf_url,
-                "filepath": None,
-                "filename": filename,
-                "dealer_id": dealer_id,
-                "date": date,
-                "status": "failed",
-                "message": message,
-            }
+            return _make_result(pdf_url, None, filename, dealer_id, date, "failed", message)
 
         with open(filepath, "wb") as f:
             f.write(response.content)
 
-        file_size = len(response.content)
-
-        result = {
-            "url": pdf_url,
-            "filepath": filepath,
-            "filename": filename,
-            "dealer_id": dealer_id,
-            "date": date,
-            "status": "success",
-            "message": f"Downloaded ({file_size} bytes)",
-        }
-
-        if auto_extract and brand_name:
-            try:
-                extraction_status, json_path = _attempt_extraction(filepath, brand_name, dealer_id, date, extract_model)
-                result["extraction"] = extraction_status
-                if json_path:
-                    result["json_path"] = json_path
-            except Exception as e:
-                result["extraction"] = "failed"
-                result["extraction_error"] = str(e)
-                print(f"⚠ Extraction failed for {filename}: {e}")
-
+        result = _make_result(
+            pdf_url, filepath, filename, dealer_id, date, "success", f"Downloaded ({len(response.content)} bytes)"
+        )
+        if auto_extract:
+            _maybe_extract(result, filepath, brand_name, dealer_id, date, extract_model)
         return result
 
     except RateLimitError:
-        return {
-            "url": pdf_url,
-            "filepath": None,
-            "filename": filename,
-            "dealer_id": dealer_id,
-            "date": date,
-            "status": "error",
-            "message": f"429 Too Many Requests after {MAX_RETRIES} attempts",
-        }
+        return _make_result(
+            pdf_url, None, filename, dealer_id, date, "error", f"429 Too Many Requests after {MAX_RETRIES} attempts"
+        )
     except Exception as e:
-        return {
-            "url": pdf_url,
-            "filepath": None,
-            "filename": filename,
-            "dealer_id": dealer_id,
-            "date": date,
-            "status": "error",
-            "message": str(e),
-        }
+        return _make_result(pdf_url, None, filename, dealer_id, date, "error", str(e))
 
 
-def process_dealer(dealer_id, brand_name, auto_extract=False, extract_model="gemini-2.0-flash"):
+def process_dealer(dealer_id, brand_name, auto_extract=False, extract_model=DEFAULT_EXTRACT_MODEL):
     brand_url = PRICELIST_URL_TEMPLATE.format(dealer_id=dealer_id, brand=normalize_brand_name(brand_name))
 
     try:
@@ -213,10 +185,10 @@ def process_dealer(dealer_id, brand_name, auto_extract=False, extract_model="gem
 def download_all_pdfs_from_page(
     page_url,
     brand_name=None,
-    output_dir="data/pricelists",
+    output_dir=PRICELISTS_DIR,
     max_workers=DEFAULT_PDF_MAX_WORKERS,
     auto_extract=False,
-    extract_model="gemini-2.0-flash",
+    extract_model=DEFAULT_EXTRACT_MODEL,
 ):
     from sgcarmart.core.scraper import extract_brand_from_url
 
@@ -265,11 +237,15 @@ def download_all_pdfs_from_page(
         for future in as_completed(futures):
             result = future.result()
             results.append(result)
-
-            status_symbol = "✓" if result["status"] == "success" else "○" if result["status"] == "skipped" else "✗"
-            display_name = result.get("filename", result["url"].split("/")[-1])
-            if result.get("dealer_id") and result.get("date"):
-                display_name = f"dealer_{result['dealer_id']}_{result['date']}.pdf"
-            print(f"{status_symbol} {display_name}: {result['message']}")
+            _print_download_progress(result)
 
     return results
+
+
+def _print_download_progress(result):
+    status = result["status"]
+    status_symbol = "✓" if status == "success" else "○" if status == "skipped" else "✗"
+    display_name = result.get("filename", result["url"].split("/")[-1])
+    if result.get("dealer_id") and result.get("date"):
+        display_name = f"dealer_{result['dealer_id']}_{result['date']}.pdf"
+    print(f"{status_symbol} {display_name}: {result['message']}")

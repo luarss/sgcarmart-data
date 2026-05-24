@@ -16,6 +16,8 @@ load_dotenv(Path(__file__).parent / ".env")
 
 
 class GeminiPDFExtractor:
+    DEFAULT_MODEL: ClassVar[str] = "gemini-2.0-flash"
+
     PRICING: ClassVar = {
         "gemini-3-pro": {"input_per_million": 2.00, "output_per_million": 12.00, "is_free": False},
         "gemini-2.5-pro": {"input_per_million": 1.25, "output_per_million": 10.00, "is_free": False},
@@ -33,7 +35,7 @@ class GeminiPDFExtractor:
         self.client = OpenAI(api_key=self.api_key, base_url="https://generativelanguage.googleapis.com/v1beta/openai/")
 
     def calculate_cost(self, model: str, input_tokens: int, output_tokens: int) -> APIUsageStats:
-        pricing = self.PRICING.get(model, self.PRICING["gemini-2.0-flash"])
+        pricing = self.PRICING.get(model, self.PRICING[self.DEFAULT_MODEL])
 
         input_cost = (input_tokens / 1_000_000) * pricing["input_per_million"]
         output_cost = (output_tokens / 1_000_000) * pricing["output_per_million"]
@@ -158,10 +160,14 @@ Extract the data now from the provided PDF."""
     def extract_from_pdf(
         self,
         pdf_path: Path,
-        model: str = "gemini-2.0-flash",
+        model: str | None = None,
         temperature: float = 0.1,
-        fallback_model: str = "gemini-2.0-flash",
+        fallback_model: str | None = None,
     ) -> SGCarMartPriceListExtraction:
+        if model is None:
+            model = self.DEFAULT_MODEL
+        if fallback_model is None:
+            fallback_model = self.DEFAULT_MODEL
         pdf_path = Path(pdf_path)
         if not pdf_path.exists():
             raise FileNotFoundError(f"PDF not found: {pdf_path}")
@@ -318,7 +324,7 @@ def main():
         default=None,
         help="Output directory for extracted JSON (default: data/pricelists/<brand>/<year>)",
     )
-    parser.add_argument("--model", type=str, default="gemini-2.0-flash", help="Gemini model to use")
+    parser.add_argument("--model", type=str, default=GeminiPDFExtractor.DEFAULT_MODEL, help="Gemini model to use")
     parser.add_argument("--api-key", type=str, help="Gemini API key (or set GEMINI_API_KEY env var)")
 
     args = parser.parse_args()

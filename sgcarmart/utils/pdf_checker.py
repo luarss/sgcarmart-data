@@ -98,6 +98,38 @@ def check_pdfs_in_directory(directory, pattern="**/*.pdf", recursive=True):
     return results
 
 
+def _print_invalid_details(results):
+    error_types = {}
+    for result in results:
+        if not result.is_valid:
+            error_type = result.error_type or "UNKNOWN"
+            error_types.setdefault(error_type, []).append(result)
+
+    for error_type, error_results in error_types.items():
+        print(f"\n{error_type} ({len(error_results)} files):")
+        for result in error_results[:10]:
+            print(f"  - {result.file_path}")
+            if result.error_message:
+                print(f"    Error: {result.error_message[:100]}")
+        if len(error_results) > 10:
+            print(f"  ... and {len(error_results) - 10} more")
+
+
+def _print_special_category(header, items, limit=5, extra_info=None):
+    if not items:
+        return
+    print(f"\n{'=' * 80}")
+    print(f"{header}: {len(items)}")
+    print(f"{'=' * 80}")
+    for result in items[:limit]:
+        info = ""
+        if extra_info:
+            info = extra_info(result)
+        print(f"  - {result.file_path}{info}")
+    if len(items) > limit:
+        print(f"  ... and {len(items) - limit} more")
+
+
 def print_summary(results):
     total = len(results)
     valid = sum(1 for r in results if r.is_valid)
@@ -107,52 +139,21 @@ def print_summary(results):
     print("PDF Corruption Check Summary")
     print(f"{'=' * 80}")
     print(f"Total PDFs checked: {total}")
-    print(f"Valid PDFs: {valid} ({valid / total * 100:.1f}%)" if total > 0 else "Valid PDFs: 0")
-    print(
-        f"Invalid/Corrupted PDFs: {invalid} ({invalid / total * 100:.1f}%)"
-        if total > 0
-        else "Invalid/Corrupted PDFs: 0"
-    )
+    if total > 0:
+        print(f"Valid PDFs: {valid} ({valid / total * 100:.1f}%)")
+        print(f"Invalid/Corrupted PDFs: {invalid} ({invalid / total * 100:.1f}%)")
+    else:
+        print("Valid PDFs: 0")
+        print("Invalid/Corrupted PDFs: 0")
 
     if invalid > 0:
         print(f"\n{'=' * 80}")
         print("Invalid PDFs Details:")
         print(f"{'=' * 80}")
-
-        error_types = {}
-        for result in results:
-            if not result.is_valid:
-                error_type = result.error_type or "UNKNOWN"
-                if error_type not in error_types:
-                    error_types[error_type] = []
-                error_types[error_type].append(result)
-
-        for error_type, error_results in error_types.items():
-            print(f"\n{error_type} ({len(error_results)} files):")
-            for result in error_results[:10]:
-                print(f"  - {result.file_path}")
-                if result.error_message:
-                    print(f"    Error: {result.error_message[:100]}")
-
-            if len(error_results) > 10:
-                print(f"  ... and {len(error_results) - 10} more")
+        _print_invalid_details(results)
 
     encrypted = [r for r in results if r.is_valid and r.is_encrypted]
-    if encrypted:
-        print(f"\n{'=' * 80}")
-        print(f"Encrypted PDFs: {len(encrypted)}")
-        print(f"{'=' * 80}")
-        for result in encrypted[:5]:
-            print(f"  - {result.file_path}")
-        if len(encrypted) > 5:
-            print(f"  ... and {len(encrypted) - 5} more")
+    _print_special_category("Encrypted PDFs", encrypted)
 
     no_text = [r for r in results if r.is_valid and r.has_text is False]
-    if no_text:
-        print(f"\n{'=' * 80}")
-        print(f"PDFs with no extractable text: {len(no_text)}")
-        print(f"{'=' * 80}")
-        for result in no_text[:5]:
-            print(f"  - {result.file_path} ({result.page_count} pages)")
-        if len(no_text) > 5:
-            print(f"  ... and {len(no_text) - 5} more")
+    _print_special_category("PDFs with no extractable text", no_text, extra_info=lambda r: f" ({r.page_count} pages)")

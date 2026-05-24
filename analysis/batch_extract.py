@@ -12,6 +12,54 @@ from constants import EXCLUDED_BRANDS
 load_dotenv(Path(__file__).parent / ".env")
 
 
+def _process_single_pdf(extractor, pdf_file, model, output_dir):
+    """Extract a single PDF and return the file result dict."""
+    extraction = extractor.extract_from_pdf(pdf_file, model=model)
+    output_path = extractor.save_extraction(extraction=extraction, output_dir=output_dir)
+
+    file_result = {
+        "filename": pdf_file.name,
+        "status": "success",
+        "confidence": extraction.extraction_confidence,
+        "models_extracted": len(extraction.pricelist.models),
+        "output_path": str(output_path),
+    }
+
+    if extraction.metadata.api_usage:
+        api = extraction.metadata.api_usage
+        file_result["api_usage"] = {
+            "model": api.model_name,
+            "tokens": api.total_tokens,
+            "cost_usd": float(api.total_cost_usd),
+            "is_free": api.is_free_tier,
+        }
+
+    return file_result, extraction.metadata.api_usage
+
+
+def _print_batch_summary(results):
+    """Print batch extraction summary and cost breakdown."""
+    cost = results["cost_summary"]
+    print(f"\n\n{'=' * 60}")
+    print("BATCH EXTRACTION SUMMARY")
+    print(f"{'=' * 60}")
+    print(f"Total Attempted: {results['summary']['total_attempted']}")
+    print(f"Total Successful: {results['summary']['total_successful']}")
+    print(f"Total Failed: {results['summary']['total_failed']}")
+
+    print("\nCost Summary:")
+    print(f"  Total Tokens: {cost['total_tokens']:,}")
+    print(f"  Input Tokens: {cost['total_input_tokens']:,}")
+    print(f"  Output Tokens: {cost['total_output_tokens']:,}")
+    print(f"  Free Tier Requests: {cost['free_tier_requests']}")
+    print(f"  Paid Requests: {cost['paid_requests']}")
+    if cost["total_cost_usd"] == 0:
+        print("  Total Cost: FREE")
+    else:
+        print(f"  Total Cost: ${cost['total_cost_usd']:.6f} USD")
+    print(f"{'=' * 60}\n")
+
+
 def extract_brand_samples(
     brands: list[str],
     base_dir: Path = Path("data/pricelists"),
@@ -68,33 +116,15 @@ def extract_brand_samples(
             print(f"{'=' * 60}")
 
             try:
-                extraction = extractor.extract_from_pdf(pdf_file, model=model)
+                file_result, api_usage = _process_single_pdf(extractor, pdf_file, model, output_dir)
 
-                output_path = extractor.save_extraction(extraction=extraction, output_dir=output_dir)
+                if api_usage:
+                    results["cost_summary"]["total_tokens"] += api_usage.total_tokens
+                    results["cost_summary"]["total_input_tokens"] += api_usage.input_tokens
+                    results["cost_summary"]["total_output_tokens"] += api_usage.output_tokens
+                    results["cost_summary"]["total_cost_usd"] += float(api_usage.total_cost_usd)
 
-                file_result = {
-                    "filename": pdf_file.name,
-                    "status": "success",
-                    "confidence": extraction.extraction_confidence,
-                    "models_extracted": len(extraction.pricelist.models),
-                    "output_path": str(output_path),
-                }
-
-                if extraction.metadata.api_usage:
-                    api = extraction.metadata.api_usage
-                    file_result["api_usage"] = {
-                        "model": api.model_name,
-                        "tokens": api.total_tokens,
-                        "cost_usd": float(api.total_cost_usd),
-                        "is_free": api.is_free_tier,
-                    }
-
-                    results["cost_summary"]["total_tokens"] += api.total_tokens
-                    results["cost_summary"]["total_input_tokens"] += api.input_tokens
-                    results["cost_summary"]["total_output_tokens"] += api.output_tokens
-                    results["cost_summary"]["total_cost_usd"] += float(api.total_cost_usd)
-
-                    if api.is_free_tier:
+                    if api_usage.is_free_tier:
                         results["cost_summary"]["free_tier_requests"] += 1
                     else:
                         results["cost_summary"]["paid_requests"] += 1
@@ -109,28 +139,7 @@ def extract_brand_samples(
 
         results["brands"].append(brand_results)
 
-    cost = results["cost_summary"]
-
-    print(f"\n\n{'=' * 60}")
-    print("BATCH EXTRACTION SUMMARY")
-    print(f"{'=' * 60}")
-    print(f"Total Attempted: {results['summary']['total_attempted']}")
-    print(f"Total Successful: {results['summary']['total_successful']}")
-    print(f"Total Failed: {results['summary']['total_failed']}")
-
-    print("\nCost Summary:")
-    print(f"  Total Tokens: {cost['total_tokens']:,}")
-    print(f"  Input Tokens: {cost['total_input_tokens']:,}")
-    print(f"  Output Tokens: {cost['total_output_tokens']:,}")
-    print(f"  Free Tier Requests: {cost['free_tier_requests']}")
-    print(f"  Paid Requests: {cost['paid_requests']}")
-    if cost["total_cost_usd"] == 0:
-        print("  Total Cost: FREE")
-    else:
-        print(f"  Total Cost: ${cost['total_cost_usd']:.6f} USD")
-
-    print(f"{'=' * 60}\n")
-
+    _print_batch_summary(results)
     return results
 
 

@@ -139,40 +139,43 @@ class SimpleYearNavigator:
             date_selector.click()
             time.sleep(0.5)
 
-            all_text_elements = self.page.locator("div").all()
-            date_texts = []
-
-            for elem in all_text_elements:
-                try:
-                    text = elem.inner_text(timeout=500).strip()
-                    if text and len(text) > 5 and len(text) < 50 and re.match(r"^\d{2}\s+\w+\s+\d{4}$", text):
-                        date_texts.append(text)
-                except Exception:
-                    continue
-
+            date_texts = self._extract_date_texts()
             self.page.keyboard.press("Escape")
             time.sleep(0.2)
 
-            pdfs = []
-            for date_text in set(date_texts):
-                url_date = self.parse_date_to_url_format(date_text)
-                if url_date:
-                    pdf_url = PDF_URL_TEMPLATE.format(dealer_id=dealer_id, date=url_date)
-                    pdfs.append(
-                        {
-                            "url": pdf_url,
-                            "date": url_date,
-                            "filename": f"dealer_{dealer_id}_{url_date}.pdf",
-                            "year": year,
-                            "date_text": date_text,
-                        }
-                    )
-
-            return pdfs
+            return self._build_pdf_infos(date_texts, dealer_id, year)
 
         except Exception as e:
             print(f"Error getting PDFs for year {year}: {e}")
             return []
+
+    def _extract_date_texts(self) -> list[str]:
+        all_text_elements = self.page.locator("div").all()
+        date_texts = []
+        for elem in all_text_elements:
+            try:
+                text = elem.inner_text(timeout=500).strip()
+                if text and len(text) > 5 and len(text) < 50 and re.match(r"^\d{2}\s+\w+\s+\d{4}$", text):
+                    date_texts.append(text)
+            except Exception:
+                continue
+        return date_texts
+
+    def _build_pdf_infos(self, date_texts: list[str], dealer_id: str, year: str) -> list[dict[str, str]]:
+        pdfs = []
+        for date_text in set(date_texts):
+            url_date = self.parse_date_to_url_format(date_text)
+            if url_date:
+                pdfs.append(
+                    {
+                        "url": PDF_URL_TEMPLATE.format(dealer_id=dealer_id, date=url_date),
+                        "date": url_date,
+                        "filename": f"dealer_{dealer_id}_{url_date}.pdf",
+                        "year": year,
+                        "date_text": date_text,
+                    }
+                )
+        return pdfs
 
     def discover_all_pdfs(
         self, dealer_id: str, brand_name: str, target_years: list[str] | None = None

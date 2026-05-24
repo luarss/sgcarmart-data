@@ -37,6 +37,32 @@ def parse_sitemap_for_dealers():
     return dealer_brand_map
 
 
+def _build_mapping_error(added, removed, changed, current_map, sitemap_map):
+    """Build error message for dealer-brand mapping drift."""
+    error_msg = ["Dealer-brand mapping is out of date.", ""]
+
+    if added:
+        error_msg.append("Added dealers:")
+        for dealer_id in sorted(added, key=int):
+            error_msg.append(f"  + Dealer {dealer_id}: {sitemap_map[dealer_id]}")
+        error_msg.append("")
+
+    if removed:
+        error_msg.append("Removed dealers:")
+        for dealer_id in sorted(removed, key=int):
+            error_msg.append(f"  - Dealer {dealer_id}: {current_map[dealer_id]}")
+        error_msg.append("")
+
+    if changed:
+        error_msg.append("Changed brands:")
+        for dealer_id in sorted(changed.keys(), key=int):
+            error_msg.append(f"  ~ Dealer {dealer_id}: {changed[dealer_id]['old']} -> {changed[dealer_id]['new']}")
+        error_msg.append("")
+
+    error_msg.append("Run 'uv run python check_mapping_changes.py --update' to update it.")
+    return "\n".join(error_msg)
+
+
 @pytest.mark.integration
 def test_dealer_brand_mapping_is_up_to_date():
     with open(DEALER_BRAND_MAPPING_FILE, 'r') as f:
@@ -50,37 +76,11 @@ def test_dealer_brand_mapping_is_up_to_date():
     added_dealers = sitemap_dealers - current_dealers
     removed_dealers = current_dealers - sitemap_dealers
 
-    changed_brands = {}
-    for dealer_id in current_dealers & sitemap_dealers:
-        if current_map[dealer_id] != sitemap_map[dealer_id]:
-            changed_brands[dealer_id] = {
-                'old': current_map[dealer_id],
-                'new': sitemap_map[dealer_id]
-            }
+    changed_brands = {
+        dealer_id: {'old': current_map[dealer_id], 'new': sitemap_map[dealer_id]}
+        for dealer_id in current_dealers & sitemap_dealers
+        if current_map[dealer_id] != sitemap_map[dealer_id]
+    }
 
     if added_dealers or removed_dealers or changed_brands:
-        error_msg = ["Dealer-brand mapping is out of date.", ""]
-
-        if added_dealers:
-            error_msg.append("Added dealers:")
-            for dealer_id in sorted(added_dealers, key=int):
-                error_msg.append(f"  + Dealer {dealer_id}: {sitemap_map[dealer_id]}")
-            error_msg.append("")
-
-        if removed_dealers:
-            error_msg.append("Removed dealers:")
-            for dealer_id in sorted(removed_dealers, key=int):
-                error_msg.append(f"  - Dealer {dealer_id}: {current_map[dealer_id]}")
-            error_msg.append("")
-
-        if changed_brands:
-            error_msg.append("Changed brands:")
-            for dealer_id in sorted(changed_brands.keys(), key=int):
-                old_brand = changed_brands[dealer_id]['old']
-                new_brand = changed_brands[dealer_id]['new']
-                error_msg.append(f"  ~ Dealer {dealer_id}: {old_brand} -> {new_brand}")
-            error_msg.append("")
-
-        error_msg.append("Run 'uv run python check_mapping_changes.py --update' to update it.")
-
-        pytest.fail("\n".join(error_msg))
+        pytest.fail(_build_mapping_error(added_dealers, removed_dealers, changed_brands, current_map, sitemap_map))

@@ -17,6 +17,8 @@ from sgcarmart.core.used import SEARCH_PARAMS, UsedCarSearch
 PROJECT_ROOT = Path(__file__).resolve().parent
 DATA_DIR = PROJECT_ROOT / "data" / "used_cars"
 
+MAX_SAFE_PAGES = 100  # upper bound to prevent unbounded loops from user config
+
 # COE-renewed car title patterns — these cars have had their 10-yr COE extended,
 # so the reg_date reflects the renewal date, not the car's true age.
 _COE_RENEWED_RE = re.compile(
@@ -34,7 +36,7 @@ DEFAULT_CONFIG = {
         "min_price": 60000,
         "max_price": 100000,
         "year_from": 2016,
-        "vts": 2,                  # "All Passenger Cars" — excludes vans/commercial
+        "vts": 2,  # "All Passenger Cars" — excludes vans/commercial
         "avl": "a",
         "sortby": "REG_DESC",
         "limit": 100,
@@ -50,6 +52,7 @@ def _listing_id(href: str) -> str:
         return ""
     # e.g. /used-cars/info/mercedes-benz-c-class-...-1504441/
     import re
+
     m = re.search(r"-(\d{6,})/", href)
     return m.group(1) if m else ""
 
@@ -71,27 +74,44 @@ def _capture_debug(search, watch_dir: Path, page_num: int) -> None:
     print(f"DEBUG: no listings on page {page_num}, url={search.page.url}")
 
 
-def run_watch(config: dict) -> dict:
-    """Fetch current listings, diff against previous snapshot, save new snapshot."""
-    name = config["name"]
-    filters = config["filters"]
-    max_pages = config.get("max_pages", 10)
+def _filter_coe_renewed(current: dict) -> dict:
+    """Remove COE-renewed cars from listing dict (title-based check)."""
+    before = len(current)
+    filtered = {lid: c for lid, c in current.items() if not _COE_RENEWED_RE.search(c["title"])}
+    if before != len(filtered):
+        print(f"Excluded {before - len(filtered)} COE-renewed cars")
+    return filtered
 
-    # Validate filter keys against centralised SEARCH_PARAMS
-    unknown = [k for k in filters if k not in SEARCH_PARAMS]
-    if unknown:
-        raise ValueError(
-            f"Unknown filter keys: {unknown}. Valid keys: {list(SEARCH_PARAMS)}"
-        )
 
-    watch_dir = DATA_DIR / name
-    watch_dir.mkdir(parents=True, exist_ok=True)
+def _compute_diff(current, previous):
+    """Compute added, removed, and price-change listings between snapshots."""
+    current_ids = set(current.keys())
+    previous_ids = set(previous.keys())
 
-    # Persist config
-    with open(watch_dir / "config.json", "w") as f:
-        json.dump(config, f, indent=2, default=str)
+    added_ids = current_ids - previous_ids
+    removed_ids = previous_ids - current_ids
+    unchanged_ids = current_ids & previous_ids
 
-    # Fetch current listings
+    price_changes = []
+    for lid in unchanged_ids:
+        prev_price = previous[lid].get("price")
+        curr_price = current[lid].get("price")
+        if prev_price != curr_price and prev_price is not None and curr_price is not None:
+            price_changes.append(
+                {
+                    "id": lid,
+                    "title": current[lid]["title"],
+                    "url": current[lid]["url"],
+                    "previous_price": prev_price,
+                    "current_price": curr_price,
+                }
+            )
+
+    return added_ids, removed_ids, price_changes
+
+
+def _fetch_current_listings(filters, max_pages, watch_dir):
+    """Fetch all listings across pages into a dict keyed by listing ID."""
     current = {}
     with UsedCarSearch(headless=True) as s:
         s.search(**filters)
@@ -122,47 +142,38 @@ def run_watch(config: dict) -> dict:
                     }
             if not s.next_page():
                 break
+    return current
 
-    # Post-filter: COE-renewed cars (title-based — API year_from misses them
-    # because SGCarMart uses the COE renewal date as the reg_date).
+
+def run_watch(config: dict) -> dict:
+    """Fetch current listings, diff against previous snapshot, save new snapshot."""
+    name = config["name"]
+    filters = config["filters"]
+    max_pages = min(config.get("max_pages", 10), MAX_SAFE_PAGES)
+
+    unknown = [k for k in filters if k not in SEARCH_PARAMS]
+    if unknown:
+        raise ValueError(f"Unknown filter keys: {unknown}. Valid keys: {list(SEARCH_PARAMS)}")
+
+    watch_dir = DATA_DIR / name
+    watch_dir.mkdir(parents=True, exist_ok=True)
+
+    with open(watch_dir / "config.json", "w") as f:
+        json.dump(config, f, indent=2, default=str)
+
+    current = _fetch_current_listings(filters, max_pages, watch_dir)
+
     if config.get("exclude_coe_renewed"):
-        before = len(current)
-        current = {
-            lid: c for lid, c in current.items()
-            if not _COE_RENEWED_RE.search(c["title"])
-        }
-        print(f"Excluded {before - len(current)} COE-renewed cars")
+        current = _filter_coe_renewed(current)
 
-    # Load previous snapshot
     previous_path = watch_dir / "latest.json"
     previous = {}
     if previous_path.exists():
         with open(previous_path) as f:
             previous = json.load(f)
 
-    # Compute diff
-    current_ids = set(current.keys())
-    previous_ids = set(previous.keys())
+    added_ids, removed_ids, price_changes = _compute_diff(current, previous)
 
-    added_ids = current_ids - previous_ids
-    removed_ids = previous_ids - current_ids
-    unchanged_ids = current_ids & previous_ids
-
-    # Detect price changes in surviving listings
-    price_changes = []
-    for lid in unchanged_ids:
-        prev_price = previous[lid].get("price")
-        curr_price = current[lid].get("price")
-        if prev_price != curr_price and prev_price is not None and curr_price is not None:
-            price_changes.append({
-                "id": lid,
-                "title": current[lid]["title"],
-                "url": current[lid]["url"],
-                "previous_price": prev_price,
-                "current_price": curr_price,
-            })
-
-    # Write dated snapshot
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     snapshot = {
         "date": today,
@@ -175,11 +186,10 @@ def run_watch(config: dict) -> dict:
     with open(snapshot_path, "w") as f:
         json.dump(snapshot, f, indent=2, default=str)
 
-    # Update latest
     with open(previous_path, "w") as f:
         json.dump(current, f, indent=2, default=str)
 
-    summary = {
+    return {
         "watch": name,
         "date": today,
         "fetched_at": datetime.now(timezone.utc).isoformat(),
@@ -188,14 +198,44 @@ def run_watch(config: dict) -> dict:
         "previous_count": len(previous),
         "added": len(added_ids),
         "removed": len(removed_ids),
-        "unchanged": len(unchanged_ids),
+        "unchanged": len(current) - len(added_ids),
         "price_changes": len(price_changes),
         "added_ids": sorted(added_ids),
         "removed_ids": sorted(removed_ids),
         "price_change_details": price_changes,
         "snapshot_file": str(snapshot_path.relative_to(PROJECT_ROOT)),
     }
-    return summary
+
+
+def _load_config(name):
+    config_path = DATA_DIR / name / "config.json"
+    if config_path.exists():
+        with open(config_path) as f:
+            return json.load(f)
+    if name != DEFAULT_CONFIG["name"]:
+        return {**DEFAULT_CONFIG, "name": name}
+    return DEFAULT_CONFIG
+
+
+def _print_summary_text(summary):
+    print(f"Watch: {summary['watch']}")
+    print(f"Date:  {summary['date']}")
+    print(f"Filters: {json.dumps(summary['filters'])}")
+    print(
+        f"Total: {summary['current_count']} listings "
+        f"(+{summary['added']} new, "
+        f"-{summary['removed']} removed, "
+        f"={summary['unchanged']} unchanged)"
+    )
+    if summary["price_changes"]:
+        print(f"Price changes: {summary['price_changes']}")
+        for pc in summary["price_change_details"][:10]:
+            print(f"  {pc['title']}: ${pc['previous_price']:,} → ${pc['current_price']:,}")
+    if summary["added_ids"]:
+        print(f"\nNew: {', '.join(summary['added_ids'][:20])}")
+        if len(summary["added_ids"]) > 20:
+            print(f"  ... and {len(summary['added_ids']) - 20} more")
+    print(f"\nSnapshot: {summary['snapshot_file']}")
 
 
 def main():
@@ -204,36 +244,13 @@ def main():
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
 
-    config_path = DATA_DIR / args.name / "config.json"
-    if config_path.exists():
-        with open(config_path) as f:
-            config = json.load(f)
-    else:
-        config = DEFAULT_CONFIG
-        if args.name != DEFAULT_CONFIG["name"]:
-            config = {**DEFAULT_CONFIG, "name": args.name}
-
+    config = _load_config(args.name)
     summary = run_watch(config)
 
     if args.json:
         print(json.dumps(summary, indent=2, default=str))
     else:
-        print(f"Watch: {summary['watch']}")
-        print(f"Date:  {summary['date']}")
-        print(f"Filters: {json.dumps(summary['filters'])}")
-        print(f"Total: {summary['current_count']} listings "
-              f"(+{summary['added']} new, "
-              f"-{summary['removed']} removed, "
-              f"={summary['unchanged']} unchanged)")
-        if summary["price_changes"]:
-            print(f"Price changes: {summary['price_changes']}")
-            for pc in summary["price_change_details"][:10]:
-                print(f"  {pc['title']}: ${pc['previous_price']:,} → ${pc['current_price']:,}")
-        if summary["added_ids"]:
-            print(f"\nNew: {', '.join(summary['added_ids'][:20])}")
-            if len(summary['added_ids']) > 20:
-                print(f"  ... and {len(summary['added_ids']) - 20} more")
-        print(f"\nSnapshot: {summary['snapshot_file']}")
+        _print_summary_text(summary)
 
     return summary
 
