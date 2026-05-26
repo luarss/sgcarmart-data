@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "source_filename": "dealer_109_2026-05-25.pdf",
+    "extraction_date": "2026-05-26",
+    "dealer_id": "109",
+    "pdf_date": "2026-05-25",
+    "brand_folder": "smart",
+    "year_folder": 2026,
+    "pdf_size_kb": 2257.990234375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 867,
+      "total_tokens": 2403,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.0003468,
+      "total_cost_usd": 0.0005004,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "smart",
+        "model_name": "#1",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "#1 Pro+ (CORE) - Cat A",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 289888.0,
+            "final_price": 201000.0
+          },
+          {
+            "variant_name": "#1 Pro+",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 301888.0,
+            "final_price": 218000.0
+          },
+          {
+            "variant_name": "#1 BRABUS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 349888.0,
+            "final_price": 266000.0
+          }
+        ]
+      },
+      {
+        "brand": "smart",
+        "model_name": "#3",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "#3 Pro+ (CORE) - Cat A",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 294888.0,
+            "final_price": 206000.0
+          },
+          {
+            "variant_name": "#3 Pro+",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 323888.0,
+            "final_price": 240000.0
+          },
+          {
+            "variant_name": "#3 BRABUS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 375888.0,
+            "final_price": 292000.0
+          }
+        ]
+      },
+      {
+        "brand": "smart",
+        "model_name": "#5",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "#5 Pro",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 319888.0,
+            "final_price": 236000.0
+          },
+          {
+            "variant_name": "#5 Premium",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 363888.0,
+            "final_price": 280000.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

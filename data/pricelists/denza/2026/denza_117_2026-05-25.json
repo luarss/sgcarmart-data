@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "source_filename": "dealer_117_2026-05-25.pdf",
+    "extraction_date": "2026-05-26",
+    "dealer_id": "117",
+    "pdf_date": "2026-05-25",
+    "brand_folder": "denza",
+    "year_folder": 2026,
+    "pdf_size_kb": 4502.4609375,
+    "api_usage": {
+      "model_name": "gemini-2.0-flash",
+      "input_tokens": 1536,
+      "output_tokens": 503,
+      "total_tokens": 2039,
+      "input_cost_usd": 0.00015360000000000002,
+      "output_cost_usd": 0.0002012,
+      "total_cost_usd": 0.00035480000000000006,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "DENZA",
+        "model_name": "B5 Orion",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "B5 Orion",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 436888.0,
+            "final_price": 353888.0
+          }
+        ]
+      },
+      {
+        "brand": "DENZA",
+        "model_name": "D9 Elite",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "D9 Elite",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 373888.0,
+            "final_price": 304888.0
+          }
+        ]
+      },
+      {
+        "brand": "DENZA",
+        "model_name": "D9 Grandeur",
+        "category": null,
+        "variants": [
+          {
+            "variant_name": "D9 Grandeur",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 421388.0,
+            "final_price": 352388.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
