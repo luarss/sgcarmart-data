@@ -42,10 +42,13 @@ jobs:
         env:
           PROXY_FALLBACKS: ${{ steps.proxies.outputs.proxies }}
 
+      - name: Generate value watchlist
+        run: uv run python watchlist.py --name sgd-passenger
+
       - name: Commit and push if changes
         uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
         with:
-          commit_message: "chore: update used car watch ${{ steps.date.outputs.date }}"
+          commit_message: "chore: update used car watch and value watchlist ${{ steps.date.outputs.date }}"
           file_pattern: 'data/used_cars/**/*'
           commit_user_name: github-actions[bot]
           commit_user_email: github-actions[bot]@users.noreply.github.com
