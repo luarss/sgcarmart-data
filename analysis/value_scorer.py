@@ -2,7 +2,7 @@
 Value scoring engine for used car listings.
 
 Extracted from analysis/used-car-value-study.ipynb — computes a composite
-value score for each listing using 8 COE-adjusted metrics, weighted to
+value score for each listing using 7 COE-adjusted metrics, weighted to
 identify the best-value used cars.
 
 Pure Python stdlib — no pandas/numpy needed.
@@ -16,14 +16,17 @@ from datetime import date, datetime
 from pathlib import Path
 
 # ── Scoring weights (must sum to 1.0) ────────────────────────────────────
+# `value_retention` was removed: it is derived from the same (price,
+# depreciation, age) inputs as `depreciation_rate`, so including both
+# double-counted depreciation at ~30% effective weight.  Its 0.20 share
+# is redistributed across the four strongest independent signals.
 
 DEFAULT_WEIGHTS = {
-    "body_depreciation_rate": 0.25,
-    "value_retention": 0.20,
-    "body_price_per_coe_year": 0.15,
-    "depreciation_rate": 0.10,
+    "body_depreciation_rate": 0.30,   # was 0.25
+    "body_price_per_coe_year": 0.20,  # was 0.15
+    "depreciation_rate": 0.15,        # was 0.10
     "annual_mileage": 0.10,
-    "depreciation_per_km": 0.10,
+    "depreciation_per_km": 0.15,      # was 0.10
     "price_per_owner": 0.05,
     "days_on_market": 0.05,
 }
@@ -144,6 +147,26 @@ def _assign_coe_category(eng_cap_cc: float | None) -> str:
     if eng_cap_cc is None or eng_cap_cc <= 1600:
         return "Category A"
     return "Category B"
+
+
+# ── Normalization helpers ────────────────────────────────────────────────
+
+
+def _winsorized_bounds(
+    vals: list[float],
+    lower_pct: float = 0.02,
+    upper_pct: float = 0.98,
+) -> tuple[float, float]:
+    """Return (lower, upper) bounds after winsorizing at given percentiles.
+
+    Clamping to the 2nd/98th percentile prevents a single outlier from
+    compressing all other scores toward the same value under min-max normalization.
+    """
+    s = sorted(vals)
+    n = len(s)
+    lo = s[max(0, int(lower_pct * n))]
+    hi = s[min(n - 1, int(upper_pct * n))]
+    return lo, hi
 
 
 # ── Main scoring pipeline ────────────────────────────────────────────────
@@ -273,7 +296,7 @@ def score_listings(
     clean: list[dict] = []
 
     scoring_fields = [
-        "depreciation_rate", "value_retention", "body_depreciation_rate",
+        "depreciation_rate", "body_depreciation_rate",
         "body_price_per_coe_year", "annual_mileage", "depreciation_per_km",
         "price_per_owner", "days_on_market",
     ]
@@ -283,7 +306,11 @@ def score_listings(
         vr = row.get("value_retention", 0) or 0
         dr = row.get("depreciation_rate", 0) or 0
         age = row.get("age_years", 0)
-        if vr > 1.5 or vr < 0.1 or dr > 1.0 or age < 0:
+        dom = row.get("days_on_market", 0)
+        bdr = row.get("body_depreciation_rate")
+        # dom < 0: listing posted_date is in the future (bad scrape data)
+        # bdr <= 0: COE depreciation exceeds total depreciation — nonsensical body value
+        if vr > 1.5 or vr < 0.1 or dr > 1.0 or age < 0 or dom < 0 or (bdr is not None and bdr <= 0):
             suspicious_count += 1
             continue
 
@@ -313,33 +340,25 @@ def score_listings(
             "excluded_missing_fields": missing_fields_count,
         }
 
-    # ── Stage 4: Min-max normalization & composite scoring ────────────
-    # Gather min/max for each metric across the *clean* dataset
+    # ── Stage 4: Winsorized normalization & composite scoring ─────────
+    # Use 2nd/98th percentile bounds so a single outlier doesn't collapse
+    # all other scores toward the same value.
     metric_ranges: dict[str, tuple[float, float]] = {}
     for metric in scoring_fields:
         vals = [row[metric] for row in clean]
-        metric_ranges[metric] = (min(vals), max(vals))
+        metric_ranges[metric] = _winsorized_bounds(vals)
 
-    # Direction: lower-is-better → score = 1 - (v - min)/(max - min)
-    #            higher-is-better → score = (v - min)/(max - min)
-    lower_is_better = {
-        "body_depreciation_rate", "body_price_per_coe_year", "depreciation_rate",
-        "annual_mileage", "depreciation_per_km", "price_per_owner", "days_on_market",
-    }
-    higher_is_better = {"value_retention"}
-
+    # All scoring metrics are lower-is-better (value_retention removed).
+    # score = 1 - (clamped_v - lo) / (hi - lo)
     for row in clean:
         scores: dict[str, float] = {}
         for metric in scoring_fields:
-            mn, mx = metric_ranges[metric]
-            if mx == mn:
+            lo, hi = metric_ranges[metric]
+            if hi == lo:
                 scores[metric] = 0.5  # single-value dataset → neutral
                 continue
-            norm = (row[metric] - mn) / (mx - mn)
-            if metric in lower_is_better:
-                scores[metric] = 1.0 - norm
-            else:
-                scores[metric] = norm
+            clamped = max(lo, min(hi, row[metric]))
+            scores[metric] = 1.0 - (clamped - lo) / (hi - lo)
 
         composite = sum(scores[m] * DEFAULT_WEIGHTS[m] for m in scoring_fields)
         row["composite_score"] = composite
