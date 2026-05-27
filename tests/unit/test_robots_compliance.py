@@ -1,7 +1,7 @@
 import pytest
 import requests
 from urllib.robotparser import RobotFileParser
-from constants import BASE_URL, SCRAPER_URL_PATTERNS
+from sgcarmart.constants import BASE_URL, SCRAPER_URL_PATTERNS
 
 
 def _generate_urls_for_pattern(pattern, test_data):

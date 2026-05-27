@@ -2,7 +2,7 @@ import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
-from constants import (
+from sgcarmart.constants import (
     BASE_URL,
     DEFAULT_PAGE_TIMEOUT,
     DEFAULT_PDF_MAX_WORKERS,

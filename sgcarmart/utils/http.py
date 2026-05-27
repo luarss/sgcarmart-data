@@ -3,7 +3,7 @@ import random
 import requests
 from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_exponential
 
-from constants import (
+from sgcarmart.constants import (
     INITIAL_RETRY_DELAY,
     MAX_RETRIES,
     USER_AGENTS,

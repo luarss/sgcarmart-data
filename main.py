@@ -8,7 +8,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from constants import DEFAULT_BROWSER_MAX_WORKERS, DEFAULT_MAX_WORKERS
+from sgcarmart.constants import DEFAULT_BROWSER_MAX_WORKERS, DEFAULT_MAX_WORKERS
 from sgcarmart.core.downloader import process_dealer
 from sgcarmart.core.year_navigator import discover_historical_pdfs
 from sgcarmart.utils.file_utils import load_dealer_brand_mapping

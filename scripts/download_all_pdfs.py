@@ -4,7 +4,7 @@ import os
 import sys
 from datetime import datetime
 
-from constants import BASE_URL
+from sgcarmart.constants import BASE_URL
 from sgcarmart.core.downloader import download_all_pdfs_from_page
 from sgcarmart.utils.file_utils import load_dealer_brand_mapping, normalize_brand_name
 

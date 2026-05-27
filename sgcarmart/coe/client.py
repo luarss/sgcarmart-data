@@ -3,7 +3,7 @@ from __future__ import annotations
 import os
 import time
 
-from constants import COE_API_BASE_URL, COE_API_PAGE_LIMIT, COE_RESOURCE_ID, DEFAULT_REQUEST_TIMEOUT
+from sgcarmart.constants import COE_API_BASE_URL, COE_API_PAGE_LIMIT, COE_RESOURCE_ID, DEFAULT_REQUEST_TIMEOUT
 from sgcarmart.utils.http import fetch_with_retry
 
 

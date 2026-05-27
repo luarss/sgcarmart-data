@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-from constants import (
+from sgcarmart.constants import (
     DEFAULT_PAGE_TIMEOUT,
     PRICELIST_CONTAINER_CLASS,
     PRICELIST_LINK_CLASS,

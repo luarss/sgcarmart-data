@@ -1,7 +1,7 @@
 import json
 import os
 
-from constants import DEALER_BRAND_MAPPING_FILE
+from sgcarmart.constants import DEALER_BRAND_MAPPING_FILE
 
 
 def normalize_brand_name(brand):
@@ -14,7 +14,7 @@ def ensure_directory(path):
 
 
 def load_dealer_brand_mapping(exclude_brands=True):
-    from constants import EXCLUDED_BRANDS
+    from sgcarmart.constants import EXCLUDED_BRANDS
 
     with open(DEALER_BRAND_MAPPING_FILE) as f:
         mapping = json.load(f)

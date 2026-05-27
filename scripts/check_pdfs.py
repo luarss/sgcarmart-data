@@ -98,12 +98,12 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python check_pdfs.py                                    # Check all PDFs in data/pricelists
-  python check_pdfs.py --directory data/pricelists/toyota # Check only Toyota PDFs
-  python check_pdfs.py --file data/pricelists/toyota/2025/toyota_44_2025-01-10.pdf
-  python check_pdfs.py --brand byd                        # Check only BYD PDFs
-  python check_pdfs.py --year 2025                        # Check only 2025 PDFs
-  python check_pdfs.py --output results.json              # Save results to JSON
+  python scripts/check_pdfs.py                                    # Check all PDFs in data/pricelists
+  python scripts/check_pdfs.py --directory data/pricelists/toyota # Check only Toyota PDFs
+  python scripts/check_pdfs.py --file data/pricelists/toyota/2025/toyota_44_2025-01-10.pdf
+  python scripts/check_pdfs.py --brand byd                        # Check only BYD PDFs
+  python scripts/check_pdfs.py --year 2025                        # Check only 2025 PDFs
+  python scripts/check_pdfs.py --output results.json              # Save results to JSON
         """,
     )
 

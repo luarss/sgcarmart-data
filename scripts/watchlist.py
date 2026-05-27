@@ -3,11 +3,11 @@
 Daily value watchlist — ranks used car listings by composite value score.
 
 Usage:
-    uv run python watchlist.py                        # human-readable summary
-    uv run python watchlist.py --json                 # JSON to stdout
-    uv run python watchlist.py --name sgd-passenger   # named watch
-    uv run python watchlist.py --top 50               # limit output rows
-    uv run python watchlist.py --date 2026-05-27      # backfill a snapshot date
+    uv run python scripts/watchlist.py                        # human-readable summary
+    uv run python scripts/watchlist.py --json                 # JSON to stdout
+    uv run python scripts/watchlist.py --name sgd-passenger   # named watch
+    uv run python scripts/watchlist.py --top 50               # limit output rows
+    uv run python scripts/watchlist.py --date 2026-05-27      # backfill a snapshot date
 """
 
 import argparse
@@ -18,7 +18,7 @@ from pathlib import Path
 
 from analysis.value_scorer import DEFAULT_WEIGHTS, load_and_score, load_coe_lookup
 
-PROJECT_ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data" / "used_cars"
 DEFAULT_WATCH = "sgd-passenger"
 DEFAULT_TOP = 100

@@ -6,7 +6,7 @@ from sgcarmart.utils.http import (
     fetch_with_retry,
     RateLimitError,
 )
-from constants import USER_AGENTS
+from sgcarmart.constants import USER_AGENTS
 
 
 @pytest.mark.unit

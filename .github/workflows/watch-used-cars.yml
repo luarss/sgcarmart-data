@@ -38,12 +38,12 @@ jobs:
           echo "proxies=$PROXIES" >> $GITHUB_OUTPUT
 
       - name: Track used car listings
-        run: uv run python watch_used.py
+        run: uv run python scripts/watch_used.py
         env:
           PROXY_FALLBACKS: ${{ steps.proxies.outputs.proxies }}
 
       - name: Generate value watchlist
-        run: uv run python watchlist.py --name sgd-passenger
+        run: uv run python scripts/watchlist.py --name sgd-passenger
 
       - name: Commit and push if changes
         uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0

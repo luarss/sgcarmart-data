@@ -5,7 +5,7 @@ from xml.etree import ElementTree
 
 import pytest
 
-from constants import DEALER_BRAND_MAPPING_FILE, BASE_URL, DEFAULT_PAGE_TIMEOUT
+from sgcarmart.constants import DEALER_BRAND_MAPPING_FILE, BASE_URL, DEFAULT_PAGE_TIMEOUT
 from sgcarmart.utils.http import fetch_with_retry
 
 

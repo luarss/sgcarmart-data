@@ -22,7 +22,7 @@ jobs:
         run: uv sync
 
       - name: Download COE results
-        run: uv run python download_coe.py
+        run: uv run python scripts/download_coe.py
         env:
           DATA_GOV_API_KEY: ${{ secrets.DATA_GOV_API_KEY }}
 

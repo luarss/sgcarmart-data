@@ -11,7 +11,7 @@ from urllib.parse import urlencode, urljoin
 from playwright.sync_api import Page, sync_playwright
 from playwright_stealth import Stealth
 
-from constants import BASE_URL
+from sgcarmart.constants import BASE_URL
 
 LISTING_URL = f"{BASE_URL}/used-cars/listing"
 DETAIL_URL = f"{BASE_URL}/used-cars/info"

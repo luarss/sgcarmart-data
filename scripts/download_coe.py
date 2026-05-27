@@ -10,9 +10,9 @@ from dotenv import load_dotenv
 
 from sgcarmart.coe import fetch_coe_results, save_coe_data
 from sgcarmart.coe.client import COEAPIError
-from constants import COE_OUTPUT_DIR
+from sgcarmart.constants import COE_OUTPUT_DIR
 
-load_dotenv(Path(__file__).parent / ".env")
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 
 def main():

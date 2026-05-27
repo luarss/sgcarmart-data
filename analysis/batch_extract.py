@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from analysis.pdf_extractor import GeminiPDFExtractor
-from constants import EXCLUDED_BRANDS
+from sgcarmart.constants import EXCLUDED_BRANDS
 
 load_dotenv(Path(__file__).parent / ".env")
 

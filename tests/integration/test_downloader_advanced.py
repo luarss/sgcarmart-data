@@ -2,7 +2,7 @@ import pytest
 import os
 import responses
 from sgcarmart.core.downloader import download_all_pdfs_from_page
-from constants import BASE_URL
+from sgcarmart.constants import BASE_URL
 
 
 @pytest.mark.integration

@@ -8,7 +8,7 @@ from datetime import datetime
 
 from playwright.sync_api import sync_playwright
 
-from constants import PDF_URL_TEMPLATE, PRICELIST_URL_TEMPLATE
+from sgcarmart.constants import PDF_URL_TEMPLATE, PRICELIST_URL_TEMPLATE
 
 
 class SimpleYearNavigator:

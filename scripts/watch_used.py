@@ -2,8 +2,8 @@
 Daily used car listing tracker — idempotent snapshot & diff.
 
 Usage:
-    uv run python watch_used.py
-    uv run python watch_used.py --name my-watch --json
+    uv run python scripts/watch_used.py
+    uv run python scripts/watch_used.py --name my-watch --json
 """
 
 import argparse
@@ -14,7 +14,7 @@ from pathlib import Path
 
 from sgcarmart.core.used import SEARCH_PARAMS, UsedCarSearch
 
-PROJECT_ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data" / "used_cars"
 
 MAX_SAFE_PAGES = 100  # upper bound to prevent unbounded loops from user config
