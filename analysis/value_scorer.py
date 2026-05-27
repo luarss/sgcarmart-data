@@ -30,6 +30,23 @@ DEFAULT_WEIGHTS = {
 
 ANNUAL_MILEAGE_CAP = 50000
 
+# Niche/retro/classic brands that don't reflect mainstream used-car value.
+# Their pricing is driven by rarity/collectibility, not fundamentals.
+EXCLUDED_BRANDS = {"Mitsuoka", "Pontiac"}
+
+# Classic/retro models from otherwise-mainstream brands.
+# These are vintage cars (e.g. 1970s-1990s Rolls-Royce) re-registered
+# under modern COEs — their age-based metrics are meaningless.
+_RETRO_MODEL_RE = re.compile(
+    r"Silver\s+(Spirit|Shadow|Cloud|Dawn|Seraph|Wraith\s*II)|"
+    r"Corniche|Camargue",
+    re.IGNORECASE,
+)
+
+# OPC (Off-Peak Car) — restricted to evenings/weekends, priced ~$5-10K
+# below equivalent normal-plate cars. Exclude from value comparison.
+_OPC_RE = re.compile(r"\bOPC\b", re.IGNORECASE)
+
 
 # ── Parsing helpers ──────────────────────────────────────────────────────
 
@@ -147,9 +164,23 @@ def score_listings(
     # ── Stage 1: Parse and enrich each listing ────────────────────────
     enriched: list[dict] = []
     parse_errors = 0
+    excluded_brands = 0
+    excluded_retro = 0
+    excluded_opc = 0
 
     for car in listings:
         title = car.get("title", "")
+        brand = _extract_brand(title)
+        if brand in EXCLUDED_BRANDS:
+            excluded_brands += 1
+            continue
+        if _RETRO_MODEL_RE.search(title):
+            excluded_retro += 1
+            continue
+        if _OPC_RE.search(title):
+            excluded_opc += 1
+            continue
+
         price = car.get("price")
         depreciation = car.get("depreciation")
         reg_date = _parse_reg_date(car.get("reg_date"))
@@ -171,7 +202,7 @@ def score_listings(
 
         enriched.append({
             **car,
-            "brand": _extract_brand(title),
+            "brand": brand,
             "reg_date_parsed": reg_date,
             "posted_date_parsed": posted_date,
             "age_years": age_years,
@@ -274,6 +305,9 @@ def score_listings(
             "total_source_listings": len(listings),
             "scored_listings": 0,
             "excluded_parse_errors": parse_errors,
+            "excluded_brands": excluded_brands,
+            "excluded_retro_models": excluded_retro,
+            "excluded_opc": excluded_opc,
             "excluded_suspicious_metrics": suspicious_count,
             "excluded_low_body_price": low_body_price_count,
             "excluded_missing_fields": missing_fields_count,
@@ -317,6 +351,9 @@ def score_listings(
         "total_source_listings": len(listings),
         "scored_listings": len(clean),
         "excluded_parse_errors": parse_errors,
+        "excluded_brands": excluded_brands,
+        "excluded_retro_models": excluded_retro,
+        "excluded_opc": excluded_opc,
         "excluded_suspicious_metrics": suspicious_count,
         "excluded_low_body_price": low_body_price_count,
         "excluded_missing_fields": missing_fields_count,

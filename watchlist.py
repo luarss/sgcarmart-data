@@ -100,6 +100,9 @@ def run_watchlist(
         "scored_listings": stats["scored_listings"],
         "excluded": {
             "parse_errors": stats["excluded_parse_errors"],
+            "brands": stats.get("excluded_brands", 0),
+            "retro_models": stats.get("excluded_retro_models", 0),
+            "opc": stats.get("excluded_opc", 0),
             "suspicious_metrics": stats["excluded_suspicious_metrics"],
             "low_body_price": stats["excluded_low_body_price"],
             "missing_fields": stats["excluded_missing_fields"],
@@ -131,6 +134,12 @@ def _print_summary(result: dict) -> None:
     excl = stats["excluded"]
     if any(excl.values()):
         parts = []
+        if excl.get("brands"):
+            parts.append(f"{excl['brands']} excluded brands")
+        if excl.get("retro_models"):
+            parts.append(f"{excl['retro_models']} retro/classic models")
+        if excl.get("opc"):
+            parts.append(f"{excl['opc']} OPC")
         if excl["parse_errors"]:
             parts.append(f"{excl['parse_errors']} parse errors")
         if excl["suspicious_metrics"]:
