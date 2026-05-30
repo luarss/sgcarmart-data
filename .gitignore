@@ -165,7 +165,12 @@ venv.bak/
 .ropeproject
 
 # mkdocs documentation
-/site
+# /site
+
+# Observable Framework
+site/dist/
+site/src/.observablehq/
+site/node_modules/
 
 # mypy
 .mypy_cache/
