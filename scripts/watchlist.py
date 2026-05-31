@@ -76,6 +76,7 @@ def run_watchlist(
         "depreciation_rate", "body_price_per_coe_year",
         "depreciation_per_km", "price_per_owner", "days_on_market",
         "composite_score", "metric_scores",
+        "road_tax",
     ]
 
     top_listings = []
@@ -160,9 +161,9 @@ def _print_summary(result: dict) -> None:
     print("-" * 100)
     print(
         f"{'#':>3}  {'Title':<45} {'Price':>10} {'BodyDepr':>8} "
-        f"{'Retention':>9} {'Body$/yr':>9} {'Score':>6}"
+        f"{'Retention':>9} {'Body$/yr':>9} {'RdTax':>7} {'Score':>6}"
     )
-    print("-" * 100)
+    print("-" * 112)
     for row in listings:
         title = row["title"][:44]
         print(
@@ -171,6 +172,7 @@ def _print_summary(result: dict) -> None:
             f"{_format_pct(row['body_depreciation_rate']):>8} "
             f"{_format_pct(row['value_retention']):>9} "
             f"{_format_price(int(row['body_price_per_coe_year'])) if row.get('body_price_per_coe_year') else 'N/A':>9} "
+            f"{_format_price(row.get('road_tax')):>7} "
             f"{row['composite_score']:.3f}"
         )
 

@@ -23,6 +23,26 @@ _PROXY_FALLBACKS = [p.strip() for p in os.environ.get("PROXY_FALLBACKS", "").spl
 
 _BADGE_FLAGS = {"PREMIUM AD", "DIRECT OWNER", "IMPORT USED"}
 
+# LTA road tax formula for petrol cars (6-monthly base, multiply by 2 for annual).
+# Source: https://onemotoring.lta.gov.sg/content/onemotoring/home/buying/upfront-vehicle-costs/tax-structure.html
+_ROAD_TAX_MULTIPLIER = 0.782
+
+
+def compute_road_tax(eng_cap_cc: int) -> int | None:
+    """Compute annual road tax for a petrol car from engine capacity (cc)."""
+    if eng_cap_cc <= 600:
+        base = 200
+    elif eng_cap_cc <= 1000:
+        base = 200 + 0.125 * (eng_cap_cc - 600)
+    elif eng_cap_cc <= 1600:
+        base = 250 + 0.375 * (eng_cap_cc - 1000)
+    elif eng_cap_cc <= 3000:
+        base = 475 + 0.75 * (eng_cap_cc - 1600)
+    else:
+        base = 1525 + 1.0 * (eng_cap_cc - 3000)
+    semi_annual = base * _ROAD_TAX_MULTIPLIER
+    return round(semi_annual * 2)
+
 # filter key → SGCarMart URL parameter name
 SEARCH_PARAMS: dict[str, str] = {
     "min_price": "pr1",
@@ -54,6 +74,7 @@ class UsedCarListing:
     mileage: str | None = None
     eng_cap: str | None = None
     owners: str | None = None
+    road_tax: int | None = None
     is_direct_owner: bool = False
     is_premium_ad: bool = False
     is_import_used: bool = False
@@ -225,6 +246,13 @@ class UsedCarSearch:
         url = self._extract_card_url(card)
         fields = self._parse_listing_lines(lines)
 
+        eng_cap = fields["eng_cap"]
+        road_tax = None
+        if eng_cap:
+            m = re.search(r"([\d,]+)", eng_cap)
+            if m:
+                road_tax = compute_road_tax(int(m.group(1).replace(",", "")))
+
         return UsedCarListing(
             title=fields["title"],
             url=url,
@@ -234,7 +262,8 @@ class UsedCarSearch:
             reg_date=fields["reg_date"],
             coe_left=fields["coe_left"],
             mileage=fields["mileage"],
-            eng_cap=fields["eng_cap"],
+            eng_cap=eng_cap,
+            road_tax=road_tax,
             owners=fields["owners"],
             is_direct_owner=fields["is_direct"],
             is_premium_ad=fields["is_premium"],
@@ -443,15 +472,14 @@ class UsedCarSearch:
         url = page.url
         text = page.inner_text("body")
 
-        # Deregistration value from the API
-        dereg_value = None
+        api_data: dict = {}
         try:
             aid_match = re.search(r"(\d{6,})", url)
             if aid_match:
                 aid = aid_match.group(1)
                 api_url = f"{BASE_URL}/used-cars/api/info/deregistration-value?aid={aid}&date=2026-05-23"
                 resp = page.evaluate(f"fetch('{api_url}').then(r => r.json())")
-                dereg_value = resp.get("data", {}).get("data", {}).get("deregValue_today")
+                api_data = resp.get("data", {}).get("data", {})
         except Exception:
             pass
 
@@ -462,10 +490,10 @@ class UsedCarSearch:
             reg_date=self._extract_re(text, r"(\d{1,2}-[A-Z][a-z]{2}-\d{4})"),
             mileage=self._extract_re(text, r"([\d,]+ km)"),
             eng_cap=self._extract_re(text, r"([\d,]+ cc)"),
-            coe=self._extract_field(text, r"COE\b[:\s]*\$?([\d,]+)"),
+            coe=api_data.get("coe"),
             omv=self._extract_field(text, r"OMV\b[:\s]*\$?([\d,]+)"),
-            arf=self._extract_field(text, r"ARF\b[:\s]*\$?([\d,]+)"),
-            dereg_value=dereg_value,
+            arf=api_data.get("arf"),
+            dereg_value=api_data.get("deregValue_today"),
             road_tax=self._extract_field(text, r"Road Tax\b[:\s]*\$?([\d,]+)"),
             no_of_owners=self._extract_re(text, r"(\d+ Owner)"),
             description=self._extract_description(page),

@@ -171,6 +171,7 @@ display(htl.html`<div class="chart-container" style="overflow-x: auto;">
   <th>Price</th>
   <th>Depr/yr</th>
   <th>Body Depr</th>
+  <th>RdTax</th>
   <th>Value Ret.</th>
   <th>Body$/COE yr</th>
   <th>Score</th>
@@ -186,6 +187,7 @@ ${top20.map(l => {
   <td class="price-col">$${l.price.toLocaleString()}</td>
   <td>$${l.depreciation.toLocaleString()}</td>
   <td>${(l.body_depreciation_rate * 100).toFixed(1)}%</td>
+  <td>${l.road_tax != null ? "$" + l.road_tax.toLocaleString() : "N/A"}</td>
   <td>${(l.value_retention * 100).toFixed(1)}%</td>
   <td>$${Math.round(l.body_price_per_coe_year).toLocaleString()}</td>
   <td class="score-col"><span class="score-badge ${cls}">${sc.toFixed(4)}</span></td>

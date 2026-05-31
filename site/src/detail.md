@@ -58,6 +58,7 @@ display(htl.html`<div class="content">
     <div class="meta-item"><div class="meta-val">${listing.age_years.toFixed(1)} yrs</div><div class="meta-lbl">Age</div></div>
     <div class="meta-item"><div class="meta-val">${listing.coe_years_left.toFixed(1)} yrs</div><div class="meta-lbl">COE Left</div></div>
     <div class="meta-item"><div class="meta-val">${listing.coe_category}</div><div class="meta-lbl">COE Cat</div></div>
+    <div class="meta-item"><div class="meta-val">${listing.road_tax != null ? "$" + listing.road_tax.toLocaleString() + "/yr" : "N/A"}</div><div class="meta-lbl">Road Tax</div></div>
     <div class="meta-item"><div class="meta-val">${listing.mileage_km.toLocaleString()} km</div><div class="meta-lbl">Mileage</div></div>
     <div class="meta-item"><div class="meta-val">${listing.num_owners}</div><div class="meta-lbl">Owners</div></div>
     <div class="meta-item"><div class="meta-val">${listing.days_on_market} days</div><div class="meta-lbl">On Market</div></div>
@@ -118,6 +119,7 @@ ${scoreData.map(d => {
 <tr><td style="font-weight:600;">Depreciation per km</td><td style="font-weight:700; color:var(--green-700);">$${listing.depreciation_per_km.toFixed(2)}</td><td style="font-size:0.8rem; color:var(--slate-500);">Annual depr / km driven (lower = better)</td></tr>
 <tr><td style="font-weight:600;">Price per Owner</td><td style="font-weight:700; color:var(--green-700);">$${Math.round(listing.price_per_owner).toLocaleString()}</td><td style="font-size:0.8rem; color:var(--slate-500);">Price / number of owners (lower = better)</td></tr>
 <tr><td style="font-weight:600;">Annual Mileage</td><td style="font-weight:700; color:var(--green-700);">${Math.round(listing.annual_mileage).toLocaleString()} km</td><td style="font-size:0.8rem; color:var(--slate-500);">Mileage / age in years (lower = better)</td></tr>
+<tr><td style="font-weight:600;">Road Tax</td><td style="font-weight:700; color:var(--green-700);">${listing.road_tax != null ? "$" + listing.road_tax.toLocaleString() + "/yr" : "N/A"}</td><td style="font-size:0.8rem; color:var(--slate-500);">Annual road tax (computed from engine capacity)</td></tr>
 </tbody></table>
 </div>
 

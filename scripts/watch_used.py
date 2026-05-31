@@ -133,6 +133,7 @@ def _fetch_current_listings(filters, max_pages, watch_dir):
                         "coe_left": card.coe_left,
                         "mileage": card.mileage,
                         "eng_cap": card.eng_cap,
+                        "road_tax": card.road_tax,
                         "owners": card.owners,
                         "is_direct_owner": card.is_direct_owner,
                         "is_premium_ad": card.is_premium_ad,
