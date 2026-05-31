@@ -1,0 +1,42 @@
+name: Bump Watchlist Year
+
+on:
+  schedule:
+    - cron: '30 0 1 1 *'  # Jan 1st, 0030 UTC / 0830 SGT
+  workflow_dispatch:
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Bump year_from in watch configs
+        run: |
+          shopt -s globstar nullglob
+          bumped=0
+          for config in data/used_cars/*/config.json; do
+            year=$(jq -r '.filters.year_from' "$config")
+            if [[ "$year" =~ ^[0-9]+$ ]]; then
+              new_year=$((year + 1))
+              jq ".filters.year_from = $new_year" "$config" > "$config.tmp" && mv "$config.tmp" "$config"
+              echo "Bumped $config: $year → $new_year"
+              bumped=1
+            fi
+          done
+          if (( bumped == 0 )); then
+            echo "No watch configs found — nothing to bump."
+          fi
+
+      - name: Commit and push if changes
+        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
+        with:
+          commit_message: "chore: bump watchlist year_from for new year"
+          file_pattern: 'data/used_cars/*/config.json'
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
+          commit_author: GitHub Actions <github-actions[bot]@users.noreply.github.com>
