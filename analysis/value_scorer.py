@@ -50,6 +50,13 @@ _RETRO_MODEL_RE = re.compile(
 # below equivalent normal-plate cars. Exclude from value comparison.
 _OPC_RE = re.compile(r"\bOPC\b", re.IGNORECASE)
 
+# Diesel cars — higher road tax and maintenance costs make them incomparable
+# with petrol/hybrid/electric on the same value metrics.
+_DIESEL_RE = re.compile(
+    r"\bDiesel\b|\b[T]?DI\b|\bdCi\b|\bCRDi\b|\d{2,4}d\b",
+    re.IGNORECASE,
+)
+
 
 # ── Parsing helpers ──────────────────────────────────────────────────────
 
@@ -190,6 +197,7 @@ def score_listings(
     excluded_brands = 0
     excluded_retro = 0
     excluded_opc = 0
+    excluded_diesel = 0
 
     for car in listings:
         title = car.get("title", "")
@@ -202,6 +210,9 @@ def score_listings(
             continue
         if _OPC_RE.search(title):
             excluded_opc += 1
+            continue
+        if _DIESEL_RE.search(title):
+            excluded_diesel += 1
             continue
 
         price = car.get("price")
@@ -335,6 +346,7 @@ def score_listings(
             "excluded_brands": excluded_brands,
             "excluded_retro_models": excluded_retro,
             "excluded_opc": excluded_opc,
+            "excluded_diesel": excluded_diesel,
             "excluded_suspicious_metrics": suspicious_count,
             "excluded_low_body_price": low_body_price_count,
             "excluded_missing_fields": missing_fields_count,
@@ -373,6 +385,7 @@ def score_listings(
         "excluded_brands": excluded_brands,
         "excluded_retro_models": excluded_retro,
         "excluded_opc": excluded_opc,
+        "excluded_diesel": excluded_diesel,
         "excluded_suspicious_metrics": suspicious_count,
         "excluded_low_body_price": low_body_price_count,
         "excluded_missing_fields": missing_fields_count,
