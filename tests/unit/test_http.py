@@ -2,14 +2,14 @@ import pytest
 import responses
 import time
 from unittest.mock import patch
-from requests.exceptions import HTTPError, Timeout
+from requests.exceptions import HTTPError
 from sgcarmart.utils.http import (
     get_random_user_agent,
     fetch_with_retry,
     apply_crawl_delay,
     RateLimitError,
 )
-from sgcarmart.constants import USER_AGENTS, CRAWL_DELAY_SECONDS
+from sgcarmart.constants import USER_AGENTS
 
 
 @pytest.fixture(autouse=True)
