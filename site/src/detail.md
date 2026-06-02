@@ -8,11 +8,24 @@ const watchlist = await FileAttachment("data/watchlist.json").json();
 const top100 = watchlist.top_listings;
 const weights = watchlist.scoring_weights;
 const metricNames = Object.keys(weights);
+```
 
-const params = new URLSearchParams(location.search);
-const listingId = params.get("id");
-const listing = top100.find(l => l.id === listingId);
+```js
+// Reactive listing ID from URL hash — works with Observable Framework's
+// client-side router, which strips query params during navigation.
+const listingId = Generators.observe(notify => {
+  const update = () => notify(location.hash.replace(/^#/, "") || null);
+  update();
+  window.addEventListener("hashchange", update);
+  return () => window.removeEventListener("hashchange", update);
+});
+```
 
+```js
+const listing = top100.find(l => l.id === listingId) ?? null;
+```
+
+```js
 if (!listing) {
   display(htl.html`<div class="content" style="text-align:center; padding:80px 24px;">
     <h2>Listing not found</h2>
@@ -20,7 +33,9 @@ if (!listing) {
     <a href="/" style="display:inline-block; margin-top:20px; padding:8px 20px; border-radius:20px; background:var(--slate-100); color:var(--slate-700); text-decoration:none; font-weight:500;">← Back to Top 100</a>
   </div>`);
 }
+```
 
+```js
 if (listing) {
 
 const idx = top100.indexOf(listing);
@@ -127,9 +142,9 @@ ${scoreData.map(d => {
 </div>
 
 <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:32px; padding:20px; background:white; border-radius:var(--radius); box-shadow:var(--shadow);">
-  <div>${prev ? htl.html`<a href="/detail?id=${prev.id}" style="padding:6px 16px; border-radius:20px; font-size:0.85rem; font-weight:500; text-decoration:none; color:var(--slate-600); background:var(--slate-100);">← #${prev.rank} ${prev.title.substring(0, 35)}...</a>` : htl.html`<span style="color:var(--slate-300); font-size:0.85rem;">← First in list</span>`}</div>
+  <div>${prev ? htl.html`<a href="/detail#${prev.id}" style="padding:6px 16px; border-radius:20px; font-size:0.85rem; font-weight:500; text-decoration:none; color:var(--slate-600); background:var(--slate-100);">← #${prev.rank} ${prev.title.substring(0, 35)}...</a>` : htl.html`<span style="color:var(--slate-300); font-size:0.85rem;">← First in list</span>`}</div>
   <div style="font-weight:600; color:var(--slate-500);">#${listing.rank} of ${top100.length}</div>
-  <div>${next ? htl.html`<a href="/detail?id=${next.id}" style="padding:6px 16px; border-radius:20px; font-size:0.85rem; font-weight:500; text-decoration:none; color:var(--slate-600); background:var(--slate-100);">#${next.rank} ${next.title.substring(0, 35)}... →</a>` : htl.html`<span style="color:var(--slate-300); font-size:0.85rem;">Last in list →</span>`}</div>
+  <div>${next ? htl.html`<a href="/detail#${next.id}" style="padding:6px 16px; border-radius:20px; font-size:0.85rem; font-weight:500; text-decoration:none; color:var(--slate-600); background:var(--slate-100);">#${next.rank} ${next.title.substring(0, 35)}... →</a>` : htl.html`<span style="color:var(--slate-300); font-size:0.85rem;">Last in list →</span>`}</div>
 </div>
 
 </div>`);

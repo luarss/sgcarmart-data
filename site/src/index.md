@@ -182,7 +182,7 @@ ${top20.map(l => {
   const cls = sc >= 0.9 ? "high" : sc >= 0.8 ? "mid" : "low";
   return htl.html`<tr>
   <td class="rank-col">${l.rank}</td>
-  <td><a href="/detail?id=${l.id}">${l.title}</a></td>
+  <td><a href="/detail#${l.id}">${l.title}</a></td>
   <td>${l.brand}</td>
   <td class="price-col">$${l.price.toLocaleString()}</td>
   <td>$${l.depreciation.toLocaleString()}</td>
