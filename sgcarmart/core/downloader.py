@@ -18,6 +18,7 @@ from sgcarmart.utils.file_utils import (
     normalize_brand_name,
 )
 from sgcarmart.utils.http import RateLimitError, fetch_with_retry
+from sgcarmart.utils.manifest import is_known, record
 from sgcarmart.utils.validation import validate_pdf
 
 PRICELISTS_DIR = "data/pricelists"
@@ -120,6 +121,14 @@ def download_pdf(
         filename = pdf_url.split("/")[-1]
         filepath = os.path.join(output_dir, filename)
 
+    rel_key = str(Path(filepath).relative_to(output_dir))
+
+    if is_known(rel_key):
+        result = _make_result(pdf_url, filepath, filename, dealer_id, date, "skipped", "Already exists")
+        if auto_extract:
+            _maybe_extract(result, filepath, brand_name, dealer_id, date, extract_model)
+        return result
+
     if os.path.exists(filepath):
         file_size = os.path.getsize(filepath)
         result = _make_result(
@@ -135,11 +144,13 @@ def download_pdf(
         if not is_valid:
             return _make_result(pdf_url, None, filename, dealer_id, date, "failed", message)
 
+        content = response.content
+        record(rel_key, content)
         with open(filepath, "wb") as f:
-            f.write(response.content)
+            f.write(content)
 
         result = _make_result(
-            pdf_url, filepath, filename, dealer_id, date, "success", f"Downloaded ({len(response.content)} bytes)"
+            pdf_url, filepath, filename, dealer_id, date, "success", f"Downloaded ({len(content)} bytes)"
         )
         if auto_extract:
             _maybe_extract(result, filepath, brand_name, dealer_id, date, extract_model)
@@ -153,7 +164,7 @@ def download_pdf(
         return _make_result(pdf_url, None, filename, dealer_id, date, "error", str(e))
 
 
-def process_dealer(dealer_id, brand_name, auto_extract=False, extract_model=DEFAULT_EXTRACT_MODEL):
+def process_dealer(dealer_id, brand_name, auto_extract=False, extract_model=DEFAULT_EXTRACT_MODEL, output_dir=PRICELISTS_DIR):
     brand_url = PRICELIST_URL_TEMPLATE.format(dealer_id=dealer_id, brand=normalize_brand_name(brand_name))
 
     try:
@@ -166,7 +177,7 @@ def process_dealer(dealer_id, brand_name, auto_extract=False, extract_model=DEFA
             latest_url = extracted_links[0]
             full_url = latest_url if latest_url.startswith("http") else f"{BASE_URL}{latest_url}"
 
-            result = download_pdf(full_url, brand_name, auto_extract=auto_extract, extract_model=extract_model)
+            result = download_pdf(full_url, brand_name, output_dir=output_dir, auto_extract=auto_extract, extract_model=extract_model)
             result["brand"] = brand_name
             return result
         else:

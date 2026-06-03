@@ -12,6 +12,7 @@ from sgcarmart.constants import DEFAULT_BROWSER_MAX_WORKERS, DEFAULT_EXTRACT_MOD
 from sgcarmart.core.downloader import process_dealer
 from sgcarmart.core.year_navigator import discover_historical_pdfs
 from sgcarmart.utils.file_utils import load_dealer_brand_mapping
+from sgcarmart.utils import manifest as pdf_manifest
 
 load_dotenv(Path(__file__).parent / "analysis" / ".env")
 
@@ -281,6 +282,7 @@ Examples:
     if args.extract_only:
         return
 
+    pdf_manifest.load()
     print()
 
     if mode == "historical":
@@ -289,6 +291,8 @@ Examples:
         )
     else:
         results = _run_latest_mode(dealer_brand_mapping, auto_extract, extract_model)
+
+    pdf_manifest.save()
 
     report_file = f"data/download_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
     with open(report_file, "w") as f:

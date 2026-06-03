@@ -144,7 +144,7 @@ class TestDownloadPdf:
 @pytest.mark.integration
 class TestProcessDealer:
     @responses.activate
-    def test_process_dealer_success(self, valid_pdf_content, sample_html_with_pdfs):
+    def test_process_dealer_success(self, valid_pdf_content, sample_html_with_pdfs, temp_output_dir):
         dealer_url = "https://www.sgcarmart.com/new-cars/pricelists/82/mg"
         pdf_url = "https://www.sgcarmart.com/new_cars/pricelist/82/2025-01-15.pdf"
 
@@ -157,7 +157,7 @@ class TestProcessDealer:
             status=200
         )
 
-        result = process_dealer("82", "mg")
+        result = process_dealer("82", "mg", output_dir=temp_output_dir)
 
         assert result["status"] == "success"
         assert result["dealer_id"] == "82"

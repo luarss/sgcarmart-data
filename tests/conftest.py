@@ -2,6 +2,15 @@ import pytest
 import os
 from pathlib import Path
 
+from sgcarmart.utils import manifest as pdf_manifest
+
+
+@pytest.fixture(autouse=True)
+def reset_manifest():
+    pdf_manifest._manifest.clear()
+    yield
+    pdf_manifest._manifest.clear()
+
 
 @pytest.fixture
 def sample_dealer_mapping():
