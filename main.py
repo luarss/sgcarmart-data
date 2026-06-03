@@ -8,7 +8,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from sgcarmart.constants import DEFAULT_BROWSER_MAX_WORKERS, DEFAULT_MAX_WORKERS
+from sgcarmart.constants import DEFAULT_BROWSER_MAX_WORKERS, DEFAULT_EXTRACT_MODEL, DEFAULT_MAX_WORKERS
 from sgcarmart.core.downloader import process_dealer
 from sgcarmart.core.year_navigator import discover_historical_pdfs
 from sgcarmart.utils.file_utils import load_dealer_brand_mapping
@@ -34,7 +34,7 @@ def parse_year_range(year_arg: str) -> list:
 
 
 def process_dealer_historical(
-    dealer_id: str, brand_name: str, years: list | None = None, auto_extract=False, extract_model="gemini-2.0-flash"
+    dealer_id: str, brand_name: str, years: list | None = None, auto_extract=False, extract_model=DEFAULT_EXTRACT_MODEL
 ) -> dict:
     """
     Process a dealer with historical PDF discovery and download.
@@ -44,7 +44,7 @@ def process_dealer_historical(
         brand_name: Brand name
         years: List of years to download (None = all years)
         auto_extract: Whether to run automatic extraction
-        extract_model: Model name used for extraction (default: "gemini-2.0-flash")
+        extract_model: Model name used for extraction (default from constants.py)
 
     Returns:
         Dict with download results
@@ -250,8 +250,8 @@ Examples:
     parser.add_argument(
         "--extract-model",
         type=str,
-        default="gemini-2.0-flash",
-        help="Gemini model to use for extraction (default: gemini-2.0-flash)",
+        default=DEFAULT_EXTRACT_MODEL,
+        help=f"Gemini model to use for extraction (default: {DEFAULT_EXTRACT_MODEL})",
     )
 
     args = parser.parse_args()

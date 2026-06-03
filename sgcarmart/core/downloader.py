@@ -4,6 +4,7 @@ from pathlib import Path
 
 from sgcarmart.constants import (
     BASE_URL,
+    DEFAULT_EXTRACT_MODEL,
     DEFAULT_PAGE_TIMEOUT,
     DEFAULT_PDF_MAX_WORKERS,
     DEFAULT_REQUEST_TIMEOUT,
@@ -20,7 +21,6 @@ from sgcarmart.utils.http import RateLimitError, fetch_with_retry
 from sgcarmart.utils.validation import validate_pdf
 
 PRICELISTS_DIR = "data/pricelists"
-DEFAULT_EXTRACT_MODEL = "gemini-2.0-flash"
 
 
 def _setup_filepath(brand_name, dealer_id, date, output_dir):

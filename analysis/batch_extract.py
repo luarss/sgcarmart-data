@@ -66,7 +66,7 @@ def extract_brand_samples(
     year: int = 2025,
     max_per_brand: int = 1,
     output_dir: Path | None = None,
-    model: str = "gemini-2.0-flash",
+    model: str = GeminiPDFExtractor.DEFAULT_MODEL,
 ):
     extractor = GeminiPDFExtractor()
 
@@ -158,8 +158,8 @@ def main():
     parser.add_argument(
         "--model",
         type=str,
-        default="gemini-2.0-flash",
-        help="Gemini model to use (e.g., gemini-2.0-flash, gemini-2.0-flash)",
+        default=GeminiPDFExtractor.DEFAULT_MODEL,
+        help=f"Gemini model to use (e.g., {GeminiPDFExtractor.DEFAULT_MODEL}, gemini-2.5-flash-lite)",
     )
 
     args = parser.parse_args()
