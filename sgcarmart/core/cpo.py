@@ -4,7 +4,10 @@ Certified Pre-Owned (CPO) car scraper for multiple Singapore dealers.
 Sites scraped:
   Listing pages  : ic_preowned, eurokars, das_weltauto, toyota, dickson,
                    carchoice, sim_mee_motors
-  Programme pages: cycle_carriage, skoda, tesla
+  Programme pages: cycle_carriage, skoda
+
+Excluded (robots.txt non-compliant or unverifiable):
+  tesla - robots.txt returns HTTP 403; cannot verify access permission
 """
 import contextlib
 import json
@@ -463,12 +466,6 @@ class SkodaScraper(ProgrammePageCPOScraper):
     PROGRAMME_TITLE = "Skoda Das WeltAuto Certified Pre-Owned Programme"
 
 
-class TeslaScraper(ProgrammePageCPOScraper):
-    SOURCE_ID = "tesla"
-    BASE_URL = "https://www.tesla.com/en_sg/support/certified-pre-owned"
-    PROGRAMME_TITLE = "Tesla Certified Pre-Owned Programme"
-
-
 # ─── Registry & runner ────────────────────────────────────────────────────────
 
 
@@ -482,7 +479,6 @@ ALL_SCRAPERS: dict[str, type[CPOScraper]] = {
     "sim_mee_motors": SimeMeeMotorsScraper,
     "cycle_carriage": CycleCarriageScraper,
     "skoda": SkodaScraper,
-    "tesla": TeslaScraper,
 }
 
 _TEST_SITES = ["ic_preowned", "toyota", "das_weltauto"]
