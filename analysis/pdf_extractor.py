@@ -16,9 +16,11 @@ load_dotenv(Path(__file__).parent / ".env")
 
 
 class GeminiPDFExtractor:
-    DEFAULT_MODEL: ClassVar[str] = "gemini-2.5-flash"
+    DEFAULT_MODEL: ClassVar[str] = "gemini-3.5-flash"
 
     PRICING: ClassVar = {
+        "gemini-3.5-flash": {"input_per_million": 1.50, "output_per_million": 9.00, "is_free": False},
+        "gemini-3-flash": {"input_per_million": 0.50, "output_per_million": 3.00, "is_free": False},
         "gemini-3-pro": {"input_per_million": 2.00, "output_per_million": 12.00, "is_free": False},
         "gemini-2.5-pro": {"input_per_million": 1.25, "output_per_million": 10.00, "is_free": False},
         "gemini-2.5-flash": {"input_per_million": 0.15, "output_per_million": 0.60, "is_free": False},

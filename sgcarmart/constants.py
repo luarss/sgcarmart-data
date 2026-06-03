@@ -57,7 +57,7 @@ COE_API_BASE_URL = "https://data.gov.sg/api/action/datastore_search"
 COE_API_PAGE_LIMIT = 100
 COE_OUTPUT_DIR = "data/coe"
 
-DEFAULT_EXTRACT_MODEL = "gemini-2.5-flash"
+DEFAULT_EXTRACT_MODEL = "gemini-3.5-flash"
 
 EXCLUDED_BRANDS = {
     "bac",
