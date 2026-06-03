@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "source_filename": "dealer_122_2026-06-03.pdf",
+    "extraction_date": "2026-06-03",
+    "dealer_id": "122",
+    "pdf_date": "2026-06-03",
+    "brand_folder": "deepal",
+    "year_folder": 2026,
+    "pdf_size_kb": 445.6435546875,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 2085,
+      "output_tokens": 316,
+      "total_tokens": 2401,
+      "input_cost_usd": 0.0031275,
+      "output_cost_usd": 0.0028439999999999997,
+      "total_cost_usd": 0.005971499999999999,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Deepal",
+        "model_name": "S05",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Electric",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 199999.0,
+            "final_price": 190999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Extracted Deepal S05 electric SUV. List price is after VES, final price is the effective retail price after subsidies and bonuses."
+  ]
+}
