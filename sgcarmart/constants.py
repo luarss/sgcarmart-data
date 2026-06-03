@@ -59,6 +59,9 @@ COE_OUTPUT_DIR = "data/coe"
 
 DEFAULT_EXTRACT_MODEL = "gemini-3.5-flash"
 
+CPO_OUTPUT_DIR = "data/cpo"
+CPO_DEFAULT_MAX_WORKERS = 3
+
 EXCLUDED_BRANDS = {
     "bac",
     "bentley",
