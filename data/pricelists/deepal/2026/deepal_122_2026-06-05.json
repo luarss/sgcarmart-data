@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "source_filename": "dealer_122_2026-06-05.pdf",
+    "extraction_date": "2026-06-05",
+    "dealer_id": "122",
+    "pdf_date": "2026-06-05",
+    "brand_folder": "deepal",
+    "year_folder": 2026,
+    "pdf_size_kb": 1084.146484375,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 3149,
+      "output_tokens": 437,
+      "total_tokens": 3586,
+      "input_cost_usd": 0.0047235,
+      "output_cost_usd": 0.003933,
+      "total_cost_usd": 0.008656500000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Changan",
+        "model_name": "Deepal S05",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Electric",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 206999.0,
+            "final_price": 189999.0
+          }
+        ]
+      },
+      {
+        "brand": "Changan",
+        "model_name": "Deepal S07",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Electric",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 218999.0,
+            "final_price": 199999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Extracted Changan Deepal S05 and S07 models.",
+    "Both models are fully electric SUVs as indicated by the energy consumption in kWh/100km and range specifications."
+  ]
+}
