@@ -1,0 +1,15 @@
+{
+  "date": "2026-06-05",
+  "fetched_at": "2026-06-05T05:22:00.586747+00:00",
+  "filters": {
+    "min_price": 60000,
+    "max_price": 100000,
+    "year_from": 2016,
+    "vts": 2,
+    "avl": "a",
+    "sortby": "REG_DESC",
+    "limit": 100
+  },
+  "total_listings": 0,
+  "listings": {}
+}
