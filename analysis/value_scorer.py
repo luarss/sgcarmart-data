@@ -74,9 +74,11 @@ def _parse_coe_left(text: str | None) -> float | None:
     return years if years > 0 else None
 
 
-def _parse_mileage(text: str | None) -> float | None:
+def _parse_mileage(text: str | int | None) -> float | None:
     if not text:
         return None
+    if isinstance(text, int):
+        return float(text)
     m = re.search(r"([\d,]+)", text)
     return float(m.group(1).replace(",", "")) if m else None
 
@@ -84,7 +86,7 @@ def _parse_mileage(text: str | None) -> float | None:
 def _parse_eng_cap(text: str | None) -> float | None:
     if not text:
         return None
-    m = re.search(r"([\d,]+)", text)
+    m = re.search(r"([\d,]+)", str(text))
     return float(m.group(1).replace(",", "")) if m else None
 
 
