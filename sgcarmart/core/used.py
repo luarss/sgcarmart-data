@@ -13,9 +13,10 @@ import os
 import re
 import time
 import json
-import urllib.request
 from dataclasses import dataclass, field
 from urllib.parse import urlencode, urljoin
+
+import requests
 
 from playwright.sync_api import Page, sync_playwright
 from playwright_stealth import Stealth
@@ -38,10 +39,50 @@ _HTTP_HEADERS = {
 }
 
 
+def _proxy_dict(proxy_url: str) -> dict:
+    """Convert a proxy URL (e.g. socks5://host:port) to requests' proxies dict."""
+    return {"http": proxy_url, "https": proxy_url}
+
+
+# Cached working proxy — set on first successful fetch so subsequent pages
+# reuse it without re-scanning the whole list.
+_http_working_proxy: str | None = None
+
+
 def _fetch_html(url: str, timeout: int = 20) -> str:
-    req = urllib.request.Request(url, headers=_HTTP_HEADERS)
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return resp.read().decode("utf-8")
+    """Fetch HTML via HTTP, rotating through proxies on failure.
+
+    Tries the cached working proxy first, then direct, then each fallback
+    proxy in _PROXY_FALLBACKS. Raises the last error if all fail.
+    """
+    global _http_working_proxy
+
+    candidates: list[str | None] = []
+    if _http_working_proxy:
+        candidates.append(_http_working_proxy)
+    candidates.append(None)  # direct connection
+    candidates.extend(p for p in _PROXY_FALLBACKS if p != _http_working_proxy)
+
+    last_error = None
+    for proxy in candidates:
+        label = proxy or "direct"
+        try:
+            proxies = _proxy_dict(proxy) if proxy else None
+            resp = requests.get(
+                url, headers=_HTTP_HEADERS, proxies=proxies, timeout=timeout
+            )
+            resp.raise_for_status()
+            if proxy != _http_working_proxy:
+                print(f"HTTP: connection established via {label}")
+            _http_working_proxy = proxy
+            return resp.text
+        except Exception as e:
+            last_error = e
+            _http_working_proxy = None
+            if len(candidates) > 1:
+                print(f"HTTP fetch via {label} failed ({e}), trying next...")
+
+    raise last_error
 
 
 def _parse_rsc_listings(html: str) -> list[dict]:
