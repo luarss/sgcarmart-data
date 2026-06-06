@@ -18,8 +18,14 @@ DETAIL_URL = f"{BASE_URL}/used-cars/info"
 
 _PROXY_SERVER = os.environ.get("PROXY_SERVER")
 
-# Comma-separated fallback proxies to rotate through on failure
-_PROXY_FALLBACKS = [p.strip() for p in os.environ.get("PROXY_FALLBACKS", "").split(",") if p.strip()]
+# Comma-separated fallback proxies to rotate through on failure.
+# Cap at 5 to bound worst-case wait time (30 s × 5 = 2.5 min max).
+_MAX_PROXY_ATTEMPTS = 5
+_PROXY_FALLBACKS = [
+    p.strip()
+    for p in os.environ.get("PROXY_FALLBACKS", "").split(",")
+    if p.strip()
+][:_MAX_PROXY_ATTEMPTS]
 
 _BADGE_FLAGS = {"PREMIUM AD", "DIRECT OWNER", "IMPORT USED"}
 
@@ -181,22 +187,25 @@ class UsedCarSearch:
         return self._navigate(url)
 
     def _navigate(self, url: str) -> str:
-        proxies = [p for p in [_PROXY_SERVER, *_PROXY_FALLBACKS] if p]
+        # Build candidate list: [None (direct), proxy1, proxy2, ...].
+        # Always start with a direct attempt; proxies are fallbacks.
+        candidates: list[str | None] = [None, *[p for p in [_PROXY_SERVER, *_PROXY_FALLBACKS] if p]]
         last_error = None
-        for i, proxy in enumerate(proxies or [None]):
+        for i, proxy in enumerate(candidates):
+            label = proxy or "direct"
             try:
                 if self._try_navigate_with_proxy(url, proxy, i):
                     return self.page.url
-                if i < len(proxies) - 1:
-                    print(f"Proxy loaded page but 0 listings, trying next...")
+                if i < len(candidates) - 1:
+                    print(f"Navigation via {label} loaded page but 0 listings, trying next...")
                     continue
                 return self.page.url
             except Exception as e:
                 last_error = e
-                if i < len(proxies) - 1:
-                    print(f"Proxy failed ({e}), trying next...")
+                if i < len(candidates) - 1:
+                    print(f"Navigation via {label} failed ({e}), trying next...")
                     continue
-        if last_error and proxies:
+        if last_error:
             raise last_error
         return self.page.url
 

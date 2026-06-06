@@ -173,9 +173,47 @@ def run_watch(config: dict) -> dict:
         with open(previous_path) as f:
             previous = json.load(f)
 
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    snapshot_path = watch_dir / f"{today}.json"
+
+    if not current and previous:
+        # Fetched 0 listings when we had data before — likely a scraping failure
+        # (blocked IP, all proxies dead, site down). Don't overwrite latest.json
+        # so the next run diffs against real data rather than an empty baseline.
+        print(
+            f"WARNING: 0 listings fetched but previous snapshot has {len(previous)} listings. "
+            "Skipping latest.json overwrite to preserve previous data."
+        )
+        snapshot = {
+            "date": today,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "filters": filters,
+            "total_listings": 0,
+            "fetch_warning": "0 listings returned — possible proxy/scraping failure",
+            "listings": {},
+        }
+        with open(snapshot_path, "w") as f:
+            json.dump(snapshot, f, indent=2, default=str)
+        return {
+            "watch": name,
+            "date": today,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "filters": filters,
+            "current_count": 0,
+            "previous_count": len(previous),
+            "added": 0,
+            "removed": 0,
+            "unchanged": 0,
+            "price_changes": 0,
+            "added_ids": [],
+            "removed_ids": [],
+            "price_change_details": [],
+            "snapshot_file": str(snapshot_path.relative_to(PROJECT_ROOT)),
+            "fetch_warning": "0 listings returned — possible proxy/scraping failure",
+        }
+
     added_ids, removed_ids, price_changes = _compute_diff(current, previous)
 
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     snapshot = {
         "date": today,
         "fetched_at": datetime.now(timezone.utc).isoformat(),
@@ -183,7 +221,6 @@ def run_watch(config: dict) -> dict:
         "total_listings": len(current),
         "listings": current,
     }
-    snapshot_path = watch_dir / f"{today}.json"
     with open(snapshot_path, "w") as f:
         json.dump(snapshot, f, indent=2, default=str)
 
