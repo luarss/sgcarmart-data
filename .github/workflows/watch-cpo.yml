@@ -1,0 +1,41 @@
+name: Watch CPO Listings
+
+on:
+  schedule:
+    - cron: '45 2 * * *'  # 0245 UTC / 1045 SGT (staggered from used-cars watch)
+  workflow_dispatch:
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Install Playwright browsers
+        run: uv run playwright install chromium --with-deps
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      - name: Scrape CPO listings
+        run: uv run cpo_main.py
+
+      - name: Commit and push if changes
+        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
+        with:
+          commit_message: "chore: update CPO watch ${{ steps.date.outputs.date }}"
+          file_pattern: 'data/cpo/**/*'
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
+          commit_author: GitHub Actions <github-actions[bot]@users.noreply.github.com>

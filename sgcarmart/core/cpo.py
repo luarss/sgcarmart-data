@@ -525,6 +525,14 @@ def save_results(
     os.makedirs(output_dir, exist_ok=True)
     today = date.today().isoformat()
     filepath = os.path.join(output_dir, f"{today}.json")
+    latest_path = os.path.join(output_dir, "latest.json")
+
+    # Load previous latest.json for idempotency guard
+    previous = {}
+    if os.path.exists(latest_path):
+        with open(latest_path) as f:
+            previous = json.load(f)
+
     payload = {
         "date": today,
         "scraped_at": datetime.now(UTC).isoformat(),
@@ -532,6 +540,21 @@ def save_results(
         "total_listings": len(listings),
         "listings": [asdict(lst) for lst in listings],
     }
+
+    # Write the dated snapshot always
     with open(filepath, "w") as f:
         json.dump(payload, f, indent=2)
+
+    # Idempotency: if 0 listings but we had data before, don't overwrite latest.json.
+    # A zero-result scrape is almost certainly a failure (blocked, site changed, etc.).
+    if not listings and previous.get("total_listings"):
+        print(
+            f"WARNING: 0 listings fetched but previous snapshot has "
+            f"{previous['total_listings']} listings. "
+            "Skipping latest.json overwrite to preserve previous data."
+        )
+    else:
+        with open(latest_path, "w") as f:
+            json.dump(payload, f, indent=2)
+
     return filepath
