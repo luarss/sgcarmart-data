@@ -1,10 +1,19 @@
 """
-Playwright helper for browsing and extracting SGCarMart used car listings.
+SGCarMart used car scraper — HTTP (primary) and Playwright (fallback).
+
+Primary path: fetch the Next.js page HTML and parse the RSC payload that
+the server embeds server-side. No browser required, works as long as
+Cloudflare serves the cached page.
+
+Playwright path: kept for detail pages and as a fallback if the HTTP path
+stops working (e.g. Cloudflare starts JS-challenging all requests).
 """
 
 import os
 import re
 import time
+import json
+import urllib.request
 from dataclasses import dataclass, field
 from urllib.parse import urlencode, urljoin
 
@@ -15,6 +24,142 @@ from sgcarmart.constants import BASE_URL
 
 LISTING_URL = f"{BASE_URL}/used-cars/listing"
 DETAIL_URL = f"{BASE_URL}/used-cars/info"
+
+# ── HTTP scraping (primary) ──────────────────────────────────────────────────
+
+_HTTP_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/131.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-GB,en;q=0.9",
+}
+
+
+def _fetch_html(url: str, timeout: int = 20) -> str:
+    req = urllib.request.Request(url, headers=_HTTP_HEADERS)
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return resp.read().decode("utf-8")
+
+
+def _parse_rsc_listings(html: str) -> list[dict]:
+    """Extract the listing_data.data array from the Next.js RSC payload."""
+    chunks = re.findall(
+        r'self\.__next_f\.push\(\[1,"((?:[^"\\]|\\.)*)"\]\)',
+        html,
+        re.DOTALL,
+    )
+    all_decoded = "\n".join(json.loads('"' + chunk + '"') for chunk in chunks)
+
+    m = re.search(r'"listing_data":\{"data":\[', all_decoded)
+    if not m:
+        return []
+
+    # Walk forward to find the matching closing bracket.
+    start = m.end()
+    depth, pos = 1, start
+    while pos < len(all_decoded) and depth > 0:
+        if all_decoded[pos] == "[":
+            depth += 1
+        elif all_decoded[pos] == "]":
+            depth -= 1
+        pos += 1
+
+    try:
+        return json.loads("[" + all_decoded[start : pos - 1] + "]")
+    except json.JSONDecodeError:
+        return []
+
+
+def _rsc_item_to_dict(item: dict) -> dict:
+    """Map one RSC listing object to the canonical snapshot dict."""
+    eng_cap_str = item.get("engine_capacity") or ""
+    road_tax = None
+    m = re.search(r"([\d,]+)", eng_cap_str)
+    if m:
+        try:
+            road_tax = compute_road_tax(int(m.group(1).replace(",", "")))
+        except Exception:
+            pass
+
+    tag = (item.get("tag") or "").upper()
+    instalment_info = item.get("instalment") or {}
+    instalment_amt = instalment_info.get("installment")
+    instalment = f"${instalment_amt:,} /mth" if instalment_amt else None
+
+    mileage = item.get("mileage") or None
+    if mileage in ("N.A", "N.A."):
+        mileage = None
+
+    owners = item.get("owners") or None
+    if owners in ("N.A", "N.A."):
+        owners = None
+
+    dealer_info = item.get("dealer_lead") or {}
+
+    return {
+        "id": str(item["id"]),
+        "title": item.get("car_model", ""),
+        "url": item.get("link", ""),
+        "price": item.get("price"),
+        "instalment": instalment,
+        "depreciation": item.get("depreciation"),
+        "reg_date": item.get("registration_date"),
+        "coe_left": item.get("coeLeft") or None,
+        "mileage": mileage,
+        "eng_cap": eng_cap_str or None,
+        "road_tax": road_tax,
+        "owners": owners,
+        "is_direct_owner": "DIRECT" in tag,
+        "is_premium_ad": "PREMIUM" in tag or item.get("ad_type") == "p",
+        "is_import_used": (item.get("additional_statuses") or {}).get("is_imported_used", False),
+        "dealer": dealer_info.get("name"),
+        "posted_date": item.get("date"),
+        "description": item.get("description", ""),
+    }
+
+
+def fetch_all_listings_http(
+    filters: dict,
+    max_pages: int = 50,
+    rate_limit: float = 0.3,
+) -> dict[str, dict]:
+    """Fetch listings across pages via HTTP, returning a dict keyed by listing ID.
+
+    Raises on network failure so the caller can decide how to handle it.
+    Returns an empty dict (not raises) when the page loads but RSC has no data.
+    """
+    params = {}
+    for key, value in filters.items():
+        if key in SEARCH_PARAMS and value is not None:
+            param_name = SEARCH_PARAMS[key]
+            if isinstance(value, list):
+                params[param_name] = [str(v) for v in value]
+            else:
+                params[param_name] = str(value)
+
+    base_url = f"{LISTING_URL}?{urlencode(params, doseq=True)}"
+    results: dict[str, dict] = {}
+
+    for page in range(1, max_pages + 1):
+        url = base_url if page == 1 else f"{base_url}&page={page}"
+        html = _fetch_html(url)
+        items = _parse_rsc_listings(html)
+        if not items:
+            print(f"HTTP: no RSC listings on page {page}, stopping.")
+            break
+        for item in items:
+            d = _rsc_item_to_dict(item)
+            results[d["id"]] = d
+        print(f"HTTP: page {page} → {len(items)} listings (total so far: {len(results)})")
+        if len(items) < int(filters.get("limit", 100)):
+            break
+        if page < max_pages:
+            time.sleep(rate_limit)
+
+    return results
 
 _PROXY_SERVER = os.environ.get("PROXY_SERVER")
 

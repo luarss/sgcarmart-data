@@ -12,7 +12,7 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-from sgcarmart.core.used import SEARCH_PARAMS, UsedCarSearch
+from sgcarmart.core.used import SEARCH_PARAMS, UsedCarSearch, fetch_all_listings_http
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data" / "used_cars"
@@ -111,7 +111,21 @@ def _compute_diff(current, previous):
 
 
 def _fetch_current_listings(filters, max_pages, watch_dir):
-    """Fetch all listings across pages into a dict keyed by listing ID."""
+    """Fetch all listings across pages into a dict keyed by listing ID.
+
+    Tries the fast HTTP/RSC path first (no browser needed). Falls back to
+    Playwright if the HTTP path returns nothing (e.g. Cloudflare challenge).
+    """
+    # ── HTTP path ────────────────────────────────────────────────────────────
+    try:
+        current = fetch_all_listings_http(filters, max_pages)
+        if current:
+            return current
+        print("HTTP path returned 0 listings, falling back to Playwright...")
+    except Exception as e:
+        print(f"HTTP path failed ({e}), falling back to Playwright...")
+
+    # ── Playwright fallback ──────────────────────────────────────────────────
     current = {}
     try:
         with UsedCarSearch(headless=True) as s:
@@ -145,10 +159,7 @@ def _fetch_current_listings(filters, max_pages, watch_dir):
                 if not s.next_page():
                     break
     except Exception as e:
-        # All navigation candidates (direct + proxies) exhausted — treat as 0
-        # listings so the 0-listing guard in run_watch() can handle it without
-        # crashing CI.
-        print(f"WARNING: Scraping failed after trying all candidates: {e}")
+        print(f"WARNING: Playwright fallback also failed: {e}")
     return current
 
 
