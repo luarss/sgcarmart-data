@@ -32,7 +32,7 @@ jobs:
         id: proxies
         run: |
           PROXIES=$(curl -sS --retry 3 \
-            "https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&country=SG&proxy_format=protocolipport&format=text&protocol=http&timeout=5000" \
+            "https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&country=SG&proxy_format=protocolipport&format=text&timeout=5000" \
             | paste -sd, -)
           echo "count=$(echo "$PROXIES" | tr ',' '\n' | grep -c .)" >> $GITHUB_OUTPUT
           echo "proxies=$PROXIES" >> $GITHUB_OUTPUT

@@ -19,8 +19,8 @@ DETAIL_URL = f"{BASE_URL}/used-cars/info"
 _PROXY_SERVER = os.environ.get("PROXY_SERVER")
 
 # Comma-separated fallback proxies to rotate through on failure.
-# Cap at 5 to bound worst-case wait time (30 s × 5 = 2.5 min max).
-_MAX_PROXY_ATTEMPTS = 5
+# Cap at 10 to bound worst-case wait time (30 s × 10 = 5 min max).
+_MAX_PROXY_ATTEMPTS = 10
 _PROXY_FALLBACKS = [
     p.strip()
     for p in os.environ.get("PROXY_FALLBACKS", "").split(",")
