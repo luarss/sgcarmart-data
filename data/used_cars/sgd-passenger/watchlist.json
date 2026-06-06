@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-05T05:22:01.413643+00:00",
-  "reference_date": "2026-06-05",
-  "source_snapshot": "data/used_cars/sgd-passenger/2026-06-05.json",
+  "generated_at": "2026-06-06T05:39:54.915139+00:00",
+  "reference_date": "2026-06-06",
+  "source_snapshot": "data/used_cars/sgd-passenger/2026-06-06.json",
   "total_source_listings": 0,
   "scored_listings": 0,
   "excluded": {
