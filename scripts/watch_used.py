@@ -57,23 +57,6 @@ def _listing_id(href: str) -> str:
     return m.group(1) if m else ""
 
 
-def _capture_debug(search, watch_dir: Path, page_num: int) -> None:
-    """Capture screenshot and HTML when no listings found — CI debugging."""
-    debug_dir = watch_dir / "debug"
-    debug_dir.mkdir(parents=True, exist_ok=True)
-    ts = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
-    try:
-        search.page.screenshot(path=str(debug_dir / f"page-{page_num}-{ts}.png"))
-    except Exception as e:
-        print(f"DEBUG: screenshot failed: {e}")
-    try:
-        html = search.page.content()
-        (debug_dir / f"page-{page_num}-{ts}.html").write_text(html)
-    except Exception as e:
-        print(f"DEBUG: html capture failed: {e}")
-    print(f"DEBUG: no listings on page {page_num}, url={search.page.url}")
-
-
 def _filter_coe_renewed(current: dict) -> dict:
     """Remove COE-renewed cars from listing dict (title-based check)."""
     before = len(current)
@@ -110,7 +93,7 @@ def _compute_diff(current, previous):
     return added_ids, removed_ids, price_changes
 
 
-def _fetch_current_listings(filters, max_pages, watch_dir):
+def _fetch_current_listings(filters, max_pages):
     """Fetch all listings across pages into a dict keyed by listing ID.
 
     Tries the fast HTTP/RSC path first (no browser needed). Falls back to
@@ -133,7 +116,7 @@ def _fetch_current_listings(filters, max_pages, watch_dir):
             for page_num in range(max_pages):
                 cards = s.get_listings()
                 if not cards:
-                    _capture_debug(s, watch_dir, page_num)
+                    print(f"No listings on page {page_num}, stopping.")
                     break
                 for card in cards:
                     lid = _listing_id(card.url)
@@ -179,7 +162,7 @@ def run_watch(config: dict) -> dict:
     with open(watch_dir / "config.json", "w") as f:
         json.dump(config, f, indent=2, default=str)
 
-    current = _fetch_current_listings(filters, max_pages, watch_dir)
+    current = _fetch_current_listings(filters, max_pages)
 
     if config.get("exclude_coe_renewed"):
         current = _filter_coe_renewed(current)
