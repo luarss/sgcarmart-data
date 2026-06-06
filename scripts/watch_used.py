@@ -113,36 +113,42 @@ def _compute_diff(current, previous):
 def _fetch_current_listings(filters, max_pages, watch_dir):
     """Fetch all listings across pages into a dict keyed by listing ID."""
     current = {}
-    with UsedCarSearch(headless=True) as s:
-        s.search(**filters)
-        for page_num in range(max_pages):
-            cards = s.get_listings()
-            if not cards:
-                _capture_debug(s, watch_dir, page_num)
-                break
-            for card in cards:
-                lid = _listing_id(card.url)
-                if lid:
-                    current[lid] = {
-                        "id": lid,
-                        "title": card.title,
-                        "url": card.url,
-                        "price": card.price,
-                        "depreciation": card.depreciation,
-                        "reg_date": card.reg_date,
-                        "coe_left": card.coe_left,
-                        "mileage": card.mileage,
-                        "eng_cap": card.eng_cap,
-                        "road_tax": card.road_tax,
-                        "owners": card.owners,
-                        "is_direct_owner": card.is_direct_owner,
-                        "is_premium_ad": card.is_premium_ad,
-                        "dealer": card.dealer,
-                        "posted_date": card.posted_date,
-                        "description": card.description,
-                    }
-            if not s.next_page():
-                break
+    try:
+        with UsedCarSearch(headless=True) as s:
+            s.search(**filters)
+            for page_num in range(max_pages):
+                cards = s.get_listings()
+                if not cards:
+                    _capture_debug(s, watch_dir, page_num)
+                    break
+                for card in cards:
+                    lid = _listing_id(card.url)
+                    if lid:
+                        current[lid] = {
+                            "id": lid,
+                            "title": card.title,
+                            "url": card.url,
+                            "price": card.price,
+                            "depreciation": card.depreciation,
+                            "reg_date": card.reg_date,
+                            "coe_left": card.coe_left,
+                            "mileage": card.mileage,
+                            "eng_cap": card.eng_cap,
+                            "road_tax": card.road_tax,
+                            "owners": card.owners,
+                            "is_direct_owner": card.is_direct_owner,
+                            "is_premium_ad": card.is_premium_ad,
+                            "dealer": card.dealer,
+                            "posted_date": card.posted_date,
+                            "description": card.description,
+                        }
+                if not s.next_page():
+                    break
+    except Exception as e:
+        # All navigation candidates (direct + proxies) exhausted — treat as 0
+        # listings so the 0-listing guard in run_watch() can handle it without
+        # crashing CI.
+        print(f"WARNING: Scraping failed after trying all candidates: {e}")
     return current
 
 
