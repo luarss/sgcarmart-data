@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "source_filename": "dealer_77_2026-06-05.pdf",
+    "extraction_date": "2026-06-06",
+    "dealer_id": "77",
+    "pdf_date": "2026-06-05",
+    "brand_folder": "maxus",
+    "year_folder": 2026,
+    "pdf_size_kb": 1597.5263671875,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 2085,
+      "output_tokens": 584,
+      "total_tokens": 2669,
+      "input_cost_usd": 0.0031275,
+      "output_cost_usd": 0.005256,
+      "total_cost_usd": 0.0083835,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Maxus",
+        "model_name": "eDeliver 5",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 146000.0
+          },
+          {
+            "variant_name": "High Roof Bus",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 159500.0
+          }
+        ]
+      },
+      {
+        "brand": "Maxus",
+        "model_name": "eDeliver 7",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "N",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 160000.0
+          }
+        ]
+      },
+      {
+        "brand": "Maxus",
+        "model_name": "eDeliver 9",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "FL",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 165000.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Prices extracted are 'Price With Guaranteed COE (after in-house finance & insurance subsidy)'. No list price without COE was provided.",
+    "All models are electric commercial vans."
+  ]
+}

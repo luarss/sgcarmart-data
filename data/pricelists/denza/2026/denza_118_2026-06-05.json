@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "source_filename": "dealer_118_2026-06-05.pdf",
+    "extraction_date": "2026-06-06",
+    "dealer_id": "118",
+    "pdf_date": "2026-06-05",
+    "brand_folder": "denza",
+    "year_folder": 2026,
+    "pdf_size_kb": 29.833984375,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 1553,
+      "output_tokens": 500,
+      "total_tokens": 2053,
+      "input_cost_usd": 0.0023295,
+      "output_cost_usd": 0.0045000000000000005,
+      "total_cost_usd": 0.0068295000000000005,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "DENZA",
+        "model_name": "B5",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Plug-in Hybrid 1.5 Orion(A)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 349888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "DENZA",
+        "model_name": "D9",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Electric Elite 103.36 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 299888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Grandeur 103.36 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 347388.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Denza B5 classified as SUV.",
+    "Only one price column was available, mapped to list_price as per instructions."
+  ]
+}

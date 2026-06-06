@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "source_filename": "dealer_42_2026-06-05.pdf",
+    "extraction_date": "2026-06-06",
+    "dealer_id": "42",
+    "pdf_date": "2026-06-05",
+    "brand_folder": "subaru",
+    "year_folder": 2026,
+    "pdf_size_kb": 170.67578125,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 1553,
+      "output_tokens": 796,
+      "total_tokens": 2349,
+      "input_cost_usd": 0.0023295,
+      "output_cost_usd": 0.007164,
+      "total_cost_usd": 0.0094935,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Subaru",
+        "model_name": "E-OUTBACK ELECTRIC",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "E-OUTBACK ELECTRIC AWD 74.7KWH",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 246600.0,
+            "final_price": 243800.0
+          }
+        ]
+      },
+      {
+        "brand": "Subaru",
+        "model_name": "SOLTERRA XT ELECTRIC",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SOLTERRA XT ELECTRIC AWD 73.1KWH",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 239600.0,
+            "final_price": 236800.0
+          }
+        ]
+      },
+      {
+        "brand": "Subaru",
+        "model_name": "FORESTER",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "2.5i-S EYESIGHT HYBRID AWD CVT",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 220600.0,
+            "final_price": 217800.0
+          }
+        ]
+      },
+      {
+        "brand": "Subaru",
+        "model_name": "BRZ",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "2.4 EYESIGHT RWD 6MT",
+            "engine_size": "2.4",
+            "vehicle_type": "ICE",
+            "list_price": 257600.0,
+            "final_price": 254800.0
+          },
+          {
+            "variant_name": "2.4 EYESIGHT RWD 6AT",
+            "engine_size": "2.4",
+            "vehicle_type": "ICE",
+            "list_price": 262600.0,
+            "final_price": 259800.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Forester 2.5 Hybrid has an optional Sport Edition top-up of S$4,500.",
+    "Pricelist date is listed as 05/06/2026 to 17/06/2026."
+  ]
+}

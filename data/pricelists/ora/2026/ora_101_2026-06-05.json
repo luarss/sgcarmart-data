@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "source_filename": "dealer_101_2026-06-05.pdf",
+    "extraction_date": "2026-06-06",
+    "dealer_id": "101",
+    "pdf_date": "2026-06-05",
+    "brand_folder": "ora",
+    "year_folder": 2026,
+    "pdf_size_kb": 290.01953125,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 2085,
+      "output_tokens": 521,
+      "total_tokens": 2606,
+      "input_cost_usd": 0.0031275,
+      "output_cost_usd": 0.004689,
+      "total_cost_usd": 0.0078165,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "ORA",
+        "model_name": "GOOD CAT",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "Standard Package",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 228999.0,
+            "final_price": 178999.0
+          },
+          {
+            "variant_name": "Platinum Package",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 228999.0,
+            "final_price": 182999.0
+          },
+          {
+            "variant_name": "GT Standard Package",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 233999.0,
+            "final_price": 183999.0
+          },
+          {
+            "variant_name": "GT Platinum Package",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 233999.0,
+            "final_price": 187999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Extracted ORA Good Cat and Good Cat GT variants with Standard and Platinum packages.",
+    "Vehicle type classified as Electric based on energy consumption metrics (kWh/100km) and EEAI rebate."
+  ]
+}

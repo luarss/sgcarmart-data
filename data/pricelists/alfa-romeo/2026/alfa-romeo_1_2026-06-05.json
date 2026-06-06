@@ -1,0 +1,78 @@
+{
+  "metadata": {
+    "source_filename": "dealer_1_2026-06-05.pdf",
+    "extraction_date": "2026-06-06",
+    "dealer_id": "1",
+    "pdf_date": "2026-06-05",
+    "brand_folder": "alfa-romeo",
+    "year_folder": 2026,
+    "pdf_size_kb": 241.853515625,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 1553,
+      "output_tokens": 622,
+      "total_tokens": 2175,
+      "input_cost_usd": 0.0023295,
+      "output_cost_usd": 0.0055980000000000005,
+      "total_cost_usd": 0.0079275,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Alfa Romeo",
+        "model_name": "Tonale",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5T MHEV Veloce",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 249999.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Alfa Romeo",
+        "model_name": "Stelvio",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "2.0T Veloce (Premium Pack)",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 358888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Alfa Romeo",
+        "model_name": "Giulia",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "2.0T Veloce",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 298888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "2.9T Quadrifoglio",
+            "engine_size": "2.9",
+            "vehicle_type": "ICE",
+            "list_price": 493888.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Prices listed include COE. Following the rule 'If only one price is available, put it in list_price and set final_price to null', the prices have been mapped to list_price."
+  ]
+}

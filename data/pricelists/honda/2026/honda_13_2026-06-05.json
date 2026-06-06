@@ -1,0 +1,193 @@
+{
+  "metadata": {
+    "source_filename": "dealer_13_2026-06-05.pdf",
+    "extraction_date": "2026-06-06",
+    "dealer_id": "13",
+    "pdf_date": "2026-06-05",
+    "brand_folder": "honda",
+    "year_folder": 2026,
+    "pdf_size_kb": 2277.921875,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 2085,
+      "output_tokens": 1699,
+      "total_tokens": 3784,
+      "input_cost_usd": 0.0031275,
+      "output_cost_usd": 0.015290999999999999,
+      "total_cost_usd": 0.018418499999999997,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Honda",
+        "model_name": "CIVIC",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "1.5L TURBO",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 233999.0,
+            "final_price": 215999.0
+          },
+          {
+            "variant_name": "2.0L e:HEV",
+            "engine_size": "2.0L",
+            "vehicle_type": "Hybrid",
+            "list_price": 261999.0,
+            "final_price": 241999.0
+          }
+        ]
+      },
+      {
+        "brand": "Honda",
+        "model_name": "FREED",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "1.5L HS7 e:HEV",
+            "engine_size": "1.5L",
+            "vehicle_type": "Hybrid",
+            "list_price": 215999.0,
+            "final_price": 197999.0
+          },
+          {
+            "variant_name": "1.5L HE7 e:HEV",
+            "engine_size": "1.5L",
+            "vehicle_type": "Hybrid",
+            "list_price": 222999.0,
+            "final_price": 204999.0
+          }
+        ]
+      },
+      {
+        "brand": "Honda",
+        "model_name": "HR-V",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5L DX",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 213999.0,
+            "final_price": 195999.0
+          },
+          {
+            "variant_name": "1.5L DX+",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": 198999.0
+          },
+          {
+            "variant_name": "1.5L HX e:HEV",
+            "engine_size": "1.5L",
+            "vehicle_type": "Hybrid",
+            "list_price": 224999.0,
+            "final_price": 204999.0
+          }
+        ]
+      },
+      {
+        "brand": "Honda",
+        "model_name": "JAZZ",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "1.5L CROSSTAR MONO e:HEV",
+            "engine_size": "1.5L",
+            "vehicle_type": "Hybrid",
+            "list_price": 207999.0,
+            "final_price": 189999.0
+          }
+        ]
+      },
+      {
+        "brand": "Honda",
+        "model_name": "SUPER-ONE",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "EV",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 210999.0,
+            "final_price": 194999.0
+          }
+        ]
+      },
+      {
+        "brand": "Honda",
+        "model_name": "ACCORD",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "2.0L RS e:HEV",
+            "engine_size": "2.0L",
+            "vehicle_type": "Hybrid",
+            "list_price": 311999.0,
+            "final_price": 290999.0
+          }
+        ]
+      },
+      {
+        "brand": "Honda",
+        "model_name": "CR-V",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5L 5-SEATER",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 275999.0,
+            "final_price": 255999.0
+          },
+          {
+            "variant_name": "1.5L 7-SEATER",
+            "engine_size": "1.5L",
+            "vehicle_type": "ICE",
+            "list_price": 285999.0,
+            "final_price": 265999.0
+          }
+        ]
+      },
+      {
+        "brand": "Honda",
+        "model_name": "STEP WGN",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "2.0L SPADA e:HEV",
+            "engine_size": "2.0L",
+            "vehicle_type": "Hybrid",
+            "list_price": 256999.0,
+            "final_price": 235999.0
+          }
+        ]
+      },
+      {
+        "brand": "Honda",
+        "model_name": "ZR-V",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "2.0L e:HEV",
+            "engine_size": "2.0L",
+            "vehicle_type": "Hybrid",
+            "list_price": 247999.0,
+            "final_price": 227999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Grouped Civic and HR-V variants across Category A and Category B pages into single model entries.",
+    "Used the 'ESSENTIAL COE' column as the final_price.",
+    "HR-V 1.5L DX+ did not have a list price specified in the table, so it was set to null.",
+    "Super-One EV is classified as an SUV based on its market segment (Honda e:N1)."
+  ]
+}

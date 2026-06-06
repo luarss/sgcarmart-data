@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "source_filename": "dealer_108_2026-06-05.pdf",
+    "extraction_date": "2026-06-06",
+    "dealer_id": "108",
+    "pdf_date": "2026-06-05",
+    "brand_folder": "aion",
+    "year_folder": 2026,
+    "pdf_size_kb": 754.9873046875,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 2085,
+      "output_tokens": 968,
+      "total_tokens": 3053,
+      "input_cost_usd": 0.0031275,
+      "output_cost_usd": 0.008712,
+      "total_cost_usd": 0.0118395,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "GAC",
+        "model_name": "AION UT",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "STANDARD",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 242988.0,
+            "final_price": 166988.0
+          },
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 246988.0,
+            "final_price": 170988.0
+          }
+        ]
+      },
+      {
+        "brand": "GAC",
+        "model_name": "AION Y PLUS",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "ELITE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 246988.0,
+            "final_price": 170988.0
+          },
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 250988.0,
+            "final_price": 174988.0
+          }
+        ]
+      },
+      {
+        "brand": "GAC",
+        "model_name": "AION V",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 255988.0,
+            "final_price": 179988.0
+          },
+          {
+            "variant_name": "LUXURY",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 264988.0,
+            "final_price": 188988.0
+          }
+        ]
+      },
+      {
+        "brand": "GAC",
+        "model_name": "HYPTEC HT",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 283988.0,
+            "final_price": 214988.0
+          },
+          {
+            "variant_name": "LUXURY (GULL WING)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 313988.0,
+            "final_price": 244988.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Extracted GAC price list from Vincar Group valid from 5 June 2026 to 17 June 2026.",
+    "All models are electric vehicles (EVs) as indicated by power consumption in kWh/100km.",
+    "Final price mapped to the ASSURE package (Non-guaranteed 8 bids COE rebate @ $116,000)."
+  ]
+}

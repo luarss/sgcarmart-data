@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "source_filename": "dealer_40_2026-06-05.pdf",
+    "extraction_date": "2026-06-06",
+    "dealer_id": "40",
+    "pdf_date": "2026-06-05",
+    "brand_folder": "skoda",
+    "year_folder": 2026,
+    "pdf_size_kb": 250.9345703125,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 1553,
+      "output_tokens": 1299,
+      "total_tokens": 2852,
+      "input_cost_usd": 0.0023295,
+      "output_cost_usd": 0.011691,
+      "total_cost_usd": 0.0140205,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Skoda",
+        "model_name": "KAMIQ",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SELECTION 1.0 TSI",
+            "engine_size": "1.0",
+            "vehicle_type": "ICE",
+            "list_price": 245900.0,
+            "final_price": 195900.0
+          }
+        ]
+      },
+      {
+        "brand": "Skoda",
+        "model_name": "OCTAVIA",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "SELECTION 1.5 TSI",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 260900.0,
+            "final_price": 205900.0
+          },
+          {
+            "variant_name": "RS 2.0 TSI",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 350900.0,
+            "final_price": 285900.0
+          }
+        ]
+      },
+      {
+        "brand": "Skoda",
+        "model_name": "OCTAVIA COMBI",
+        "category": "WAGON",
+        "variants": [
+          {
+            "variant_name": "COMBI SELECTION 1.5 TSI",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 270900.0,
+            "final_price": 215900.0
+          },
+          {
+            "variant_name": "COMBI RS 2.0 TSI",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 358900.0,
+            "final_price": 295900.0
+          }
+        ]
+      },
+      {
+        "brand": "Skoda",
+        "model_name": "KODIAQ",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SELECTION 1.5 TSI",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 306900.0,
+            "final_price": 242900.0
+          },
+          {
+            "variant_name": "SPORTLINE 1.5 TSI",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 318900.0,
+            "final_price": 257900.0
+          },
+          {
+            "variant_name": "RS 2.0 TSI",
+            "engine_size": "2.0",
+            "vehicle_type": "ICE",
+            "list_price": 354900.0,
+            "final_price": 297900.0
+          }
+        ]
+      },
+      {
+        "brand": "Skoda",
+        "model_name": "SUPERB COMBI",
+        "category": "WAGON",
+        "variants": [
+          {
+            "variant_name": "LAURIN & KLEMENT 1.5 TSI",
+            "engine_size": "1.5",
+            "vehicle_type": "ICE",
+            "list_price": 316900.0,
+            "final_price": 252900.0
+          }
+        ]
+      },
+      {
+        "brand": "Skoda",
+        "model_name": "FL ENYAQ 60",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "63kWh SPORTLINE ADVANCED 150kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 274900.0,
+            "final_price": 267900.0
+          }
+        ]
+      },
+      {
+        "brand": "Skoda",
+        "model_name": "ELROQ 60",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "63kWh PLUS 150kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 256900.0,
+            "final_price": 237900.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

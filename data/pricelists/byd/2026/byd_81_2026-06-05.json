@@ -1,0 +1,228 @@
+{
+  "metadata": {
+    "source_filename": "dealer_81_2026-06-05.pdf",
+    "extraction_date": "2026-06-06",
+    "dealer_id": "81",
+    "pdf_date": "2026-06-05",
+    "brand_folder": "byd",
+    "year_folder": 2026,
+    "pdf_size_kb": 3117.052734375,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 3149,
+      "output_tokens": 1892,
+      "total_tokens": 5041,
+      "input_cost_usd": 0.0047235,
+      "output_cost_usd": 0.017028,
+      "total_cost_usd": 0.0217515,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "BYD",
+        "model_name": "ATTO 2",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 243888.0,
+            "final_price": 176888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "DOLPHIN",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 254888.0,
+            "final_price": 187888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "ATTO 3",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "STANDARD",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 253888.0,
+            "final_price": 186888.0
+          },
+          {
+            "variant_name": "CARBON EDGE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 257888.0,
+            "final_price": 190888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "SEAL 6 EV",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 248888.0,
+            "final_price": 181888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "SEAL",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "DYNAMIC",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 274888.0,
+            "final_price": 207888.0
+          },
+          {
+            "variant_name": "2025 PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 287888.0,
+            "final_price": 220388.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "SEALION 7",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "DYNAMIC",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 280888.0,
+            "final_price": 213888.0
+          },
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 286888.0,
+            "final_price": 219888.0
+          },
+          {
+            "variant_name": "PERFORMANCE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 318888.0,
+            "final_price": 251888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "M6",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "STANDARD",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 262888.0,
+            "final_price": 196388.0
+          },
+          {
+            "variant_name": "CARBON EDGE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 265888.0,
+            "final_price": 199388.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "E6",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "STANDARD",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 260888.0,
+            "final_price": 193888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "SEALION 6 DM-i",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "STANDARD",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 277888.0,
+            "final_price": 210888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "SEAL 6 DM-i TOURING",
+        "category": "WAGON",
+        "variants": [
+          {
+            "variant_name": "DYNAMIC",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 265388.0,
+            "final_price": 198388.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "SEAL 6 DM-i",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "DYNAMIC",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 261388.0,
+            "final_price": 194388.0
+          },
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 269388.0,
+            "final_price": 202388.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Grouped 'BYD SEAL' and '2025 BYD SEAL' under a single 'SEAL' model entry.",
+    "Grouped 'BYD SEALION 7' variants from Category A and Category B pages under a single 'SEALION 7' model entry.",
+    "Classified 'SEAL 6 DM-i TOURING' as WAGON due to the 'Touring' designation.",
+    "Extracted final prices from the discounted 'Excite Guaranteed COE' row."
+  ]
+}

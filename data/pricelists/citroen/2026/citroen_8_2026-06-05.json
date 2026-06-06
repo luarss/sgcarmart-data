@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "source_filename": "dealer_8_2026-06-05.pdf",
+    "extraction_date": "2026-06-06",
+    "dealer_id": "8",
+    "pdf_date": "2026-06-05",
+    "brand_folder": "citroen",
+    "year_folder": 2026,
+    "pdf_size_kb": 2401.392578125,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 3149,
+      "output_tokens": 385,
+      "total_tokens": 3534,
+      "input_cost_usd": 0.0047235,
+      "output_cost_usd": 0.0034649999999999998,
+      "total_cost_usd": 0.0081885,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Citro\u00ebn",
+        "model_name": "\u00eb-C4X",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "SHINE PLUS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 98999.0,
+            "final_price": 74999.0
+          }
+        ]
+      },
+      {
+        "brand": "Citro\u00ebn",
+        "model_name": "\u00eb-Berlingo",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 139000.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

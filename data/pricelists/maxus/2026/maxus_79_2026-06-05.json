@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "source_filename": "dealer_79_2026-06-05.pdf",
+    "extraction_date": "2026-06-06",
+    "dealer_id": "79",
+    "pdf_date": "2026-06-05",
+    "brand_folder": "maxus",
+    "year_folder": 2026,
+    "pdf_size_kb": 2083.2880859375,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 2085,
+      "output_tokens": 502,
+      "total_tokens": 2587,
+      "input_cost_usd": 0.0031275,
+      "output_cost_usd": 0.0045179999999999994,
+      "total_cost_usd": 0.0076454999999999995,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Maxus",
+        "model_name": "MIFA 7",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Elite",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 255999.0,
+            "final_price": 209999.0
+          }
+        ]
+      },
+      {
+        "brand": "Maxus",
+        "model_name": "MIFA 9",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Luxury",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 318999.0,
+            "final_price": 272999.0
+          },
+          {
+            "variant_name": "Premium",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 333999.0,
+            "final_price": 287999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Used Platinum Package price as the final_price since it represents the Guaranteed COE price.",
+    "The PDF date is listed as 5 June - 17 June 2026."
+  ]
+}

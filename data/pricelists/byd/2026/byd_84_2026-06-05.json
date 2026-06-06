@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "source_filename": "dealer_84_2026-06-05.pdf",
+    "extraction_date": "2026-06-06",
+    "dealer_id": "84",
+    "pdf_date": "2026-06-05",
+    "brand_folder": "byd",
+    "year_folder": 2026,
+    "pdf_size_kb": 227.658203125,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 1553,
+      "output_tokens": 321,
+      "total_tokens": 1874,
+      "input_cost_usd": 0.0023295,
+      "output_cost_usd": 0.002889,
+      "total_cost_usd": 0.0052185,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "BYD",
+        "model_name": "eT3",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 64800.0,
+            "final_price": 43800.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "The pricelist is valid from 5th Jun - 15th Jun 2026.",
+    "The vehicle is classified as a VAN based on the text 'Singapore's Best-Selling Electric Van'."
+  ]
+}

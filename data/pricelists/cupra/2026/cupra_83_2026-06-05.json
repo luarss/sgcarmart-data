@@ -1,0 +1,101 @@
+{
+  "metadata": {
+    "source_filename": "dealer_83_2026-06-05.pdf",
+    "extraction_date": "2026-06-06",
+    "dealer_id": "83",
+    "pdf_date": "2026-06-05",
+    "brand_folder": "cupra",
+    "year_folder": 2026,
+    "pdf_size_kb": 479.1796875,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 2085,
+      "output_tokens": 867,
+      "total_tokens": 2952,
+      "input_cost_usd": 0.0031275,
+      "output_cost_usd": 0.007803,
+      "total_cost_usd": 0.0109305,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "CUPRA",
+        "model_name": "LEON",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "LEON 1.5 eTSI 110kW mHEV DSG",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 302900.0,
+            "final_price": 202900.0
+          }
+        ]
+      },
+      {
+        "brand": "CUPRA",
+        "model_name": "TERRAMAR",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "TERRAMAR 1.5 eTSI 110kW mHEV DSG",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 330900.0,
+            "final_price": 232900.0
+          }
+        ]
+      },
+      {
+        "brand": "CUPRA",
+        "model_name": "BORN",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "BORN eBoost 59kWh 170kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 305900.0,
+            "final_price": 197900.0
+          },
+          {
+            "variant_name": "BORN VZ 79kWh 240kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "CUPRA",
+        "model_name": "TAVASCAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "TAVASCAN ENDURANCE 77kWh 210kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 312900.0,
+            "final_price": 229900.0
+          },
+          {
+            "variant_name": "TAVASCAN VZ 77kWh 250kW",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Classified LEON and BORN as HATCHBACK, TERRAMAR and TAVASCAN as SUV.",
+    "mHEV (Mild Hybrid) variants classified as Hybrid.",
+    "Sold out variants (BORN VZ and TAVASCAN VZ) have null prices."
+  ]
+}
