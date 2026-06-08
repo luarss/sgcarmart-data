@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "source_filename": "dealer_14_2026-06-08.pdf",
+    "extraction_date": "2026-06-08",
+    "dealer_id": "14",
+    "pdf_date": "2026-06-08",
+    "brand_folder": "hyundai",
+    "year_folder": 2026,
+    "pdf_size_kb": 2342.740234375,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 2085,
+      "output_tokens": 1418,
+      "total_tokens": 3503,
+      "input_cost_usd": 0.0031275,
+      "output_cost_usd": 0.012761999999999999,
+      "total_cost_usd": 0.0158895,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Hyundai",
+        "model_name": "AVANTE",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "S",
+            "engine_size": "1.6",
+            "vehicle_type": "Hybrid",
+            "list_price": 254999.0,
+            "final_price": 204999.0
+          },
+          {
+            "variant_name": "Elite",
+            "engine_size": "1.6",
+            "vehicle_type": "Hybrid",
+            "list_price": 260999.0,
+            "final_price": 210999.0
+          }
+        ]
+      },
+      {
+        "brand": "Hyundai",
+        "model_name": "KONA",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "S",
+            "engine_size": "1.6",
+            "vehicle_type": "Hybrid",
+            "list_price": 257999.0,
+            "final_price": 207999.0
+          },
+          {
+            "variant_name": "Elite",
+            "engine_size": "1.6",
+            "vehicle_type": "Hybrid",
+            "list_price": 267999.0,
+            "final_price": 217999.0
+          }
+        ]
+      },
+      {
+        "brand": "Hyundai",
+        "model_name": "TUCSON",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": "1.6",
+            "vehicle_type": "Hybrid",
+            "list_price": 318499.0,
+            "final_price": 265999.0
+          },
+          {
+            "variant_name": "N-Line",
+            "engine_size": "1.6",
+            "vehicle_type": "Hybrid",
+            "list_price": 332499.0,
+            "final_price": 279999.0
+          }
+        ]
+      },
+      {
+        "brand": "Hyundai",
+        "model_name": "SANTA FE",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": "1.6",
+            "vehicle_type": "Hybrid",
+            "list_price": 327499.0,
+            "final_price": 274999.0
+          },
+          {
+            "variant_name": "Calligraphy",
+            "engine_size": "1.6",
+            "vehicle_type": "Hybrid",
+            "list_price": 341499.0,
+            "final_price": 288999.0
+          },
+          {
+            "variant_name": "Calligraphy (6-Seater)",
+            "engine_size": "1.6",
+            "vehicle_type": "Hybrid",
+            "list_price": 343499.0,
+            "final_price": 290999.0
+          }
+        ]
+      },
+      {
+        "brand": "Hyundai",
+        "model_name": "IONIQ 5",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Prestige",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 271388.0,
+            "final_price": 228888.0
+          }
+        ]
+      },
+      {
+        "brand": "Hyundai",
+        "model_name": "IONIQ 5 N",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "2025 Edition",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 470388.0,
+            "final_price": 387888.0
+          }
+        ]
+      },
+      {
+        "brand": "Hyundai",
+        "model_name": "IONIQ 9",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 394499.0,
+            "final_price": 311999.0
+          },
+          {
+            "variant_name": "Calligraphy",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 423499.0,
+            "final_price": 340999.0
+          },
+          {
+            "variant_name": "Calligraphy (6-Seater)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 429499.0,
+            "final_price": 346999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

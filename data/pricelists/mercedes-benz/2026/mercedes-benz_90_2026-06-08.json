@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "source_filename": "dealer_90_2026-06-08.pdf",
+    "extraction_date": "2026-06-08",
+    "dealer_id": "90",
+    "pdf_date": "2026-06-08",
+    "brand_folder": "mercedes-benz",
+    "year_folder": 2026,
+    "pdf_size_kb": 1152.2431640625,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 2085,
+      "output_tokens": 783,
+      "total_tokens": 2868,
+      "input_cost_usd": 0.0031275,
+      "output_cost_usd": 0.0070469999999999994,
+      "total_cost_usd": 0.0101745,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "Vito",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "114 CDI Van (Long) PRO Version 5-Doors",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 104988.0,
+            "final_price": 193988.0
+          },
+          {
+            "variant_name": "114 CDI Van (Long) PRO Version 6-Doors",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 106988.0,
+            "final_price": 195988.0
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "eVito",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "112 Van (Long)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 87988.0,
+            "final_price": 176988.0
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "eCitan",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 67988.0,
+            "final_price": 156988.0
+          }
+        ]
+      },
+      {
+        "brand": "Mercedes-Benz",
+        "model_name": "V-Class",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "V 250 CDI Coach (Extra-Long)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 197988.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "V-Class V 250 CDI Coach final prices are listed as TBA (To Be Announced), so final_price is set to null.",
+    "Guaranteed COE (3 rounds bidding) was used as the final_price.",
+    "eCitan variant name was set to 'Standard' as no specific variant name was provided on the sheet."
+  ]
+}
