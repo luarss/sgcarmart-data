@@ -1,0 +1,106 @@
+{
+  "metadata": {
+    "source_filename": "dealer_102_2026-06-08.pdf",
+    "extraction_date": "2026-06-09",
+    "dealer_id": "102",
+    "pdf_date": "2026-06-08",
+    "brand_folder": "omoda",
+    "year_folder": 2026,
+    "pdf_size_kb": 816.033203125,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 1553,
+      "output_tokens": 862,
+      "total_tokens": 2415,
+      "input_cost_usd": 0.0023295,
+      "output_cost_usd": 0.007758,
+      "total_cost_usd": 0.0100875,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "OMODA",
+        "model_name": "E5",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "99kW Cat A",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 222999.0,
+            "final_price": 174999.0
+          }
+        ]
+      },
+      {
+        "brand": "JAECOO",
+        "model_name": "6",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "BEV 99kW Cat A",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 232999.0,
+            "final_price": 182999.0
+          },
+          {
+            "variant_name": "BEV 205kW Cat B",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 245499.0,
+            "final_price": 219999.0
+          }
+        ]
+      },
+      {
+        "brand": "JAECOO",
+        "model_name": "5",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "BEV 155kW Cat B",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 229999.0,
+            "final_price": 179999.0
+          }
+        ]
+      },
+      {
+        "brand": "JAECOO",
+        "model_name": "7",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "PHEV 255kW Cat B",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 237999.0,
+            "final_price": 219999.0
+          }
+        ]
+      },
+      {
+        "brand": "JAECOO",
+        "model_name": "8",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "PHEV 315kW Cat B",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 269999.0,
+            "final_price": 249999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Pricelist date is listed as 8 June 2026 to 14 June 2026. Final prices extracted are based on the 4 Bid Guaranteed COE package."
+  ]
+}

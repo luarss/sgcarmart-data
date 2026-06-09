@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "source_filename": "dealer_21_2026-06-08.pdf",
+    "extraction_date": "2026-06-09",
+    "dealer_id": "21",
+    "pdf_date": "2026-06-08",
+    "brand_folder": "lexus",
+    "year_folder": 2026,
+    "pdf_size_kb": 994.783203125,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 3149,
+      "output_tokens": 1745,
+      "total_tokens": 4894,
+      "input_cost_usd": 0.0047235,
+      "output_cost_usd": 0.015705,
+      "total_cost_usd": 0.020428500000000002,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Lexus",
+        "model_name": "ES",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "300h EXECUTIVE",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 372800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "300h LUXURY",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 392800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "350e PURE ELECTRIC",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 405800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "LBX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "ELEGANT",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 274800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "COOL",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 279800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "UX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "300h LUXURY",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": 328800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "NX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "350h EXECUTIVE",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 378800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "350h LUXURY",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 403800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "450h+ F SPORT (PLUG-IN HYBRID)",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 463800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "RX",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "350h EXECUTIVE",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 459800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "350h LUXURY",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 491800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "450h+ LUXURY (PLUG-IN HYBRID)",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 539800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "500h F SPORT",
+            "engine_size": "2.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 559800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "LS",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "500h LUXURY",
+            "engine_size": "3.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 835800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "LC",
+        "category": "SPORTS",
+        "variants": [
+          {
+            "variant_name": "500 COUPE",
+            "engine_size": "5.0",
+            "vehicle_type": "ICE",
+            "list_price": 805800.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Lexus",
+        "model_name": "LM",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "350h LUXURY",
+            "engine_size": "2.5",
+            "vehicle_type": "Hybrid",
+            "list_price": 716800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "500h ULTRA LUXURY",
+            "engine_size": "2.4",
+            "vehicle_type": "Hybrid",
+            "list_price": 863800.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Grouped ES 300h (Hybrid) and ES 350e (Electric) under the single model 'ES'.",
+    "Corrected a typo in the PDF header for RX 350h which read 'RX 350h | 2,487cc LBX | 1,490 cc'.",
+    "Mapped 'List Price After VES' to list_price as no separate COE rebate/final price columns were present."
+  ]
+}
