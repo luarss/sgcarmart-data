@@ -1,0 +1,47 @@
+{
+  "ic_preowned": {
+    "name": "IC Preowned",
+    "search_query": "IC Preowned Singapore used car",
+    "place_id": null
+  },
+  "eurokars": {
+    "name": "Eurokars Preowned",
+    "search_query": "Eurokars Preowned Singapore",
+    "place_id": null
+  },
+  "das_weltauto": {
+    "name": "Das WeltAuto Singapore",
+    "search_query": "Das WeltAuto Singapore Volkswagen certified used car",
+    "place_id": null
+  },
+  "toyota": {
+    "name": "Borneo Motors Toyota Pre-Owned",
+    "search_query": "Borneo Motors Toyota pre-owned Singapore",
+    "place_id": null
+  },
+  "dickson": {
+    "name": "Dickson Group",
+    "search_query": "Dickson Group Singapore used car",
+    "place_id": null
+  },
+  "carchoice": {
+    "name": "Car Choice Singapore",
+    "search_query": "Car Choice certified pre-owned Singapore",
+    "place_id": null
+  },
+  "sim_mee_motors": {
+    "name": "Auto Selection by Sime Motors",
+    "search_query": "Auto Selection Sime Motors Singapore used car",
+    "place_id": null
+  },
+  "cycle_carriage": {
+    "name": "Cycle & Carriage Republic Auto",
+    "search_query": "Cycle Carriage Republic Auto Singapore",
+    "place_id": null
+  },
+  "skoda": {
+    "name": "Skoda Das WeltAuto Singapore",
+    "search_query": "Skoda Das WeltAuto Singapore",
+    "place_id": null
+  }
+}
