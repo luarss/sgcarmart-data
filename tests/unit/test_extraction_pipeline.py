@@ -1,7 +1,10 @@
 import pytest
 from pathlib import Path
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import Mock, patch
 from sgcarmart.core.downloader import _attempt_extraction, _setup_filepath
+
+FALLBACK_PATH = "analysis.pdf_extractor.extract_pdf_with_fallback"
+SAVE_PATH = "analysis.pdf_extractor.save_extraction"
 
 
 class TestSetupFilepath:
@@ -38,17 +41,17 @@ class TestSetupFilepath:
 
 @pytest.mark.unit
 class TestAttemptExtraction:
-    @patch('analysis.pdf_extractor.GeminiPDFExtractor')
-    def test_extraction_success(self, mock_extractor_class, temp_output_dir):
+    @patch(SAVE_PATH)
+    @patch(FALLBACK_PATH)
+    def test_extraction_success(self, mock_fallback, mock_save, temp_output_dir):
         pdf_path = Path(temp_output_dir) / "toyota" / "2025" / "dealer_44_2025-01-15.pdf"
         pdf_path.parent.mkdir(parents=True, exist_ok=True)
         pdf_path.write_bytes(b'%PDF-1.4\n')
 
-        mock_extractor = Mock()
         mock_extraction = Mock()
-        mock_extractor.extract_from_pdf.return_value = mock_extraction
-        mock_extractor.save_extraction.return_value = str(pdf_path.parent / "toyota_44_2025-01-15.json")
-        mock_extractor_class.return_value = mock_extractor
+        mock_fallback.return_value = mock_extraction
+        expected_json = pdf_path.parent / "toyota_44_2025-01-15.json"
+        mock_save.return_value = expected_json
 
         status, output_path = _attempt_extraction(
             str(pdf_path), "Toyota", "44", "2025-01-15", "gemini-2.5-flash"
@@ -57,8 +60,8 @@ class TestAttemptExtraction:
         assert status == "success"
         assert output_path is not None
         assert "toyota_44_2025-01-15.json" in output_path
-        mock_extractor.extract_from_pdf.assert_called_once()
-        mock_extractor.save_extraction.assert_called_once()
+        mock_fallback.assert_called_once()
+        mock_save.assert_called_once()
 
     def test_extraction_skipped_when_json_exists(self, temp_output_dir):
         pdf_path = Path(temp_output_dir) / "toyota" / "2025" / "dealer_44_2025-01-15.pdf"
@@ -75,26 +78,23 @@ class TestAttemptExtraction:
         assert status == "skipped"
         assert output_path is None
 
-    @patch('analysis.pdf_extractor.GeminiPDFExtractor')
-    def test_extraction_with_different_models(self, mock_extractor_class, temp_output_dir):
+    @patch(SAVE_PATH)
+    @patch(FALLBACK_PATH)
+    def test_extraction_with_different_models(self, mock_fallback, mock_save, temp_output_dir):
         pdf_path = Path(temp_output_dir) / "bmw" / "2025" / "dealer_4_2025-01-15.pdf"
         pdf_path.parent.mkdir(parents=True, exist_ok=True)
         pdf_path.write_bytes(b'%PDF-1.4\n')
 
-        mock_extractor = Mock()
         mock_extraction = Mock()
-        mock_extractor.extract_from_pdf.return_value = mock_extraction
-        mock_extractor.save_extraction.return_value = str(pdf_path.parent / "bmw_4_2025-01-15.json")
-        mock_extractor_class.return_value = mock_extractor
+        mock_fallback.return_value = mock_extraction
+        mock_save.return_value = pdf_path.parent / "bmw_4_2025-01-15.json"
 
-        status, output_path = _attempt_extraction(
+        status, _ = _attempt_extraction(
             str(pdf_path), "BMW", "4", "2025-01-15", "gemini-2.5-flash"
         )
 
         assert status == "success"
-        mock_extractor.extract_from_pdf.assert_called_once_with(
-            pdf_path, model="gemini-2.5-flash"
-        )
+        mock_fallback.assert_called_once_with(pdf_path, model="gemini-2.5-flash")
 
     def test_extraction_normalizes_brand_name(self, temp_output_dir):
         pdf_path = Path(temp_output_dir) / "mercedes-benz" / "2025" / "dealer_10_2025-01-15.pdf"

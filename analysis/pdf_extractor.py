@@ -154,7 +154,7 @@ def save_extraction(
 
 class GeminiPDFExtractor:
     DEFAULT_MODEL: ClassVar[str] = "gemini-3.5-flash"
-    FALLBACK_MODEL: ClassVar[str] = "gemini-2.5-flash"
+    FALLBACK_MODEL: ClassVar[str] = "gemini-2.5-flash-lite"
 
     PRICING: ClassVar = {
         "gemini-3.5-flash": {"input_per_million": 1.50, "output_per_million": 9.00, "is_free": False},
@@ -340,11 +340,36 @@ class DeepSeekPDFExtractor:
         )
 
     def extract_text_from_pdf(self, pdf_path: Path) -> str:
+        import re
+
         from pypdf import PdfReader
 
         reader = PdfReader(str(pdf_path))
         pages = [page.extract_text() or "" for page in reader.pages]
-        return "\n\n".join(p for p in pages if p.strip())
+        text = "\n\n".join(p for p in pages if p.strip())
+
+        # Detect custom-font PDFs where pypdf emits glyph IDs (/0 /1 /2...) instead of text.
+        # These require vision-based extraction (Gemini) and cannot be decoded as plain text.
+        tokens = text.split()
+        if tokens:
+            glyph_refs = sum(1 for t in tokens if re.fullmatch(r"/\d+", t))
+            if glyph_refs / len(tokens) > 0.4:
+                raise ValueError(
+                    f"PDF uses custom font encoding — pypdf extracted glyph IDs only "
+                    f"({glyph_refs}/{len(tokens)} tokens are glyph refs). "
+                    "Requires vision-based extraction (Gemini), cannot use text-only fallback."
+                )
+
+        # Detect image-based PDFs that only contain a wrapper/template (e.g. TCPDF shell).
+        # Real pricelists have dozens of model names, prices, and numbers; a sub-300 char
+        # extraction means the actual content is embedded as images, not selectable text.
+        if len(text.strip()) < 300:
+            raise ValueError(
+                f"PDF appears image-based — only {len(text.strip())} chars of text extracted "
+                f"({text.strip()!r:.80}). Requires vision-based extraction (Gemini)."
+            )
+
+        return text
 
     def extract_from_pdf(
         self, pdf_path: Path, model: str | None = None, temperature: float = 0.1
@@ -423,32 +448,169 @@ PDF TEXT:
         return save_extraction(extraction, output_dir, format)
 
 
+class MimoPDFExtractor:
+    DEFAULT_MODEL: ClassVar[str] = "mimo-v2.5"
+    BASE_URL: ClassVar[str] = "https://api.xiaomimimo.com/v1"
+    DPI: ClassVar[int] = 150
+    MAX_TOKENS: ClassVar[int] = 8000
+
+    # https://mimo.mi.com/docs/en-US/price/pay-as-you-go (overseas pricing, updated 2026-05-27)
+    PRICING: ClassVar = {
+        "mimo-v2.5": {"input_per_million": 0.14, "output_per_million": 0.28, "is_free": False},
+        "mimo-v2.5-pro": {"input_per_million": 0.435, "output_per_million": 0.87, "is_free": False},
+    }
+
+    def __init__(self, api_key: str | None = None):
+        self.api_key = api_key or os.getenv("XIAOMI_API_KEY")
+        if not self.api_key:
+            raise ValueError("XIAOMI_API_KEY not found in environment or constructor")
+        self.client = OpenAI(api_key=self.api_key, base_url=self.BASE_URL)
+
+    def calculate_cost(self, model: str, input_tokens: int, output_tokens: int) -> APIUsageStats:
+        pricing = self.PRICING.get(model, self.PRICING[self.DEFAULT_MODEL])
+        input_cost = (input_tokens / 1_000_000) * pricing["input_per_million"]
+        output_cost = (output_tokens / 1_000_000) * pricing["output_per_million"]
+        total_cost = input_cost + output_cost
+        return APIUsageStats(
+            model_name=model,
+            input_tokens=input_tokens,
+            output_tokens=output_tokens,
+            total_tokens=input_tokens + output_tokens,
+            input_cost_usd=input_cost,
+            output_cost_usd=output_cost,
+            total_cost_usd=total_cost,
+            is_free_tier=pricing.get("is_free", False),
+        )
+
+    def render_pages(self, pdf_path: Path) -> list[str]:
+        import fitz
+
+        doc = fitz.open(str(pdf_path))
+        return [
+            base64.standard_b64encode(page.get_pixmap(dpi=self.DPI).tobytes("png")).decode()
+            for page in doc
+        ]
+
+    def extract_from_pdf(
+        self, pdf_path: Path, model: str | None = None, temperature: float = 0.1
+    ) -> SGCarMartPriceListExtraction:
+        if model is None:
+            model = self.DEFAULT_MODEL
+        pdf_path = Path(pdf_path)
+        if not pdf_path.exists():
+            raise FileNotFoundError(f"PDF not found: {pdf_path}")
+
+        print(f"Rendering PDF pages to images (Mimo fallback): {pdf_path.name}...")
+        images = self.render_pages(pdf_path)
+        print(f"Rendered {len(images)} page(s)")
+
+        metadata_dict = _extract_metadata_from_path(pdf_path)
+
+        schema = SGCarMartPriceListExtraction.model_json_schema()
+        pricelist_schema = json.dumps(
+            {k: schema[k] for k in ("properties", "required", "$defs") if k in schema}, indent=2
+        )
+
+        content = [
+            {
+                "type": "text",
+                "text": f"""{_create_extraction_prompt()}
+
+Output ONLY valid JSON with these top-level fields: "pricelist" (with "models" array), \
+"extraction_confidence" ("high"/"medium"/"low"), and optionally "extraction_notes" (array of strings).
+Do NOT include "metadata" — it will be added separately.
+
+Schema reference:
+{pricelist_schema}""",
+            }
+        ]
+        for img_b64 in images:
+            content.append({"type": "image_url", "image_url": {"url": f"data:image/png;base64,{img_b64}"}})
+
+        print(f"Calling Mimo API (model: {model})...")
+        response = self.client.chat.completions.create(
+            model=model,
+            messages=[{"role": "user", "content": content}],
+            response_format={"type": "json_object"},
+            max_tokens=self.MAX_TOKENS,
+            temperature=temperature,
+        )
+
+        response_content = response.choices[0].message.content
+        if not response_content:
+            raise ValueError("Empty response from Mimo API (reasoning may have exhausted max_tokens)")
+
+        extraction_data = json.loads(response_content)
+
+        usage = response.usage
+        if not usage:
+            raise ValueError("No usage data in Mimo response")
+
+        api_usage = self.calculate_cost(model, usage.prompt_tokens, usage.completion_tokens)
+        metadata_dict["api_usage"] = api_usage.model_dump()
+        extraction_data["metadata"] = metadata_dict
+
+        try:
+            extraction = SGCarMartPriceListExtraction(**extraction_data)
+        except ValidationError as e:
+            print(f"✗ Mimo validation error: {e}")
+            raise
+
+        reasoning_tokens = (usage.completion_tokens_details.reasoning_tokens or 0) if usage.completion_tokens_details else 0
+        print(f"✓ Mimo extraction successful! Confidence: {extraction.extraction_confidence}")
+        print(f"✓ Extracted {len(extraction.pricelist.models)} model(s)")
+        print(
+            f"✓ Tokens: {api_usage.total_tokens:,} "
+            f"(in: {api_usage.input_tokens:,}, out: {api_usage.output_tokens:,}, reasoning: {reasoning_tokens:,})"
+        )
+        print(f"✓ Cost: ${api_usage.total_cost_usd:.6f} USD")
+
+        return extraction
+
+    def save_extraction(
+        self, extraction: SGCarMartPriceListExtraction, output_dir: Path | None = None, format: str = "json"
+    ) -> Path:
+        return save_extraction(extraction, output_dir, format)
+
+
 def extract_pdf_with_fallback(
     pdf_path: Path,
     model: str | None = None,
     temperature: float = 0.1,
 ) -> SGCarMartPriceListExtraction:
-    """Try Gemini first; fall back to DeepSeek on any failure."""
+    """Try Gemini first; fall back to DeepSeek (text) then Mimo (vision) on failure."""
     pdf_path = Path(pdf_path)
     gemini_key = os.getenv("GEMINI_API_KEY")
     deepseek_key = os.getenv("DEEPSEEK_API_KEY")
+    xiaomi_key = os.getenv("XIAOMI_API_KEY")
 
-    if not gemini_key and not deepseek_key:
-        raise RuntimeError("No API keys available — set GEMINI_API_KEY or DEEPSEEK_API_KEY")
+    if not gemini_key and not deepseek_key and not xiaomi_key:
+        raise RuntimeError("No API keys available — set GEMINI_API_KEY, DEEPSEEK_API_KEY, or XIAOMI_API_KEY")
 
     if gemini_key:
         try:
             extractor = GeminiPDFExtractor(api_key=gemini_key)
             return extractor.extract_from_pdf(pdf_path, model=model, temperature=temperature)
         except Exception as e:
-            if deepseek_key:
-                print(f"⚠ Gemini failed: {e}")
-                print("↻ Falling back to DeepSeek...")
-            else:
-                raise
+            print(f"⚠ Gemini failed: {e}")
 
-    extractor = DeepSeekPDFExtractor(api_key=deepseek_key)
-    return extractor.extract_from_pdf(pdf_path, temperature=temperature)
+    # DeepSeek: fast, cheap, text-only. Raises ValueError for image-based/garbled PDFs.
+    if deepseek_key:
+        try:
+            extractor = DeepSeekPDFExtractor(api_key=deepseek_key)
+            return extractor.extract_from_pdf(pdf_path, temperature=temperature)
+        except ValueError as e:
+            print(f"⚠ DeepSeek text extraction not viable: {e}")
+            print("↻ Falling back to Mimo (vision)...")
+        except Exception as e:
+            print(f"⚠ DeepSeek failed: {e}")
+            print("↻ Falling back to Mimo (vision)...")
+
+    if xiaomi_key:
+        extractor = MimoPDFExtractor(api_key=xiaomi_key)
+        return extractor.extract_from_pdf(pdf_path, temperature=temperature)
+
+    raise RuntimeError("All extractors exhausted — no API keys available for remaining fallbacks")
 
 
 def main():
