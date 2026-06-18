@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "source_filename": "dealer_94_2026-06-18.pdf",
+    "extraction_date": "2026-06-18",
+    "dealer_id": "94",
+    "pdf_date": "2026-06-18",
+    "brand_folder": "bmw",
+    "year_folder": 2026,
+    "pdf_size_kb": 93.7900390625,
+    "api_usage": {
+      "model_name": "deepseek-v4-flash",
+      "input_tokens": 9094,
+      "output_tokens": 363,
+      "total_tokens": 9457,
+      "input_cost_usd": 0.0006365800000000001,
+      "output_cost_usd": 0.00010164000000000001,
+      "total_cost_usd": 0.0007382200000000002,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": []
+  },
+  "extraction_confidence": "low",
+  "extraction_notes": [
+    "The PDF text is garbled/unreadable, likely due to corrupted extraction or image-based content. Unable to identify any car models, variants, or prices. No data extracted."
+  ]
+}

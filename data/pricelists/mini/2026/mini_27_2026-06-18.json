@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "source_filename": "dealer_27_2026-06-18.pdf",
+    "extraction_date": "2026-06-18",
+    "dealer_id": "27",
+    "pdf_date": "2026-06-18",
+    "brand_folder": "mini",
+    "year_folder": 2026,
+    "pdf_size_kb": 337.796875,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 1553,
+      "output_tokens": 904,
+      "total_tokens": 2457,
+      "input_cost_usd": 0.0023295,
+      "output_cost_usd": 0.008136,
+      "total_cost_usd": 0.010465499999999999,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "MINI",
+        "model_name": "COOPER",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "COOPER C (3-DOOR)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 276888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "COOPER C (5-DOOR)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 278888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "COOPER S (3-DOOR)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 295888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "JCW COOPER (3-DOOR)",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 311888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "COOPER E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 252888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "COOPER SE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 265888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "JCW COOPER E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 285888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "COOPER CONVERTIBLE",
+        "category": "CONVERTIBLE",
+        "variants": [
+          {
+            "variant_name": "COOPER S CONVERTIBLE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 321888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "JCW COOPER CONVERTIBLE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 341888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "ACEMAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "ACEMAN E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 260888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "ACEMAN SE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 272888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "JCW ACEMAN E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 295888.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "MINI",
+        "model_name": "COUNTRYMAN",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "COUNTRYMAN ONE",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 289888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "COUNTRYMAN S ALL4",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 307888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "JCW COUNTRYMAN ALL4",
+            "engine_size": null,
+            "vehicle_type": "ICE",
+            "list_price": 343888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "COUNTRYMAN E",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 282888.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "COUNTRYMAN SE ALL4",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 300888.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Combined ICE and Electric variants under single model entries for MINI COOPER and MINI COUNTRYMAN as per instructions.",
+    "Only Retail Price was available, mapped to list_price as per instructions."
+  ]
+}

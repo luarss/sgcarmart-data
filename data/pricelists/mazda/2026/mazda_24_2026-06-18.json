@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "source_filename": "dealer_24_2026-06-18.pdf",
+    "extraction_date": "2026-06-18",
+    "dealer_id": "24",
+    "pdf_date": "2026-06-18",
+    "brand_folder": "mazda",
+    "year_folder": 2026,
+    "pdf_size_kb": 3542.9169921875,
+    "api_usage": {
+      "model_name": "deepseek-v4-flash",
+      "input_tokens": 23712,
+      "output_tokens": 256,
+      "total_tokens": 23968,
+      "input_cost_usd": 0.00165984,
+      "output_cost_usd": 7.168e-05,
+      "total_cost_usd": 0.00173152,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": []
+  },
+  "extraction_confidence": "low",
+  "extraction_notes": [
+    "The PDF text is garbled and contains no readable car model or pricing information. Extraction not possible."
+  ]
+}

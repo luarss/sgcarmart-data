@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "source_filename": "dealer_112_2026-06-18.pdf",
+    "extraction_date": "2026-06-18",
+    "dealer_id": "112",
+    "pdf_date": "2026-06-18",
+    "brand_folder": "xpeng",
+    "year_folder": 2026,
+    "pdf_size_kb": 1687.7421875,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 2617,
+      "output_tokens": 704,
+      "total_tokens": 3321,
+      "input_cost_usd": 0.0039255,
+      "output_cost_usd": 0.006336,
+      "total_cost_usd": 0.0102615,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "XPENG",
+        "model_name": "G6",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Air RWD Standard Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 222999.0,
+            "final_price": 211999.0
+          },
+          {
+            "variant_name": "Pro RWD Long Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 240999.0,
+            "final_price": 226999.0
+          },
+          {
+            "variant_name": "Pro AWD Performance",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 269999.0,
+            "final_price": 255999.0
+          }
+        ]
+      },
+      {
+        "brand": "XPENG",
+        "model_name": "X9",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Standard Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 355999.0,
+            "final_price": 336999.0
+          },
+          {
+            "variant_name": "Long Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 366999.0,
+            "final_price": 347999.0
+          },
+          {
+            "variant_name": "Grand Seat",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 375999.0,
+            "final_price": 347999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "XPENG is an all-electric brand, so all vehicles are classified as Electric.",
+    "X9 variants from Page 2 and Page 3 have been grouped under a single X9 model entry.",
+    "Effective Retail Price was used as the final_price."
+  ]
+}

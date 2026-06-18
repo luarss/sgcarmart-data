@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "source_filename": "dealer_88_2026-06-18.pdf",
+    "extraction_date": "2026-06-18",
+    "dealer_id": "88",
+    "pdf_date": "2026-06-18",
+    "brand_folder": "polestar",
+    "year_folder": 2026,
+    "pdf_size_kb": 29.921875,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 1553,
+      "output_tokens": 644,
+      "total_tokens": 2197,
+      "input_cost_usd": 0.0023295,
+      "output_cost_usd": 0.005796000000000001,
+      "total_cost_usd": 0.0081255,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Polestar",
+        "model_name": "Polestar 2",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Electric Long Range Dual Motor Performance Pack 82 kWh(A)",
+            "engine_size": "82 kWh",
+            "vehicle_type": "Electric",
+            "list_price": 285000.0,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Polestar",
+        "model_name": "Polestar 3",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Electric Long Range Dual Motor 111 kWh(A)",
+            "engine_size": "111 kWh",
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": null
+          }
+        ]
+      },
+      {
+        "brand": "Polestar",
+        "model_name": "Polestar 4",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Electric Long Range Dual Motor 100 kWh(A)",
+            "engine_size": "100 kWh",
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Long Range Single Motor 100 kWh(A)",
+            "engine_size": "100 kWh",
+            "vehicle_type": "Electric",
+            "list_price": 325000.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Prices listed as POA (Price on Application) were set to null.",
+    "Battery capacities (e.g., 82 kWh, 111 kWh, 100 kWh) were extracted into the engine_size field for these electric vehicles."
+  ]
+}

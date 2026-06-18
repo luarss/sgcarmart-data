@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "source_filename": "dealer_115_2026-06-18.pdf",
+    "extraction_date": "2026-06-18",
+    "dealer_id": "115",
+    "pdf_date": "2026-06-18",
+    "brand_folder": "dongfeng",
+    "year_folder": 2026,
+    "pdf_size_kb": 1123.9267578125,
+    "api_usage": {
+      "model_name": "deepseek-v4-flash",
+      "input_tokens": 3057,
+      "output_tokens": 134,
+      "total_tokens": 3191,
+      "input_cost_usd": 0.00021399,
+      "output_cost_usd": 3.752000000000001e-05,
+      "total_cost_usd": 0.00025151000000000004,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": []
+  },
+  "extraction_confidence": "low",
+  "extraction_notes": [
+    "PDF text contains only template text, no car pricing data found."
+  ]
+}

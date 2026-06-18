@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "source_filename": "dealer_102_2026-06-18.pdf",
+    "extraction_date": "2026-06-18",
+    "dealer_id": "102",
+    "pdf_date": "2026-06-18",
+    "brand_folder": "omoda",
+    "year_folder": 2026,
+    "pdf_size_kb": 755.6533203125,
+    "api_usage": {
+      "model_name": "deepseek-v4-flash",
+      "input_tokens": 8014,
+      "output_tokens": 428,
+      "total_tokens": 8442,
+      "input_cost_usd": 0.0005609800000000001,
+      "output_cost_usd": 0.00011984,
+      "total_cost_usd": 0.0006808200000000001,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": []
+  },
+  "extraction_confidence": "low",
+  "extraction_notes": [
+    "The PDF text extraction resulted in garbled output with no recognizable model names, prices, or variant information. The data appears to be encoded or corrupted."
+  ]
+}
