@@ -39,16 +39,15 @@ def _setup_filepath(brand_name, dealer_id, date, output_dir):
 
 
 def _attempt_extraction(filepath, brand_name, dealer_id, date, extract_model):
-    from analysis.pdf_extractor import GeminiPDFExtractor
+    from analysis.pdf_extractor import extract_pdf_with_fallback, save_extraction
 
     brand_normalized = normalize_brand_name(brand_name)
     json_filename = f"{brand_normalized}_{dealer_id}_{date}.json"
     json_path = Path(filepath).parent / json_filename
 
     if not json_path.exists():
-        extractor = GeminiPDFExtractor()
-        extraction = extractor.extract_from_pdf(Path(filepath), model=extract_model)
-        output_path = extractor.save_extraction(extraction, output_dir=None)
+        extraction = extract_pdf_with_fallback(Path(filepath), model=extract_model)
+        output_path = save_extraction(extraction)
         return "success", str(output_path)
     else:
         return "skipped", None

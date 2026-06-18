@@ -15,79 +15,43 @@ from analysis.schema import APIUsageStats, SGCarMartPriceListExtraction
 load_dotenv(Path(__file__).parent / ".env")
 
 
-class GeminiPDFExtractor:
-    DEFAULT_MODEL: ClassVar[str] = "gemini-3.5-flash"
+def _is_transient_api_error(error_str: str) -> bool:
+    quota_error = "429" in error_str and ("quota" in error_str.lower() or "RESOURCE_EXHAUSTED" in error_str)
+    unavailable_error = "503" in error_str and "UNAVAILABLE" in error_str
+    return quota_error or unavailable_error
 
-    PRICING: ClassVar = {
-        "gemini-3.5-flash": {"input_per_million": 1.50, "output_per_million": 9.00, "is_free": False},
-        "gemini-3-flash": {"input_per_million": 0.50, "output_per_million": 3.00, "is_free": False},
-        "gemini-3-pro": {"input_per_million": 2.00, "output_per_million": 12.00, "is_free": False},
-        "gemini-2.5-pro": {"input_per_million": 1.25, "output_per_million": 10.00, "is_free": False},
-        "gemini-2.5-flash": {"input_per_million": 0.15, "output_per_million": 0.60, "is_free": False},
-        "gemini-2.5-flash-lite": {"input_per_million": 0.10, "output_per_million": 0.40, "is_free": False},
-        "gemini-2.0-flash": {"input_per_million": 0.10, "output_per_million": 0.40, "is_free": False},
-        "gemini-2.0-flash-lite": {"input_per_million": 0.05, "output_per_million": 0.20, "is_free": False},
+
+def _extract_metadata_from_path(pdf_path: Path) -> dict:
+    parts = pdf_path.parts
+    filename = pdf_path.name
+
+    brand_folder = parts[-3] if len(parts) >= 3 else "unknown"
+    year_folder = int(parts[-2]) if len(parts) >= 2 and parts[-2].isdigit() else 2025
+
+    filename_parts = filename.replace(".pdf", "").split("_")
+    dealer_id = filename_parts[1] if len(filename_parts) > 1 else "unknown"
+    pdf_date_str = filename_parts[2] if len(filename_parts) > 2 else str(date.today())
+
+    try:
+        pdf_date = date.fromisoformat(pdf_date_str)
+    except ValueError:
+        pdf_date = date.today()
+
+    pdf_size_kb = pdf_path.stat().st_size / 1024
+
+    return {
+        "source_filename": filename,
+        "extraction_date": date.today(),
+        "dealer_id": dealer_id,
+        "pdf_date": pdf_date,
+        "brand_folder": brand_folder,
+        "year_folder": year_folder,
+        "pdf_size_kb": pdf_size_kb,
     }
 
-    def __init__(self, api_key: str | None = None):
-        self.api_key = api_key or os.getenv("GEMINI_API_KEY")
-        if not self.api_key:
-            raise ValueError("GEMINI_API_KEY not found in environment or constructor")
 
-        self.client = OpenAI(api_key=self.api_key, base_url="https://generativelanguage.googleapis.com/v1beta/openai/")
-
-    def calculate_cost(self, model: str, input_tokens: int, output_tokens: int) -> APIUsageStats:
-        pricing = self.PRICING.get(model, self.PRICING[self.DEFAULT_MODEL])
-
-        input_cost = (input_tokens / 1_000_000) * pricing["input_per_million"]
-        output_cost = (output_tokens / 1_000_000) * pricing["output_per_million"]
-        total_cost = input_cost + output_cost
-
-        return APIUsageStats(
-            model_name=model,
-            input_tokens=input_tokens,
-            output_tokens=output_tokens,
-            total_tokens=input_tokens + output_tokens,
-            input_cost_usd=input_cost,
-            output_cost_usd=output_cost,
-            total_cost_usd=total_cost,
-            is_free_tier=pricing.get("is_free", False),
-        )
-
-    def encode_pdf(self, pdf_path: Path) -> str:
-        with open(pdf_path, "rb") as pdf_file:
-            return base64.standard_b64encode(pdf_file.read()).decode("utf-8")
-
-    def extract_metadata_from_path(self, pdf_path: Path) -> dict:
-        parts = pdf_path.parts
-        filename = pdf_path.name
-
-        brand_folder = parts[-3] if len(parts) >= 3 else "unknown"
-        year_folder = int(parts[-2]) if len(parts) >= 2 and parts[-2].isdigit() else 2025
-
-        filename_parts = filename.replace(".pdf", "").split("_")
-        dealer_id = filename_parts[1] if len(filename_parts) > 1 else "unknown"
-        pdf_date_str = filename_parts[2] if len(filename_parts) > 2 else str(date.today())
-
-        try:
-            pdf_date = date.fromisoformat(pdf_date_str)
-        except ValueError:
-            pdf_date = date.today()
-
-        pdf_size_kb = pdf_path.stat().st_size / 1024
-
-        return {
-            "source_filename": filename,
-            "extraction_date": date.today(),
-            "dealer_id": dealer_id,
-            "pdf_date": pdf_date,
-            "brand_folder": brand_folder,
-            "year_folder": year_folder,
-            "pdf_size_kb": pdf_size_kb,
-        }
-
-    def create_extraction_prompt(self) -> str:
-        return """You are an expert data extraction assistant specialized in extracting car pricing \
+def _create_extraction_prompt() -> str:
+    return """You are an expert data extraction assistant specialized in extracting car pricing \
 information from Singapore dealer price lists.
 
 Extract the following information from this PDF pricelist:
@@ -159,6 +123,107 @@ CRITICAL EXTRACTION RULES:
 
 Extract the data now from the provided PDF."""
 
+
+def save_extraction(
+    extraction: SGCarMartPriceListExtraction, output_dir: Path | None = None, format: str = "json"
+) -> Path:
+    if output_dir is None:
+        brand_folder = extraction.metadata.brand_folder
+        year_folder = str(extraction.metadata.year_folder)
+        output_dir = Path("data/pricelists") / brand_folder / year_folder
+    else:
+        output_dir = Path(output_dir)
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    brand_folder = extraction.metadata.brand_folder
+    dealer_id = extraction.metadata.dealer_id
+    pdf_date = extraction.metadata.pdf_date
+    base_filename = f"{brand_folder}_{dealer_id}_{pdf_date}"
+
+    if format == "json":
+        output_path = output_dir / f"{base_filename}.json"
+        with open(output_path, "w") as f:
+            json.dump(extraction.model_dump(mode="json"), f, indent=2, default=str)
+    else:
+        raise ValueError(f"Unsupported format: {format}")
+
+    print(f"✓ Saved extraction to: {output_path}")
+    return output_path
+
+
+class GeminiPDFExtractor:
+    DEFAULT_MODEL: ClassVar[str] = "gemini-3.5-flash"
+    FALLBACK_MODEL: ClassVar[str] = "gemini-2.5-flash"
+
+    PRICING: ClassVar = {
+        "gemini-3.5-flash": {"input_per_million": 1.50, "output_per_million": 9.00, "is_free": False},
+        "gemini-3-flash": {"input_per_million": 0.50, "output_per_million": 3.00, "is_free": False},
+        "gemini-3-pro": {"input_per_million": 2.00, "output_per_million": 12.00, "is_free": False},
+        "gemini-2.5-pro": {"input_per_million": 1.25, "output_per_million": 10.00, "is_free": False},
+        "gemini-2.5-flash": {"input_per_million": 0.15, "output_per_million": 0.60, "is_free": False},
+        "gemini-2.5-flash-lite": {"input_per_million": 0.10, "output_per_million": 0.40, "is_free": False},
+        "gemini-2.0-flash": {"input_per_million": 0.10, "output_per_million": 0.40, "is_free": False},
+        "gemini-2.0-flash-lite": {"input_per_million": 0.05, "output_per_million": 0.20, "is_free": False},
+    }
+
+    def __init__(self, api_key: str | None = None):
+        self.api_key = api_key or os.getenv("GEMINI_API_KEY")
+        if not self.api_key:
+            raise ValueError("GEMINI_API_KEY not found in environment or constructor")
+
+        self.client = OpenAI(api_key=self.api_key, base_url="https://generativelanguage.googleapis.com/v1beta/openai/")
+
+    def calculate_cost(self, model: str, input_tokens: int, output_tokens: int) -> APIUsageStats:
+        pricing = self.PRICING.get(model, self.PRICING[self.DEFAULT_MODEL])
+
+        input_cost = (input_tokens / 1_000_000) * pricing["input_per_million"]
+        output_cost = (output_tokens / 1_000_000) * pricing["output_per_million"]
+        total_cost = input_cost + output_cost
+
+        return APIUsageStats(
+            model_name=model,
+            input_tokens=input_tokens,
+            output_tokens=output_tokens,
+            total_tokens=input_tokens + output_tokens,
+            input_cost_usd=input_cost,
+            output_cost_usd=output_cost,
+            total_cost_usd=total_cost,
+            is_free_tier=pricing.get("is_free", False),
+        )
+
+    def encode_pdf(self, pdf_path: Path) -> str:
+        with open(pdf_path, "rb") as pdf_file:
+            return base64.standard_b64encode(pdf_file.read()).decode("utf-8")
+
+    def extract_metadata_from_path(self, pdf_path: Path) -> dict:
+        return _extract_metadata_from_path(pdf_path)
+
+    def create_extraction_prompt(self) -> str:
+        return _create_extraction_prompt()
+
+    def _call_api(self, model: str, pdf_base64: str, temperature: float) -> object:
+        return self.client.chat.completions.create(
+            model=model,
+            messages=[
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": _create_extraction_prompt()},
+                        {"type": "image_url", "image_url": {"url": f"data:application/pdf;base64,{pdf_base64}"}},
+                    ],
+                }
+            ],
+            temperature=temperature,
+            response_format={
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "pricelist_extraction",
+                    "schema": SGCarMartPriceListExtraction.model_json_schema(),
+                },
+            },
+        )
+
     def extract_from_pdf(
         self,
         pdf_path: Path,
@@ -169,7 +234,7 @@ Extract the data now from the provided PDF."""
         if model is None:
             model = self.DEFAULT_MODEL
         if fallback_model is None:
-            fallback_model = self.DEFAULT_MODEL
+            fallback_model = self.FALLBACK_MODEL
         pdf_path = Path(pdf_path)
         if not pdf_path.exists():
             raise FileNotFoundError(f"PDF not found: {pdf_path}")
@@ -178,70 +243,19 @@ Extract the data now from the provided PDF."""
         pdf_base64 = self.encode_pdf(pdf_path)
 
         print("Extracting metadata from file path...")
-        metadata_dict = self.extract_metadata_from_path(pdf_path)
+        metadata_dict = _extract_metadata_from_path(pdf_path)
 
         current_model = model
         print(f"Calling Gemini API (model: {current_model})...")
         try:
-            response = self.client.chat.completions.create(
-                model=current_model,
-                messages=[
-                    {
-                        "role": "user",
-                        "content": [
-                            {
-                                "type": "text",
-                                "text": self.create_extraction_prompt(),
-                            },
-                            {
-                                "type": "image_url",
-                                "image_url": {"url": f"data:application/pdf;base64,{pdf_base64}"},
-                            },
-                        ],
-                    }
-                ],
-                temperature=temperature,
-                response_format={
-                    "type": "json_schema",
-                    "json_schema": {
-                        "name": "pricelist_extraction",
-                        "schema": SGCarMartPriceListExtraction.model_json_schema(),
-                    },
-                },
-            )
+            response = self._call_api(current_model, pdf_base64, temperature)
         except Exception as e:
             error_str = str(e)
-            if "429" in error_str and ("quota" in error_str.lower() or "RESOURCE_EXHAUSTED" in error_str):
-                print(f"⚠ Daily quota exhausted for {current_model}")
+            if _is_transient_api_error(error_str) and fallback_model != current_model:
+                print(f"⚠ Gemini {current_model} unavailable: {error_str[:120]}")
                 print(f"↻ Switching to fallback model: {fallback_model}")
                 current_model = fallback_model
-
-                response = self.client.chat.completions.create(
-                    model=current_model,
-                    messages=[
-                        {
-                            "role": "user",
-                            "content": [
-                                {
-                                    "type": "text",
-                                    "text": self.create_extraction_prompt(),
-                                },
-                                {
-                                    "type": "image_url",
-                                    "image_url": {"url": f"data:application/pdf;base64,{pdf_base64}"},
-                                },
-                            ],
-                        }
-                    ],
-                    temperature=temperature,
-                    response_format={
-                        "type": "json_schema",
-                        "json_schema": {
-                            "name": "pricelist_extraction",
-                            "schema": SGCarMartPriceListExtraction.model_json_schema(),
-                        },
-                    },
-                )
+                response = self._call_api(current_model, pdf_base64, temperature)
             else:
                 raise
 
@@ -290,29 +304,151 @@ Extract the data now from the provided PDF."""
     def save_extraction(
         self, extraction: SGCarMartPriceListExtraction, output_dir: Path | None = None, format: str = "json"
     ) -> Path:
-        if output_dir is None:
-            brand_folder = extraction.metadata.brand_folder
-            year_folder = str(extraction.metadata.year_folder)
-            output_dir = Path("data/pricelists") / brand_folder / year_folder
-        else:
-            output_dir = Path(output_dir)
+        return save_extraction(extraction, output_dir, format)
 
-        output_dir.mkdir(parents=True, exist_ok=True)
 
-        brand_folder = extraction.metadata.brand_folder
-        dealer_id = extraction.metadata.dealer_id
-        pdf_date = extraction.metadata.pdf_date
-        base_filename = f"{brand_folder}_{dealer_id}_{pdf_date}"
+class DeepSeekPDFExtractor:
+    DEFAULT_MODEL: ClassVar[str] = "deepseek-v4-flash"
+    BASE_URL: ClassVar[str] = "https://api.deepseek.com"
 
-        if format == "json":
-            output_path = output_dir / f"{base_filename}.json"
-            with open(output_path, "w") as f:
-                json.dump(extraction.model_dump(mode="json"), f, indent=2, default=str)
-        else:
-            raise ValueError(f"Unsupported format: {format}")
+    PRICING: ClassVar = {
+        "deepseek-v4-flash": {"input_per_million": 0.07, "output_per_million": 0.28, "is_free": False},
+        "deepseek-chat": {"input_per_million": 0.27, "output_per_million": 1.10, "is_free": False},
+        "deepseek-reasoner": {"input_per_million": 0.55, "output_per_million": 2.19, "is_free": False},
+    }
 
-        print(f"✓ Saved extraction to: {output_path}")
-        return output_path
+    def __init__(self, api_key: str | None = None):
+        self.api_key = api_key or os.getenv("DEEPSEEK_API_KEY")
+        if not self.api_key:
+            raise ValueError("DEEPSEEK_API_KEY not found in environment or constructor")
+        self.client = OpenAI(api_key=self.api_key, base_url=self.BASE_URL)
+
+    def calculate_cost(self, model: str, input_tokens: int, output_tokens: int) -> APIUsageStats:
+        pricing = self.PRICING.get(model, self.PRICING[self.DEFAULT_MODEL])
+        input_cost = (input_tokens / 1_000_000) * pricing["input_per_million"]
+        output_cost = (output_tokens / 1_000_000) * pricing["output_per_million"]
+        total_cost = input_cost + output_cost
+        return APIUsageStats(
+            model_name=model,
+            input_tokens=input_tokens,
+            output_tokens=output_tokens,
+            total_tokens=input_tokens + output_tokens,
+            input_cost_usd=input_cost,
+            output_cost_usd=output_cost,
+            total_cost_usd=total_cost,
+            is_free_tier=pricing.get("is_free", False),
+        )
+
+    def extract_text_from_pdf(self, pdf_path: Path) -> str:
+        from pypdf import PdfReader
+
+        reader = PdfReader(str(pdf_path))
+        pages = [page.extract_text() or "" for page in reader.pages]
+        return "\n\n".join(p for p in pages if p.strip())
+
+    def extract_from_pdf(
+        self, pdf_path: Path, model: str | None = None, temperature: float = 0.1
+    ) -> SGCarMartPriceListExtraction:
+        if model is None:
+            model = self.DEFAULT_MODEL
+        pdf_path = Path(pdf_path)
+        if not pdf_path.exists():
+            raise FileNotFoundError(f"PDF not found: {pdf_path}")
+
+        print(f"Extracting text from PDF (DeepSeek fallback): {pdf_path.name}...")
+        pdf_text = self.extract_text_from_pdf(pdf_path)
+        if not pdf_text.strip():
+            raise ValueError(f"No extractable text in {pdf_path.name} (may be image-based PDF)")
+
+        metadata_dict = _extract_metadata_from_path(pdf_path)
+
+        schema = SGCarMartPriceListExtraction.model_json_schema()
+        pricelist_schema = json.dumps(
+            {k: schema[k] for k in ("properties", "required", "$defs") if k in schema}, indent=2
+        )
+
+        prompt = f"""{_create_extraction_prompt()}
+
+Output ONLY valid JSON with these top-level fields: "pricelist" (with "models" array), \
+"extraction_confidence" ("high"/"medium"/"low"), and optionally "extraction_notes" (array of strings).
+Do NOT include "metadata" — it will be added separately.
+
+Schema reference:
+{pricelist_schema}
+
+PDF TEXT:
+{pdf_text}"""
+
+        print(f"Calling DeepSeek API (model: {model})...")
+        response = self.client.chat.completions.create(
+            model=model,
+            messages=[{"role": "user", "content": prompt}],
+            response_format={"type": "json_object"},
+            temperature=temperature,
+        )
+
+        response_content = response.choices[0].message.content
+        if not response_content:
+            raise ValueError("Empty response from DeepSeek API")
+
+        extraction_data = json.loads(response_content)
+
+        usage = response.usage
+        if not usage:
+            raise ValueError("No usage data in DeepSeek response")
+
+        api_usage = self.calculate_cost(model, usage.prompt_tokens, usage.completion_tokens)
+        metadata_dict["api_usage"] = api_usage.model_dump()
+        extraction_data["metadata"] = metadata_dict
+
+        try:
+            extraction = SGCarMartPriceListExtraction(**extraction_data)
+        except ValidationError as e:
+            print(f"✗ DeepSeek validation error: {e}")
+            raise
+
+        print(f"✓ DeepSeek extraction successful! Confidence: {extraction.extraction_confidence}")
+        print(f"✓ Extracted {len(extraction.pricelist.models)} model(s)")
+        print(
+            f"✓ Tokens: {api_usage.total_tokens:,} "
+            f"(in: {api_usage.input_tokens:,}, out: {api_usage.output_tokens:,})"
+        )
+        print(f"✓ Cost: ${api_usage.total_cost_usd:.6f} USD")
+
+        return extraction
+
+    def save_extraction(
+        self, extraction: SGCarMartPriceListExtraction, output_dir: Path | None = None, format: str = "json"
+    ) -> Path:
+        return save_extraction(extraction, output_dir, format)
+
+
+def extract_pdf_with_fallback(
+    pdf_path: Path,
+    model: str | None = None,
+    temperature: float = 0.1,
+) -> SGCarMartPriceListExtraction:
+    """Try Gemini first; fall back to DeepSeek on any failure."""
+    pdf_path = Path(pdf_path)
+    gemini_key = os.getenv("GEMINI_API_KEY")
+    deepseek_key = os.getenv("DEEPSEEK_API_KEY")
+
+    if not gemini_key and not deepseek_key:
+        raise RuntimeError("No API keys available — set GEMINI_API_KEY or DEEPSEEK_API_KEY")
+
+    if gemini_key:
+        try:
+            extractor = GeminiPDFExtractor(api_key=gemini_key)
+            return extractor.extract_from_pdf(pdf_path, model=model, temperature=temperature)
+        except Exception as e:
+            if deepseek_key:
+                print(f"⚠ Gemini failed: {e}")
+                print("↻ Falling back to DeepSeek...")
+            else:
+                raise
+
+    extractor = DeepSeekPDFExtractor(api_key=deepseek_key)
+    return extractor.extract_from_pdf(pdf_path, temperature=temperature)
 
 
 def main():

@@ -54,6 +54,7 @@ jobs:
       - name: Download pricelists
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: uv run python main.py
 
       - name: Get current date
