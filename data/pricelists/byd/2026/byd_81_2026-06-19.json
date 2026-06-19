@@ -1,0 +1,227 @@
+{
+  "metadata": {
+    "source_filename": "dealer_81_2026-06-19.pdf",
+    "extraction_date": "2026-06-19",
+    "dealer_id": "81",
+    "pdf_date": "2026-06-19",
+    "brand_folder": "byd",
+    "year_folder": 2026,
+    "pdf_size_kb": 3697.599609375,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 3149,
+      "output_tokens": 1853,
+      "total_tokens": 5002,
+      "input_cost_usd": 0.0047235,
+      "output_cost_usd": 0.016677,
+      "total_cost_usd": 0.021400500000000003,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "BYD",
+        "model_name": "BYD ATTO 2",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 241888.0,
+            "final_price": 174888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "BYD DOLPHIN",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 252888.0,
+            "final_price": 185888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "BYD ATTO 3",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "STANDARD",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 246888.0,
+            "final_price": 179888.0
+          },
+          {
+            "variant_name": "CARBON EDGE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 250888.0,
+            "final_price": 183888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "BYD SEAL 6 EV",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 247888.0,
+            "final_price": 180888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "BYD SEAL",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "DYNAMIC",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 272888.0,
+            "final_price": 205888.0
+          },
+          {
+            "variant_name": "2025 PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 283888.0,
+            "final_price": 216888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "BYD SEALION 7",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "DYNAMIC",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 272388.0,
+            "final_price": 205388.0
+          },
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 283888.0,
+            "final_price": 216888.0
+          },
+          {
+            "variant_name": "PERFORMANCE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 314888.0,
+            "final_price": 247888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "BYD M6",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "STANDARD",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 259888.0,
+            "final_price": 192888.0
+          },
+          {
+            "variant_name": "CARBON EDGE",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 262888.0,
+            "final_price": 195888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "BYD E6",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "STANDARD",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 260888.0,
+            "final_price": 193888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "BYD SEALION 6 DM-i",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "STANDARD",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 273888.0,
+            "final_price": 206888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "BYD SEAL 6 DM-i TOURING",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "DYNAMIC",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 261888.0,
+            "final_price": 194888.0
+          }
+        ]
+      },
+      {
+        "brand": "BYD",
+        "model_name": "BYD SEAL 6 DM-i",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "DYNAMIC",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 257888.0,
+            "final_price": 190888.0
+          },
+          {
+            "variant_name": "PREMIUM",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 265888.0,
+            "final_price": 198888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Extracted final prices from the Excite Guaranteed COE package with the $2,000 or $7,000 discount applied as shown in the orange boxes.",
+    "Grouped 2025 BYD Seal Premium under the BYD Seal model entry.",
+    "Classified DM-i models as Hybrid (PHEV) and other models as Electric based on the specifications."
+  ]
+}
