@@ -2,7 +2,7 @@ name: Download SGCarMart Pricelists
 
 on:
   schedule:
-    - cron: '0 2 * * *'  # 0200 UTC/ 1000 SGT
+    - cron: '13 20 * * *'  # 2013 UTC / 0413 SGT
   workflow_dispatch:
   push:
     branches: [main]

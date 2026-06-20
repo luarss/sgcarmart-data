@@ -2,7 +2,7 @@ name: Watch CPO Listings
 
 on:
   schedule:
-    - cron: '45 2 * * *'  # 0245 UTC / 1045 SGT (staggered from used-cars watch)
+    - cron: '43 20 * * *'  # 2043 UTC / 0443 SGT
   workflow_dispatch:
 
 jobs:

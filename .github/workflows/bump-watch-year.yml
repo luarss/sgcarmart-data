@@ -2,7 +2,7 @@ name: Bump Watchlist Year
 
 on:
   schedule:
-    - cron: '30 0 1 1 *'  # Jan 1st, 0030 UTC / 0830 SGT
+    - cron: '37 20 1 1 *'  # Jan 1st, 2037 UTC / 0437 SGT
   workflow_dispatch:
 
 jobs:

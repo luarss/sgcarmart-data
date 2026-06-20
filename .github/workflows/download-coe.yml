@@ -2,7 +2,7 @@ name: Download COE Bidding Results
 
 on:
   schedule:
-    - cron: '30 2 * * 1'  # Monday 0230 UTC / 1030 SGT (weekly)
+    - cron: '17 20 * * 0'  # Sunday 2017 UTC / Monday 0417 SGT (weekly)
   workflow_dispatch:
 
 jobs:
