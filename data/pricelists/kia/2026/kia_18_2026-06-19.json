@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "source_filename": "dealer_18_2026-06-19.pdf",
+    "extraction_date": "2026-06-21",
+    "dealer_id": "18",
+    "pdf_date": "2026-06-19",
+    "brand_folder": "kia",
+    "year_folder": 2026,
+    "pdf_size_kb": 2707.015625,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 2085,
+      "output_tokens": 1218,
+      "total_tokens": 3303,
+      "input_cost_usd": 0.0031275,
+      "output_cost_usd": 0.010962,
+      "total_cost_usd": 0.0140895,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Kia",
+        "model_name": "Niro Hybrid",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "EX",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 241999.0,
+            "final_price": 199999.0
+          },
+          {
+            "variant_name": "EX Comfort",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 249999.0,
+            "final_price": 207999.0
+          },
+          {
+            "variant_name": "SX",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 259999.0,
+            "final_price": 217999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "Sorento Hybrid",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "SX",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 294999.0,
+            "final_price": 252999.0
+          },
+          {
+            "variant_name": "SX Tech Pack",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 304999.0,
+            "final_price": 262999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "Carnival Hybrid",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "7-Seater",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 344999.0,
+            "final_price": 302999.0
+          },
+          {
+            "variant_name": "8-Seater",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 333999.0,
+            "final_price": 291999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "EV5",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Air Standard Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 241999.0,
+            "final_price": 199999.0
+          },
+          {
+            "variant_name": "Earth Long Range",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 261999.0,
+            "final_price": 219999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "EV4",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 253999.0,
+            "final_price": 211999.0
+          }
+        ]
+      },
+      {
+        "brand": "Kia",
+        "model_name": "EV9",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Dual Motor Long Range GT-Line (Body Only)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 345999.0,
+            "final_price": 299999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Final prices extracted are based on the Platinum Package (6-Bid Guaranteed) as it represents the guaranteed COE price.",
+    "EV4 variant name was listed as '-' in the PDF, mapped to 'Standard' for clarity.",
+    "EV9 final price is listed as $299,999 (Without COE) in the PDF."
+  ]
+}

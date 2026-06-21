@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "source_filename": "dealer_101_2026-06-19.pdf",
+    "extraction_date": "2026-06-21",
+    "dealer_id": "101",
+    "pdf_date": "2026-06-19",
+    "brand_folder": "ora",
+    "year_folder": 2026,
+    "pdf_size_kb": 496.1044921875,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 2085,
+      "output_tokens": 817,
+      "total_tokens": 2902,
+      "input_cost_usd": 0.0031275,
+      "output_cost_usd": 0.007353,
+      "total_cost_usd": 0.0104805,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "ORA",
+        "model_name": "ORA 5 eSUV",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Flexi",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 241999.0,
+            "final_price": 177999.0
+          },
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 241999.0,
+            "final_price": 181999.0
+          },
+          {
+            "variant_name": "Platinum",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 241999.0,
+            "final_price": 185999.0
+          }
+        ]
+      },
+      {
+        "brand": "ORA",
+        "model_name": "ORA Good Cat",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 221999.0,
+            "final_price": 171999.0
+          },
+          {
+            "variant_name": "Platinum",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 221999.0,
+            "final_price": 175999.0
+          }
+        ]
+      },
+      {
+        "brand": "ORA",
+        "model_name": "ORA Good Cat GT",
+        "category": "HATCHBACK",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 226999.0,
+            "final_price": 176999.0
+          },
+          {
+            "variant_name": "Platinum",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 226999.0,
+            "final_price": 180999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Extracted ORA price list valid from 17 June 2026 to 8 July 2026.",
+    "The variants are mapped based on the COE packages (Flexi, Standard, Platinum) as they represent the different pricing tiers available for each model."
+  ]
+}

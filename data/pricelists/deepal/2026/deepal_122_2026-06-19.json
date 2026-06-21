@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "source_filename": "dealer_122_2026-06-19.pdf",
+    "extraction_date": "2026-06-21",
+    "dealer_id": "122",
+    "pdf_date": "2026-06-19",
+    "brand_folder": "deepal",
+    "year_folder": 2026,
+    "pdf_size_kb": 2236.1962890625,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 3149,
+      "output_tokens": 460,
+      "total_tokens": 3609,
+      "input_cost_usd": 0.0047235,
+      "output_cost_usd": 0.0041400000000000005,
+      "total_cost_usd": 0.0088635,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Changan",
+        "model_name": "DEEPAL S05",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 206999.0,
+            "final_price": 187999.0
+          }
+        ]
+      },
+      {
+        "brand": "Changan",
+        "model_name": "DEEPAL S07",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 218999.0,
+            "final_price": 199999.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Extracted Deepal S05 and Deepal S07 models under the Changan brand.",
+    "The pricelist is valid from 18 June to 8 July 2026.",
+    "List price is taken from 'List Price (After VES)' and final price is taken from 'Effective Retail Price'."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "source_filename": "dealer_8_2026-06-19.pdf",
+    "extraction_date": "2026-06-21",
+    "dealer_id": "8",
+    "pdf_date": "2026-06-19",
+    "brand_folder": "citroen",
+    "year_folder": 2026,
+    "pdf_size_kb": 2440.3427734375,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 3149,
+      "output_tokens": 537,
+      "total_tokens": 3686,
+      "input_cost_usd": 0.0047235,
+      "output_cost_usd": 0.0048330000000000005,
+      "total_cost_usd": 0.0095565,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Citro\u00ebn",
+        "model_name": "\u00eb-C4X",
+        "category": "SEDAN",
+        "variants": [
+          {
+            "variant_name": "SHINE PLUS",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 98999.0,
+            "final_price": 74999.0
+          }
+        ]
+      },
+      {
+        "brand": "Citro\u00ebn",
+        "model_name": "\u00eb-Berlingo",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Electric",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 138500.0
+          }
+        ]
+      },
+      {
+        "brand": "Citro\u00ebn",
+        "model_name": "\u00eb-Dispatch",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Electric",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 134000.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "\u00eb-C4X prices are body prices (without COE) as indicated in the document.",
+    "\u00eb-Berlingo and \u00eb-Dispatch are commercial electric vehicles with guaranteed COE prices."
+  ]
+}

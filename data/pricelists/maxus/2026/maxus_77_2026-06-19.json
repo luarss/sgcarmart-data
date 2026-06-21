@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "source_filename": "dealer_77_2026-06-19.pdf",
+    "extraction_date": "2026-06-21",
+    "dealer_id": "77",
+    "pdf_date": "2026-06-19",
+    "brand_folder": "maxus",
+    "year_folder": 2026,
+    "pdf_size_kb": 1640.37109375,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 2085,
+      "output_tokens": 699,
+      "total_tokens": 2784,
+      "input_cost_usd": 0.0031275,
+      "output_cost_usd": 0.006291,
+      "total_cost_usd": 0.0094185,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Maxus",
+        "model_name": "eDeliver 5",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Standard",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 145000.0
+          },
+          {
+            "variant_name": "High Roof Bus",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 158500.0
+          }
+        ]
+      },
+      {
+        "brand": "Maxus",
+        "model_name": "eDeliver 7",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "N",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 159000.0
+          }
+        ]
+      },
+      {
+        "brand": "Maxus",
+        "model_name": "eDeliver 9",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "FL",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 164000.0
+          }
+        ]
+      },
+      {
+        "brand": "Maxus",
+        "model_name": "eTerron 9",
+        "category": "TRUCK",
+        "variants": [
+          {
+            "variant_name": "Comfort",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": null,
+            "final_price": 193500.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "All vehicles are electric commercial vehicles.",
+    "Prices extracted are final prices with guaranteed COE after in-house finance & insurance subsidy.",
+    "eTerron 9 is classified as a TRUCK based on the visual representation of a pickup truck."
+  ]
+}
