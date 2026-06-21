@@ -59,7 +59,7 @@ jobs:
         run: uv run python main.py
 
       - name: Rebase onto latest main before committing
-        run: git pull --rebase origin main
+        run: git pull --rebase --autostash origin main
 
       - name: Get current date
         id: date
