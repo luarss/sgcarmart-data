@@ -58,6 +58,9 @@ jobs:
           XIAOMI_API_KEY: ${{ secrets.XIAOMI_API_KEY }}
         run: uv run python main.py
 
+      - name: Rebase onto latest main before committing
+        run: git pull --rebase --autostash origin main
+
       - name: Get current date
         id: date
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
