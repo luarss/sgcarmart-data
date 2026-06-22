@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "source_filename": "dealer_107_2026-06-22.pdf",
+    "extraction_date": "2026-06-22",
+    "dealer_id": "107",
+    "pdf_date": "2026-06-22",
+    "brand_folder": "seres",
+    "year_folder": 2026,
+    "pdf_size_kb": 29.7568359375,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 1553,
+      "output_tokens": 231,
+      "total_tokens": 1784,
+      "input_cost_usd": 0.0023295,
+      "output_cost_usd": 0.002079,
+      "total_cost_usd": 0.0044085,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Seres",
+        "model_name": "Seres 3",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Electric Classic [99kW] 54 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 171800.0,
+            "final_price": null
+          },
+          {
+            "variant_name": "Electric Excite [99kW] 54 kWh(A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 181800.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}
