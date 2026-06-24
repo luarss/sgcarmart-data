@@ -68,7 +68,7 @@ jobs:
       - name: Commit and push if changes
         uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
         with:
-          commit_message: "chore: update pricelists ${{ steps.date.outputs.date }}"
+          commit_message: "chore: update new car pricelists ${{ steps.date.outputs.date }}"
           file_pattern: 'data/pricelists/**/*.pdf data/pricelists/**/*.json data/pricelists/manifest.json'
           add_options: '--sparse'
           commit_user_name: github-actions[bot]
