@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "source_filename": "dealer_117_2026-06-18.pdf",
+    "extraction_date": "2026-06-25",
+    "dealer_id": "117",
+    "pdf_date": "2026-06-18",
+    "brand_folder": "denza",
+    "year_folder": 2026,
+    "pdf_size_kb": 1437.2294921875,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 1553,
+      "output_tokens": 505,
+      "total_tokens": 2058,
+      "input_cost_usd": 0.0023295,
+      "output_cost_usd": 0.004545,
+      "total_cost_usd": 0.0068745,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Denza",
+        "model_name": "D9",
+        "category": "MPV",
+        "variants": [
+          {
+            "variant_name": "Elite",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 367888.0,
+            "final_price": 298888.0
+          },
+          {
+            "variant_name": "Grandeur",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 415388.0,
+            "final_price": 346388.0
+          }
+        ]
+      },
+      {
+        "brand": "Denza",
+        "model_name": "B5",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "Orion",
+            "engine_size": null,
+            "vehicle_type": "Hybrid",
+            "list_price": 430888.0,
+            "final_price": 348888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Denza B5 Orion is classified as a Hybrid due to both electricity and fuel consumption figures (20.0kWh/100km and 3.9l/100km) indicating a Plug-in Hybrid powertrain."
+  ]
+}
