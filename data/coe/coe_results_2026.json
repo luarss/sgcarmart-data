@@ -548,5 +548,55 @@
     "bids_success": "238",
     "bids_received": "497",
     "premium": "129000"
+  },
+  {
+    "_id": 1946,
+    "month": "2026-06",
+    "bidding_no": "2",
+    "vehicle_class": "Category A",
+    "quota": "1251",
+    "bids_success": "1,245",
+    "bids_received": "1,768",
+    "premium": "123847"
+  },
+  {
+    "_id": 1947,
+    "month": "2026-06",
+    "bidding_no": "2",
+    "vehicle_class": "Category B",
+    "quota": "883",
+    "bids_success": "879",
+    "bids_received": "1,202",
+    "premium": "123502"
+  },
+  {
+    "_id": 1948,
+    "month": "2026-06",
+    "bidding_no": "2",
+    "vehicle_class": "Category C",
+    "quota": "291",
+    "bids_success": "280",
+    "bids_received": "390",
+    "premium": "93001"
+  },
+  {
+    "_id": 1949,
+    "month": "2026-06",
+    "bidding_no": "2",
+    "vehicle_class": "Category D",
+    "quota": "532",
+    "bids_success": "494",
+    "bids_received": "615",
+    "premium": "9989"
+  },
+  {
+    "_id": 1950,
+    "month": "2026-06",
+    "bidding_no": "2",
+    "vehicle_class": "Category E",
+    "quota": "262",
+    "bids_success": "254",
+    "bids_received": "487",
+    "premium": "129002"
   }
 ]
