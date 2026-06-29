@@ -1,0 +1,172 @@
+{
+  "metadata": {
+    "source_filename": "dealer_20_2026-06-29.pdf",
+    "extraction_date": "2026-06-29",
+    "dealer_id": "20",
+    "pdf_date": "2026-06-29",
+    "brand_folder": "land-rover",
+    "year_folder": 2026,
+    "pdf_size_kb": 197.1337890625,
+    "api_usage": {
+      "model_name": "mimo-v2.5",
+      "input_tokens": 5291,
+      "output_tokens": 1228,
+      "total_tokens": 6519,
+      "input_cost_usd": 0.00074074,
+      "output_cost_usd": 0.00034384,
+      "total_cost_usd": 0.00108458,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Land Rover",
+        "model_name": "DEFENDER",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "110 2.0 X-Dynamic HSE",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": 491888.0
+          },
+          {
+            "variant_name": "110 2.0 Trophy Edition 1 (5 Seater)",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": 495888.0
+          },
+          {
+            "variant_name": "110 4.4 OCTA",
+            "engine_size": "4.4",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "110 4.4 OCTA Black",
+            "engine_size": "4.4",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "130 5.0 X-Dynamic HSE (7 Seater)",
+            "engine_size": "5.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": 562888.0
+          },
+          {
+            "variant_name": "130 5.0 X-Dynamic HSE (8 Seater)",
+            "engine_size": "5.0",
+            "vehicle_type": "ICE",
+            "list_price": null,
+            "final_price": 532888.0
+          }
+        ]
+      },
+      {
+        "brand": "Land Rover",
+        "model_name": "RANGE ROVER EVOQUE",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "1.5 S",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": 326888.0
+          },
+          {
+            "variant_name": "1.5 S (Premium Pack)",
+            "engine_size": "1.5",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": 337888.0
+          }
+        ]
+      },
+      {
+        "brand": "Land Rover",
+        "model_name": "RANGE ROVER VELAR",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "3.0 S",
+            "engine_size": "3.0",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": 470888.0
+          }
+        ]
+      },
+      {
+        "brand": "Land Rover",
+        "model_name": "RANGE ROVER SPORT",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "3.0 S",
+            "engine_size": "3.0",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": 572888.0
+          },
+          {
+            "variant_name": "3.0 Dynamic HSE",
+            "engine_size": "3.0",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": 661888.0
+          }
+        ]
+      },
+      {
+        "brand": "Land Rover",
+        "model_name": "RANGE ROVER",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "3.0 HSE SWB",
+            "engine_size": "3.0",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": 844888.0
+          },
+          {
+            "variant_name": "3.0 Autobiography SWB",
+            "engine_size": "3.0",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": 907888.0
+          },
+          {
+            "variant_name": "3.0 Autobiography LWB (5 Seater)",
+            "engine_size": "3.0",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": null
+          },
+          {
+            "variant_name": "3.0 SV LWB (4 Seater)",
+            "engine_size": "3.0",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": 1248888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "The pricelist only provides a single 'Retail Price' column which includes COE. No separate 'list_price w/o COE' was found, so all prices are placed in 'final_price'.",
+    "Defender 130 variants are categorized under the 'DEFENDER' model entry per grouping rules.",
+    "POA (Price on Application) models (110 4.4 OCTA variants, 3.0 Autobiography LWB) have null prices.",
+    "Pricing is effective from 26 June 2026 as per the document."
+  ]
+}

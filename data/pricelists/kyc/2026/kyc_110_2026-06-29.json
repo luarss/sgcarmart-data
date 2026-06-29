@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source_filename": "dealer_110_2026-06-29.pdf",
+    "extraction_date": "2026-06-29",
+    "dealer_id": "110",
+    "pdf_date": "2026-06-29",
+    "brand_folder": "kyc",
+    "year_folder": 2026,
+    "pdf_size_kb": 29.810546875,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 1553,
+      "output_tokens": 276,
+      "total_tokens": 1829,
+      "input_cost_usd": 0.0023295,
+      "output_cost_usd": 0.002484,
+      "total_cost_usd": 0.0048135,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "KYC",
+        "model_name": "V7",
+        "category": "VAN",
+        "variants": [
+          {
+            "variant_name": "Electric 50.23 kWh (A)",
+            "engine_size": null,
+            "vehicle_type": "Electric",
+            "list_price": 56800.0,
+            "final_price": null
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": []
+}

@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "source_filename": "dealer_16_2026-06-29.pdf",
+    "extraction_date": "2026-06-29",
+    "dealer_id": "16",
+    "pdf_date": "2026-06-29",
+    "brand_folder": "jaguar",
+    "year_folder": 2026,
+    "pdf_size_kb": 224.375,
+    "api_usage": {
+      "model_name": "gemini-3.5-flash",
+      "input_tokens": 1553,
+      "output_tokens": 323,
+      "total_tokens": 1876,
+      "input_cost_usd": 0.0023295,
+      "output_cost_usd": 0.002907,
+      "total_cost_usd": 0.0052365,
+      "is_free_tier": false
+    }
+  },
+  "pricelist": {
+    "models": [
+      {
+        "brand": "Jaguar",
+        "model_name": "F-PACE",
+        "category": "SUV",
+        "variants": [
+          {
+            "variant_name": "2.0 R-Dynamic S",
+            "engine_size": "2.0",
+            "vehicle_type": "Hybrid",
+            "list_price": null,
+            "final_price": 393888.0
+          }
+        ]
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "extraction_notes": [
+    "Only one model (F-PACE) was found in the price list.",
+    "The price listed is 'Retail Price' which includes COE, so it is mapped to final_price."
+  ]
+}
