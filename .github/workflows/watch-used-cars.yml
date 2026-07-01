@@ -2,7 +2,7 @@ name: Watch Used Car Listings
 
 on:
   schedule:
-    - cron: '27 21 * * *'  # 2127 UTC / 0527 SGT
+    - cron: '13 22 * * *'
   workflow_dispatch:
 
 jobs:
