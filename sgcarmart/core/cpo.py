@@ -240,6 +240,9 @@ class SimeMeeMotorsScraper(CPOScraper):
     BASE_URL = "https://autoselection.simemotors.com.sg/stock/list-all"
     _BASE = "https://autoselection.simemotors.com.sg"
 
+    def __init__(self, headless: bool = True, timeout: int = 60000):
+        super().__init__(headless=headless, timeout=timeout)
+
     def get_listings(self) -> list[CPOListing]:
         self.page.goto(self.BASE_URL, wait_until="domcontentloaded")
         with contextlib.suppress(Exception):
@@ -488,17 +491,23 @@ def run_all(
     sites: list[str] | None = None,
     headless: bool = True,
     max_workers: int = CPO_DEFAULT_MAX_WORKERS,
+    retries: int = 1,
 ) -> tuple[list[CPOListing], dict[str, dict]]:
     targets = {k: v for k, v in ALL_SCRAPERS.items() if sites is None or k in sites}
     all_listings: list[CPOListing] = []
     site_results: dict[str, dict] = {}
 
     def _scrape(name: str, cls: type[CPOScraper]) -> tuple[str, list[CPOListing], str | None]:
-        try:
-            listings = cls(headless=headless).scrape()
-            return name, listings, None
-        except Exception as e:
-            return name, [], str(e)
+        last_error: str | None = None
+        for attempt in range(1 + retries):
+            try:
+                listings = cls(headless=headless).scrape()
+                return name, listings, None
+            except Exception as e:
+                last_error = str(e)
+                if attempt < retries:
+                    print(f"↺ {name}: attempt {attempt + 1} failed, retrying… ({e})")
+        return name, [], last_error
 
     with ThreadPoolExecutor(max_workers=max_workers) as pool:
         futures = {pool.submit(_scrape, name, cls): name for name, cls in targets.items()}
