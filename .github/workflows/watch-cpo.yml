@@ -32,6 +32,7 @@ jobs:
         run: uv run cpo_main.py
 
       - name: Commit and push if changes
+        if: always()
         uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
         with:
           commit_message: "chore: update CPO watch ${{ steps.date.outputs.date }}"
