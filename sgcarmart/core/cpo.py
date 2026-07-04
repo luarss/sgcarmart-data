@@ -2,8 +2,8 @@
 Certified Pre-Owned (CPO) car scraper for multiple Singapore dealers.
 
 Sites scraped:
-  Listing pages  : ic_preowned, eurokars, das_weltauto, toyota, dickson,
-                   carchoice, sim_mee_motors
+  Listing pages  : ic_preowned, eurokars, das_weltauto, toyota, carchoice,
+                   sim_mee_motors
   Programme pages: cycle_carriage, skoda
 
 Excluded (robots.txt non-compliant or unverifiable):
@@ -363,54 +363,6 @@ class ToyotaScraper(CPOScraper):
         )
 
 
-class DicksonScraper(CPOScraper):
-    SOURCE_ID = "dickson"
-    BASE_URL = "https://dicksongroup.com.sg/buy-sell/pre-owned-cars/"
-
-    def get_listings(self) -> list[CPOListing]:
-        self.page.goto(self.BASE_URL, wait_until="domcontentloaded")
-        with contextlib.suppress(Exception):
-            self.page.wait_for_selector(".item-template", timeout=10000)
-
-        results = []
-        for card in self.page.locator(".item-template").all():
-            try:
-                listing = self._parse_card(card)
-                if listing:
-                    results.append(listing)
-            except Exception:
-                continue
-        return results
-
-    def _parse_card(self, card) -> CPOListing | None:
-        title = card.locator("h4.cartitle").inner_text().strip()
-        if not title:
-            return None
-
-        data_raw = card.get_attribute("data-item")
-        data: dict = json.loads(data_raw) if data_raw else {}
-
-        href = card.locator("a.js_list_link").get_attribute("href")
-
-        car_paras = card.locator(".col-7 p.car").all()
-        mileage = car_paras[1].inner_text().strip() if len(car_paras) > 1 else None
-        reg_date = (
-            car_paras[2].inner_text().strip()
-            if len(car_paras) > 2
-            else data.get("date")
-        )
-
-        return CPOListing(
-            source=self.SOURCE_ID,
-            title=title,
-            url=href or self.BASE_URL,
-            price=data.get("price"),
-            mileage=mileage,
-            reg_date=reg_date,
-            raw={k: v for k, v in data.items() if k not in ("model", "price", "date")},
-        )
-
-
 class CarChoiceScraper(CPOScraper):
     SOURCE_ID = "carchoice"
     BASE_URL = "https://carchoice.com.sg/certified-pre-owned-cars"
@@ -477,7 +429,6 @@ ALL_SCRAPERS: dict[str, type[CPOScraper]] = {
     "eurokars": EurokarsScraper,
     "das_weltauto": DasWeltAutoScraper,
     "toyota": ToyotaScraper,
-    "dickson": DicksonScraper,
     "carchoice": CarChoiceScraper,
     "sim_mee_motors": SimeMeeMotorsScraper,
     "cycle_carriage": CycleCarriageScraper,
