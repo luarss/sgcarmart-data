@@ -87,7 +87,7 @@
     "quota": "378",
     "bids_success": "378",
     "bids_received": "551",
-    "premium": "852"
+    "premium": "20090"
   },
   {
     "_id": 10,
@@ -114,7 +114,7 @@
     "month": "2010-02",
     "bidding_no": "1",
     "vehicle_class": "Category B",
-    "quota": "693",
+    "quota": "1154",
     "bids_success": "690",
     "bids_received": "930",
     "premium": "23180"
