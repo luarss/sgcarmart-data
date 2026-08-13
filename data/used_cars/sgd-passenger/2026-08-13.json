@@ -1,0 +1,16 @@
+{
+  "date": "2026-08-13",
+  "fetched_at": "2026-08-13T23:15:10.900562+00:00",
+  "filters": {
+    "min_price": 60000,
+    "max_price": 100000,
+    "year_from": 2016,
+    "vts": 2,
+    "avl": "a",
+    "sortby": "REG_DESC",
+    "limit": 100
+  },
+  "total_listings": 0,
+  "fetch_warning": "0 listings returned \u2014 possible proxy/scraping failure",
+  "listings": {}
+}
