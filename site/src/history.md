@@ -41,6 +41,12 @@ const totalPriceMoves = tracked.filter(l => {
   <div class="stat-card"><div class="stat-value">${totalPriceMoves.toLocaleString()}</div><div class="stat-label">With Price Changes</div></div>
 </div>
 
+<div class="coe-banner">
+  <div class="coe-item"><div class="coe-cat">COE Cat A</div><div class="coe-val">$${watchlist.coe_premiums_used.category_a_latest.premium.toLocaleString()}</div></div>
+  <div class="coe-item"><div class="coe-cat">COE Cat B</div><div class="coe-val">$${watchlist.coe_premiums_used.category_b_latest.premium.toLocaleString()}</div></div>
+  <div class="coe-item"><div class="coe-cat">Reference Date</div><div class="coe-val">${watchlist.reference_date}</div></div>
+</div>
+
 <div class="content">
 
 ## Daily Listing Volume

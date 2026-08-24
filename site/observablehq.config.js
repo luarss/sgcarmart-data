@@ -3,7 +3,6 @@ export default {
   title: "SGCM Value Watchlist",
   pages: [
     {name: "Top 100", path: "/"},
-    {name: "Detail", path: "/detail"},
     {name: "History", path: "/history"}
   ],
   base: "/",
