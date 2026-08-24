@@ -31,9 +31,11 @@ const avgScore = top100.reduce((s, l) => s + l.composite_score, 0) / top100.leng
 </div>
 
 <div class="coe-banner">
-  <div class="coe-item"><div class="coe-cat">COE Cat A</div><div class="coe-val">$${coe.category_a_latest.premium.toLocaleString()}</div></div>
-  <div class="coe-item"><div class="coe-cat">COE Cat B</div><div class="coe-val">$${coe.category_b_latest.premium.toLocaleString()}</div></div>
-  <div class="coe-item"><div class="coe-cat">Reference Date</div><div class="coe-val">${watchlist.reference_date}</div></div>
+  <div class="coe-banner-inner">
+    <div class="coe-item"><div class="coe-cat">COE Cat A</div><div class="coe-val">$${coe.category_a_latest.premium.toLocaleString()}</div></div>
+    <div class="coe-item"><div class="coe-cat">COE Cat B</div><div class="coe-val">$${coe.category_b_latest.premium.toLocaleString()}</div></div>
+    <div class="coe-item"><div class="coe-cat">Reference Date</div><div class="coe-val">${watchlist.reference_date}</div></div>
+  </div>
 </div>
 
 <div class="content">
@@ -81,6 +83,85 @@ display(htl.html`<div class="chart-container">${Plot.plot({
     })
   ]
 })}</div>`);
+```
+
+## Pareto Frontier: Best Value at Each Price Point
+
+Among the top 100, these listings are **non-dominated** — no other car in the set offers both a lower price and an equal-or-higher composite score. Together they trace the cheapest available score at every price point.
+
+```js
+const paretoFrontier = (() => {
+  const sorted = [...top100].sort((a, b) => a.price - b.price);
+  const frontier = [];
+  let maxScore = -Infinity;
+  for (const d of sorted) {
+    if (d.composite_score > maxScore) {
+      frontier.push(d);
+      maxScore = d.composite_score;
+    }
+  }
+  return frontier;
+})();
+
+const frontierIds = new Set(paretoFrontier.map(d => d.id));
+
+display(htl.html`<div class="chart-container">${Plot.plot({
+  marginLeft: 60,
+  marginBottom: 40,
+  height: 440,
+  style: { fontSize: "13px" },
+  x: { label: "Price (SGD)", tickFormat: "$,d" },
+  y: { label: "Composite Score", tickFormat: ".2f" },
+  marks: [
+    Plot.dot(top100.filter(d => !frontierIds.has(d.id)), {
+      x: "price",
+      y: "composite_score",
+      fill: "#94a3b8",
+      fillOpacity: 0.4,
+      r: 4,
+      tip: true,
+      title: (d) => `${d.title}\nPrice: $${d.price.toLocaleString()}\nScore: ${d.composite_score.toFixed(3)}`,
+    }),
+    Plot.line(paretoFrontier, {
+      x: "price",
+      y: "composite_score",
+      stroke: "#ef4444",
+      strokeWidth: 2,
+      curve: "step-after",
+    }),
+    Plot.dot(paretoFrontier, {
+      x: "price",
+      y: "composite_score",
+      fill: "#ef4444",
+      stroke: "white",
+      strokeWidth: 1.5,
+      r: 6,
+      tip: true,
+      title: (d) => `★ ${d.title}\nPrice: $${d.price.toLocaleString()}\nScore: ${d.composite_score.toFixed(3)}\nBrand: ${d.brand}`,
+    })
+  ]
+})}</div>`);
+```
+
+```js
+display(htl.html`<div class="chart-container" style="overflow-x: auto;">
+<table class="data-table">
+<thead><tr>
+  <th class="rank-col">#</th>
+  <th>Car</th>
+  <th>Brand</th>
+  <th>Price</th>
+  <th>Score</th>
+</tr></thead>
+<tbody>
+${paretoFrontier.map((l, i) => htl.html`<tr>
+  <td class="rank-col">${i + 1}</td>
+  <td><a href="/detail#${l.id}">${l.title}</a></td>
+  <td>${l.brand}</td>
+  <td class="price-col">$${l.price.toLocaleString()}</td>
+  <td class="score-col"><span class="score-badge high">${l.composite_score.toFixed(4)}</span></td>
+</tr>`)}
+</tbody></table></div>`);
 ```
 
 <div class="grid-2">

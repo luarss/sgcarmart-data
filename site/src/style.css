@@ -87,15 +87,19 @@ body {
 
 /* COE Banner */
 .coe-banner {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  padding: 16px 24px;
   background: var(--green-50);
   border-bottom: 1px solid var(--green-100);
 }
+.coe-banner .coe-banner-inner {
+  display: flex;
+  justify-content: flex-start;
+  gap: 32px;
+  padding: 16px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .coe-banner .coe-item {
-  text-align: center;
+  text-align: left;
 }
 .coe-banner .coe-cat {
   font-size: 0.75rem;
