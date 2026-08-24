@@ -22,13 +22,13 @@ from pathlib import Path
 # is redistributed across the four strongest independent signals.
 
 DEFAULT_WEIGHTS = {
-    "body_depreciation_rate": 0.30,   # was 0.25
-    "body_price_per_coe_year": 0.20,  # was 0.15
-    "depreciation_rate": 0.15,        # was 0.10
-    "annual_mileage": 0.10,
-    "depreciation_per_km": 0.15,      # was 0.10
+    "body_depreciation_rate": 0.30,
+    "body_price_per_coe_year": 0.25,  # +0.05: absorbs redistribution from deprecated metric
+    "depreciation_rate": 0.00,        # removed: r=0.990 with body_depreciation_rate; biases against COE-peak cars
+    "annual_mileage": 0.12,
+    "depreciation_per_km": 0.18,
     "price_per_owner": 0.05,
-    "days_on_market": 0.05,
+    "days_on_market": 0.10,           # +0.05: only fully orthogonal signal (r≈0.09 with all others)
 }
 
 ANNUAL_MILEAGE_CAP = 50000
