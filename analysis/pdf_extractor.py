@@ -308,11 +308,11 @@ class GeminiPDFExtractor:
 
 
 class DeepSeekPDFExtractor:
-    DEFAULT_MODEL: ClassVar[str] = "deepseek-v4-flash"
+    DEFAULT_MODEL: ClassVar[str] = "deepseek-flash"
     BASE_URL: ClassVar[str] = "https://api.deepseek.com"
 
     PRICING: ClassVar = {
-        "deepseek-v4-flash": {"input_per_million": 0.07, "output_per_million": 0.28, "is_free": False},
+        "deepseek-flash": {"input_per_million": 0.07, "output_per_million": 0.28, "is_free": False},
         "deepseek-chat": {"input_per_million": 0.27, "output_per_million": 1.10, "is_free": False},
         "deepseek-reasoner": {"input_per_million": 0.55, "output_per_million": 2.19, "is_free": False},
     }
