@@ -1,0 +1,50 @@
+{
+  "ic_preowned": {
+    "name": "IC Preowned",
+    "search_query": "IC Preowned Singapore used car",
+    "place_id": "ChIJyc8mKSgb2jERteq2Ek4ERiU"
+  },
+  "eurokars": {
+    "name": "Eurokars Preowned",
+    "search_query": "Eurokars Preowned Singapore",
+    "place_id": "ChIJZYic8Cwa2jERbqpm6YmO3H4"
+  },
+  "das_weltauto": {
+    "name": "Das WeltAuto Singapore",
+    "search_query": "Das WeltAuto Singapore Volkswagen certified used car",
+    "place_id": "ChIJXcDZz9Ib2jER4oMSx8nNYCA"
+  },
+  "toyota": {
+    "name": "Borneo Motors Toyota Pre-Owned",
+    "search_query": "Borneo Motors Toyota pre-owned Singapore",
+    "place_id": "ChIJ__8_Xi0a2jERSMTznqsDKdw",
+    "_note": "Borneo Motors Leng Kee — no dedicated pre-owned showroom found"
+  },
+  "dickson": {
+    "name": "Dickson Group",
+    "search_query": "Dickson Group Singapore used car",
+    "place_id": "ChIJGW3rFIkX2jERy7i0DTBfJoU"
+  },
+  "carchoice": {
+    "name": "Car Choice Singapore",
+    "search_query": "Car Choice certified pre-owned Singapore",
+    "place_id": "ChIJh-AvZD8X2jER5auOicxa0MM",
+    "_note": "Car Choice Polaris@Woodlands — multi-location chain, verify correct branch"
+  },
+  "sim_mee_motors": {
+    "name": "Auto Selection by Sime Motors",
+    "search_query": "Auto Selection Sime Motors Singapore used car",
+    "place_id": "ChIJd9_csPEX2jERYIuRuUzsJw4"
+  },
+  "cycle_carriage": {
+    "name": "Cycle & Carriage Republic Auto",
+    "search_query": "Cycle Carriage Republic Auto Singapore",
+    "place_id": "ChIJ____76Ma2jERi8HZy9953pQ"
+  },
+  "skoda": {
+    "name": "Skoda Das WeltAuto Singapore",
+    "search_query": "Skoda Das WeltAuto Singapore",
+    "place_id": "ChIJXcDZz9Ib2jER4oMSx8nNYCA",
+    "_note": "Same physical location as das_weltauto (247 Alexandra Rd)"
+  }
+}
