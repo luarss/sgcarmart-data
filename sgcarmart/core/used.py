@@ -49,11 +49,21 @@ def _proxy_dict(proxy_url: str) -> dict:
 _http_working_proxy: str | None = None
 
 
+class _BlockedResponseError(Exception):
+    """Response loaded (HTTP 200) but didn't contain the expected RSC listing
+    payload — typically a proxy serving a block/challenge page instead of the
+    real one. Distinct from a genuinely empty last page, which is a normal
+    end-of-pagination signal, not a failure."""
+
+
 def _fetch_html(url: str, timeout: int = 20) -> str:
     """Fetch HTML via HTTP, rotating through proxies on failure.
 
     Tries the cached working proxy first, then direct, then each fallback
-    proxy in _PROXY_FALLBACKS. Raises the last error if all fail.
+    proxy in _PROXY_FALLBACKS. A response that parses as a blocked/challenge
+    page (see `_parse_rsc_listings`) is treated the same as a network failure
+    and triggers a retry with the next candidate. Raises the last error if
+    all fail.
     """
     global _http_working_proxy
 
@@ -72,6 +82,7 @@ def _fetch_html(url: str, timeout: int = 20) -> str:
                 url, headers=_HTTP_HEADERS, proxies=proxies, timeout=timeout
             )
             resp.raise_for_status()
+            _parse_rsc_listings(resp.text)  # raises _BlockedResponseError if unusable
             if proxy != _http_working_proxy:
                 print(f"HTTP: connection established via {label}")
             _http_working_proxy = proxy
@@ -86,17 +97,26 @@ def _fetch_html(url: str, timeout: int = 20) -> str:
 
 
 def _parse_rsc_listings(html: str) -> list[dict]:
-    """Extract the listing_data.data array from the Next.js RSC payload."""
+    """Extract the listing_data.data array from the Next.js RSC payload.
+
+    Raises `_BlockedResponseError` if the page doesn't contain the expected
+    RSC structure at all (block/challenge page). Returns [] only when the
+    structure is present but the data array is genuinely empty — the real
+    end-of-pagination signal.
+    """
     chunks = re.findall(
         r'self\.__next_f\.push\(\[1,"((?:[^"\\]|\\.)*)"\]\)',
         html,
         re.DOTALL,
     )
+    if not chunks:
+        raise _BlockedResponseError("no RSC payload found in response")
+
     all_decoded = "\n".join(json.loads('"' + chunk + '"') for chunk in chunks)
 
     m = re.search(r'"listing_data":\{"data":\[', all_decoded)
     if not m:
-        return []
+        raise _BlockedResponseError("listing_data not found in RSC payload")
 
     # Walk forward to find the matching closing bracket.
     start = m.end()
@@ -110,8 +130,8 @@ def _parse_rsc_listings(html: str) -> list[dict]:
 
     try:
         return json.loads("[" + all_decoded[start : pos - 1] + "]")
-    except json.JSONDecodeError:
-        return []
+    except json.JSONDecodeError as e:
+        raise _BlockedResponseError("failed to parse listing_data array") from e
 
 
 def _rsc_item_to_dict(item: dict) -> dict:
@@ -162,6 +182,33 @@ def _rsc_item_to_dict(item: dict) -> dict:
     }
 
 
+# A blocked page is often a transient proxy hiccup rather than a hard wall —
+# retry the whole candidate sweep a few times with backoff before giving up
+# on that page.
+_PAGE_RETRY_ATTEMPTS = 3
+_PAGE_RETRY_BACKOFF = 3.0  # seconds; multiplied by attempt number
+
+
+def _fetch_page_items(url: str) -> list[dict]:
+    """Fetch and parse one listing page, retrying if every proxy candidate
+    was blocked. Raises the last error if still blocked after all retries."""
+    last_error: Exception | None = None
+    for attempt in range(1, _PAGE_RETRY_ATTEMPTS + 1):
+        try:
+            html = _fetch_html(url)
+            return _parse_rsc_listings(html)
+        except Exception as e:
+            last_error = e
+            if attempt < _PAGE_RETRY_ATTEMPTS:
+                delay = _PAGE_RETRY_BACKOFF * attempt
+                print(
+                    f"HTTP: page blocked on all proxies ({e}), retrying in "
+                    f"{delay:.0f}s [{attempt}/{_PAGE_RETRY_ATTEMPTS}]..."
+                )
+                time.sleep(delay)
+    raise last_error
+
+
 def fetch_all_listings_http(
     filters: dict,
     max_pages: int = 50,
@@ -169,7 +216,10 @@ def fetch_all_listings_http(
 ) -> dict[str, dict]:
     """Fetch listings across pages via HTTP, returning a dict keyed by listing ID.
 
-    Raises on network failure so the caller can decide how to handle it.
+    Raises on network failure so the caller can decide how to handle it —
+    but only when page 1 fails outright (no data collected at all). A block
+    on a later page, after retries are exhausted, stops pagination and
+    returns whatever was collected rather than discarding it.
     Returns an empty dict (not raises) when the page loads but RSC has no data.
     """
     params = {}
@@ -186,8 +236,16 @@ def fetch_all_listings_http(
 
     for page in range(1, max_pages + 1):
         url = base_url if page == 1 else f"{base_url}&page={page}"
-        html = _fetch_html(url)
-        items = _parse_rsc_listings(html)
+        try:
+            items = _fetch_page_items(url)
+        except Exception as e:
+            if page == 1:
+                raise
+            print(
+                f"HTTP: page {page} still blocked after {_PAGE_RETRY_ATTEMPTS} "
+                f"attempts ({e}), stopping with {len(results)} listings collected."
+            )
+            break
         if not items:
             print(f"HTTP: no RSC listings on page {page}, stopping.")
             break
