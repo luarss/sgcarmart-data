@@ -1,7 +1,7 @@
 [project]
 name = "sgcarmart-data"
 version = "0.1.0"
-description = "Add your description here"
+description = "Archive and analyse Singapore car market data: new car pricelists, used car listings, CPO stock and COE bidding results"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
@@ -36,6 +36,14 @@ dev = [
     "pytest-playwright>=0.7.1",
     "responses>=0.25.0",
     "ruff>=0.14.6",
+]
+# Only needed by scripts/archive_to_r2.py (Cloudflare R2 upload). Kept out of
+# the runtime deps so the five scheduled workflows, none of which archive,
+# don't pay for boto3's large dependency tree on every `uv sync`.
+# Install with: uv sync --extra archive
+archive = [
+    "boto3>=1.35.0",
+    "botocore",
 ]
 
 [tool.pytest.ini_options]
