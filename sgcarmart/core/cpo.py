@@ -9,6 +9,7 @@ Sites scraped:
 Excluded (robots.txt non-compliant or unverifiable):
   tesla - robots.txt returns HTTP 403; cannot verify access permission
 """
+
 import contextlib
 import json
 import os
@@ -282,9 +283,7 @@ class DasWeltAutoScraper(CPOScraper):
             try:
                 self.page.locator(f'a.page-link[data-pg="{pg}"]').click()
                 # Wait for the active state to update
-                self.page.wait_for_selector(
-                    f'.page-item.active a[data-pg="{pg}"]', timeout=5000
-                )
+                self.page.wait_for_selector(f'.page-item.active a[data-pg="{pg}"]', timeout=5000)
                 results.extend(self._parse_current_page())
             except Exception:
                 continue

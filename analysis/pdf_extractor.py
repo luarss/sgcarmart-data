@@ -435,8 +435,7 @@ PDF TEXT:
         print(f"✓ DeepSeek extraction successful! Confidence: {extraction.extraction_confidence}")
         print(f"✓ Extracted {len(extraction.pricelist.models)} model(s)")
         print(
-            f"✓ Tokens: {api_usage.total_tokens:,} "
-            f"(in: {api_usage.input_tokens:,}, out: {api_usage.output_tokens:,})"
+            f"✓ Tokens: {api_usage.total_tokens:,} (in: {api_usage.input_tokens:,}, out: {api_usage.output_tokens:,})"
         )
         print(f"✓ Cost: ${api_usage.total_cost_usd:.6f} USD")
 
@@ -486,10 +485,7 @@ class MimoPDFExtractor:
         import fitz
 
         doc = fitz.open(str(pdf_path))
-        return [
-            base64.standard_b64encode(page.get_pixmap(dpi=self.DPI).tobytes("png")).decode()
-            for page in doc
-        ]
+        return [base64.standard_b64encode(page.get_pixmap(dpi=self.DPI).tobytes("png")).decode() for page in doc]
 
     def extract_from_pdf(
         self, pdf_path: Path, model: str | None = None, temperature: float = 0.1
@@ -556,7 +552,9 @@ Schema reference:
             print(f"✗ Mimo validation error: {e}")
             raise
 
-        reasoning_tokens = (usage.completion_tokens_details.reasoning_tokens or 0) if usage.completion_tokens_details else 0
+        reasoning_tokens = (
+            (usage.completion_tokens_details.reasoning_tokens or 0) if usage.completion_tokens_details else 0
+        )
         print(f"✓ Mimo extraction successful! Confidence: {extraction.extraction_confidence}")
         print(f"✓ Extracted {len(extraction.pricelist.models)} model(s)")
         print(

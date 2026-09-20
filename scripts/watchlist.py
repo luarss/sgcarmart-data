@@ -13,7 +13,7 @@ Usage:
 import argparse
 import json
 import math
-from datetime import date, datetime, timezone
+from datetime import UTC, date, datetime
 from pathlib import Path
 
 from analysis.value_scorer import DEFAULT_WEIGHTS, load_and_score, load_coe_lookup
@@ -68,14 +68,31 @@ def run_watchlist(
 
     # Build output fields for top-N cars
     output_fields = [
-        "id", "title", "brand", "url", "price", "depreciation",
-        "reg_date", "age_years", "coe_years_left", "coe_category",
-        "mileage_km", "annual_mileage", "num_owners",
-        "is_direct_owner", "is_premium_ad",
-        "body_price", "body_depreciation_rate", "value_retention",
-        "depreciation_rate", "body_price_per_coe_year",
-        "depreciation_per_km", "price_per_owner", "days_on_market",
-        "composite_score", "metric_scores",
+        "id",
+        "title",
+        "brand",
+        "url",
+        "price",
+        "depreciation",
+        "reg_date",
+        "age_years",
+        "coe_years_left",
+        "coe_category",
+        "mileage_km",
+        "annual_mileage",
+        "num_owners",
+        "is_direct_owner",
+        "is_premium_ad",
+        "body_price",
+        "body_depreciation_rate",
+        "value_retention",
+        "depreciation_rate",
+        "body_price_per_coe_year",
+        "depreciation_per_km",
+        "price_per_owner",
+        "days_on_market",
+        "composite_score",
+        "metric_scores",
         "road_tax",
     ]
 
@@ -94,7 +111,7 @@ def run_watchlist(
     source_ref = str(snapshot_path.relative_to(PROJECT_ROOT)) if snapshot_path.exists() else "latest.json"
 
     return {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": datetime.now(UTC).isoformat(),
         "reference_date": reference_date.isoformat(),
         "source_snapshot": source_ref,
         "total_source_listings": stats["total_source_listings"],
@@ -181,7 +198,9 @@ def main() -> dict:
     parser = argparse.ArgumentParser(description="Generate value watchlist from used car listings")
     parser.add_argument("--name", default=DEFAULT_WATCH, help=f"Watch name (default: {DEFAULT_WATCH})")
     parser.add_argument("--date", type=str, default=None, help="Reference date (YYYY-MM-DD), defaults to today")
-    parser.add_argument("--top", type=int, default=DEFAULT_TOP, help=f"Number of top listings to include (default: {DEFAULT_TOP})")
+    parser.add_argument(
+        "--top", type=int, default=DEFAULT_TOP, help=f"Number of top listings to include (default: {DEFAULT_TOP})"
+    )
     parser.add_argument("--json", action="store_true", help="Output JSON to stdout instead of summary")
     args = parser.parse_args()
 

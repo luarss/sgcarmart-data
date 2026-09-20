@@ -9,15 +9,15 @@ Playwright path: kept for detail pages and as a fallback if the HTTP path
 stops working (e.g. Cloudflare starts JS-challenging all requests).
 """
 
+import contextlib
+import json
 import os
 import re
 import time
-import json
 from dataclasses import dataclass, field
 from urllib.parse import urlencode, urljoin
 
 import requests
-
 from playwright.sync_api import Page, sync_playwright
 from playwright_stealth import Stealth
 
@@ -78,9 +78,7 @@ def _fetch_html(url: str, timeout: int = 20) -> str:
         label = proxy or "direct"
         try:
             proxies = _proxy_dict(proxy) if proxy else None
-            resp = requests.get(
-                url, headers=_HTTP_HEADERS, proxies=proxies, timeout=timeout
-            )
+            resp = requests.get(url, headers=_HTTP_HEADERS, proxies=proxies, timeout=timeout)
             resp.raise_for_status()
             _parse_rsc_listings(resp.text)  # raises _BlockedResponseError if unusable
             if proxy != _http_working_proxy:
@@ -140,10 +138,8 @@ def _rsc_item_to_dict(item: dict) -> dict:
     road_tax = None
     m = re.search(r"([\d,]+)", eng_cap_str)
     if m:
-        try:
+        with contextlib.suppress(Exception):
             road_tax = compute_road_tax(int(m.group(1).replace(",", "")))
-        except Exception:
-            pass
 
     tag = (item.get("tag") or "").upper()
     instalment_info = item.get("instalment") or {}
@@ -260,16 +256,15 @@ def fetch_all_listings_http(
 
     return results
 
+
 _PROXY_SERVER = os.environ.get("PROXY_SERVER")
 
 # Comma-separated fallback proxies to rotate through on failure.
-# Cap at 10 to bound worst-case wait time (30 s × 10 = 5 min max).
+# Cap at 10 to bound worst-case wait time (30 s x 10 = 5 min max).
 _MAX_PROXY_ATTEMPTS = 10
-_PROXY_FALLBACKS = [
-    p.strip()
-    for p in os.environ.get("PROXY_FALLBACKS", "").split(",")
-    if p.strip()
-][:_MAX_PROXY_ATTEMPTS]
+_PROXY_FALLBACKS = [p.strip() for p in os.environ.get("PROXY_FALLBACKS", "").split(",") if p.strip()][
+    :_MAX_PROXY_ATTEMPTS
+]
 
 _BADGE_FLAGS = {"PREMIUM AD", "DIRECT OWNER", "IMPORT USED"}
 
@@ -292,6 +287,7 @@ def compute_road_tax(eng_cap_cc: int) -> int | None:
         base = 1525 + 1.0 * (eng_cap_cc - 3000)
     semi_annual = base * _ROAD_TAX_MULTIPLIER
     return round(semi_annual * 2)
+
 
 # filter key → SGCarMart URL parameter name
 SEARCH_PARAMS: dict[str, str] = {
@@ -458,10 +454,8 @@ class UsedCarSearch:
             print(f"Retrying with proxy: {proxy}")
             self._restart_with_proxy(proxy)
         self.page.goto(url, wait_until="domcontentloaded", timeout=30000)
-        try:
+        with contextlib.suppress(Exception):
             self.page.wait_for_selector('[class*="listing_box"]', timeout=15000)
-        except Exception:
-            pass
         return bool(self.get_listings())
 
     def _build_params(self, filters: dict) -> dict:
@@ -494,7 +488,7 @@ class UsedCarSearch:
 
     def _parse_card(self, card) -> UsedCarListing | None:
         text = card.inner_text()
-        lines = [l.strip() for l in text.split("\n") if l.strip()]
+        lines = [line.strip() for line in text.split("\n") if line.strip()]
 
         url = self._extract_card_url(card)
         fields = self._parse_listing_lines(lines)
@@ -705,10 +699,7 @@ class UsedCarSearch:
 
     def get_detail(self, url_or_id: str) -> UsedCarDetail | None:
         """Fetch a car detail page and extract structured data."""
-        if url_or_id.startswith("http"):
-            url = url_or_id
-        else:
-            url = f"{DETAIL_URL}/car-{url_or_id}"
+        url = url_or_id if url_or_id.startswith("http") else f"{DETAIL_URL}/car-{url_or_id}"
 
         self.page.goto(url, wait_until="domcontentloaded")
         time.sleep(1)

@@ -11,8 +11,8 @@ from dotenv import load_dotenv
 from sgcarmart.constants import DEFAULT_BROWSER_MAX_WORKERS, DEFAULT_EXTRACT_MODEL, DEFAULT_MAX_WORKERS
 from sgcarmart.core.downloader import process_dealer
 from sgcarmart.core.year_navigator import discover_historical_pdfs
-from sgcarmart.utils.file_utils import load_dealer_brand_mapping
 from sgcarmart.utils import manifest as pdf_manifest
+from sgcarmart.utils.file_utils import load_dealer_brand_mapping
 
 load_dotenv(Path(__file__).parent / "analysis" / ".env")
 

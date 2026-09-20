@@ -28,8 +28,8 @@ def fetch_coe_results(resource_id: str = COE_RESOURCE_ID) -> list[dict]:
 
         try:
             data = response.json()
-        except ValueError:
-            raise COEAPIError("Invalid JSON response from COE API")
+        except ValueError as err:
+            raise COEAPIError("Invalid JSON response from COE API") from err
 
         if not data.get("success"):
             raise COEAPIError(f"COE API returned success=false: {data.get('error', 'unknown error')}")

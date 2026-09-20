@@ -1,13 +1,11 @@
 """Data loader: aggregates daily snapshots into compact time-series."""
+
 import json
 import sys
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 
-snapshot_dir = (
-    Path(__file__).resolve().parents[3]
-    / "data" / "used_cars" / "sgd-passenger"
-)
+snapshot_dir = Path(__file__).resolve().parents[3] / "data" / "used_cars" / "sgd-passenger"
 
 dates = []
 daily_stats = []
@@ -50,25 +48,26 @@ for f in sorted(snapshot_dir.glob("20[2-9][0-9]-[01][0-9]-[0-3][0-9].json")):
         else:
             listings_index[lid]["last_seen"] = date_str
 
-        listings_index[lid]["history"].append({
-            "date": date_str,
-            "price": price,
-            "depreciation": depr,
-        })
+        listings_index[lid]["history"].append(
+            {
+                "date": date_str,
+                "price": price,
+                "depreciation": depr,
+            }
+        )
 
-    daily_stats.append({
-        "date": date_str,
-        "count": len(ids),
-        "avg_price": round(sum(prices) / len(prices)) if prices else 0,
-        "min_price": min(prices) if prices else 0,
-        "max_price": max(prices) if prices else 0,
-    })
+    daily_stats.append(
+        {
+            "date": date_str,
+            "count": len(ids),
+            "avg_price": round(sum(prices) / len(prices)) if prices else 0,
+            "min_price": min(prices) if prices else 0,
+            "max_price": max(prices) if prices else 0,
+        }
+    )
 
 # Filter to listings that appear in multiple snapshots (for price tracking)
-tracked = [
-    v for v in listings_index.values()
-    if len(v["history"]) >= 2
-]
+tracked = [v for v in listings_index.values() if len(v["history"]) >= 2]
 
 result = {
     "dates": dates,

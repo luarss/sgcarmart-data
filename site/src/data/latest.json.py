@@ -1,14 +1,12 @@
 """Data loader: extracts summary stats from latest.json for hero section."""
+
 import json
 import re
 import sys
-from pathlib import Path
 from collections import Counter
+from pathlib import Path
 
-latest_path = (
-    Path(__file__).resolve().parents[3]
-    / "data" / "used_cars" / "sgd-passenger" / "latest.json"
-)
+latest_path = Path(__file__).resolve().parents[3] / "data" / "used_cars" / "sgd-passenger" / "latest.json"
 
 if not latest_path.exists():
     json.dump({"error": "latest.json not found"}, sys.stdout)
@@ -48,23 +46,23 @@ mileages = []
 owner_counts = []
 brands = Counter()
 
-for l in listings:
-    price = l.get("price", 0) or 0
-    depr = l.get("depreciation", 0) or 0
+for listing in listings:
+    price = listing.get("price", 0) or 0
+    depr = listing.get("depreciation", 0) or 0
     if price:
         prices.append(price)
     if depr:
         depreciations.append(depr)
 
-    mileage = parse_mileage(l.get("mileage", 0))
+    mileage = parse_mileage(listing.get("mileage", 0))
     if mileage:
         mileages.append(mileage)
 
-    owners = parse_owners(l.get("owners", 0))
+    owners = parse_owners(listing.get("owners", 0))
     if owners:
         owner_counts.append(owners)
 
-    title = l.get("title", "")
+    title = listing.get("title", "")
     brand = title.split()[0] if title else "Unknown"
     brands[brand] += 1
 
@@ -97,10 +95,7 @@ summary = {
     },
     "avg_mileage": round(sum(mileages) / len(mileages)) if mileages else 0,
     "avg_owners": round(sum(owner_counts) / len(owner_counts), 1) if owner_counts else 0,
-    "top_brands": [
-        {"brand": b, "count": c}
-        for b, c in brands.most_common(15)
-    ],
+    "top_brands": [{"brand": b, "count": c} for b, c in brands.most_common(15)],
     "unique_brands": len(brands),
 }
 

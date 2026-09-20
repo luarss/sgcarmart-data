@@ -10,7 +10,6 @@ Pure Python stdlib — no pandas/numpy needed.
 
 import glob
 import json
-import math
 import re
 from datetime import date, datetime
 from pathlib import Path
@@ -24,11 +23,11 @@ from pathlib import Path
 DEFAULT_WEIGHTS = {
     "body_depreciation_rate": 0.30,
     "body_price_per_coe_year": 0.25,  # +0.05: absorbs redistribution from deprecated metric
-    "depreciation_rate": 0.00,        # removed: r=0.990 with body_depreciation_rate; biases against COE-peak cars
+    "depreciation_rate": 0.00,  # removed: r=0.990 with body_depreciation_rate; biases against COE-peak cars
     "annual_mileage": 0.12,
     "depreciation_per_km": 0.18,
     "price_per_owner": 0.05,
-    "days_on_market": 0.10,           # +0.05: only fully orthogonal signal (r≈0.09 with all others)
+    "days_on_market": 0.10,  # +0.05: only fully orthogonal signal (r≈0.09 with all others)
 }
 
 ANNUAL_MILEAGE_CAP = 50000
@@ -236,22 +235,24 @@ def score_listings(
         coe_category = _assign_coe_category(eng_cap_cc)
         days_on_market = (reference_date - posted_date).days
 
-        enriched.append({
-            **car,
-            "brand": brand,
-            "reg_date_parsed": reg_date,
-            "posted_date_parsed": posted_date,
-            "age_years": age_years,
-            "coe_years_left": coe_years_left,
-            "mileage_km": mileage_km,
-            "eng_cap_cc": eng_cap_cc,
-            "num_owners": num_owners,
-            "annual_mileage_km_raw": annual_mileage_km,
-            "coe_category": coe_category,
-            "days_on_market": days_on_market,
-            "depreciation_rate": depreciation / price,
-            "est_original_price": price + (depreciation * age_years),
-        })
+        enriched.append(
+            {
+                **car,
+                "brand": brand,
+                "reg_date_parsed": reg_date,
+                "posted_date_parsed": posted_date,
+                "age_years": age_years,
+                "coe_years_left": coe_years_left,
+                "mileage_km": mileage_km,
+                "eng_cap_cc": eng_cap_cc,
+                "num_owners": num_owners,
+                "annual_mileage_km_raw": annual_mileage_km,
+                "coe_category": coe_category,
+                "days_on_market": days_on_market,
+                "depreciation_rate": depreciation / price,
+                "est_original_price": price + (depreciation * age_years),
+            }
+        )
 
     # ── Stage 2: Derived per-car metrics ──────────────────────────────
     for row in enriched:
@@ -309,9 +310,13 @@ def score_listings(
     clean: list[dict] = []
 
     scoring_fields = [
-        "depreciation_rate", "body_depreciation_rate",
-        "body_price_per_coe_year", "annual_mileage", "depreciation_per_km",
-        "price_per_owner", "days_on_market",
+        "depreciation_rate",
+        "body_depreciation_rate",
+        "body_price_per_coe_year",
+        "annual_mileage",
+        "depreciation_per_km",
+        "price_per_owner",
+        "days_on_market",
     ]
 
     for row in enriched:

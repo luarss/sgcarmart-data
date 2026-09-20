@@ -1,7 +1,9 @@
 """List available Gemini models via the OpenAI-compatible endpoint."""
+
 import os
-from dotenv import load_dotenv
 from pathlib import Path
+
+from dotenv import load_dotenv
 from openai import OpenAI
 
 load_dotenv(Path(__file__).parent.parent / "analysis" / ".env")
