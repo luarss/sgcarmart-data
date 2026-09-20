@@ -8,6 +8,7 @@ Usage:
     uv run cpo_main.py --workers 2             # limit parallel browsers
     uv run cpo_main.py --no-headless           # show browser windows
 """
+
 import argparse
 import sys
 
@@ -54,6 +55,16 @@ def main() -> None:
 
     print(f"Scraping {'test sites' if args.test else sites or 'all sites'}...")
     listings, site_results = run_all(sites=sites, headless=headless, max_workers=args.workers)
+
+    if not listings:
+        # Every site came back empty — a scrape failure, not a real result.
+        # Exit non-zero without writing anything so CI reports the failure and
+        # no empty snapshot is committed.
+        print(
+            "ERROR: 0 listings scraped across all sites — treating as a scrape failure. No snapshot written.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
 
     path = save_results(listings, site_results, output_dir=args.output_dir)
     print(f"\nTotal: {len(listings)} listings → {path}")
