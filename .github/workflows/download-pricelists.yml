@@ -26,8 +26,19 @@ jobs:
       - name: Install dependencies with dev extras
         run: uv sync --extra dev
 
-      #- name: Run tests with coverage
-      #  run: uv run pytest --cov=sgcarmart --cov-report=term-missing
+      - name: Run tests with coverage
+        # The suite is hermetic: tests/conftest.py blocks real sockets, so a
+        # broken mock fails loudly instead of calling sgcarmart.com or an LLM
+        # provider. Live drift checks are marked `network` and need --run-network.
+        #
+        # Coverage settings (including the fail-under ratchet) live in
+        # pyproject.toml so local runs and CI agree. Don't override them here.
+        run: uv run pytest --cov-report=term-missing
+        env:
+          # Belt and braces: no real credentials available to the test job.
+          GEMINI_API_KEY: ""
+          DEEPSEEK_API_KEY: ""
+          XIAOMI_API_KEY: ""
 
   download:
     runs-on: ubuntu-latest

@@ -1,0 +1,141 @@
+User-agent: *
+Crawl-delay: 30
+
+Disallow: /car-loan/info.php*?q=
+
+Disallow: /search*?q=
+
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: Yahoo-MMCrawler
+Disallow: /
+
+User-agent: Paracrawl
+Disallow: /
+
+User-agent: psbot
+Disallow: /
+
+User-agent: SentiBot
+Disallow: /
+
+User-agent: SentiBot www.sentibot.eu (compatible with Googlebot)
+Disallow: /
+
+User-agent: Applebot
+Crawl-delay: 5
+Disallow: /cgi-bin/
+Disallow: /images/
+Disallow: /mail/
+Disallow: /dealer/
+Disallow: /directory/premium/
+Disallow: /includes/
+Disallow: /phpads/
+Disallow: /update/
+Disallow: /upload/
+Disallow: /used_cars/valuation.php
+Disallow: /api
+Disallow: /used-cars/api
+Disallow: /shop/api
+
+User-agent: grapeshot
+Crawl-delay: 0
+Disallow: /cgi-bin/
+Disallow: /images/
+Disallow: /mail/
+Disallow: /dealer/
+Disallow: /directory/premium/
+Disallow: /includes/
+Disallow: /phpads/
+Disallow: /update/
+Disallow: /upload/
+Disallow: /used_cars/valuation.php
+Disallow: /api
+Disallow: /used-cars/api
+Disallow: /shop/api
+
+User-agent: PetalBot
+Allow: /rss/
+
+User-agent: Googlebot-Desktop
+Disallow: /cgi-bin/
+Disallow: /images/
+Disallow: /mail/
+Disallow: /dealer/
+Disallow: /directory/premium/
+Disallow: /includes/
+Disallow: /phpads/
+Disallow: /update/
+Disallow: /upload/
+Disallow: /checkout/
+Disallow: /used_cars/valuation.php
+Disallow: /api
+Disallow: /used-cars/api
+Disallow: /shop/api
+
+User-agent: SiteAuditBot-Desktop
+Disallow: /cgi-bin/
+Disallow: /images/
+Disallow: /mail/
+Disallow: /dealer/
+Disallow: /directory/premium/
+Disallow: /includes/
+Disallow: /phpads/
+Disallow: /update/
+Disallow: /upload/
+Disallow: /checkout/
+Disallow: /used_cars/valuation.php
+Disallow: /api
+Disallow: /used-cars/api
+Disallow: /shop/api
+
+User-agent: Googlebot-Mobile
+Disallow: /cgi-bin/
+Disallow: /images/
+Disallow: /mail/
+Disallow: /dealer/
+Disallow: /directory/premium/
+Disallow: /includes/
+Disallow: /phpads/
+Disallow: /update/
+Disallow: /upload/
+Disallow: /checkout/
+Disallow: /used_cars/valuation.php
+Disallow: /api
+Disallow: /used-cars/api
+Disallow: /shop/api
+
+User-agent: SiteAuditBot-Mobile
+Disallow: /cgi-bin/
+Disallow: /images/
+Disallow: /mail/
+Disallow: /dealer/
+Disallow: /directory/premium/
+Disallow: /includes/
+Disallow: /phpads/
+Disallow: /update/
+Disallow: /upload/
+Disallow: /checkout/
+Disallow: /used_cars/valuation.php
+Disallow: /api
+Disallow: /used-cars/api
+Disallow: /shop/api
+
+User-agent: *
+Crawl-delay: 5
+Disallow: /cgi-bin/
+Disallow: /images/
+Disallow: /mail/
+Disallow: /dealer/
+Disallow: /directory/premium/
+Disallow: /includes/
+Disallow: /phpads/
+Disallow: /update/
+Disallow: /upload/
+Disallow: /used_cars/valuation.php
+Disallow: /api
+Disallow: /used-cars/api
+Disallow: /shop/api
+
+Sitemap: https://www.sgcarmart.com/sitemap_index.xml

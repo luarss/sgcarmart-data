@@ -64,7 +64,13 @@ def _build_mapping_error(added, removed, changed, current_map, sitemap_map):
 
 
 @pytest.mark.integration
+@pytest.mark.network
 def test_dealer_brand_mapping_is_up_to_date():
+    """Live drift check against sgcarmart.com's sitemap.
+
+    Inherently needs the network (it compares our checked-in mapping against
+    the live site), so it is opt-in: `uv run pytest --run-network`.
+    """
     with open(DEALER_BRAND_MAPPING_FILE, 'r') as f:
         current_map = json.load(f)
 

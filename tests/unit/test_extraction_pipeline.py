@@ -114,32 +114,76 @@ class TestAttemptExtraction:
 
 @pytest.mark.unit
 class TestExtractionErrorHandling:
-    @patch('analysis.pdf_extractor.GeminiPDFExtractor')
-    def test_extraction_handles_api_error(self, mock_extractor_class, temp_output_dir):
+    """
+    `_attempt_extraction` calls `extract_pdf_with_fallback`, which owns the whole
+    Gemini -> DeepSeek -> Mimo fallback chain internally. Patch that boundary,
+    not the individual extractor classes: patching e.g. GeminiPDFExtractor only
+    makes the chain fall through to the *next* provider and issue real API calls.
+    """
+
+    @patch(FALLBACK_PATH)
+    def test_extraction_propagates_api_error(self, mock_fallback, temp_output_dir):
         pdf_path = Path(temp_output_dir) / "toyota" / "2025" / "dealer_44_2025-01-15.pdf"
         pdf_path.parent.mkdir(parents=True, exist_ok=True)
         pdf_path.write_bytes(b'%PDF-1.4\n')
 
-        mock_extractor = Mock()
-        mock_extractor.extract_from_pdf.side_effect = Exception("API timeout")
-        mock_extractor_class.return_value = mock_extractor
+        mock_fallback.side_effect = Exception("API timeout")
 
         with pytest.raises(Exception, match="API timeout"):
             _attempt_extraction(
                 str(pdf_path), "Toyota", "44", "2025-01-15", "gemini-2.5-flash"
             )
 
-    @patch('analysis.pdf_extractor.GeminiPDFExtractor')
-    def test_extraction_handles_invalid_pdf(self, mock_extractor_class, temp_output_dir):
+        mock_fallback.assert_called_once_with(pdf_path, model="gemini-2.5-flash")
+        # The failure must not leave a partial JSON artefact behind.
+        assert not (pdf_path.parent / "toyota_44_2025-01-15.json").exists()
+
+    @patch(FALLBACK_PATH)
+    def test_extraction_propagates_invalid_pdf_error(self, mock_fallback, temp_output_dir):
         pdf_path = Path(temp_output_dir) / "toyota" / "2025" / "dealer_44_2025-01-15.pdf"
         pdf_path.parent.mkdir(parents=True, exist_ok=True)
         pdf_path.write_bytes(b'Invalid PDF content')
 
-        mock_extractor = Mock()
-        mock_extractor.extract_from_pdf.side_effect = ValueError("Invalid PDF format")
-        mock_extractor_class.return_value = mock_extractor
+        mock_fallback.side_effect = ValueError("Invalid PDF format")
 
         with pytest.raises(ValueError, match="Invalid PDF format"):
             _attempt_extraction(
                 str(pdf_path), "Toyota", "44", "2025-01-15", "gemini-2.5-flash"
             )
+
+        mock_fallback.assert_called_once_with(pdf_path, model="gemini-2.5-flash")
+
+    @patch(SAVE_PATH)
+    @patch(FALLBACK_PATH)
+    def test_extraction_propagates_save_error(self, mock_fallback, mock_save, temp_output_dir):
+        pdf_path = Path(temp_output_dir) / "toyota" / "2025" / "dealer_44_2025-01-15.pdf"
+        pdf_path.parent.mkdir(parents=True, exist_ok=True)
+        pdf_path.write_bytes(b'%PDF-1.4\n')
+
+        mock_fallback.return_value = Mock()
+        mock_save.side_effect = OSError("disk full")
+
+        with pytest.raises(OSError, match="disk full"):
+            _attempt_extraction(
+                str(pdf_path), "Toyota", "44", "2025-01-15", "gemini-2.5-flash"
+            )
+
+    @patch(FALLBACK_PATH)
+    def test_extraction_passes_extraction_result_to_save(self, mock_fallback, temp_output_dir):
+        """The object returned by the fallback chain is what gets persisted."""
+        pdf_path = Path(temp_output_dir) / "toyota" / "2025" / "dealer_44_2025-01-15.pdf"
+        pdf_path.parent.mkdir(parents=True, exist_ok=True)
+        pdf_path.write_bytes(b'%PDF-1.4\n')
+
+        sentinel_extraction = Mock(name="extraction")
+        mock_fallback.return_value = sentinel_extraction
+
+        with patch(SAVE_PATH) as mock_save:
+            mock_save.return_value = pdf_path.parent / "toyota_44_2025-01-15.json"
+            status, output_path = _attempt_extraction(
+                str(pdf_path), "Toyota", "44", "2025-01-15", "gemini-2.5-flash"
+            )
+
+        assert status == "success"
+        mock_save.assert_called_once_with(sentinel_extraction)
+        assert output_path.endswith("toyota_44_2025-01-15.json")
