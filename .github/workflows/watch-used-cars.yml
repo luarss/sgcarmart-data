@@ -28,23 +28,37 @@ jobs:
         id: date
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
-      # Free proxies are mostly dead; keep only ones that can actually reach the site.
-      # A paid/residential proxy in the PROXY_URL secret (if set) is tried first.
+      # Free proxies are mostly dead; pool several public lists and keep only ones that can
+      # actually reach the site. A paid/residential proxy in the PROXY_URL secret (if set) goes first.
       - name: Get SG proxies
         id: proxies
         env:
           PAID_PROXY: ${{ secrets.PROXY_URL }}
         run: |
-          curl -sS --retry 3 \
-            "https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&country=SG&proxy_format=protocolipport&format=text&timeout=5000" \
-            > all_proxies.txt || true
+          get() { curl -sS -m 30 --retry 2 "$1" 2>/dev/null || true; }
+          pre() { grep -E '^[0-9]' | sed "s#^#$1://#"; }   # add scheme to bare ip:port lines
+          RAW=https://raw.githubusercontent.com
+          {
+            # Singapore-specific lists (small, tried in full)
+            get "https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&country=SG&proxy_format=protocolipport&format=text&timeout=5000"
+            get $RAW/proxifly/free-proxy-list/main/proxies/countries/SG/data.txt
+          } | grep -E '^(http|socks4|socks5)://' > sg.txt || true
+          {
+            # Global lists (huge, unfiltered by country): sample a random subset
+            get $RAW/monosans/proxy-list/main/proxies/all.txt | grep -E '^(http|socks4|socks5)://'
+            get $RAW/TheSpeedX/PROXY-List/master/http.txt | pre http
+            get $RAW/TheSpeedX/PROXY-List/master/socks5.txt | pre socks5
+            get $RAW/hookzof/socks5_list/master/proxy.txt | pre socks5
+          } | sort -u | shuf -n 400 > global.txt || true
+          cat sg.txt global.txt | sort -u > all_proxies.txt
           check() {
-            curl -s -o /dev/null -m 10 -x "$1" -w '%{http_code}' https://www.sgcarmart.com/ 2>/dev/null | grep -q '^200$' && echo "$1"
+            curl -s -o /dev/null -m 8 -x "$1" -w '%{http_code}' https://www.sgcarmart.com/ 2>/dev/null | grep -q '^200$' && echo "$1"
           }
           export -f check
-          HEALTHY=$(grep . all_proxies.txt | xargs -P 20 -I{} bash -c 'check {}' | paste -sd, - || true)
+          # used.py caps the fallback list at 10, so stop after 10 healthy proxies
+          HEALTHY=$(grep . all_proxies.txt | xargs -P 40 -I{} bash -c 'check {}' | head -10 | paste -sd, - || true)
           PROXIES="${PAID_PROXY:+$PAID_PROXY,}$HEALTHY"
-          echo "paid=$([ -n "$PAID_PROXY" ] && echo yes || echo no) free_total=$(grep -c . all_proxies.txt) healthy=$(echo "$HEALTHY" | tr ',' '\n' | grep -c .)"
+          echo "paid=$([ -n "$PAID_PROXY" ] && echo yes || echo no) sg=$(grep -c . sg.txt) candidates=$(grep -c . all_proxies.txt) healthy=$(echo "$HEALTHY" | tr ',' '\n' | grep -c .)"
           echo "proxies=${PROXIES%,}" >> $GITHUB_OUTPUT
 
       # Retry on a fresh attempt a few times; a blocked run writes nothing, so retries are safe.
