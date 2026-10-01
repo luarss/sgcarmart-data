@@ -28,21 +28,55 @@ jobs:
         id: date
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
+      # Free proxies are mostly dead; pool several public lists and keep only ones that can
+      # actually reach the site. A paid/residential proxy in the PROXY_URL secret (if set) goes first.
       - name: Get SG proxies
         id: proxies
+        env:
+          PAID_PROXY: ${{ secrets.PROXY_URL }}
         run: |
-          PROXIES=$(curl -sS --retry 3 \
-            "https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&country=SG&proxy_format=protocolipport&format=text&timeout=5000" \
-            | paste -sd, -)
-          echo "count=$(echo "$PROXIES" | tr ',' '\n' | grep -c .)" >> $GITHUB_OUTPUT
-          echo "proxies=$PROXIES" >> $GITHUB_OUTPUT
+          get() { curl -sS -m 30 --retry 2 "$1" 2>/dev/null || true; }
+          pre() { grep -E '^[0-9]' | sed "s#^#$1://#"; }   # add scheme to bare ip:port lines
+          RAW=https://raw.githubusercontent.com
+          {
+            # Singapore-specific lists (small, tried in full)
+            get "https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&country=SG&proxy_format=protocolipport&format=text&timeout=5000"
+            get $RAW/proxifly/free-proxy-list/main/proxies/countries/SG/data.txt
+          } | grep -E '^(http|socks4|socks5)://' > sg.txt || true
+          {
+            # Global lists (huge, unfiltered by country): sample a random subset
+            get $RAW/monosans/proxy-list/main/proxies/all.txt | grep -E '^(http|socks4|socks5)://'
+            get $RAW/TheSpeedX/PROXY-List/master/http.txt | pre http
+            get $RAW/TheSpeedX/PROXY-List/master/socks5.txt | pre socks5
+            get $RAW/hookzof/socks5_list/master/proxy.txt | pre socks5
+          } | sort -u | shuf -n 400 > global.txt || true
+          cat sg.txt global.txt | sort -u > all_proxies.txt
+          check() {
+            curl -s -o /dev/null -m 8 -x "$1" -w '%{http_code}' https://www.sgcarmart.com/ 2>/dev/null | grep -q '^200$' && echo "$1"
+          }
+          export -f check
+          # used.py caps the fallback list at 10, so stop after 10 healthy proxies
+          HEALTHY=$(grep . all_proxies.txt | xargs -P 40 -I{} bash -c 'check {}' | head -10 | paste -sd, - || true)
+          PROXIES="${PAID_PROXY:+$PAID_PROXY,}$HEALTHY"
+          echo "paid=$([ -n "$PAID_PROXY" ] && echo yes || echo no) sg=$(grep -c . sg.txt) candidates=$(grep -c . all_proxies.txt) healthy=$(echo "$HEALTHY" | tr ',' '\n' | grep -c .)"
+          echo "proxies=${PROXIES%,}" >> $GITHUB_OUTPUT
 
+      # Retry on a fresh attempt a few times; a blocked run writes nothing, so retries are safe.
+      # continue-on-error: one blocked day is not a red pipeline (see staleness check below).
       - name: Track used car listings
-        run: uv run python scripts/watch_used.py
+        id: track
+        continue-on-error: true
+        run: |
+          for attempt in 1 2 3; do
+            if uv run python scripts/watch_used.py; then exit 0; fi
+            [ "$attempt" -lt 3 ] && echo "Attempt $attempt failed, waiting 15m..." && sleep 900
+          done
+          exit 1
         env:
           PROXY_FALLBACKS: ${{ steps.proxies.outputs.proxies }}
 
       - name: Generate value watchlist
+        if: steps.track.outcome == 'success'
         run: uv run python scripts/watchlist.py --name sgd-passenger
 
       - name: Commit and push if changes
@@ -53,3 +87,17 @@ jobs:
           commit_user_name: github-actions[bot]
           commit_user_email: github-actions[bot]@users.noreply.github.com
           commit_author: GitHub Actions <github-actions[bot]@users.noreply.github.com>
+
+      # Fail loudly only when data is actually stale, not on a single blocked day.
+      - name: Check snapshot freshness
+        if: always()
+        run: |
+          newest=$(ls data/used_cars/sgd-passenger/20??-??-??.json | sort | tail -1 | xargs basename | cut -d. -f1)
+          age=$(( ( $(date +%s) - $(date -d "$newest" +%s) ) / 86400 ))
+          echo "newest snapshot: $newest (${age}d old)"
+          if [ "$age" -gt 2 ]; then
+            echo "::error::Used-car snapshot is ${age} days old"
+            exit 1
+          fi
+          [ "${{ steps.track.outcome }}" = "failure" ] && echo "::warning::Today's fetch was blocked after retries; snapshot is ${age}d old"
+          exit 0
