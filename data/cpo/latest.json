@@ -1,6 +1,6 @@
 {
   "date": "2026-10-14",
-  "scraped_at": "2026-10-14T00:21:24.093599+00:00",
+  "scraped_at": "2026-10-14T23:58:54.903438+00:00",
   "site_results": {
     "das_weltauto": {
       "status": "ok",
@@ -28,14 +28,14 @@
     },
     "sim_mee_motors": {
       "status": "ok",
-      "count": 141
+      "count": 140
     },
     "ic_preowned": {
       "status": "ok",
       "count": 9
     }
   },
-  "total_listings": 206,
+  "total_listings": 205,
   "listings": [
     {
       "source": "das_weltauto",
@@ -95,6 +95,20 @@
     },
     {
       "source": "das_weltauto",
+      "title": "2023 Volkswagen Golf LIFE 1.5 ETSI",
+      "url": "https://dasweltauto.com.sg/car-for-sale/387/2023-volkswagen-golf",
+      "price": 121988,
+      "mileage": null,
+      "reg_date": null,
+      "warranty": null,
+      "brand": null,
+      "model": null,
+      "scraped_date": "2026-10-14",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "das_weltauto",
       "title": "2026 Volkswagen Golf 1.5 R-Line",
       "url": "https://dasweltauto.com.sg/car-for-sale/386/2026-volkswagen-golf",
       "price": 188988,
@@ -182,20 +196,6 @@
       "title": "2025 SKODA Octavia Mild Hybrid 1.5A TSI Selection",
       "url": "https://dasweltauto.com.sg/car-for-sale/350/2025-skoda-octavia",
       "price": 176988,
-      "mileage": null,
-      "reg_date": null,
-      "warranty": null,
-      "brand": null,
-      "model": null,
-      "scraped_date": "2026-10-14",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "das_weltauto",
-      "title": "2026 Volkswagen ID. Buzz 7 Seater",
-      "url": "https://dasweltauto.com.sg/car-for-sale/379/2026-volkswagen-id.-buzz",
-      "price": 289988,
       "mileage": null,
       "reg_date": null,
       "warranty": null,
@@ -263,6 +263,20 @@
     },
     {
       "source": "das_weltauto",
+      "title": "2023 Volkswagen Golf LIFE 1.5 ETSI",
+      "url": "https://dasweltauto.com.sg/car-for-sale/387/2023-volkswagen-golf",
+      "price": 121988,
+      "mileage": null,
+      "reg_date": null,
+      "warranty": null,
+      "brand": null,
+      "model": null,
+      "scraped_date": "2026-10-14",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "das_weltauto",
       "title": "2026 Volkswagen Golf 1.5 R-Line",
       "url": "https://dasweltauto.com.sg/car-for-sale/386/2026-volkswagen-golf",
       "price": 188988,
@@ -360,15 +374,43 @@
       "raw": {}
     },
     {
-      "source": "das_weltauto",
-      "title": "2026 Volkswagen ID. Buzz 7 Seater",
-      "url": "https://dasweltauto.com.sg/car-for-sale/379/2026-volkswagen-id.-buzz",
-      "price": 289988,
-      "mileage": null,
-      "reg_date": null,
+      "source": "eurokars",
+      "title": "BMW i4 Gran Coupe Electric eDrive35 M-Sport",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1543771/2025-bmw-i4-used",
+      "price": 259800,
+      "mileage": "4,010 km",
+      "reg_date": "28/05/2026",
       "warranty": null,
-      "brand": null,
-      "model": null,
+      "brand": "BMW",
+      "model": "i4",
+      "scraped_date": "2026-10-14",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "MG ZS EV Trophy",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1543682/2024-mg-zs-used",
+      "price": 129800,
+      "mileage": "52,000 km",
+      "reg_date": "22/08/2024",
+      "warranty": null,
+      "brand": "MG",
+      "model": "ZS",
+      "scraped_date": "2026-10-14",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "Mazda CX-60 2.5A Luxury",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1534248/2024-mazda-cx-60-used",
+      "price": 218800,
+      "mileage": "12,300 km",
+      "reg_date": "04/09/2025",
+      "warranty": null,
+      "brand": "Mazda",
+      "model": "CX-60",
       "scraped_date": "2026-10-14",
       "listing_type": "listing",
       "raw": {}
@@ -383,20 +425,6 @@
       "warranty": null,
       "brand": "Toyota",
       "model": "Corolla",
-      "scraped_date": "2026-10-14",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "Mazda 2 HB 1.5A Deluxe",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1543427/2018-mazda-2-used",
-      "price": 41800,
-      "mileage": "49,700 km",
-      "reg_date": "29/01/2019",
-      "warranty": null,
-      "brand": "Mazda",
-      "model": "2",
       "scraped_date": "2026-10-14",
       "listing_type": "listing",
       "raw": {}
@@ -543,20 +571,6 @@
     },
     {
       "source": "eurokars",
-      "title": "Mazda CX-60 2.5A Luxury",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1534248/2024-mazda-cx-60-used",
-      "price": 218800,
-      "mileage": "12,300 km",
-      "reg_date": "04/09/2025",
-      "warranty": null,
-      "brand": "Mazda",
-      "model": "CX-60",
-      "scraped_date": "2026-10-14",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
       "title": "Porsche Panamera 2.9A PDK",
       "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1541376/2021-porsche-panamera-used",
       "price": 299800,
@@ -691,20 +705,6 @@
       "warranty": null,
       "brand": "BMW",
       "model": "i7",
-      "scraped_date": "2026-10-14",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "Mazda 6 2.0A Luxury",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1540852/2024-mazda-6-used",
-      "price": 155800,
-      "mileage": "38,100 km",
-      "reg_date": "18/12/2024",
-      "warranty": null,
-      "brand": "Mazda",
-      "model": "6",
       "scraped_date": "2026-10-14",
       "listing_type": "listing",
       "raw": {}
@@ -1033,6 +1033,20 @@
     },
     {
       "source": "sim_mee_motors",
+      "title": "2021 BMW 420i Coupe",
+      "url": "https://autoselection.simemotors.com.sg/stock/details/185231-289853/2021-bmw-420i-used",
+      "price": 179800,
+      "mileage": "42,933 km",
+      "reg_date": "24-Jan-2022",
+      "warranty": null,
+      "brand": "BMW",
+      "model": "420i",
+      "scraped_date": "2026-10-14",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "sim_mee_motors",
       "title": "2020 BMW 520i",
       "url": "https://autoselection.simemotors.com.sg/stock/details/185231-288220/2020-bmw-520i-used",
       "price": 130800,
@@ -1192,20 +1206,6 @@
       "price": 180800,
       "mileage": "28,006 km",
       "reg_date": "25-Sep-2023",
-      "warranty": null,
-      "brand": "BMW",
-      "model": "X1",
-      "scraped_date": "2026-10-14",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "sim_mee_motors",
-      "title": "2022 BMW X1 sDrive18i",
-      "url": "https://autoselection.simemotors.com.sg/stock/details/185231-289400/2022-bmw-x1-used",
-      "price": 131800,
-      "mileage": "76,898 km",
-      "reg_date": "30-Mar-2022",
       "warranty": null,
       "brand": "BMW",
       "model": "X1",
@@ -2424,20 +2424,6 @@
       "price": 99800,
       "mileage": "98,551 km",
       "reg_date": "08-Nov-2021",
-      "warranty": null,
-      "brand": "Toyota",
-      "model": "COROLLA",
-      "scraped_date": "2026-10-14",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "sim_mee_motors",
-      "title": "2024 Toyota COROLLA ALTIS 1.6 ELEGANCE",
-      "url": "https://autoselection.simemotors.com.sg/stock/details/185231-289983/2024-toyota-corolla-used",
-      "price": 151800,
-      "mileage": "6,485 km",
-      "reg_date": "30-Sep-2024",
       "warranty": null,
       "brand": "Toyota",
       "model": "COROLLA",
