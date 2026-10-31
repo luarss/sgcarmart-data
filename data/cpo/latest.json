@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-30",
-  "scraped_at": "2026-10-30T01:01:59.684582+00:00",
+  "date": "2026-10-31",
+  "scraped_at": "2026-10-31T00:51:27.447203+00:00",
   "site_results": {
     "das_weltauto": {
       "status": "ok",
@@ -22,20 +22,20 @@
       "status": "ok",
       "count": 1
     },
-    "sim_mee_motors": {
-      "status": "ok",
-      "count": 140
-    },
     "skoda": {
       "status": "ok",
       "count": 1
+    },
+    "sim_mee_motors": {
+      "status": "ok",
+      "count": 145
     },
     "ic_preowned": {
       "status": "ok",
       "count": 12
     }
   },
-  "total_listings": 209,
+  "total_listings": 214,
   "listings": [
     {
       "source": "das_weltauto",
@@ -47,7 +47,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -61,7 +61,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -75,7 +75,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -89,7 +89,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -103,7 +103,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -117,7 +117,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -131,7 +131,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -145,7 +145,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -159,7 +159,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -173,7 +173,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -187,7 +187,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -201,7 +201,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -215,7 +215,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -229,7 +229,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -243,7 +243,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -257,7 +257,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -271,7 +271,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -285,7 +285,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -299,7 +299,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -313,7 +313,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -327,7 +327,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -341,7 +341,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -355,7 +355,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -369,217 +369,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "MG 4 EV Trophy LR",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1547368/2024-mg-4-used",
-      "price": 145800,
-      "mileage": "23,380 km",
-      "reg_date": "25/03/2025",
-      "warranty": null,
-      "brand": "MG",
-      "model": "4",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "Porsche 911 Carrera Coupe 3.0A PDK (COE till 05/2036)",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1531771/2016-porsche-911-used",
-      "price": 368800,
-      "mileage": "108,000 km",
-      "reg_date": "09/09/2016",
-      "warranty": null,
-      "brand": "Porsche",
-      "model": "911",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "BMW 7 Series 735i Mild Hybrid Pinnacle",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1543906/2025-bmw-735i-used",
-      "price": 473800,
-      "mileage": "1,100 km",
-      "reg_date": "25/04/2025",
-      "warranty": null,
-      "brand": "BMW",
-      "model": "735i",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "BMW iX3 Electric Inspiring Sunroof",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1546557/2025-bmw-ix3-used",
-      "price": 236800,
-      "mileage": "18,380 km",
-      "reg_date": "30/07/2025",
-      "warranty": null,
-      "brand": "BMW",
-      "model": "iX3",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "Mazda CX-30 2.0A Elegance",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1532918/2020-mazda-cx-30-used",
-      "price": 92800,
-      "mileage": "51,800 km",
-      "reg_date": "16/03/2021",
-      "warranty": null,
-      "brand": "Mazda",
-      "model": "CX-30",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "Mazda 3 Mild Hybrid 1.5A Astina Sunroof",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1543904/2022-mazda-3-used",
-      "price": 108800,
-      "mileage": "65,000 km",
-      "reg_date": "27/09/2022",
-      "warranty": null,
-      "brand": "Mazda",
-      "model": "3",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "Honda HR-V 1.5A DX",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1529297/2025-honda-hr-v-used",
-      "price": 167800,
-      "mileage": "16,900 km",
-      "reg_date": "11/07/2025",
-      "warranty": null,
-      "brand": "Honda",
-      "model": "HR-V",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "BMW X2 sDrive16i M-Sport",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1530874/2024-bmw-x2-used",
-      "price": 194800,
-      "mileage": "21,250 km",
-      "reg_date": "22/07/2024",
-      "warranty": null,
-      "brand": "BMW",
-      "model": "X2",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "MG ZS EV Trophy",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1543682/2024-mg-zs-used",
-      "price": 129800,
-      "mileage": "52,000 km",
-      "reg_date": "22/08/2024",
-      "warranty": null,
-      "brand": "MG",
-      "model": "ZS",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "BMW 2 Series 216i Active Tourer Inspiring",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1541174/2025-bmw-216i-used",
-      "price": 209800,
-      "mileage": "100 km",
-      "reg_date": "31/08/2026",
-      "warranty": null,
-      "brand": "BMW",
-      "model": "216i",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "BMW X1 sDrive16i M-Sport",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1545207/2023-bmw-x1-used",
-      "price": 169800,
-      "mileage": "50,500 km",
-      "reg_date": "07/07/2023",
-      "warranty": null,
-      "brand": "BMW",
-      "model": "X1",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "MG Cyberster EV",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1536273/2024-mg-cyberster-used",
-      "price": 293800,
-      "mileage": "2,700 km",
-      "reg_date": "24/09/2025",
-      "warranty": null,
-      "brand": "MG",
-      "model": "Cyberster",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "Mazda CX-80 Plug-in Hybrid 2.5A Sport Luxury 7-Seater",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1540815/2025-mazda-cx-80-used",
-      "price": 283800,
-      "mileage": "8,850 km",
-      "reg_date": "09/12/2025",
-      "warranty": null,
-      "brand": "Mazda",
-      "model": "CX-80",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "BMW i5 Touring Electric eDrive40 M-Sport",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1532096/2025-bmw-i5-used",
-      "price": 353800,
-      "mileage": "11,000 km",
-      "reg_date": "26/01/2026",
-      "warranty": null,
-      "brand": "BMW",
-      "model": "i5",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "BMW iX2 Electric eDrive20 M-Sport",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1533247/2024-bmw-ix2-used",
-      "price": 227800,
-      "mileage": "8,000 km",
-      "reg_date": "03/10/2025",
-      "warranty": null,
-      "brand": "BMW",
-      "model": "iX2",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -593,49 +383,21 @@
       "warranty": null,
       "brand": "BMW",
       "model": "216i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
     {
       "source": "eurokars",
-      "title": "BMW X6 Mild Hybrid xDrive40i M-Sport Pro",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1544791/2024-bmw-x6-used",
-      "price": 483800,
-      "mileage": "500 km",
-      "reg_date": "27/02/2026",
+      "title": "BMW 2 Series 216i Active Tourer Inspiring",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1541174/2025-bmw-216i-used",
+      "price": 209800,
+      "mileage": "100 km",
+      "reg_date": "31/08/2026",
       "warranty": null,
       "brand": "BMW",
-      "model": "X6",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "MG IM5 Electric Performance",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1544920/2025-mg-im5-used",
-      "price": 258800,
-      "mileage": "300 km",
-      "reg_date": "22/10/2025",
-      "warranty": null,
-      "brand": "MG",
-      "model": "IM5",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "BMW X1 sDrive16i M-Sport",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1544923/2023-bmw-x1-used",
-      "price": 175800,
-      "mileage": "48,500 km",
-      "reg_date": "29/09/2023",
-      "warranty": null,
-      "brand": "BMW",
-      "model": "X1",
-      "scraped_date": "2026-10-30",
+      "model": "216i",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -649,7 +411,259 @@
       "warranty": null,
       "brand": "Lexus",
       "model": "UX",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "BMW X6 Mild Hybrid xDrive40i M-Sport Pro",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1544791/2024-bmw-x6-used",
+      "price": 483800,
+      "mileage": "500 km",
+      "reg_date": "27/02/2026",
+      "warranty": null,
+      "brand": "BMW",
+      "model": "X6",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "BMW X2 sDrive16i M-Sport",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1547625/2024-bmw-x2-used",
+      "price": 207800,
+      "mileage": "23,600 km",
+      "reg_date": "24/03/2025",
+      "warranty": null,
+      "brand": "BMW",
+      "model": "X2",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "MG 4 EV Trophy LR",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1547368/2024-mg-4-used",
+      "price": 145800,
+      "mileage": "23,380 km",
+      "reg_date": "25/03/2025",
+      "warranty": null,
+      "brand": "MG",
+      "model": "4",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "Porsche 911 Carrera Coupe 3.0A PDK (COE till 05/2036)",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1531771/2016-porsche-911-used",
+      "price": 368800,
+      "mileage": "108,000 km",
+      "reg_date": "09/09/2016",
+      "warranty": null,
+      "brand": "Porsche",
+      "model": "911",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "BMW 7 Series 735i Mild Hybrid Pinnacle",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1543906/2025-bmw-735i-used",
+      "price": 473800,
+      "mileage": "1,100 km",
+      "reg_date": "25/04/2025",
+      "warranty": null,
+      "brand": "BMW",
+      "model": "735i",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "BMW iX3 Electric Inspiring Sunroof",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1546557/2025-bmw-ix3-used",
+      "price": 236800,
+      "mileage": "18,380 km",
+      "reg_date": "30/07/2025",
+      "warranty": null,
+      "brand": "BMW",
+      "model": "iX3",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "Mazda CX-30 2.0A Elegance",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1532918/2020-mazda-cx-30-used",
+      "price": 92800,
+      "mileage": "51,800 km",
+      "reg_date": "16/03/2021",
+      "warranty": null,
+      "brand": "Mazda",
+      "model": "CX-30",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "Mazda 3 Mild Hybrid 1.5A Astina Sunroof",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1543904/2022-mazda-3-used",
+      "price": 108800,
+      "mileage": "65,000 km",
+      "reg_date": "27/09/2022",
+      "warranty": null,
+      "brand": "Mazda",
+      "model": "3",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "Honda HR-V 1.5A DX",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1529297/2025-honda-hr-v-used",
+      "price": 167800,
+      "mileage": "16,900 km",
+      "reg_date": "11/07/2025",
+      "warranty": null,
+      "brand": "Honda",
+      "model": "HR-V",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "BMW X2 sDrive16i M-Sport",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1530874/2024-bmw-x2-used",
+      "price": 194800,
+      "mileage": "21,250 km",
+      "reg_date": "22/07/2024",
+      "warranty": null,
+      "brand": "BMW",
+      "model": "X2",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "MG ZS EV Trophy",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1543682/2024-mg-zs-used",
+      "price": 129800,
+      "mileage": "52,000 km",
+      "reg_date": "22/08/2024",
+      "warranty": null,
+      "brand": "MG",
+      "model": "ZS",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "BMW X1 sDrive16i M-Sport",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1545207/2023-bmw-x1-used",
+      "price": 169800,
+      "mileage": "50,500 km",
+      "reg_date": "07/07/2023",
+      "warranty": null,
+      "brand": "BMW",
+      "model": "X1",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "MG Cyberster EV",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1536273/2024-mg-cyberster-used",
+      "price": 293800,
+      "mileage": "2,700 km",
+      "reg_date": "24/09/2025",
+      "warranty": null,
+      "brand": "MG",
+      "model": "Cyberster",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "Mazda CX-80 Plug-in Hybrid 2.5A Sport Luxury 7-Seater",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1540815/2025-mazda-cx-80-used",
+      "price": 283800,
+      "mileage": "8,850 km",
+      "reg_date": "09/12/2025",
+      "warranty": null,
+      "brand": "Mazda",
+      "model": "CX-80",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "BMW i5 Touring Electric eDrive40 M-Sport",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1532096/2025-bmw-i5-used",
+      "price": 353800,
+      "mileage": "11,000 km",
+      "reg_date": "26/01/2026",
+      "warranty": null,
+      "brand": "BMW",
+      "model": "i5",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "BMW iX2 Electric eDrive20 M-Sport",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1533247/2024-bmw-ix2-used",
+      "price": 227800,
+      "mileage": "8,000 km",
+      "reg_date": "03/10/2025",
+      "warranty": null,
+      "brand": "BMW",
+      "model": "iX2",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "MG IM5 Electric Performance",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1544920/2025-mg-im5-used",
+      "price": 258800,
+      "mileage": "300 km",
+      "reg_date": "22/10/2025",
+      "warranty": null,
+      "brand": "MG",
+      "model": "IM5",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "eurokars",
+      "title": "BMW X1 sDrive16i M-Sport",
+      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1544923/2023-bmw-x1-used",
+      "price": 175800,
+      "mileage": "48,500 km",
+      "reg_date": "29/09/2023",
+      "warranty": null,
+      "brand": "BMW",
+      "model": "X1",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -663,7 +677,7 @@
       "warranty": null,
       "brand": "Porsche",
       "model": "Panamera",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -677,21 +691,7 @@
       "warranty": null,
       "brand": "Porsche",
       "model": "911",
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "eurokars",
-      "title": "Porsche 911 Carrera GTS Cabriolet 3.0A PDK",
-      "url": "https://www.eurokarspreowned.com.sg/stock/details/729648-1461200/2022-porsche-911-used",
-      "price": 828800,
-      "mileage": "600 km",
-      "reg_date": "25/12/2022",
-      "warranty": null,
-      "brand": "Porsche",
-      "model": "911",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -705,7 +705,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "i7",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -719,7 +719,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -733,7 +733,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -747,7 +747,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -761,7 +761,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -775,7 +775,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -789,7 +789,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -803,7 +803,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -817,7 +817,21 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
+      "listing_type": "programme_page",
+      "raw": {}
+    },
+    {
+      "source": "skoda",
+      "title": "Skoda Das WeltAuto Certified Pre-Owned Programme",
+      "url": "https://www.skoda.com.sg/dasweltauto/certified-pre-owned-skoda-cars",
+      "price": null,
+      "mileage": null,
+      "reg_date": null,
+      "warranty": null,
+      "brand": null,
+      "model": null,
+      "scraped_date": "2026-10-31",
       "listing_type": "programme_page",
       "raw": {}
     },
@@ -831,7 +845,7 @@
       "warranty": null,
       "brand": "Audi",
       "model": "A3",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -845,7 +859,7 @@
       "warranty": null,
       "brand": "Audi",
       "model": "A4",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -859,7 +873,7 @@
       "warranty": null,
       "brand": "Audi",
       "model": "A6",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -873,7 +887,7 @@
       "warranty": null,
       "brand": "Audi",
       "model": "Q3",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -887,7 +901,7 @@
       "warranty": null,
       "brand": "Audi",
       "model": "Q3",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -901,7 +915,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "116i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -915,7 +929,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "116i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -929,7 +943,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "116i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -943,7 +957,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "116i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -957,7 +971,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "116i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -971,7 +985,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "116i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -985,7 +999,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "118i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -999,7 +1013,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "216i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1013,7 +1027,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "216i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1027,7 +1041,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "216i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1041,7 +1055,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "318i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1055,7 +1069,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "320i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1069,7 +1083,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "420i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1083,7 +1097,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "420i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1097,7 +1111,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "520i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1111,7 +1125,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "520i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1125,7 +1139,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "520i",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1139,7 +1153,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "740Li",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1153,7 +1167,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "iX3",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1167,7 +1181,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X1",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1181,7 +1195,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X1",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1195,7 +1209,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X1",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1209,7 +1223,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X1",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1223,7 +1237,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X1",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1237,7 +1251,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X1",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1251,7 +1265,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X1",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1265,7 +1279,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X1",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1279,7 +1293,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X1",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1293,7 +1307,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X1",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1307,7 +1321,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X1",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1321,7 +1335,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X2",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1335,7 +1349,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X3",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1349,7 +1363,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X3",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1363,7 +1377,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X3",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1377,7 +1391,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X3",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1391,7 +1405,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X3",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1405,7 +1419,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X3",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1419,7 +1433,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X3",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1433,7 +1447,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X3",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1447,7 +1461,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X3",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1461,7 +1475,7 @@
       "warranty": null,
       "brand": "BMW",
       "model": "X4",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1475,7 +1489,7 @@
       "warranty": null,
       "brand": "Build Your Dreams",
       "model": "ATTO",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1489,7 +1503,7 @@
       "warranty": null,
       "brand": "Build Your Dreams",
       "model": "ATTO",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1503,7 +1517,7 @@
       "warranty": null,
       "brand": "Build Your Dreams",
       "model": "BYD",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1517,7 +1531,7 @@
       "warranty": null,
       "brand": "Build Your Dreams",
       "model": "BYD",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1531,7 +1545,7 @@
       "warranty": null,
       "brand": "Build Your Dreams",
       "model": "BYD",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1545,7 +1559,7 @@
       "warranty": null,
       "brand": "Build Your Dreams",
       "model": "BYD",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1559,7 +1573,7 @@
       "warranty": null,
       "brand": "Build Your Dreams",
       "model": "BYD",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1573,7 +1587,7 @@
       "warranty": null,
       "brand": "Build Your Dreams",
       "model": "BYD",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1587,7 +1601,7 @@
       "warranty": null,
       "brand": "Build Your Dreams",
       "model": "BYD",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1601,7 +1615,7 @@
       "warranty": null,
       "brand": "Build Your Dreams",
       "model": "Dolphin",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1615,7 +1629,7 @@
       "warranty": null,
       "brand": "Build Your Dreams",
       "model": "SEAL",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1629,7 +1643,7 @@
       "warranty": null,
       "brand": "Build Your Dreams",
       "model": "SEAL",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1643,7 +1657,7 @@
       "warranty": null,
       "brand": "Build Your Dreams",
       "model": "SEAL",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1657,7 +1671,7 @@
       "warranty": null,
       "brand": "Build Your Dreams",
       "model": "SEAL",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1671,7 +1685,7 @@
       "warranty": null,
       "brand": "Cherry",
       "model": "JAECOO6",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1685,7 +1699,7 @@
       "warranty": null,
       "brand": "Honda",
       "model": "CIVIC",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1699,7 +1713,7 @@
       "warranty": null,
       "brand": "Honda",
       "model": "HRV",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1713,7 +1727,7 @@
       "warranty": null,
       "brand": "Honda",
       "model": "HRV",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1727,7 +1741,7 @@
       "warranty": null,
       "brand": "Honda",
       "model": "SHUTTLE",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1741,7 +1755,7 @@
       "warranty": null,
       "brand": "Honda",
       "model": "VEZEL",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1755,7 +1769,7 @@
       "warranty": null,
       "brand": "Hyundai",
       "model": "IONIQ",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1769,7 +1783,7 @@
       "warranty": null,
       "brand": "Hyundai",
       "model": "IONIQ",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1783,7 +1797,7 @@
       "warranty": null,
       "brand": "Hyundai",
       "model": "SANTA",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1797,7 +1811,7 @@
       "warranty": null,
       "brand": "Hyundai",
       "model": "SANTA",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1811,7 +1825,7 @@
       "warranty": null,
       "brand": "Hyundai",
       "model": "TUCSON",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1825,7 +1839,7 @@
       "warranty": null,
       "brand": "Hyundai",
       "model": "TUCSON",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1839,7 +1853,7 @@
       "warranty": null,
       "brand": "Hyundai",
       "model": "TUCSON",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1853,7 +1867,7 @@
       "warranty": null,
       "brand": "Jaguar",
       "model": "F-PACE",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1867,7 +1881,7 @@
       "warranty": null,
       "brand": "Kia",
       "model": "CERATO",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1881,7 +1895,7 @@
       "warranty": null,
       "brand": "Kia",
       "model": "NIRO",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1895,7 +1909,7 @@
       "warranty": null,
       "brand": "Kia",
       "model": "SONET",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1909,7 +1923,7 @@
       "warranty": null,
       "brand": "Kia",
       "model": "SORENTO",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1923,7 +1937,7 @@
       "warranty": null,
       "brand": "Mazda",
       "model": "3",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1937,7 +1951,7 @@
       "warranty": null,
       "brand": "Mazda",
       "model": "CX-30",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1951,7 +1965,7 @@
       "warranty": null,
       "brand": "Mazda",
       "model": "CX-5",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1965,7 +1979,7 @@
       "warranty": null,
       "brand": "Mazda",
       "model": "CX-8",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1979,7 +1993,7 @@
       "warranty": null,
       "brand": "Mazda",
       "model": "CX-9",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -1993,7 +2007,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "A180",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2007,7 +2021,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "AMG",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2021,7 +2035,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "AMG",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2035,7 +2049,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "B180",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2049,7 +2063,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "C180",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2063,7 +2077,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "C180",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2077,7 +2091,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "C200",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2091,7 +2105,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "C200",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2105,7 +2119,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "CLA180",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2119,7 +2133,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "CLA180",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2133,7 +2147,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "CLA250",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2147,7 +2161,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "E200",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2161,7 +2175,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "GLB180",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2175,7 +2189,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "GLB180",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2189,7 +2203,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "GLC300",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2203,7 +2217,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "GLC300",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2217,7 +2231,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "GLC300",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2231,7 +2245,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "GLC300",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2245,7 +2259,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "GLC300E",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2259,7 +2273,7 @@
       "warranty": null,
       "brand": "Mercedes Benz",
       "model": "GLC300E",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2273,7 +2287,7 @@
       "warranty": null,
       "brand": "MG",
       "model": "ZS",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2287,7 +2301,7 @@
       "warranty": null,
       "brand": "Mini",
       "model": "ONE",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2301,7 +2315,7 @@
       "warranty": null,
       "brand": "Nissan",
       "model": "SERENA",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2315,7 +2329,7 @@
       "warranty": null,
       "brand": "Nissan",
       "model": "SERENA",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2329,7 +2343,7 @@
       "warranty": null,
       "brand": "Peugeot",
       "model": "2008",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2343,7 +2357,7 @@
       "warranty": null,
       "brand": "Peugeot",
       "model": "3008",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2357,7 +2371,7 @@
       "warranty": null,
       "brand": "Peugeot",
       "model": "5008",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2371,7 +2385,7 @@
       "warranty": null,
       "brand": "Peugeot",
       "model": "E-2008GT",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2385,7 +2399,7 @@
       "warranty": null,
       "brand": "Peugeot",
       "model": "PEUGEOT",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2399,7 +2413,7 @@
       "warranty": null,
       "brand": "Peugeot",
       "model": "PEUGEOT",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2413,7 +2427,7 @@
       "warranty": null,
       "brand": "\u0160KODA",
       "model": "KODIAQ",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2427,7 +2441,7 @@
       "warranty": null,
       "brand": "\u0160KODA",
       "model": "KODIAQ",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2441,7 +2455,7 @@
       "warranty": null,
       "brand": "\u0160KODA",
       "model": "OCTAVIA",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2455,7 +2469,7 @@
       "warranty": null,
       "brand": "\u0160KODA",
       "model": "OCTAVIA",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2469,7 +2483,7 @@
       "warranty": null,
       "brand": "Tesla",
       "model": "MODEL",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2483,7 +2497,7 @@
       "warranty": null,
       "brand": "Tesla",
       "model": "MODEL",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2497,7 +2511,7 @@
       "warranty": null,
       "brand": "Toyota",
       "model": "CAMRY",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2511,7 +2525,7 @@
       "warranty": null,
       "brand": "Toyota",
       "model": "COROLLA",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2525,7 +2539,7 @@
       "warranty": null,
       "brand": "Toyota",
       "model": "COROLLA",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2539,7 +2553,7 @@
       "warranty": null,
       "brand": "Toyota",
       "model": "HARRIER",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2553,7 +2567,7 @@
       "warranty": null,
       "brand": "Toyota",
       "model": "LEXUS",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2567,7 +2581,7 @@
       "warranty": null,
       "brand": "Toyota",
       "model": "LEXUS",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2581,7 +2595,7 @@
       "warranty": null,
       "brand": "Toyota",
       "model": "PRIUS",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2595,7 +2609,7 @@
       "warranty": null,
       "brand": "Toyota",
       "model": "RAV4",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2609,7 +2623,7 @@
       "warranty": null,
       "brand": "Volkswagen",
       "model": "GOLF",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2623,7 +2637,7 @@
       "warranty": null,
       "brand": "Volkswagen",
       "model": "GOLF",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2637,7 +2651,7 @@
       "warranty": null,
       "brand": "Volkswagen",
       "model": "GOLF",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2651,7 +2665,7 @@
       "warranty": null,
       "brand": "Volkswagen",
       "model": "SHARAN",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2665,7 +2679,7 @@
       "warranty": null,
       "brand": "Volkswagen",
       "model": "SHARAN",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2679,7 +2693,7 @@
       "warranty": null,
       "brand": "Volkswagen",
       "model": "TIGUAN",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2693,7 +2707,7 @@
       "warranty": null,
       "brand": "Volkswagen",
       "model": "TIGUAN",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2707,7 +2721,7 @@
       "warranty": null,
       "brand": "Volkswagen",
       "model": "TOURAN",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2721,7 +2735,7 @@
       "warranty": null,
       "brand": "Volkswagen",
       "model": "TOURAN",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2735,7 +2749,7 @@
       "warranty": null,
       "brand": "Volvo",
       "model": "EX30",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2749,7 +2763,7 @@
       "warranty": null,
       "brand": "Volvo",
       "model": "V40",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2763,7 +2777,7 @@
       "warranty": null,
       "brand": "Volvo",
       "model": "XC40",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2777,22 +2791,92 @@
       "warranty": null,
       "brand": "Volvo",
       "model": "XC90",
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
     {
-      "source": "skoda",
-      "title": "Skoda Das WeltAuto Certified Pre-Owned Programme",
-      "url": "https://www.skoda.com.sg/dasweltauto/certified-pre-owned-skoda-cars",
-      "price": null,
-      "mileage": null,
-      "reg_date": null,
+      "source": "sim_mee_motors",
+      "title": "2021 Audi Q3 SPORTBACK 1.4 TFSI S TRONIC",
+      "url": "https://autoselection.simemotors.com.sg/stock/details/185231-290071/2021-audi-q3-used",
+      "price": 115800,
+      "mileage": "44,098 km",
+      "reg_date": "27-May-2021",
+      "warranty": null,
+      "brand": "Audi",
+      "model": "Q3",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "sim_mee_motors",
+      "title": "2024 Mercedes Benz GLB180 PROGRESSIVE",
+      "url": "https://autoselection.simemotors.com.sg/stock/details/185231-290072/2024-mercedes-benz-glb180-used",
+      "price": 200800,
+      "mileage": "45,604 km",
+      "reg_date": "30-Sep-2024",
+      "warranty": null,
+      "brand": "Mercedes Benz",
+      "model": "GLB180",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "sim_mee_motors",
+      "title": "2018 Mitsubishi OUTLANDER 2.0",
+      "url": "https://autoselection.simemotors.com.sg/stock/details/185231-289434/2018-mitsubishi-outlander-used",
+      "price": 55800,
+      "mileage": "67,135 km",
+      "reg_date": "29-Mar-2019",
+      "warranty": null,
+      "brand": "Mitsubishi",
+      "model": "OUTLANDER",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "sim_mee_motors",
+      "title": "2019 SKODA OCTAVIA 1.4 AMBITION PLUS TSI",
+      "url": "https://autoselection.simemotors.com.sg/stock/details/185231-298495/2019-skoda-octavia-used",
+      "price": 61800,
+      "mileage": "74,770 km",
+      "reg_date": "28-Feb-2020",
+      "warranty": null,
+      "brand": "\u0160KODA",
+      "model": "OCTAVIA",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "sim_mee_motors",
+      "title": "2025 Toyota LEXUS RX350 HEV LUXURY",
+      "url": "https://autoselection.simemotors.com.sg/stock/details/185231-290129/2025-toyota-lexus-used",
+      "price": 359800,
+      "mileage": "16,089 km",
+      "reg_date": "21-Jul-2025",
+      "warranty": null,
+      "brand": "Toyota",
+      "model": "LEXUS",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
+      "raw": {}
+    },
+    {
+      "source": "ic_preowned",
+      "title": "TOYOTA PRIUS PLUS HYBRID 1.8A",
+      "url": "https://www.icpreowned.com.sg/used-car-listing/toyota-prius-plus-hybrid-9957",
+      "price": 49800,
+      "mileage": "44,650 KM",
+      "reg_date": "24/10/2018",
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
-      "listing_type": "programme_page",
+      "scraped_date": "2026-10-31",
+      "listing_type": "listing",
       "raw": {}
     },
     {
@@ -2805,7 +2889,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2819,7 +2903,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2833,21 +2917,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
-      "listing_type": "listing",
-      "raw": {}
-    },
-    {
-      "source": "ic_preowned",
-      "title": "TOYOTA HARRIER TURBO 2.0A M",
-      "url": "https://www.icpreowned.com.sg/used-car-listing/toyota-harrier-m-9760",
-      "price": 86300,
-      "mileage": "63,050 KM",
-      "reg_date": "04/2/2020",
-      "warranty": null,
-      "brand": null,
-      "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2861,7 +2931,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2875,7 +2945,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2889,7 +2959,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2903,7 +2973,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2917,7 +2987,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2931,7 +3001,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2945,7 +3015,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     },
@@ -2959,7 +3029,7 @@
       "warranty": null,
       "brand": null,
       "model": null,
-      "scraped_date": "2026-10-30",
+      "scraped_date": "2026-10-31",
       "listing_type": "listing",
       "raw": {}
     }
