@@ -8,6 +8,7 @@ Usage:
 
 import argparse
 import json
+import math
 import re
 import sys
 from datetime import UTC, datetime
@@ -35,10 +36,11 @@ MAX_SAFE_PAGES = 100  # upper bound to prevent unbounded loops from user config
 FETCH_RETRY_ATTEMPTS = 3
 FETCH_RETRY_WAIT_MULTIPLIER = 15.0
 FETCH_RETRY_WAIT_MAX = 60.0
+PARTIAL_FETCH_RATIO = 0.5
 
 
 class DegenerateFetchError(RuntimeError):
-    """A run fetched 0 listings — treated as a scrape failure, not a real result.
+    """A run fetched 0 listings, or far fewer than the previous snapshot — a scrape failure.
 
     Raised so the process exits non-zero: the daily snapshot is an observation
     that cannot be backfilled, so a silent empty day must surface as a CI
@@ -46,8 +48,8 @@ class DegenerateFetchError(RuntimeError):
     """
 
 
-class _EmptyFetchError(RuntimeError):
-    """Internal signal that one fetch attempt produced no listings."""
+class _ShortFetchError(RuntimeError):
+    """Internal signal that one fetch attempt produced fewer listings than expected."""
 
 
 # COE-renewed car title patterns — these cars have had their 10-yr COE extended,
@@ -181,37 +183,45 @@ def _log_retry(state: RetryCallState) -> None:
     delay = state.next_action.sleep if state.next_action else 0
     print(
         f"WARNING: fetch attempt {state.attempt_number}/{FETCH_RETRY_ATTEMPTS} "
-        f"returned 0 listings, retrying in {delay:.0f}s..."
+        f"failed ({state.outcome.exception()}), retrying in {delay:.0f}s..."
     )
 
 
-def fetch_current_listings(filters: dict, max_pages: int) -> dict:
-    """Fetch listings, retrying with backoff while the result is empty.
+def fetch_current_listings(filters: dict, max_pages: int, min_expected: int = 1) -> dict:
+    """Fetch listings, retrying with backoff while the result is below ``min_expected``.
 
-    Returns an empty dict if every attempt came back empty; the caller decides
-    whether that is a failure.
+    Returns the largest result seen if every attempt came up short (an empty
+    dict if all were empty); the caller decides whether that is a failure.
     """
+    best: dict = {}
 
     def _attempt() -> dict:
+        nonlocal best
         listings = _fetch_current_listings(filters, max_pages)
-        if not listings:
-            raise _EmptyFetchError("fetch returned 0 listings")
+        if len(listings) > len(best):
+            best = listings
+        if len(listings) < max(min_expected, 1):
+            raise _ShortFetchError(f"fetch returned {len(listings)} listings, expected at least {min_expected}")
         return listings
 
     retrying = Retrying(
         stop=stop_after_attempt(FETCH_RETRY_ATTEMPTS),
         wait=wait_exponential(multiplier=FETCH_RETRY_WAIT_MULTIPLIER, max=FETCH_RETRY_WAIT_MAX),
-        retry=retry_if_exception_type(_EmptyFetchError),
+        retry=retry_if_exception_type(_ShortFetchError),
         before_sleep=_log_retry,
         reraise=True,
     )
     try:
         return retrying(_attempt)
-    except _EmptyFetchError:
-        return {}
+    except _ShortFetchError:
+        return best
 
 
-def run_watch(config: dict) -> dict:
+def minimum_expected_listings(previous_count: int) -> int:
+    return math.ceil(previous_count * PARTIAL_FETCH_RATIO)
+
+
+def run_watch(config: dict, allow_partial: bool = False) -> dict:
     """Fetch current listings, diff against previous snapshot, save new snapshot."""
     name = config["name"]
     filters = config["filters"]
@@ -227,13 +237,14 @@ def run_watch(config: dict) -> dict:
     with open(watch_dir / "config.json", "w") as f:
         json.dump(config, f, indent=2, default=str)
 
-    current = fetch_current_listings(filters, max_pages)
-
     previous_path = watch_dir / "latest.json"
     previous = {}
     if previous_path.exists():
         with open(previous_path) as f:
             previous = json.load(f)
+
+    min_expected = 1 if allow_partial else minimum_expected_listings(len(previous))
+    current = fetch_current_listings(filters, max_pages, min_expected)
 
     if not current:
         # Every attempt came back empty — a scraping failure (blocked IP, all
@@ -246,6 +257,14 @@ def run_watch(config: dict) -> dict:
             f"watch '{name}': 0 listings after {FETCH_RETRY_ATTEMPTS} attempts "
             f"(previous snapshot has {len(previous)} listings). "
             "No snapshot written; latest.json left untouched."
+        )
+
+    if len(current) < min_expected:
+        raise DegenerateFetchError(
+            f"watch '{name}': only {len(current)} listings after {FETCH_RETRY_ATTEMPTS} attempts, "
+            f"below {PARTIAL_FETCH_RATIO:.0%} of the previous snapshot ({len(previous)}). "
+            "Treating as a partial scrape: no snapshot written; latest.json left untouched. "
+            "Re-run with --allow-partial if the market genuinely shrank or the filters changed."
         )
 
     if config.get("exclude_coe_renewed"):
@@ -322,11 +341,16 @@ def main():
     parser = argparse.ArgumentParser(description="Track used car listings over time")
     parser.add_argument("--name", default=DEFAULT_CONFIG["name"])
     parser.add_argument("--json", action="store_true")
+    parser.add_argument(
+        "--allow-partial",
+        action="store_true",
+        help="Accept a result far smaller than the previous snapshot (e.g. after narrowing filters)",
+    )
     args = parser.parse_args()
 
     config = _load_config(args.name)
     try:
-        summary = run_watch(config)
+        summary = run_watch(config, allow_partial=args.allow_partial)
     except DegenerateFetchError as e:
         print(f"ERROR: {e}", file=sys.stderr)
         sys.exit(1)
