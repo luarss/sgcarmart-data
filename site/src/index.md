@@ -1,290 +1,209 @@
 ---
-title: SGCM Value Watchlist
-toc: false
+title: Picks
 ---
 
 ```js
-import * as Plot from "npm:@observablehq/plot";
+import {METRICS, activeMetrics, money, compactMoney, integer, years, longDate, topShare, priceDrop, coeShort} from "./components/format.js";
+import {plotDefaults, figure, dataTable, tokens} from "./components/plot.js";
 
-const watchlist = await FileAttachment("data/watchlist.json").json();
-const market = await FileAttachment("data/latest.json").json();
+const pool = await FileAttachment("data/pool.json").json();
+const market = await FileAttachment("data/market.json").json();
 
-const top100 = watchlist.top_listings;
-const weights = watchlist.scoring_weights;
-const coe = watchlist.coe_premiums_used;
-const metricNames = Object.keys(weights);
-
-const brands = new Set(top100.map(l => l.brand)).size;
-const avgScore = top100.reduce((s, l) => s + l.composite_score, 0) / top100.length;
+const listings = pool.listings;
+const weights = pool.weights;
+const metrics = activeMetrics(weights);
+const latestDay = market.days.at(-1);
+const recentPartials = market.days.slice(-14).filter((day) => day.partial);
+const categoryCounts = d3.rollup(listings, (group) => group.length, (listing) => listing.coe_category);
+const top100CatA = listings.slice(0, 100).filter((listing) => listing.coe_category === "Category A").length;
 ```
 
-<div class="hero">
-  <h1>Best-Value Used Cars in Singapore</h1>
-  <p>Daily analysis of ${watchlist.total_source_listings.toLocaleString()} listings scored across 7 COE-adjusted metrics</p>
+# Best-value used cars, today
+
+<p class="dek">${integer(pool.scored_listings)} listings priced ${compactMoney(pool.filters.min_price)}–${compactMoney(pool.filters.max_price)}, registered ${pool.filters.year_from} or later, ranked by what you pay for the car itself once the COE is netted out.</p>
+
+<dl class="kpis">
+  <div><dt>Scored</dt><dd>${integer(pool.scored_listings)}<small>of ${integer(pool.total_source_listings)} scraped</small></dd></div>
+  <div><dt>COE Cat A</dt><dd>${money(pool.coe.category_a_latest.premium)}<small>${pool.coe.category_a_latest.month}</small></dd></div>
+  <div><dt>COE Cat B</dt><dd>${money(pool.coe.category_b_latest.premium)}<small>${pool.coe.category_b_latest.month}</small></dd></div>
+  <div><dt>As of</dt><dd>${longDate(pool.reference_date)}<small>refreshed daily</small></dd></div>
+</dl>
+
+```js
+if (latestDay.partial) {
+  display(html`<p class="notice" role="status"><strong>Partial scrape.</strong> Today's snapshot has only ${integer(latestDay.count)} listings, so scores are ranked against a much smaller pool than usual. Treat the ranking with caution.</p>`);
+} else if (recentPartials.length) {
+  display(html`<p class="notice" role="status"><strong>Note:</strong> ${recentPartials.length} of the last 14 daily scrapes were partial (${recentPartials.map((day) => longDate(day.date)).join(", ")}). Today's run is complete.</p>`);
+}
+```
+
+## Filter the list
+
+<div class="filters">
+
+```js
+const search = view(Inputs.search(listings, {label: "Search", placeholder: "Make, model or dealer", columns: ["title", "dealer"]}));
+```
+
+```js
+const category = view(Inputs.radio(["All", "Cat A", "Cat B"], {label: "COE category", value: "All"}));
+```
+
+```js
+const maxPriceInput = Inputs.range([pool.filters.min_price, pool.filters.max_price], {label: "Max price (S$)", step: 1000, value: pool.filters.max_price});
+maxPriceInput.querySelector("input[type=range]").setAttribute("aria-label", "Max price (S$)");
+const maxPrice = view(maxPriceInput);
+```
+
+```js
+const minCoeInput = Inputs.range([0, 10], {label: "Min COE left (years)", step: 0.5, value: 0});
+minCoeInput.querySelector("input[type=range]").setAttribute("aria-label", "Min COE left (years)");
+const minCoe = view(minCoeInput);
+```
+
+```js
+const options = view(Inputs.checkbox(["Price dropped", "Direct owner"], {label: "Only show"}));
+```
+
 </div>
 
-<div class="stat-grid">
-  <div class="stat-card"><div class="stat-value">${top100.length}</div><div class="stat-label">Top Value Picks</div></div>
-  <div class="stat-card"><div class="stat-value">${brands}</div><div class="stat-label">Brands in Top 100</div></div>
-  <div class="stat-card"><div class="stat-value">${watchlist.scored_listings.toLocaleString()}</div><div class="stat-label">Listings Scored</div></div>
-  <div class="stat-card"><div class="stat-value">${avgScore.toFixed(3)}</div><div class="stat-label">Avg Composite Score</div></div>
-</div>
-
-<div class="coe-banner">
-  <div class="coe-banner-inner">
-    <div class="coe-item"><div class="coe-cat">COE Cat A</div><div class="coe-val">$${coe.category_a_latest.premium.toLocaleString()}</div></div>
-    <div class="coe-item"><div class="coe-cat">COE Cat B</div><div class="coe-val">$${coe.category_b_latest.premium.toLocaleString()}</div></div>
-    <div class="coe-item"><div class="coe-cat">Reference Date</div><div class="coe-val">${watchlist.reference_date}</div></div>
-  </div>
-</div>
-
-<div class="content">
-
-## Score Distribution
-
 ```js
-const scoreMean = avgScore;
-display(htl.html`<div class="chart-container">${Plot.plot({
-  marginLeft: 50,
-  marginBottom: 40,
-  height: 220,
-  style: { fontSize: "13px" },
-  x: { label: "Composite Score", tickFormat: ".2f" },
-  y: { label: "Count", grid: true },
-  marks: [
-    Plot.rectY(top100, Plot.binX({ y: "count" }, { x: "composite_score", thresholds: 20, fill: "#22c55e", fillOpacity: 0.7 })),
-    Plot.ruleX([scoreMean], { stroke: "#ef4444", strokeWidth: 2, strokeDasharray: "4 2" }),
-    Plot.text([{x: scoreMean, y: 10, text: `avg ${scoreMean.toFixed(3)}`}], { x: "x", y: "y", text: "text", textAnchor: "start", dx: 6, fill: "#ef4444", fontSize: 11 })
-  ]
-})}</div>`);
-```
-
-## Price vs. Value Score
-
-```js
-display(htl.html`<div class="chart-container">${Plot.plot({
-  marginLeft: 60,
-  marginBottom: 40,
-  height: 420,
-  style: { fontSize: "13px" },
-  color: { legend: true, scheme: "tableau10" },
-  x: { label: "Price (SGD)", tickFormat: "$,d" },
-  y: { label: "Composite Score", tickFormat: ".2f" },
-  marks: [
-    Plot.dot(top100, {
-      x: "price",
-      y: "composite_score",
-      stroke: "brand",
-      fill: "brand",
-      fillOpacity: 0.6,
-      r: 6,
-      tip: true,
-      title: (d) => `${d.title}\nPrice: $${d.price.toLocaleString()}\nDepr/yr: $${d.depreciation.toLocaleString()}\nScore: ${d.composite_score.toFixed(3)}`,
-    })
-  ]
-})}</div>`);
-```
-
-## Pareto Frontier: Best Value at Each Price Point
-
-Among the top 100, these listings are **non-dominated** — no other car in the set offers both a lower price and an equal-or-higher composite score. Together they trace the cheapest available score at every price point.
-
-```js
-const paretoFrontier = (() => {
-  const sorted = [...top100].sort((a, b) => a.price - b.price);
-  const frontier = [];
-  let maxScore = -Infinity;
-  for (const d of sorted) {
-    if (d.composite_score > maxScore) {
-      frontier.push(d);
-      maxScore = d.composite_score;
-    }
-  }
-  return frontier;
-})();
-
-const frontierIds = new Set(paretoFrontier.map(d => d.id));
-
-display(htl.html`<div class="chart-container">${Plot.plot({
-  marginLeft: 60,
-  marginBottom: 40,
-  height: 440,
-  style: { fontSize: "13px" },
-  x: { label: "Price (SGD)", tickFormat: "$,d" },
-  y: { label: "Composite Score", tickFormat: ".2f" },
-  marks: [
-    Plot.dot(top100.filter(d => !frontierIds.has(d.id)), {
-      x: "price",
-      y: "composite_score",
-      fill: "#94a3b8",
-      fillOpacity: 0.4,
-      r: 4,
-      tip: true,
-      title: (d) => `${d.title}\nPrice: $${d.price.toLocaleString()}\nScore: ${d.composite_score.toFixed(3)}`,
-    }),
-    Plot.line(paretoFrontier, {
-      x: "price",
-      y: "composite_score",
-      stroke: "#ef4444",
-      strokeWidth: 2,
-      curve: "step-after",
-    }),
-    Plot.dot(paretoFrontier, {
-      x: "price",
-      y: "composite_score",
-      fill: "#ef4444",
-      stroke: "white",
-      strokeWidth: 1.5,
-      r: 6,
-      tip: true,
-      title: (d) => `★ ${d.title}\nPrice: $${d.price.toLocaleString()}\nScore: ${d.composite_score.toFixed(3)}\nBrand: ${d.brand}`,
-    })
-  ]
-})}</div>`);
-```
-
-```js
-display(htl.html`<div class="chart-container" style="overflow-x: auto;">
-<table class="data-table">
-<thead><tr>
-  <th class="rank-col">#</th>
-  <th>Car</th>
-  <th>Brand</th>
-  <th>Price</th>
-  <th>Score</th>
-</tr></thead>
-<tbody>
-${paretoFrontier.map((l, i) => htl.html`<tr>
-  <td class="rank-col">${i + 1}</td>
-  <td><a href="/detail#${l.id}">${l.title}</a></td>
-  <td>${l.brand}</td>
-  <td class="price-col">$${l.price.toLocaleString()}</td>
-  <td class="score-col"><span class="score-badge high">${l.composite_score.toFixed(4)}</span></td>
-</tr>`)}
-</tbody></table></div>`);
-```
-
-<div class="grid-2">
-
-<div>
-
-## Brand Breakdown
-
-```js
-const brandCounts = Array.from(
-  d3.rollup(top100, v => v.length, d => d.brand),
-  ([brand, count]) => ({ brand, count })
-).sort((a, b) => b.count - a.count).slice(0, 12);
-
-const brandAvgScore = new Map(
-  Array.from(d3.rollup(top100, v => d3.mean(v, d => d.composite_score), d => d.brand))
+const filtered = search.filter((listing) =>
+  (category === "All" || coeShort(listing.coe_category) === category) &&
+  listing.price <= maxPrice &&
+  listing.coe_years_left >= minCoe &&
+  (!options.includes("Price dropped") || priceDrop(listing) > 0) &&
+  (!options.includes("Direct owner") || listing.is_direct_owner)
 );
-
-display(htl.html`<div class="chart-container">${Plot.plot({
-  marginLeft: 90,
-  marginBottom: 30,
-  height: 400,
-  style: { fontSize: "12px" },
-  x: { label: "Count in Top 100", grid: true },
-  y: { label: null, domain: brandCounts.map(d => d.brand).reverse() },
-  color: { type: "linear", scheme: "RdYlGn", domain: [0.85, 0.95], label: "Avg Score" },
-  marks: [
-    Plot.barX(brandCounts, {
-      x: "count",
-      y: "brand",
-      fill: d => brandAvgScore.get(d.brand),
-      sort: { y: "x", reverse: true },
-      tip: true,
-      title: d => `${d.brand}: ${d.count} cars, avg score ${brandAvgScore.get(d.brand).toFixed(3)}`
-    })
-  ]
-})}</div>`);
+const filteredIds = new Set(filtered.map((listing) => listing.id));
 ```
-
-</div>
-
-<div>
-
-## Metric Weights
 
 ```js
-const weightData = Object.entries(weights).map(([key, w]) => ({
-  metric: key.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase()),
-  weight: w
-})).sort((a, b) => b.weight - a.weight);
-
-display(htl.html`<div class="chart-container">${Plot.plot({
-  marginLeft: 170,
-  marginBottom: 30,
-  height: 400,
-  style: { fontSize: "12px" },
-  x: { label: "Weight", tickFormat: ".0%", grid: true },
-  y: { label: null, domain: weightData.map(d => d.metric).reverse() },
-  marks: [
-    Plot.barX(weightData, {
-      x: "weight",
-      y: "metric",
-      fill: "#16a34a",
-      fillOpacity: 0.8,
-      sort: { y: "x", reverse: true },
-      tip: true,
-      title: d => `${d.metric}: ${(d.weight * 100).toFixed(0)}%`
-    })
-  ]
-})}</div>`);
+const pageSize = 25;
+const shownCount = Mutable(pageSize);
+const showMore = () => (shownCount.value += pageSize);
+const resetShown = () => (shownCount.value = pageSize);
 ```
-
-</div>
-</div>
-
-## Top 20 Value Picks
 
 ```js
-const sorted = [...top100].sort((a, b) => b.composite_score - a.composite_score);
-const top20 = sorted.slice(0, 20);
-
-display(htl.html`<div class="chart-container" style="overflow-x: auto;">
-<table class="data-table">
-<thead><tr>
-  <th class="rank-col">#</th>
-  <th>Car</th>
-  <th>Brand</th>
-  <th>Price</th>
-  <th>Depr/yr</th>
-  <th>Body Depr</th>
-  <th>RdTax</th>
-  <th>Value Ret.</th>
-  <th>Body$/COE yr</th>
-  <th>Score</th>
-</tr></thead>
-<tbody>
-${top20.map(l => {
-  const sc = l.composite_score;
-  const cls = sc >= 0.9 ? "high" : sc >= 0.8 ? "mid" : "low";
-  return htl.html`<tr>
-  <td class="rank-col">${l.rank}</td>
-  <td><a href="/detail#${l.id}">${l.title}</a></td>
-  <td>${l.brand}</td>
-  <td class="price-col">$${l.price.toLocaleString()}</td>
-  <td>$${l.depreciation.toLocaleString()}</td>
-  <td>${(l.body_depreciation_rate * 100).toFixed(1)}%</td>
-  <td>${l.road_tax != null ? "$" + l.road_tax.toLocaleString() : "N/A"}</td>
-  <td>${(l.value_retention * 100).toFixed(1)}%</td>
-  <td>$${Math.round(l.body_price_per_coe_year).toLocaleString()}</td>
-  <td class="score-col"><span class="score-badge ${cls}">${sc.toFixed(4)}</span></td>
-</tr>`;
-})}
-</tbody></table></div>`);
+filtered, resetShown();
 ```
 
-<div style="text-align:center; margin-top: 16px; font-size: 0.85rem; color: var(--slate-500);">
-  Showing top 20 of 100. <a href="/">Back to top</a>
-</div>
-
-</div>
+## Ranked list
 
 ```js
-display(htl.html`<footer>
-  Data refreshed daily via automated CI pipeline. Scores use winsorized min-max normalization across 7 metrics weighted by importance. Higher composite score = better value.
-</footer>`);
+function contributionBar(listing) {
+  const bar = html`<span class="stack" aria-hidden="true">${metrics.map((metric) => {
+    const contribution = listing.metric_scores[metric] * weights[metric];
+    return html`<span style="width:${(contribution * 100).toFixed(2)}%" title="${METRICS[metric].label}: ${contribution.toFixed(3)} of ${weights[metric].toFixed(2)}"></span>`;
+  })}</span>`;
+  return bar;
+}
+
+function row(listing) {
+  const drop = priceDrop(listing);
+  return html`<tr class=${listing.rank <= 10 ? "top10" : ""}>
+    <td class="rank">${listing.rank}</td>
+    <td class="car">
+      <a class="car-title" href="/detail#${listing.id}">${listing.title}</a>
+      <span class="car-sub">${listing.brand} · ${years(listing.age_years)} old · ${years(listing.coe_years_left)} COE left · ${coeShort(listing.coe_category)} · ${integer(listing.mileage_km)} km</span>
+    </td>
+    <td class="num" data-label="Price">${money(listing.price)}${drop ? html`<br><span class="tag">▼ ${money(drop)} off peak</span>` : ""}</td>
+    <td class="num" data-label="Depr./yr">${money(listing.depreciation)}</td>
+    <td class="score">
+      <div class="score-cell">
+        ${contributionBar(listing)}
+        <div class="score-figure"><b>${listing.composite_score.toFixed(2)}</b><small>${topShare(listing)}</small></div>
+      </div>
+    </td>
+  </tr>`;
+}
+
+const visible = filtered.slice(0, shownCount);
+
+display(filtered.length
+  ? html`<div class="table-scroll"><table class="ranked">
+      <caption>Showing ${integer(visible.length)} of ${integer(filtered.length)} matching listings, ranked by value score across all ${integer(listings.length)} scored cars. The bar shows how much each of the ${metrics.length} weighted metrics contributes to the score.</caption>
+      <thead><tr>
+        <th scope="col" class="num">#</th>
+        <th scope="col">Car</th>
+        <th scope="col" class="num">Price</th>
+        <th scope="col" class="num">Depr./yr</th>
+        <th scope="col" class="num">Value score</th>
+      </tr></thead>
+      <tbody>${visible.map(row)}</tbody>
+    </table></div>`
+  : html`<p class="muted">No listings match these filters.</p>`);
+
+if (visible.length < filtered.length) {
+  display(html`<div class="more"><button class="button" onclick=${showMore}>Show ${Math.min(pageSize, filtered.length - visible.length)} more</button><span>${integer(filtered.length - visible.length)} more match</span></div>`);
+}
 ```
+
+## How the picks sit in the market
+
+<div class="charts">
+
+```js
+const topThreshold = listings[Math.min(99, listings.length - 1)].composite_score;
+const scoreBins = d3.bin().domain([0, 1]).thresholds(d3.range(0, 1.0001, 0.025)).value((listing) => listing.composite_score)(listings);
+const scoreRows = scoreBins.filter((bin) => bin.length).map((bin) => ({
+  range: `${bin.x0.toFixed(3)}–${bin.x1.toFixed(3)}`,
+  all: bin.length,
+  matching: bin.filter((listing) => filteredIds.has(listing.id)).length
+}));
+
+display(figure({
+  title: "Score distribution",
+  caption: `Each bar counts listings in a score band; green is the part that matches your filters. The dashed line marks the top-100 cut-off (${topThreshold.toFixed(2)}). Scores are relative: 1.0 is the best on each metric within today's pool, not an absolute grade.`,
+  chart: resize((width) => Plot.plot(plotDefaults({
+    ariaLabel: "Histogram of value scores for all scored listings",
+    ariaDescription: `Most listings score between ${d3.quantile(listings, 0.05, (listing) => listing.composite_score).toFixed(2)} and ${d3.quantile(listings, 0.95, (listing) => listing.composite_score).toFixed(2)}. The top-100 cut-off is ${topThreshold.toFixed(2)}.`,
+    width,
+    height: 240,
+    x: {label: "Value score →", domain: [0, 1], grid: false},
+    y: {label: "↑ Listings", grid: true},
+    marks: [
+      Plot.rectY(listings, Plot.binX({y: "count"}, {x: "composite_score", interval: 0.025, fill: tokens.faint, fillOpacity: 0.35, inset: 0.5, ariaHidden: true})),
+      Plot.rectY(filtered, Plot.binX({y: "count"}, {x: "composite_score", interval: 0.025, fill: tokens.good, inset: 0.5, ariaHidden: true})),
+      Plot.ruleX([topThreshold], {stroke: tokens.ink, strokeDasharray: "3 3", ariaHidden: true}),
+      Plot.text([topThreshold], {x: (value) => value, frameAnchor: "top", dx: -4, dy: 2, textAnchor: "end", text: () => "top 100", fill: tokens.ink, ariaHidden: true}),
+      Plot.ruleY([0], {stroke: tokens.ink, ariaHidden: true})
+    ]
+  }))),
+  table: dataTable({
+    caption: "Listings per score band",
+    columns: [
+      {key: "range", label: "Score band"},
+      {key: "all", label: "All listings", numeric: true, format: integer},
+      {key: "matching", label: "Matching filters", numeric: true, format: integer}
+    ],
+    rows: scoreRows
+  })
+}));
+```
+
+```js
+display(figure({
+  title: "Price vs. body price per COE year",
+  caption: "Each dot is a listing. Lower is better on the vertical axis: it is what the car itself costs, net of COE, per year of COE left. Green dots match your filters; hover or tap a dot for details. The ranked list above is the accessible version of this chart.",
+  chart: resize((width) => Plot.plot(plotDefaults({
+    ariaLabel: "Scatter plot of asking price against body price per COE year",
+    ariaDescription: `Shows ${integer(listings.length)} listings, ${integer(filtered.length)} of them highlighted.`,
+    width,
+    height: 300,
+    marginLeft: 52,
+    x: {label: "Price →", tickFormat: (value) => compactMoney(value), ticks: 5},
+    y: {label: "↑ Body S$ / COE year", tickFormat: (value) => compactMoney(value), grid: true, type: "log"},
+    marks: [
+      Plot.dot(listings.filter((listing) => !filteredIds.has(listing.id)), {x: "price", y: "body_price_per_coe_year", r: 2, fill: tokens.faint, fillOpacity: 0.3, ariaHidden: true}),
+      Plot.dot(filtered, {x: "price", y: "body_price_per_coe_year", r: 3, fill: tokens.good, fillOpacity: 0.8, ariaHidden: true}),
+      Plot.tip(listings, Plot.pointer({x: "price", y: "body_price_per_coe_year", title: (listing) => `#${listing.rank} ${listing.title}\n${money(listing.price)} · score ${listing.composite_score.toFixed(2)}\n${money(listing.body_price_per_coe_year)} body / COE yr`, fontFamily: "var(--font-mono)", ariaHidden: true}))
+    ]
+  })))
+}));
+```
+
+</div>
+
+<p class="muted" style="margin-top: var(--s5); font-size: var(--t-sm);">Today ${integer(top100CatA)} of the top 100 are Category A (≤1,600 cc), against ${integer(categoryCounts.get("Category A") ?? 0)} Cat A and ${integer(categoryCounts.get("Category B") ?? 0)} Cat B in the scored pool. Use the COE category filter to compare like with like. <a href="/method">How the score works →</a></p>

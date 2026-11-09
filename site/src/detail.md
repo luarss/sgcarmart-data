@@ -1,270 +1,203 @@
 ---
-title: Listing Detail — SGCM Value Watchlist
-toc: false
+title: Listing
 ---
 
 ```js
-const watchlist = await FileAttachment("data/watchlist.json").json();
-const top100 = watchlist.top_listings;
-const weights = watchlist.scoring_weights;
-const metricNames = Object.keys(weights);
+import {METRICS, activeMetrics, money, compactMoney, integer, years, percent, longDate, shortDate, parseDate, metricValue, topShare, priceDrop, modelKey, coeShort} from "./components/format.js";
+import {plotDefaults, figure, dataTable, tokens} from "./components/plot.js";
+
+const pool = await FileAttachment("data/pool.json").json();
+const listings = pool.listings;
+const weights = pool.weights;
+const metrics = activeMetrics(weights);
+const byId = new Map(listings.map((listing) => [listing.id, listing]));
+const medianScore = Object.fromEntries(metrics.map((metric) => [metric, d3.median(listings, (listing) => listing.metric_scores[metric])]));
+const sortedRaw = Object.fromEntries(metrics.map((metric) => [metric, listings.map((listing) => listing[metric]).sort(d3.ascending)]));
 ```
 
 ```js
-// Reactive listing ID from URL hash — works with Observable Framework's
-// client-side router, which strips query params during navigation.
-const listingId = Generators.observe(notify => {
-  const update = () => notify(location.hash.replace(/^#/, "") || null);
+const listingId = Generators.observe((notify) => {
+  const update = () => notify(decodeURIComponent(location.hash.replace(/^#/, "")) || null);
   update();
-  window.addEventListener("hashchange", update);
-  return () => window.removeEventListener("hashchange", update);
+  addEventListener("hashchange", update);
+  return () => removeEventListener("hashchange", update);
 });
 ```
 
 ```js
-const listing = top100.find(l => l.id === listingId) ?? null;
+const listing = byId.get(listingId) ?? null;
 ```
 
 ```js
 if (!listing) {
-  display(htl.html`<div class="content" style="text-align:center; padding:80px 24px;">
-    <h2>Listing not found</h2>
-    <p style="color:var(--slate-500)">No listing with ID "${listingId}" in the current watchlist.</p>
-    <a href="/" style="display:inline-block; margin-top:20px; padding:8px 20px; border-radius:20px; background:var(--slate-100); color:var(--slate-700); text-decoration:none; font-weight:500;">← Back to Top 100</a>
-  </div>`);
+  display(html`<h1>Listing not found</h1>
+    <p class="dek">${listingId ? html`Listing <span class="mono">${listingId}</span> isn't in today's scored pool. It may have sold, been excluded, or the link may be out of date.` : "No listing was selected."}</p>
+    <p><a href="/">← Back to today's picks</a></p>`);
 }
 ```
 
 ```js
 if (listing) {
+  const drop = priceDrop(listing);
+  const shareBeaten = (metric) => {
+    const values = sortedRaw[metric];
+    return (values.length - d3.bisectRight(values, listing[metric])) / values.length;
+  };
 
-const idx = top100.indexOf(listing);
-const prev = idx > 0 ? top100[idx - 1] : null;
-const next = idx < top100.length - 1 ? top100[idx + 1] : null;
+  const breakdown = metrics.map((metric) => ({
+    metric,
+    label: METRICS[metric].label,
+    weight: weights[metric],
+    score: listing.metric_scores[metric],
+    median: medianScore[metric],
+    contribution: listing.metric_scores[metric] * weights[metric],
+    raw: listing[metric],
+    betterThan: shareBeaten(metric)
+  }));
 
-const avgScores = {};
-for (const m of metricNames) {
-  avgScores[m] = top100.reduce((s, l) => s + l.metric_scores[m], 0) / top100.length;
-}
+  const history = listing.price_history.map(([date, price]) => ({date: parseDate(date), price}));
+  const lastSeen = parseDate(pool.reference_date);
+  const historyWithToday = history.length ? [...history, {date: lastSeen, price: history.at(-1).price}] : [];
 
-const fmtPrice = (n) => "$" + n.toLocaleString();
-const sc = listing.composite_score;
-const scoreCls = sc >= 0.9 ? "high" : sc >= 0.8 ? "mid" : "low";
+  const comparables = listings
+    .filter((other) => other.id !== listing.id && modelKey(other.title) === modelKey(listing.title))
+    .slice(0, 8);
 
-const scoreData = metricNames.map(m => ({
-  metric: m.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase()),
-  key: m,
-  score: listing.metric_scores[m],
-  weight: weights[m],
-  contribution: listing.metric_scores[m] * weights[m],
-}));
+  const previous = byId.get(listings[listing.rank - 2]?.id);
+  const next = byId.get(listings[listing.rank]?.id);
 
-display(htl.html`<div class="content">
+  display(html`<a class="breadcrumb" href="/">← Today's picks</a>
+  <h1>${listing.title}</h1>
+  <p class="dek">${listing.brand} · ${listing.dealer ?? "Dealer not listed"} · registered ${listing.reg_date ?? "—"}</p>
 
-<a href="/" class="back-link">← Back to Top 100</a>
-
-<div class="detail-header">
-  <div class="car-brand">${listing.brand}</div>
-  <div class="car-title">${listing.title}</div>
-  <div class="car-price">${fmtPrice(listing.price)} <span class="score-badge ${scoreCls}">Score: ${sc.toFixed(4)}</span></div>
-  <div class="car-depr">$${listing.depreciation.toLocaleString()}/yr depreciation · Rank #${listing.rank} of ${top100.length}</div>
-
-  <div class="detail-meta">
-    <div class="meta-item"><div class="meta-val">${listing.age_years.toFixed(1)} yrs</div><div class="meta-lbl">Age</div></div>
-    <div class="meta-item"><div class="meta-val">${listing.coe_years_left.toFixed(1)} yrs</div><div class="meta-lbl">COE Left</div></div>
-    <div class="meta-item"><div class="meta-val">${listing.coe_category}</div><div class="meta-lbl">COE Cat</div></div>
-    <div class="meta-item"><div class="meta-val">${listing.road_tax != null ? "$" + listing.road_tax.toLocaleString() + "/yr" : "N/A"}</div><div class="meta-lbl">Road Tax</div></div>
-    <div class="meta-item"><div class="meta-val">${listing.mileage_km.toLocaleString()} km</div><div class="meta-lbl">Mileage</div></div>
-    <div class="meta-item"><div class="meta-val">${listing.num_owners}</div><div class="meta-lbl">Owners</div></div>
-    <div class="meta-item"><div class="meta-val">${listing.days_on_market} days</div><div class="meta-lbl">On Market</div></div>
-    <div class="meta-item"><div class="meta-val">${(listing.value_retention * 100).toFixed(1)}%</div><div class="meta-lbl">Value Retention</div></div>
-    <div class="meta-item"><div class="meta-val">${listing.is_direct_owner ? "Yes" : "No"}</div><div class="meta-lbl">Direct Owner</div></div>
+  <div class="headline-figures">
+    <div><span>Price</span><b>${money(listing.price)}</b></div>
+    <div><span>Value score</span><b>${listing.composite_score.toFixed(2)}</b></div>
+    <div><span>Rank</span><b>#${integer(listing.rank)} <small class="muted" style="font-size: var(--t-sm)">of ${integer(listings.length)} · ${topShare(listing)}</small></b></div>
+    ${drop ? html`<div><span>Below peak</span><b style="color: var(--good)">▼ ${money(drop)}</b></div>` : ""}
   </div>
-</div>
 
-<div class="grid-2">
+  <p><a href="${listing.url}" target="_blank" rel="noopener noreferrer">View listing on SGCarMart<span class="sr-only"> (opens in a new tab)</span> ↗</a></p>`);
 
-<div>
+  const spec = [
+    ["Depreciation", `${money(listing.depreciation)}/yr`],
+    ["Body price (net of COE)", money(listing.body_price)],
+    ["Age", years(listing.age_years)],
+    ["COE left", years(listing.coe_years_left)],
+    ["COE category", coeShort(listing.coe_category)],
+    ["Engine", listing.eng_cap ?? "—"],
+    ["Mileage", `${integer(listing.mileage_km)} km`],
+    ["Owners", listing.num_owners ?? "—"],
+    ["Direct owner", listing.is_direct_owner ? "Yes" : "No"],
+    ["Road tax", listing.road_tax != null ? `${money(listing.road_tax)}/yr` : "—"],
+    ["Instalment", listing.instalment ?? "—"],
+    ["First seen", longDate(listing.first_seen)],
+    ["Days in snapshots", integer(listing.days_seen)]
+  ];
 
-<h2>Metric Scores (Radar)</h2>
+  const breakdownChart = figure({
+    title: "What drives the score",
+    caption: "Bars show this car's score on each metric (1 = best in today's pool). The tick marks the median listing. Metrics are ordered by weight, shown in brackets.",
+    chart: resize((width) => Plot.plot(plotDefaults({
+      ariaLabel: "Bar chart of this listing's score on each metric against the pool median",
+      ariaDescription: breakdown.map((row) => `${row.label}: ${row.score.toFixed(2)}, median ${row.median.toFixed(2)}`).join("; "),
+      width,
+      height: 40 + breakdown.length * 34,
+      marginLeft: Math.min(200, width * 0.42),
+      x: {domain: [0, 1], label: "Metric score →", grid: true},
+      y: {domain: breakdown.map((row) => row.label), label: null, tickFormat: (label) => {
+        const row = breakdown.find((entry) => entry.label === label);
+        return `${label} (${Math.round(row.weight * 100)}%)`;
+      }},
+      marks: [
+        Plot.barX(breakdown, {x: "score", y: "label", fill: tokens.good, insetTop: 8, insetBottom: 8, ariaHidden: true}),
+        Plot.tickX(breakdown, {x: "median", y: "label", stroke: tokens.ink, strokeWidth: 2, ariaHidden: true}),
+        Plot.text(breakdown, {x: "score", y: "label", text: (row) => row.score.toFixed(2), dx: 4, textAnchor: "start", fill: tokens.ink, ariaHidden: true})
+      ]
+    }))),
+    table: dataTable({
+      caption: "Score breakdown by metric",
+      columns: [
+        {key: "label", label: "Metric"},
+        {key: "raw", label: "This car", numeric: true, format: (value, row) => metricValue(row.metric, value)},
+        {key: "betterThan", label: "Better than", numeric: true, format: (value) => `${percent(value, 0)} of pool`},
+        {key: "score", label: "Score", numeric: true, format: (value) => value.toFixed(2)},
+        {key: "weight", label: "Weight", numeric: true, format: (value) => percent(value, 0)},
+        {key: "contribution", label: "Points", numeric: true, format: (value) => value.toFixed(3)}
+      ],
+      rows: breakdown
+    })
+  });
+  breakdownChart.querySelector("details").open = true;
 
-<div class="chart-container">
-  <div class="radar-container" id="radarChart"></div>
-</div>
+  display(html`<div class="split">
+    <section aria-labelledby="spec-heading">
+      <h2 id="spec-heading">Spec sheet</h2>
+      <dl class="spec">${spec.map(([label, value]) => html.fragment`<dt>${label}</dt><dd>${value}</dd>`)}</dl>
+    </section>
+    <section aria-labelledby="score-heading">
+      <h2 id="score-heading">Score breakdown</h2>
+      ${breakdownChart}
+    </section>
+  </div>`);
 
-</div>
+  display(html`<h2>Asking price over time</h2>`);
+  display(history.length > 1
+    ? figure({
+        title: `${history.length - 1} price change${history.length > 2 ? "s" : ""} since ${longDate(listing.first_seen)}`,
+        caption: `Step line of the asking price on each daily snapshot. Peak ${money(listing.peak_price)}, now ${money(listing.price)}.`,
+        chart: resize((width) => Plot.plot(plotDefaults({
+          ariaLabel: "Step chart of asking price over time",
+          ariaDescription: history.map((point) => `${shortDate(point.date)}: ${money(point.price)}`).join("; "),
+          width,
+          height: 220,
+          marginLeft: 56,
+          marginTop: 28,
+          x: {label: null, tickFormat: shortDate, ticks: 5},
+          y: {label: "↑ Price", tickFormat: compactMoney, grid: true, nice: true},
+          marks: [
+            Plot.lineY(historyWithToday, {x: "date", y: "price", curve: "step-after", stroke: tokens.good, strokeWidth: 2, ariaHidden: true}),
+            Plot.dot(history, {x: "date", y: "price", fill: tokens.good, r: 3, ariaHidden: true})
+          ]
+        }))),
+        table: dataTable({
+          caption: "Price changes",
+          columns: [
+            {key: "date", label: "Date", format: (value) => shortDate(value)},
+            {key: "price", label: "Price", numeric: true, format: money}
+          ],
+          rows: history
+        })
+      })
+    : html`<p class="muted">No price change since this listing was first seen on ${longDate(listing.first_seen)}.</p>`);
 
-<div>
+  display(html`<h2>Same model in today's pool</h2>`);
+  display(comparables.length
+    ? html`<div class="table-scroll"><table class="data">
+        <caption>${comparables.length} other ${modelKey(listing.title).replace(/\b\w/g, (letter) => letter.toUpperCase())} listing${comparables.length > 1 ? "s" : ""}, best value first</caption>
+        <thead><tr>
+          <th scope="col" class="num">Rank</th><th scope="col">Car</th><th scope="col" class="num">Price</th>
+          <th scope="col" class="num">Age</th><th scope="col" class="num">COE left</th><th scope="col" class="num">km</th><th scope="col" class="num">Score</th>
+        </tr></thead>
+        <tbody>${comparables.map((other) => html`<tr>
+          <td class="num">${integer(other.rank)}</td>
+          <td><a href="/detail#${other.id}">${other.title}</a></td>
+          <td class="num">${money(other.price)}</td>
+          <td class="num">${years(other.age_years)}</td>
+          <td class="num">${years(other.coe_years_left)}</td>
+          <td class="num">${integer(other.mileage_km)}</td>
+          <td class="num">${other.composite_score.toFixed(2)}</td>
+        </tr>`)}</tbody>
+      </table></div>`
+    : html`<p class="muted">No other listings of this model in today's pool.</p>`);
 
-<h2>Score Breakdown</h2>
-
-<div class="chart-container">
-${scoreData.map(d => {
-  const pct = (d.score * 100).toFixed(1);
-  const wPct = (d.weight * 100).toFixed(0);
-  return htl.html`<div class="score-bar-row">
-    <div class="score-bar-label">${d.metric} (${wPct}%)</div>
-    <div class="score-bar-track">
-      <div class="score-bar-fill" style="width:${pct}%"></div>
-    </div>
-    <div class="score-bar-val">${pct}</div>
-  </div>`;
-})}
-</div>
-
-<div class="chart-container" style="text-align:center;">
-  <div style="font-size:0.9rem; color:var(--slate-500); margin-bottom:8px;">Composite Score Calculation</div>
-  <div style="font-size:1.3rem; font-weight:700; color:var(--slate-800);">
-    ${scoreData.map(d => (d.contribution * 100).toFixed(1) + "%").join(" + ")} = ${(sc * 100).toFixed(2)}%
-  </div>
-  <div style="font-size:0.75rem; color:var(--slate-400); margin-top:4px;">
-    Sum of (normalized score × weight) for each metric
-  </div>
-</div>
-
-<h2>Key Metrics</h2>
-
-<div class="chart-container">
-<table class="data-table">
-<thead><tr><th>Metric</th><th>Value</th><th>Note</th></tr></thead>
-<tbody>
-<tr><td style="font-weight:600;">Body Price</td><td style="font-weight:700; color:var(--green-700);">$${Math.round(listing.body_price).toLocaleString()}</td><td style="font-size:0.8rem; color:var(--slate-500);">Price minus estimated COE value</td></tr>
-<tr><td style="font-weight:600;">Body Depreciation Rate</td><td style="font-weight:700; color:var(--green-700);">${(listing.body_depreciation_rate * 100).toFixed(1)}%</td><td style="font-size:0.8rem; color:var(--slate-500);">Body depr / body price (lower = better)</td></tr>
-<tr><td style="font-weight:600;">Body $ per COE Year</td><td style="font-weight:700; color:var(--green-700);">$${Math.round(listing.body_price_per_coe_year).toLocaleString()}</td><td style="font-size:0.8rem; color:var(--slate-500);">Body price / COE years left (lower = better)</td></tr>
-<tr><td style="font-weight:600;">Depreciation per km</td><td style="font-weight:700; color:var(--green-700);">$${listing.depreciation_per_km.toFixed(2)}</td><td style="font-size:0.8rem; color:var(--slate-500);">Annual depr / km driven (lower = better)</td></tr>
-<tr><td style="font-weight:600;">Price per Owner</td><td style="font-weight:700; color:var(--green-700);">$${Math.round(listing.price_per_owner).toLocaleString()}</td><td style="font-size:0.8rem; color:var(--slate-500);">Price / number of owners (lower = better)</td></tr>
-<tr><td style="font-weight:600;">Annual Mileage</td><td style="font-weight:700; color:var(--green-700);">${Math.round(listing.annual_mileage).toLocaleString()} km</td><td style="font-size:0.8rem; color:var(--slate-500);">Mileage / age in years (lower = better)</td></tr>
-<tr><td style="font-weight:600;">Road Tax</td><td style="font-weight:700; color:var(--green-700);">${listing.road_tax != null ? "$" + listing.road_tax.toLocaleString() + "/yr" : "N/A"}</td><td style="font-size:0.8rem; color:var(--slate-500);">Annual road tax (computed from engine capacity)</td></tr>
-</tbody></table>
-</div>
-
-</div>
-</div>
-
-<div style="display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:32px; padding:20px; background:white; border-radius:var(--radius); box-shadow:var(--shadow);">
-  <div>${prev ? htl.html`<a href="/detail#${prev.id}" style="padding:6px 16px; border-radius:20px; font-size:0.85rem; font-weight:500; text-decoration:none; color:var(--slate-600); background:var(--slate-100);">← #${prev.rank} ${prev.title.substring(0, 35)}...</a>` : htl.html`<span style="color:var(--slate-300); font-size:0.85rem;">← First in list</span>`}</div>
-  <div style="font-weight:600; color:var(--slate-500);">#${listing.rank} of ${top100.length}</div>
-  <div>${next ? htl.html`<a href="/detail#${next.id}" style="padding:6px 16px; border-radius:20px; font-size:0.85rem; font-weight:500; text-decoration:none; color:var(--slate-600); background:var(--slate-100);">#${next.rank} ${next.title.substring(0, 35)}... →</a>` : htl.html`<span style="color:var(--slate-300); font-size:0.85rem;">Last in list →</span>`}</div>
-</div>
-
-</div>`);
-
-// Radar chart
-const width = 380;
-const height = 380;
-const cx = width / 2;
-const cy = height / 2;
-const radius = 150;
-const levels = 5;
-
-const shortLabels = {
-  "body_depreciation_rate": "Body Depr Rate",
-  "body_price_per_coe_year": "Body $/COE yr",
-  "depreciation_rate": "Depr Rate",
-  "annual_mileage": "Annual Mileage",
-  "depreciation_per_km": "Depr/km",
-  "price_per_owner": "Price/Owner",
-  "days_on_market": "Days Listed"
-};
-
-const axes = metricNames.map((m, i) => {
-  const angle = (2 * Math.PI * i) / metricNames.length - Math.PI / 2;
-  return { key: m, angle, label: shortLabels[m] || m };
-});
-
-const polarX = (angle, r) => cx + r * Math.cos(angle);
-const polarY = (angle, r) => cy + r * Math.sin(angle);
-
-const container = document.getElementById("radarChart");
-if (container) {
-  const svg = d3.select(container)
-    .append("svg")
-    .attr("viewBox", `0 0 ${width} ${height}`)
-    .attr("width", width)
-    .attr("height", height);
-
-  for (let i = 1; i <= levels; i++) {
-    const r = (radius / levels) * i;
-    const pts = axes.map(a => `${polarX(a.angle, r)},${polarY(a.angle, r)}`).join(" ");
-    svg.append("polygon")
-      .attr("points", pts)
-      .attr("fill", "none")
-      .attr("stroke", i === levels ? "#cbd5e1" : "#e2e8f0")
-      .attr("stroke-width", i === levels ? 1.5 : 0.5);
+  if (listing.description) {
+    display(html`<h2>Seller's description</h2><p class="prose">${listing.description}</p>`);
   }
 
-  axes.forEach(a => {
-    svg.append("line")
-      .attr("x1", cx).attr("y1", cy)
-      .attr("x2", polarX(a.angle, radius))
-      .attr("y2", polarY(a.angle, radius))
-      .attr("stroke", "#e2e8f0")
-      .attr("stroke-width", 1);
-  });
-
-  axes.forEach(a => {
-    const lx = polarX(a.angle, radius + 32);
-    const ly = polarY(a.angle, radius + 32);
-    svg.append("text")
-      .attr("x", lx).attr("y", ly)
-      .attr("text-anchor", "middle")
-      .attr("dominant-baseline", "middle")
-      .attr("font-size", "10px")
-      .attr("fill", "#475569")
-      .text(a.label);
-  });
-
-  for (let i = 1; i <= levels; i++) {
-    const val = i / levels;
-    const lx = polarX(axes[0].angle - 0.15, (radius / levels) * i);
-    const ly = polarY(axes[0].angle - 0.15, (radius / levels) * i);
-    svg.append("text")
-      .attr("x", lx).attr("y", ly)
-      .attr("text-anchor", "end")
-      .attr("font-size", "9px")
-      .attr("fill", "#94a3b8")
-      .text(val.toFixed(1));
-  }
-
-  const avgPts = axes.map(a => {
-    const r = radius * avgScores[a.key];
-    return `${polarX(a.angle, r)},${polarY(a.angle, r)}`;
-  }).join(" ");
-  svg.append("polygon")
-    .attr("points", avgPts)
-    .attr("fill", "#94a3b8")
-    .attr("fill-opacity", 0.2)
-    .attr("stroke", "#94a3b8")
-    .attr("stroke-width", 1.5)
-    .attr("stroke-dasharray", "4 2");
-
-  const listingPts = axes.map(a => {
-    const r = radius * listing.metric_scores[a.key];
-    return `${polarX(a.angle, r)},${polarY(a.angle, r)}`;
-  }).join(" ");
-  svg.append("polygon")
-    .attr("points", listingPts)
-    .attr("fill", "#22c55e")
-    .attr("fill-opacity", 0.25)
-    .attr("stroke", "#16a34a")
-    .attr("stroke-width", 2);
-
-  axes.forEach(a => {
-    const r = radius * listing.metric_scores[a.key];
-    svg.append("circle")
-      .attr("cx", polarX(a.angle, r))
-      .attr("cy", polarY(a.angle, r))
-      .attr("r", 4)
-      .attr("fill", "#16a34a")
-      .append("title")
-      .text(`${shortLabels[a.key] || a.key}: ${listing.metric_scores[a.key].toFixed(3)}`);
-  });
-
-  svg.append("circle").attr("cx", 30).attr("cy", height - 30).attr("r", 5).attr("fill", "#16a34a");
-  svg.append("text").attr("x", 40).attr("y", height - 26).attr("font-size","10px").attr("fill","#475569").text("This listing");
-  svg.append("line").attr("x1", 110).attr("y1", height - 30).attr("x2", 130).attr("y2", height - 30).attr("stroke", "#94a3b8").attr("stroke-dasharray", "4 2").attr("stroke-width",1.5);
-  svg.append("text").attr("x", 135).attr("y", height - 26).attr("font-size","10px").attr("fill","#475569").text("Top 100 avg");
+  display(html`<nav class="pager-links" aria-label="Adjacent listings">
+    ${previous ? html`<a href="/detail#${previous.id}">← #${previous.rank} ${previous.title}</a>` : html`<span></span>`}
+    ${next ? html`<a href="/detail#${next.id}">#${next.rank} ${next.title} →</a>` : ""}
+  </nav>`);
 }
-
-} // end if(listing)
 ```
