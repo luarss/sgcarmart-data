@@ -271,8 +271,9 @@ find PDFs in data/pricelists/{brand}/{year}/
 load data/used_cars/{name}/config.json (or DEFAULT_CONFIG)
   → fetch_all_listings_http(filters)         [HTTP/RSC path]
   → on failure/empty: UsedCarSearch Playwright fallback
-  → retry whole fetch up to 3× (tenacity, 15s/30s waits)
-  → 0 listings after all retries → raise DegenerateFetchError, write nothing
+  → retry whole fetch up to 3× (tenacity, 15s/30s waits) while below 50% of latest.json's count
+  → 0 listings, or still <50% of the previous count → raise DegenerateFetchError, write nothing
+    (bypass with --allow-partial when filters were deliberately narrowed)
   → [optional] drop COE-renewed cars by title pattern
   → diff against latest.json (added / removed / price changes)
   → write data/used_cars/{name}/{date}.json + latest.json
@@ -404,8 +405,8 @@ See `analysis/schema.py` for complete Pydantic models:
 `analysis/value_scorer.py` produces a composite 0–1 score per used listing.
 
 - **Weights** live in `DEFAULT_WEIGHTS` and must sum to 1.0. Currently:
-  `body_depreciation_rate` 0.30, `body_price_per_coe_year` 0.25, `depreciation_per_km` 0.18,
-  `annual_mileage` 0.12, `days_on_market` 0.10, `price_per_owner` 0.05.
+  `body_depreciation_rate` 0.30, `body_price_per_coe_year` 0.25, `depreciation_per_cc` 0.18,
+  `annual_mileage` 0.12, `days_on_market` 0.10, `num_owners` 0.05.
   `depreciation_rate` is weighted 0.00 — deliberately retained at zero because it correlates
   r=0.990 with `body_depreciation_rate` and double-counted depreciation.
 - **COE adjustment**: `load_coe_lookup()` reads `data/coe/coe_results_*.json` to get the
@@ -416,8 +417,11 @@ See `analysis/schema.py` for complete Pydantic models:
 - **Normalization**: values are winsorized at the 2nd/98th percentile before min-max
   normalization so one outlier can't compress the rest of the distribution.
 
-Entry points: `score_listings(listings, coe_lookup, reference_date)` and the convenience
-`load_and_score(project_root, watch_name, reference_date)`.
+- **Days on market** counts from the earlier of `posted_date` and the first dated snapshot
+  containing the listing (`load_first_seen()`), because dealers repost and reset `posted_date`.
+
+Entry points: `score_listings(listings, coe_lookup, reference_date, first_seen=None)` and the
+convenience `load_and_score(project_root, watch_name, reference_date)`, which builds `first_seen`.
 
 ### Testing Strategy
 
@@ -516,7 +520,8 @@ path always tries direct first and restarts the browser per proxy attempt.
 Both daily watches treat "zero results" as a scrape failure rather than data, because a
 daily observation cannot be backfilled:
 
-- `watch_used.py` raises `DegenerateFetchError` (non-zero exit) and writes **nothing** —
+- `watch_used.py` raises `DegenerateFetchError` (non-zero exit) on 0 listings or fewer than
+  half of the previous snapshot's count, and writes **nothing** —
   no dated snapshot, and `latest.json` is left untouched so the next run still diffs
   against real data.
 - `cpo_main.py` exits 1 before calling `save_results()` when every site came back empty,
