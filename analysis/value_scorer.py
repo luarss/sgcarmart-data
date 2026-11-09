@@ -184,12 +184,18 @@ def score_listings(
     listings: list[dict],
     coe_lookup: dict[tuple[str, str], int],
     reference_date: date,
+    first_seen: dict[str, date] | None = None,
 ) -> tuple[list[dict], dict]:
     """Score a set of used car listings by composite value.
+
+    ``first_seen`` maps listing ID to the first daily snapshot it appeared in.
+    Dealers repost listings, which resets ``posted_date``, so days on market is
+    measured from whichever of the two is earlier.
 
     Returns (scored_list, stats) where scored_list is sorted by
     composite_score descending and stats contains exclusion counts.
     """
+    first_seen = first_seen or {}
     latest_premiums = _get_latest_premiums(lookup=coe_lookup)
 
     # ── Stage 1: Parse and enrich each listing ────────────────────────
@@ -233,7 +239,8 @@ def score_listings(
         annual_mileage_km = (mileage_km / age_years) if (age_years > 0 and mileage_km is not None) else None
 
         coe_category = _assign_coe_category(eng_cap_cc)
-        days_on_market = (reference_date - posted_date).days
+        listed_since = min(posted_date, first_seen.get(str(car.get("id")), posted_date))
+        days_on_market = (reference_date - listed_since).days
 
         enriched.append(
             {
@@ -403,13 +410,33 @@ def score_listings(
 # ── Convenience: load from file ──────────────────────────────────────────
 
 
+_SNAPSHOT_NAME_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def load_first_seen(watch_dir: Path, reference_date: date) -> dict[str, date]:
+    """Map each listing ID to the date of the first dated snapshot containing it."""
+    first_seen: dict[str, date] = {}
+    for snapshot_file in sorted(watch_dir.glob("*.json")):
+        if not _SNAPSHOT_NAME_RE.match(snapshot_file.stem):
+            continue
+        snapshot_date = date.fromisoformat(snapshot_file.stem)
+        if snapshot_date > reference_date:
+            break
+        with open(snapshot_file) as f:
+            listings = json.load(f).get("listings", {})
+        for listing_id in listings:
+            first_seen.setdefault(listing_id, snapshot_date)
+    return first_seen
+
+
 def load_and_score(
     project_root: Path,
     watch_name: str = "sgd-passenger",
     reference_date: date | None = None,
 ) -> tuple[list[dict], dict]:
     """Load latest.json for a watch, score it, return (scored_list, stats)."""
-    data_file = project_root / "data" / "used_cars" / watch_name / "latest.json"
+    watch_dir = project_root / "data" / "used_cars" / watch_name
+    data_file = watch_dir / "latest.json"
     with open(data_file) as f:
         raw = json.load(f)
 
@@ -418,4 +445,5 @@ def load_and_score(
         reference_date = date.today()
 
     coe_lookup = load_coe_lookup(project_root)
-    return score_listings(listings, coe_lookup, reference_date)
+    first_seen = load_first_seen(watch_dir, reference_date)
+    return score_listings(listings, coe_lookup, reference_date, first_seen)
