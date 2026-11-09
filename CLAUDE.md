@@ -102,8 +102,8 @@ uv run python scripts/download_coe.py --dry-run
 ```bash
 cd site
 npm install
-npm run dev     # observable preview
-npm run build   # observable build
+uv run npm run dev     # observable preview (loaders import analysis/, so run under uv)
+uv run npm run build   # observable build
 npm run clean
 ```
 
@@ -200,8 +200,10 @@ scripts/                # Operational entry points
 site/                   # Observable Framework site ("SGCM Value Watchlist")
 ├── observablehq.config.js
 └── src/
-    ├── index.md, history.md, detail.md, style.css
-    └── data/           # Python data loaders (*.json.py) reading from data/
+    ├── index.md, market.md, method.md, detail.md, style.css
+    ├── components/     # Shared formatting + Plot/figure helpers
+    └── data/           # pool.json.py (re-scores latest.json via analysis.value_scorer),
+                        # market.json.py (daily snapshot stats + COE series)
 
 main.py                 # CLI entry point — new car pricelists
 cpo_main.py             # CLI entry point — CPO listings
