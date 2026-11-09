@@ -25,8 +25,8 @@ DEFAULT_WEIGHTS = {
     "body_price_per_coe_year": 0.25,  # +0.05: absorbs redistribution from deprecated metric
     "depreciation_rate": 0.00,  # removed: r=0.990 with body_depreciation_rate; biases against COE-peak cars
     "annual_mileage": 0.12,
-    "depreciation_per_km": 0.18,
-    "price_per_owner": 0.05,
+    "depreciation_per_cc": 0.18,
+    "num_owners": 0.05,
     "days_on_market": 0.10,  # +0.05: only fully orthogonal signal (r≈0.09 with all others)
 }
 
@@ -269,17 +269,14 @@ def score_listings(
         coe_left = row["coe_years_left"]
         coe_cat = row["coe_category"]
         reg_d = row["reg_date_parsed"]
-        owners = row["num_owners"]
         am_raw = row["annual_mileage_km_raw"]
         dom = row["days_on_market"]
 
         row["value_retention"] = p / row["est_original_price"] if row["est_original_price"] > 0 else 0.0
         row["price_per_coe_year"] = (p / coe_left) if coe_left and coe_left > 0 else None
         row["depreciation_per_cc"] = (d / row["eng_cap_cc"]) if row["eng_cap_cc"] and row["eng_cap_cc"] > 0 else None
-        row["price_per_owner"] = (p / owners) if (owners is not None and owners > 0) else None
         annual_mileage = min(am_raw, ANNUAL_MILEAGE_CAP) if am_raw is not None else None
         row["annual_mileage"] = annual_mileage
-        row["depreciation_per_km"] = (d / am_raw) if (am_raw is not None and am_raw > 0) else None
 
         # COE premium lookup
         ym_key = reg_d.strftime("%Y-%m")
@@ -321,8 +318,8 @@ def score_listings(
         "body_depreciation_rate",
         "body_price_per_coe_year",
         "annual_mileage",
-        "depreciation_per_km",
-        "price_per_owner",
+        "depreciation_per_cc",
+        "num_owners",
         "days_on_market",
     ]
 

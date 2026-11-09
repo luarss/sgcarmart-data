@@ -1,10 +1,10 @@
 export const METRICS = {
   body_depreciation_rate: {label: "Body depreciation rate", short: "Body depr.", unit: "pct"},
   body_price_per_coe_year: {label: "Body price per COE year", short: "Body $/COE yr", unit: "money"},
-  depreciation_per_km: {label: "Depreciation per km", short: "Depr./km", unit: "money2"},
+  depreciation_per_cc: {label: "Depreciation per cc", short: "Depr./cc", unit: "money2"},
   annual_mileage: {label: "Annual mileage", short: "km/yr", unit: "km"},
   days_on_market: {label: "Days on market", short: "Days listed", unit: "days"},
-  price_per_owner: {label: "Price per owner", short: "$/owner", unit: "money"},
+  num_owners: {label: "Previous owners", short: "Owners", unit: "count"},
   depreciation_rate: {label: "Depreciation rate", short: "Depr. rate", unit: "pct"}
 };
 
@@ -64,6 +64,8 @@ export function metricValue(metric, value) {
       return value == null ? "—" : `S$${value.toFixed(2)}`;
     case "km":
       return value == null ? "—" : `${integer(value)} km`;
+    case "count":
+      return value == null ? "—" : integer(value);
     case "days":
       return value == null ? "—" : `${value} d`;
     default:

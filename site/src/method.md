@@ -63,8 +63,8 @@ display(figure({
 - **It is relative, not absolute.** 1.0 means best on every metric *within today's pool*. A 0.90 today and a 0.90 last month are not directly comparable, and if a scrape comes back partial the whole scale shifts.
 - **Exact ranks are soft; the top tier is not.** Randomly nudging every weight by ±25% keeps about 90 of the top 100 in place, but individual positions move by several places. Treat #3 and #9 as roughly equal.
 - **Small cars dominate.** Category A cars (≤1,600 cc) carry a lower COE and a cheaper body, so they fill almost all of the top 100. Filter by COE category to compare like with like.
-- **"Days on market" is noisy.** Dealers often repost listings, which resets the posted date. The *days in snapshots* figure on each listing page is the more reliable count.
-- **Two metrics can reward odd things.** *Price per owner* gets better as the owner count rises, and *depreciation per km* gets better with high mileage, which partly offsets *annual mileage*. Check the spec sheet before trusting a high score on either.
+- **Days on market counts from first sighting.** Dealers often repost listings, which resets the posted date, so the score counts from whichever is earlier: the posted date or the first daily snapshot the listing appeared in.
+- **Depreciation per cc scales with the car.** Annual depreciation divided by engine capacity compares how fast cars of different sizes lose value, without rewarding high mileage the way a per-km measure would.
 
 </div>
 

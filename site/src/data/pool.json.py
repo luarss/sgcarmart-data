@@ -22,8 +22,7 @@ ROUNDED_FIELDS = {
     "body_depreciation_rate": 4,
     "value_retention": 4,
     "body_price_per_coe_year": 0,
-    "depreciation_per_km": 3,
-    "price_per_owner": 0,
+    "depreciation_per_cc": 2,
     "composite_score": 4,
 }
 

@@ -72,3 +72,21 @@ class TestLoadFirstSeen:
 
         assert first_seen == {"a": date(2026, 11, 1), "b": date(2026, 11, 2)}
 
+
+@pytest.mark.unit
+class TestMetricDirection:
+    def test_fewer_owners_scores_better(self):
+        listings = [_listing("1", owners="1 Owner"), _listing("2", owners="4 Owners")]
+
+        scored, _ = score_listings(listings, COE_LOOKUP, REFERENCE_DATE)
+        owner_scores = {row["id"]: row["metric_scores"]["num_owners"] for row in scored}
+
+        assert owner_scores["1"] > owner_scores["2"]
+
+    def test_mileage_does_not_improve_depreciation_metric(self):
+        listings = [_listing("1", mileage=30000), _listing("2", mileage=150000)]
+
+        scored, _ = score_listings(listings, COE_LOOKUP, REFERENCE_DATE)
+        depreciation_scores = {row["id"]: row["metric_scores"]["depreciation_per_cc"] for row in scored}
+
+        assert depreciation_scores["1"] == depreciation_scores["2"]
