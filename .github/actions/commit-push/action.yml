@@ -1,0 +1,38 @@
+name: Commit and push
+description: Commit paths and push to main, rebasing and retrying if main moved
+
+inputs:
+  message:
+    description: Commit message
+    required: true
+  paths:
+    description: Space-separated pathspecs to stage
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Commit and push with rebase retry
+      shell: bash
+      env:
+        COMMIT_MESSAGE: ${{ inputs.message }}
+        COMMIT_PATHS: ${{ inputs.paths }}
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        read -r -a pathspecs <<< "$COMMIT_PATHS"
+        git add --sparse -- "${pathspecs[@]}"
+        if git diff --cached --quiet; then
+          echo "No changes to commit."
+          exit 0
+        fi
+        git commit -m "$COMMIT_MESSAGE"
+        for attempt in 1 2 3 4 5; do
+          if git pull --rebase origin main && git push origin HEAD:main; then
+            exit 0
+          fi
+          git rebase --abort 2>/dev/null || true
+          sleep $((attempt * 5))
+        done
+        echo "Failed to push after 5 attempts." >&2
+        exit 1

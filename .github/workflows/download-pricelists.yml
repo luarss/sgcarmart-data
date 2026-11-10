@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
+    paths-ignore: ['data/**']
 
 jobs:
   test:
@@ -69,19 +70,12 @@ jobs:
           XIAOMI_API_KEY: ${{ secrets.XIAOMI_API_KEY }}
         run: uv run python main.py
 
-      - name: Rebase onto latest main before committing
-        run: git pull --rebase --autostash origin main
-
       - name: Get current date
         id: date
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
       - name: Commit and push if changes
-        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
+        uses: ./.github/actions/commit-push
         with:
-          commit_message: "chore: update new car pricelists ${{ steps.date.outputs.date }}"
-          file_pattern: 'data/pricelists/**/*.pdf data/pricelists/**/*.json data/pricelists/manifest.json'
-          add_options: '--sparse'
-          commit_user_name: github-actions[bot]
-          commit_user_email: github-actions[bot]@users.noreply.github.com
-          commit_author: GitHub Actions <github-actions[bot]@users.noreply.github.com>
+          message: "chore: update new car pricelists ${{ steps.date.outputs.date }}"
+          paths: 'data/pricelists/**/*.pdf data/pricelists/**/*.json data/pricelists/manifest.json'

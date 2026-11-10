@@ -7,6 +7,9 @@ on:
 
 jobs:
   watch:
+    concurrency:
+      group: ${{ github.workflow }}
+      cancel-in-progress: false
     runs-on: ubuntu-24.04  # Playwright does not support ubuntu-latest (26.04)
     permissions:
       contents: write
@@ -80,13 +83,10 @@ jobs:
         run: uv run python scripts/watchlist.py --name sgd-passenger
 
       - name: Commit and push if changes
-        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
+        uses: ./.github/actions/commit-push
         with:
-          commit_message: "chore: update used car watch and value watchlist ${{ steps.date.outputs.date }}"
-          file_pattern: 'data/used_cars/**/*'
-          commit_user_name: github-actions[bot]
-          commit_user_email: github-actions[bot]@users.noreply.github.com
-          commit_author: GitHub Actions <github-actions[bot]@users.noreply.github.com>
+          message: "chore: update used car watch and value watchlist ${{ steps.date.outputs.date }}"
+          paths: 'data/used_cars/**/*'
 
       # Fail loudly only when data is actually stale, not on a single blocked day.
       - name: Check snapshot freshness
