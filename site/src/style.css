@@ -1,5 +1,5 @@
 @import url("observablehq:default.css");
-@import url("observablehq:theme-air.css") (prefers-color-scheme: light);
+@import url("observablehq:theme-air.css");
 @import url("observablehq:theme-near-midnight.css") (prefers-color-scheme: dark);
 
 :root {
@@ -44,6 +44,9 @@
   --theme-foreground: var(--ink);
   --theme-foreground-muted: var(--muted);
   --theme-foreground-faint: var(--rule);
+  --theme-foreground-fainter: color-mix(in srgb, var(--ink) 30%, var(--bg));
+  --theme-foreground-faintest: color-mix(in srgb, var(--ink) 14%, var(--bg));
+  --theme-foreground-alt: color-mix(in srgb, var(--ink) 90%, var(--bg));
   --theme-foreground-focus: var(--link);
   --sans-serif: var(--font-sans);
   --monospace: var(--font-mono);
@@ -51,7 +54,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     color-scheme: dark;
     --bg: #0f1114;
     --surface: #171a1f;
@@ -68,6 +71,28 @@
     --link: #7fa7ff;
     --focus: #7fa7ff;
   }
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0f1114;
+    --surface: #171a1f;
+    --rule: #2a2e35;
+    --rule-strong: #e8e6e1;
+    --ink: #e8e6e1;
+    --muted: #a3a7b0;
+    --faint: #8a8e97;
+    --good: #3dcb8e;
+    --good-tint: #12291f;
+    --good-soft: #2a7a59;
+    --warn: #f5b547;
+    --warn-tint: #2b2112;
+    --link: #7fa7ff;
+    --focus: #7fa7ff;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
 }
 
 html,
@@ -178,6 +203,60 @@ body {
 
 .masthead .wordmark span {
   color: var(--muted);
+}
+
+.masthead .nav-end {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: var(--ink);
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun {
+    display: block;
+  }
+
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon {
+    display: none;
+  }
 }
 
 .masthead ul {
