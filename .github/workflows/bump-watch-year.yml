@@ -5,6 +5,10 @@ on:
     - cron: '37 20 1 1 *'  # Jan 1st, 2037 UTC / 0437 SGT
   workflow_dispatch:
 
+concurrency:
+  group: data-commit  # serialise every workflow that pushes data to main
+  cancel-in-progress: false
+
 jobs:
   bump:
     runs-on: ubuntu-latest
@@ -33,10 +37,7 @@ jobs:
           fi
 
       - name: Commit and push if changes
-        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
+        uses: ./.github/actions/commit-data
         with:
-          commit_message: "chore: bump watchlist year_from for new year"
-          file_pattern: 'data/used_cars/*/config.json'
-          commit_user_name: github-actions[bot]
-          commit_user_email: github-actions[bot]@users.noreply.github.com
-          commit_author: GitHub Actions <github-actions[bot]@users.noreply.github.com>
+          message: "chore: bump watchlist year_from for new year"
+          paths: 'data/used_cars/*/config.json'

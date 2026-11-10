@@ -1,0 +1,54 @@
+name: Commit data and push
+description: >
+  Commit the given paths to the current branch and push, rebasing onto the remote and
+  retrying when another workflow (or a person) pushed in the meantime.
+
+inputs:
+  paths:
+    description: Space-separated git pathspecs to stage
+    required: true
+  message:
+    description: Commit message
+    required: true
+  add-options:
+    description: Extra options for git add (e.g. --sparse)
+    required: false
+    default: ''
+
+runs:
+  using: composite
+  steps:
+    - name: Commit and push with rebase retry
+      shell: bash
+      env:
+        PATHS: ${{ inputs.paths }}
+        MESSAGE: ${{ inputs.message }}
+        ADD_OPTIONS: ${{ inputs.add-options }}
+      run: |
+        set -euo pipefail
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
+        set -f  # pathspecs are expanded by git, not the shell
+        # shellcheck disable=SC2086
+        git add $ADD_OPTIONS -- $PATHS
+        set +f
+
+        if git diff --cached --quiet; then
+          echo "No changes to commit."
+          exit 0
+        fi
+        git commit -m "$MESSAGE"
+
+        branch=$(git rev-parse --abbrev-ref HEAD)
+        for attempt in 1 2 3 4 5; do
+          git pull --rebase --autostash origin "$branch"
+          if git push origin "HEAD:$branch"; then
+            echo "Pushed on attempt $attempt."
+            exit 0
+          fi
+          echo "Push rejected (attempt $attempt); retrying..."
+          sleep $((attempt * 3))
+        done
+        echo "::error::Failed to push after 5 attempts"
+        exit 1

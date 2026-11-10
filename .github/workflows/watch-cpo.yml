@@ -5,6 +5,10 @@ on:
     - cron: '13 21 * * *'
   workflow_dispatch:
 
+concurrency:
+  group: data-commit  # serialise every workflow that pushes data to main
+  cancel-in-progress: false
+
 jobs:
   watch:
     runs-on: ubuntu-24.04  # Playwright does not support ubuntu-latest (26.04)
@@ -32,10 +36,7 @@ jobs:
         run: uv run cpo_main.py
 
       - name: Commit and push if changes
-        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
+        uses: ./.github/actions/commit-data
         with:
-          commit_message: "chore: update CPO watch ${{ steps.date.outputs.date }}"
-          file_pattern: 'data/cpo/*.json'
-          commit_user_name: github-actions[bot]
-          commit_user_email: github-actions[bot]@users.noreply.github.com
-          commit_author: GitHub Actions <github-actions[bot]@users.noreply.github.com>
+          message: "chore: update CPO watch ${{ steps.date.outputs.date }}"
+          paths: 'data/cpo/*.json'
