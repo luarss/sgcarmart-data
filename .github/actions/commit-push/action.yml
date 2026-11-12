@@ -21,7 +21,11 @@ runs:
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         read -r -a pathspecs <<< "$COMMIT_PATHS"
-        git add --sparse -- "${pathspecs[@]}"
+        # Stage each pathspec separately: git aborts the whole add when one
+        # pathspec matches nothing (e.g. no PDFs on a sparse checkout with no new downloads).
+        for spec in "${pathspecs[@]}"; do
+          git add --sparse -- "$spec" 2>/dev/null || echo "Nothing to stage for: $spec"
+        done
         if git diff --cached --quiet; then
           echo "No changes to commit."
           exit 0
