@@ -1,17 +1,17 @@
 from datetime import date
-from enum import Enum
+from enum import StrEnum
 from typing import Any, Literal
 
 from pydantic import BaseModel, Field, field_validator
 
 
-class VehicleType(str, Enum):
+class VehicleType(StrEnum):
     ICE = "ICE"
     HYBRID = "Hybrid"
     ELECTRIC = "Electric"
 
 
-class VehicleCategory(str, Enum):
+class VehicleCategory(StrEnum):
     SEDAN = "SEDAN"
     SUV = "SUV"
     MPV = "MPV"
